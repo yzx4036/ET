@@ -663,6 +663,9 @@
  <Reference Include="UnityEditor">
  <HintPath>D:/Program Files/Unity2020_1_8/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.VR">
+ <HintPath>/Applications/Unity/Hub/Editor/2019.4.12f1/Unity.app/Contents/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>D:/Program Files/Unity2020_1_8/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
