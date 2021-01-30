@@ -60,3 +60,4 @@ Client-Server.sln.DotSettings
 Server/App/Server.App.csproj
 Server/Hotfix/Server.Hotfix.csproj
 Server/Model/Server.Model.csproj
+Unity/Assets/ThirdParty/Puerts/Plugins/
