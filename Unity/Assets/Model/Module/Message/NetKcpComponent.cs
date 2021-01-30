@@ -1,4 +1,4 @@
-﻿﻿namespace ET
+﻿namespace ET
 {
     public class NetKcpComponent: Entity
     {
