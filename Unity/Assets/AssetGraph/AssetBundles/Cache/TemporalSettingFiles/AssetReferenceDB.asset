@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4bc21567f434b598a3c96ba4946372, type: 3}
+  m_Name: AssetReferenceDB
+  m_EditorClassIdentifier: 
+  m_assets:
+  - m_assetDatabaseId: f87135b0a9d24ef38b24f4eae2040c69
+    m_importFrom: Assets/Editor/Puerts/PuertsConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 4fa45afe4bb94da48a0d36b2314fe23f
+    m_importFrom: Assets/Editor/Puerts
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 40ccafe0c16301943907d65c62a7b104
+    m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetReferenceDB.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7bf1d13bab0b772409621d39f2d6661e
+    m_importFrom: Assets/AssetGraph/Cache/AssetBundleBuildMap.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 188047ee4b6ee5a42b7b6b2cba31bbe6
+    m_importFrom: Assets/AssetGraph/AddressableAssetGraph.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 00725fd3b1a2fbc419dc0dbcdf8e226a
+    m_importFrom: Assets/AddressableAssetsData/AssetGroups/code_js.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bebd02018e98e44409a761968a7cbcd9
+    m_importFrom: Assets/ThirdParty/Unity.ThirdParty.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5a35c5f0a89b9654d897ccd7c8f81bd0
+    m_importFrom: Assets/Res/Unit/Skeleton/Character/Skeleton@Skin.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dfc15c633f0d98141920018f79a042a6
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Attack.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a5ea117a2b123564a83a2dbd1c9ea4cf
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Idle.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 188f1042b5ff4644389fad5df1f98d7c
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Walk.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 18678a28cef624aeb89c5717c46be35b
+    m_importFrom: Packages/com.unity.assetgraph/Editor/SettingTemplate/setting.fbx
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1e768688017709245aed3bb86453c364
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Skill.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a749f4485b342b7469956010abf2ab25
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Death.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f57ee821486cd7b488adf1063a8dd207
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Run.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 81d4af5a5190e3d4d88c97161d881bf3
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Damage.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6f61bc53c41ba664fa527d3386ecfd1e
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Stand.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6e0b4a05932877a4b89fb3fb32c3e72b
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Knockback.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 255f38ef9f5d4f2489c21c3ea1a3a7d9
+    m_importFrom: Assets/ThirdParty/Puerts/Puerts/Src/Editor/Unity.Puerts.Editor.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fb065124ed8969b4dbaa9e56ea60ff13
+    m_importFrom: Assets/ThirdParty/Puerts/Puerts/Src/Unity.Puerts.Runtime.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 997f003cfffd9ec4fae70c0ac9b0ec2b
+    m_importFrom: Assets/Model/Unity.Model.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 40002230025d92d408c2b13bac4a5de0
+    m_importFrom: Assets/ThirdParty/Puerts/Puerts
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 000a53018e5e7c14aa75273e1f7be8e2
+    m_importFrom: Assets/Editor/Unity.Editor.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7a892c01ce2097a4a9c302a13f3c49bf
+    m_importFrom: Assets/ThirdParty/FairyGUI/Editor/Unity.FairyGUI.Editor.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 121a03aaece0c014e975e886355ec01f
+    m_importFrom: Assets/ThirdParty/FairyGUI/Unity.FairyGUI.Runtime.asmdef
+    m_exportTo: 
+    m_variantName: 
+  m_version: 2

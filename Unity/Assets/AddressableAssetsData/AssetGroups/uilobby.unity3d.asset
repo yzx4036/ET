@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: uilobby.unity3d
+  m_EditorClassIdentifier: 
+  m_GroupName: uilobby.unity3d
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 93adb1720fd6914439e00363a430eaf1
+  m_SerializeEntries:
+  - m_GUID: d8d87e53d93e234448658c9a801a9967
+    m_Address: Assets/Bundles/UI/UILobby.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: cede57cdfbd1cae47bedab3fab75d315, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: abc2b051d06952040ac7845d8c27fa35, type: 2}
+    - {fileID: 11400000, guid: adeb2668cf88a6941860fc609d1069ab, type: 2}

@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"target": "ES2018",
+		"module": "ESNext",
+		"jsx": "preserve",
+		"lib": [ "ES2018" ],
+		"sourceMap": true,
+		"inlineSources": true,
+		"moduleResolution": "node",
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"baseUrl": "src",
+		"typeRoots": [
+			"../Packages/Puerts/Puerts/Typing",
+			"../Packages/Puerts/Gen/Typing",
+			"./node_modules/@types"
+		],
+	},
+	"exclude": [
+		"src/addons/webapi/**/*.godot.ts",
+		"src/addons/webapi/**/*.godot.tsx"
+	]
+}

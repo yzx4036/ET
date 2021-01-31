@@ -1,3 +1,5 @@
+using SEyesET;
+
 namespace ET
 {
     public class AppStart_Init: AEvent<EventType.AppStart>
@@ -9,6 +11,9 @@ namespace ET
 
             // 下载ab包
             //await BundleHelper.DownloadBundle("1111");
+
+            Game.Scene.AddComponent<AdsResComponent>();
+            Game.Scene.AddComponent<PuertsComponent>();
 
             // 加载配置
             Game.Scene.AddComponent<ResourcesComponent>();

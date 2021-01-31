@@ -6,7 +6,7 @@ namespace ET
         {
             Scene zoneScene = EntitySceneFactory.CreateScene(id, zone, SceneType.Zone, name, Game.Scene);
             
-            zoneScene.AddComponent<NetKcpComponent>();
+            // zoneScene.AddComponent<NetKcpComponent>();
             zoneScene.AddComponent<UnitComponent>();
             
             // UI层的初始化

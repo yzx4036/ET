@@ -1,0 +1,44 @@
+{
+	"defaultSeverity": "error",
+	"extends": [
+		"tslint:recommended"
+	],
+	"linterOptions": {
+		"exclude": [
+			"*.d.ts",
+			"src/game/view/ui/raw/**/*.ts",
+			"src/game/configs/excel.ts",
+			"src/addons/webapi/**/*.ts",
+			"src/addons/webapi/**/*.tsx"
+		]
+	},
+	"jsRules": {
+		"no-namespace": true
+	},
+	"rules": {
+		"semicolon": true,
+		"no-conditional-assignment": true,
+		"class-name": true,
+		"max-classes-per-file": false,
+		"no-namespace": false,
+		"encoding": true,
+		"interface-name": [true,"always-prefix"],
+		"no-empty": [true, "allow-empty-functions"],
+		"jsdoc-format": false,
+		"typedef-whitespace": true,
+		"no-console": false,
+		"triple-equals": false,
+		"only-arrow-functions": false,
+		"indent": [true, "spaces", 4],
+		"object-literal-shorthand": false,
+		"space-before-function-paren": false,
+		"no-trailing-whitespace": true,
+		"whitespace": true,
+		"variable-name": [true, "allow-leading-underscore", "allow-snake-case"],
+		"prefer-for-of": false,
+		"prefer-const": false,
+		"no-default-export": false,
+		"no-bitwise": false
+	},
+	"rulesDirectory": []
+}

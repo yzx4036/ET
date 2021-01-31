@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using SEyesET;
 
 namespace ET
 {
@@ -42,6 +43,12 @@ namespace ET
 		
 		private readonly UnOrderMultiMap<Type, IDeserializeSystem> deserializeSystems = new UnOrderMultiMap<Type, IDeserializeSystem>();
 		
+		private readonly UnOrderMultiMap<Type, IFixedUpdateSystem> fixedUpdateSystems = new UnOrderMultiMap<Type, IFixedUpdateSystem>();
+
+		private readonly UnOrderMultiMap<Type, IOnApplicationFocusSystem> appFocusSystems = new UnOrderMultiMap<Type, IOnApplicationFocusSystem>();
+
+		private readonly UnOrderMultiMap<Type, IOnApplicationPauseSystem> appPauseSystems = new UnOrderMultiMap<Type, IOnApplicationPauseSystem>();
+
 		private Queue<long> updates = new Queue<long>();
 		private Queue<long> updates2 = new Queue<long>();
 		
@@ -52,7 +59,14 @@ namespace ET
 
 		private Queue<long> lateUpdates = new Queue<long>();
 		private Queue<long> lateUpdates2 = new Queue<long>();
-
+		
+		private Queue<long> fixedUpdates = new Queue<long>();
+		private Queue<long> fixedUpdates2 = new Queue<long>();
+		
+		private Queue<long> appFocusQueue = new Queue<long>();
+		
+		private Queue<long> appPauseQueue = new Queue<long>();
+		
 		private EventSystem()
 		{
 			this.Add(typeof(EventSystem).Assembly);
@@ -92,6 +106,9 @@ namespace ET
 			this.changeSystems.Clear();
 			this.destroySystems.Clear();
 			this.deserializeSystems.Clear();
+			fixedUpdateSystems.Clear();
+			appPauseSystems.Clear();
+			appFocusSystems.Clear();
 			
 			foreach (Type type in this.GetTypes(typeof(ObjectSystemAttribute)))
 			{
@@ -121,6 +138,15 @@ namespace ET
 						break;
 					case IDeserializeSystem deserializeSystem:
 						this.deserializeSystems.Add(deserializeSystem.Type(), deserializeSystem);
+						break;
+					case IFixedUpdateSystem fixedUpdateSystem:
+						fixedUpdateSystems.Add(fixedUpdateSystem.Type(), fixedUpdateSystem);
+						break;
+					case IOnApplicationFocusSystem appFocusSystem:
+						appFocusSystems.Add(appFocusSystem.Type(), appFocusSystem);
+						break;
+					case IOnApplicationPauseSystem appPauseSystem:
+						appPauseSystems.Add(appPauseSystem.Type(), appPauseSystem);
 						break;
 				}
 			}
@@ -198,6 +224,21 @@ namespace ET
 			if (this.lateUpdateSystems.ContainsKey(type))
 			{
 				this.lateUpdates.Enqueue(component.InstanceId);
+			}
+			
+			if (fixedUpdateSystems.ContainsKey(type))
+			{
+				this.fixedUpdates.Enqueue(component.InstanceId);
+			}
+			
+			if (appFocusSystems.ContainsKey(type))
+			{
+				appFocusQueue.Enqueue(component.InstanceId);
+			}
+			
+			if (appPauseSystems.ContainsKey(type))
+			{
+				appPauseQueue.Enqueue(component.InstanceId);
 			}
 		}
 
@@ -606,6 +647,114 @@ namespace ET
 			ObjectHelper.Swap(ref this.lateUpdates, ref this.lateUpdates2);
 		}
 		
+		public void FixedUpdate()
+		{
+			while (fixedUpdates.Count > 0)
+			{
+				long instanceId = fixedUpdates.Dequeue();
+				Entity component;
+				if (!allComponents.TryGetValue(instanceId, out component))
+				{
+					continue;
+				}
+				if (component.IsDisposed)
+				{
+					continue;
+				}
+			
+				List<IFixedUpdateSystem> iFixedUpdateSystems = fixedUpdateSystems[component.GetType()];
+				if (iFixedUpdateSystems == null)
+				{
+					continue;
+				}
+			
+				fixedUpdates2.Enqueue(instanceId);
+			
+				foreach (IFixedUpdateSystem iFixedUpdateSystem in iFixedUpdateSystems)
+				{
+					try
+					{
+						iFixedUpdateSystem.Run(component);
+					}
+					catch (Exception e)
+					{
+						Log.Error(e);
+					}
+				}
+			}
+			
+			ObjectHelper.Swap(ref fixedUpdates, ref fixedUpdates2);
+		}
+		
+		public void OnApplicationFocus(bool isFocus)
+		{
+			while (appFocusQueue.Count > 0)
+			{
+				long instanceId = appFocusQueue.Dequeue();
+				Entity component;
+				if (!allComponents.TryGetValue(instanceId, out component))
+				{
+					continue;
+				}
+				if (component.IsDisposed)
+				{
+					continue;
+				}
+			
+				List<IOnApplicationFocusSystem> iAppFocusSystems = appFocusSystems[component.GetType()];
+				if (iAppFocusSystems == null)
+				{
+					continue;
+				}
+				foreach (IOnApplicationFocusSystem iAppFocusSystem in iAppFocusSystems)
+				{
+					try
+					{
+						iAppFocusSystem.Run(component, isFocus);
+					}
+					catch (Exception e)
+					{
+						Log.Error(e);
+					}
+				}
+			}
+			
+		}
+		
+		public void OnApplicationPause(bool isPause)
+		{
+			while (appPauseQueue.Count > 0)
+			{
+				long instanceId = appPauseQueue.Dequeue();
+				Entity component;
+				if (!allComponents.TryGetValue(instanceId, out component))
+				{
+					continue;
+				}
+				if (component.IsDisposed)
+				{
+					continue;
+				}
+			
+				List<IOnApplicationPauseSystem> iAppPauseSystems = appPauseSystems[component.GetType()];
+				if (iAppPauseSystems == null)
+				{
+					continue;
+				}
+				foreach (IOnApplicationPauseSystem iAppPauseSystem in iAppPauseSystems)
+				{
+					try
+					{
+						iAppPauseSystem.Run(component, isPause);
+					}
+					catch (Exception e)
+					{
+						Log.Error(e);
+					}
+				}
+			}
+		}
+
 		public async ETTask Publish<T>(T a) where T: struct
 		{
 			List<object> iEvents;

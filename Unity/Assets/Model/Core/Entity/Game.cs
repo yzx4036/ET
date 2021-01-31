@@ -20,8 +20,12 @@ namespace ET
                 {
                     return scene;
                 }
+#if SERVER
                 InstanceIdStruct instanceIdStruct = new InstanceIdStruct(Options.Process, 0);
                 scene = EntitySceneFactory.CreateScene(instanceIdStruct.ToLong(), 0, SceneType.Process, "Process");
+#else
+                scene = EntitySceneFactory.CreateScene(0, 0, SceneType.Client, "Client");
+#endif
                 return scene;
             }
         }
@@ -30,7 +34,9 @@ namespace ET
 
         public static IdGenerater IdGenerater => IdGenerater.Instance;
 
+#if SERVER
         public static Options Options;
+#endif
 
         public static List<Action> FrameFinishCallback = new List<Action>();
 

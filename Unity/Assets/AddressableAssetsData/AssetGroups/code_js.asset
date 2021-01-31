@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: code_js
+  m_EditorClassIdentifier: 
+  m_GroupName: code_js
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b4226fd2ccaf6364493a158feb74df2f
+  m_SerializeEntries:
+  - m_GUID: 9f2fd034c7fa8cf4eb50c56d98688e54
+    m_Address: /bootstrap.js
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JS
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7308a89c7e46ba84a8de343252f84808
+    m_Address: /bundle.js
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JS
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 0b96dcbbb0200e4488e7e94132d52082
+    m_Address: /puerts/cjsload.js.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JS
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: da0fb330985e4714caf027a72b0729d6
+    m_Address: /puerts/csharp.js.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JS
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c8fcd7d8efe4bda4581c14d2fe4a25b0
+    m_Address: /puerts/events.js.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JS
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 85a62388a1bf9db438d22d5396b3744c
+    m_Address: /puerts/init.js.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JS
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: bfefd4ca5b64882419a76f098be442eb
+    m_Address: /puerts/log.js.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JS
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: cc595573da6d95b4f91ae1185d41d6ce
+    m_Address: /puerts/modular.js.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JS
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b4f9dc0e8cbd502458af507b38c9a84d
+    m_Address: /puerts/polyfill.js.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JS
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 80d0248e90150b94d8d086ad01d2109c
+    m_Address: /puerts/promises.js.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JS
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7212a83e3afa9de4bb8b1a98c4198a05
+    m_Address: /puerts/timer.js.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JS
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7a4f489ec98f74148aa406614f027e24
+    m_Address: /webapi.js
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JS
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3077c34f7c5e8384399cf8938b9cd883
+    m_Address: /webapi.js.map.txt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - JS
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: cede57cdfbd1cae47bedab3fab75d315, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d864c0a8b65cde94ab3ba178feb0bef5, type: 2}
+    - {fileID: 11400000, guid: 55af2a204ac28564780066b45e2c97e7, type: 2}
