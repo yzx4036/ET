@@ -41,8 +41,9 @@ namespace ET
             }
             
             return Game.Options.LogLevel <= level;
-#endif
+#else
             return true;
+#endif
         }
         
         public static Action<string, object[]> DebugCallback;

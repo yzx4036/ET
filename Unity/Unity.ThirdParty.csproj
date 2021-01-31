@@ -1,0 +1,1306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <_TargetFrameworkDirectories>non_empty_path_generated_by_unity.rider.package</_TargetFrameworkDirectories>
+    <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_unity.rider.package</_FullFrameworkReferenceAssemblyPaths>
+    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
+  <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</ProjectGuid>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Unity.ThirdParty</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>.</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_2020_2_2;UNITY_2020_2;UNITY_2020;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;UNITY_ASTC_ONLY_DECOMPRESS;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;NET452;ILRuntime;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn></NoWarn>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+  </PropertyGroup>
+  <ItemGroup>
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\DisplayObjectEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\EditorToolSet.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\PackagesWindow.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\StageCameraEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\UIConfigEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\UIContentScalerEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\UIPainterEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\UIPanelEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Extensions\DragonBones\DragonBonesLoader.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Extensions\Spine\SpineLoader.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Extensions\TextMeshPro\TMPFont.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Extensions\TextMeshPro\TMPTextFormat.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\BlendMode.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\CaptureCamera.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Container.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\DisplayObject.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\GoWrapper.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\ColliderHitTest.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\HitTestContext.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\IHitTest.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\MeshColliderHitTest.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\PixelHitTest.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\RectHitTest.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\ShapeHitTest.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Image.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\MaterialManager.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\CompositeMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\EllipseMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\FillMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\LineMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\MeshFactory.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\PlaneMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\PolygonMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\RectMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\RegularPolygonMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\RoundedRectMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\StraightLineMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\VertexBuffer.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\MovieClip.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\NAudioClip.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\NGraphics.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\NTexture.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\ShaderConfig.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Shape.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Stage.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\StageCamera.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\StageEngine.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Stats.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\BaseFont.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\BitmapFont.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\CopyPastePatch.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\DynamicFont.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\Emoji.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\FontManager.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\IKeyboard.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\InputTextField.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\RichTextField.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\RTLSupport.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\SelectionShape.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\TextField.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\TextFormat.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\TouchScreenKeyboard.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\TypingEffect.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\UpdateContext.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\EventBridge.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\EventContext.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\EventDispatcher.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\EventListener.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\IEventDispatcher.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\InputEvent.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Filter\BlurFilter.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Filter\ColorFilter.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Filter\IFilter.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\LongPressGesture.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\PinchGesture.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\RotationGesture.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\SwipeGesture.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\EaseManager.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\EaseType.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\GPath.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\GTween.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\GTweener.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\TweenManager.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\TweenPropType.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\TweenValue.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Action\ChangePageAction.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Action\ControllerAction.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Action\PlayTransitionAction.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\AsyncCreationHelper.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Controller.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\DragDropManager.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\EMRenderSupport.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\FieldTypes.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GButton.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GComboBox.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GComponent.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearAnimation.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearBase.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearColor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearDisplay.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearDisplay2.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearFontSize.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearIcon.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearLook.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearSize.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearText.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearXY.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\IAnimationGear.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\IColorGear.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GGraph.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GGroup.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GImage.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GLabel.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GList.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GLoader.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GLoader3D.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GMovieClip.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GObject.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GObjectPool.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GProgressBar.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GRichTextField.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GRoot.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GScrollBar.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GSlider.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GTextField.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GTextInput.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GTree.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GTreeNode.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\IUISource.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Margin.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\PackageItem.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\PopupMenu.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\RelationItem.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Relations.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\ScrollPane.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Transition.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\TranslationHelper.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Tree\TreeNode.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Tree\TreeView.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIConfig.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIContentScaler.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIObjectFactory.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIPackage.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIPainter.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIPanel.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Window.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\ByteBuffer.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlButton.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlElement.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlImage.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlInput.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlLink.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlPageContext.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlParseOptions.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlParser.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlSelect.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\IHtmlObject.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\IHtmlPageContext.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Timers.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\ToolSet.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\UBBParser.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\VirualClassObject.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\XML.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\XMLIterator.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\XMLList.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\XMLUtils.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\ZipReader.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\UInt32Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoEnumAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ServiceModel\XmlProtoSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\DiscriminatedUnion.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DecimalSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\MetaType.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\RuntimeTypeModel.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\SByteSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ParseableSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\MemberSpecifiedDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DateTimeSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoContractAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ImplicitFields.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ArrayDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\IProtoSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\CharSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\BufferExtension.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\BlobSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\SurrogateSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoReader.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\Int32Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ProtoDecoratorBase.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DoubleSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Compiler\Local.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\UriDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\PropertyDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\SingleSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\SubItemToken.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\GuidSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\TypeModel.InputOutput.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\BclHelpers.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoWriter.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\IProtoInputT.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\GlobalSuppressions.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ByteSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoIncludeAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ServiceModel\ProtoOperationBehavior.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\BasicList.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\DiscriminatedUnion.Serializable.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoException.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\BufferPool.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ExtensibleUtil.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoConverterAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\Int16Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ReflectedUriDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\UInt64Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\TupleSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\TagDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ListDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\TimeSpanSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\TypeFormatEventArgs.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\CompiledSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoIgnoreAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DefaultValueDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Extensible.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\IExtension.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\NetObjectSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\EnumSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\SubItemSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Properties\AssemblyInfo.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\StringSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\SystemTypeSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\SubType.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\NetObjectCache.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\Int64Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\CallbackSet.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\IProtoTypeSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Compiler\CompilerDelegates.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoMemberAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\ValueMember.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\IExtensible.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\PrefixStyle.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ImmutableCollectionDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\BooleanSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Compiler\CompilerContext.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\TypeSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\MapDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\WireType.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\IProtoOutputT.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ServiceModel\ProtoBehaviorAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\KeyValuePairProxy.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\DataFormat.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoMapAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ISerializerProxy.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ServiceModel\ProtoEndpointBehavior.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\ProtoSyntax.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Helpers.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ServiceModel\ProtoBehaviorExtensionElement.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\NullDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\AttributeMap.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\SerializationContext.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\UInt16Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\CallbackAttributes.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\TypeModel.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\FieldDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\ArgumentHelper.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\DataTranslate.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Configure.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\DocResolver.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Generator.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\U2018Compatible.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\GenericDelegate.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\JsEnv.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\Loader.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\MethodReflection.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\NativeValueApiGeneric.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\ObjectPool.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\PuertsDLL.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\StaticCallbacks.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\StaticTranslate.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\StaticWrapRegister.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\TypeExtensions.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\TypeRegister.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Puerts\Src\Utils.cs" />
+     <None Include="Assets\ThirdParty\Unity.ThirdParty.asmdef" />
+ <Reference Include="UnityEngine">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AIModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ARModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AccessibilityModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AndroidJNIModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.AndroidJNIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AnimationModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AssetBundleModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AudioModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ClothModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.CoreModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.CrashReportingModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.DSPGraphModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.DirectorModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GIModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.GIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GameCenterModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GridModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HotReloadModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.IMGUIModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ImageConversionModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.InputModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.InputLegacyModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.InputLegacyModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.JSONSerializeModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.LocalizationModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ParticleSystemModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PerformanceReportingModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PhysicsModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Physics2DModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ProfilerModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.ProfilerModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ScreenCaptureModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SharedInternalsModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpriteMaskModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpriteShapeModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.StreamingModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SubstanceModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SubsystemsModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.SubsystemsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TLSModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TerrainModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TerrainPhysicsModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TextCoreModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TextRenderingModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TilemapModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UIModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UIElementsModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UIElementsNativeModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsNativeModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UNETModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UmbraModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityAnalyticsModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityConnectModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityCurlModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UnityCurlModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityTestProtocolModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UnityTestProtocolModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VFXModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VRModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VehiclesModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VideoModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.WindModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.XRModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.CoreModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.GraphViewModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEditor.GraphViewModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.PackageManagerUIModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEditor.PackageManagerUIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.SceneTemplateModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEditor.SceneTemplateModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UIElementsModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UIElementsSamplesModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsSamplesModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UIServiceModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEditor.UIServiceModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UnityConnectModule">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WebGL.Extensions">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Android.Extensions">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UWP.Extensions">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Analytics.StandardEvents">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/PackageCache/com.unity.analytics@3.5.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="NPOI.OpenXmlFormats">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Assets/Plugins/Editor/npoi/NPOI.OpenXmlFormats.dll</HintPath>
+ </Reference>
+ <Reference Include="NPOI.OOXML">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Assets/Plugins/Editor/npoi/NPOI.OOXML.dll</HintPath>
+ </Reference>
+ <Reference Include="CommandLine">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Assets/Plugins/CommandLine.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Assets/Plugins/AstarPathfindingProject/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.ClipperLib">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Assets/Plugins/AstarPathfindingProject/Clipper/Pathfinding.ClipperLib.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
+ <Reference Include="NPOI">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Assets/Plugins/Editor/npoi/NPOI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Analytics.Editor">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="NPOI.OpenXml4Net">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Assets/Plugins/Editor/npoi/NPOI.OpenXml4Net.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Analytics.Tracker">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Tracker.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.NRefactory">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/PackageCache/com.unity.render-pipelines.core@10.2.2/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.Poly2Tri">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Assets/Plugins/AstarPathfindingProject/Poly2Tri/Pathfinding.Poly2Tri.dll</HintPath>
+ </Reference>
+ <Reference Include="MongoDB.Bson">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Assets/Plugins/MongoDB.Bson.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Common">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
+ </Reference>
+ <Reference Include="mscorlib">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
+ </Reference>
+ <Reference Include="System">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Core">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Core.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.Serialization">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Runtime.Serialization.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml.Linq">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.Linq.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Numerics">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Numerics.Vectors">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.Vectors.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Net.Http">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Net.Http.dll</HintPath>
+ </Reference>
+ <Reference Include="Microsoft.CSharp">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Microsoft.CSharp.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Data">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="Microsoft.Win32.Primitives">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/Microsoft.Win32.Primitives.dll</HintPath>
+ </Reference>
+ <Reference Include="netstandard">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/netstandard.dll</HintPath>
+ </Reference>
+ <Reference Include="System.AppContext">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.AppContext.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Collections.Concurrent">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Concurrent.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Collections">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Collections.NonGeneric">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.NonGeneric.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Collections.Specialized">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Specialized.dll</HintPath>
+ </Reference>
+ <Reference Include="System.ComponentModel.Annotations">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Annotations.dll</HintPath>
+ </Reference>
+ <Reference Include="System.ComponentModel">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.dll</HintPath>
+ </Reference>
+ <Reference Include="System.ComponentModel.EventBasedAsync">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.EventBasedAsync.dll</HintPath>
+ </Reference>
+ <Reference Include="System.ComponentModel.Primitives">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Primitives.dll</HintPath>
+ </Reference>
+ <Reference Include="System.ComponentModel.TypeConverter">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.TypeConverter.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Console">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Console.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Data.Common">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Data.Common.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Diagnostics.Contracts">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Contracts.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Diagnostics.Debug">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Debug.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Diagnostics.FileVersionInfo">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.FileVersionInfo.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Diagnostics.Process">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Process.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Diagnostics.StackTrace">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.StackTrace.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Diagnostics.TextWriterTraceListener">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Diagnostics.Tools">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Tools.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Diagnostics.TraceSource">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TraceSource.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Drawing.Primitives">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Drawing.Primitives.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Dynamic.Runtime">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Dynamic.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Globalization.Calendars">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Calendars.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Globalization">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Globalization.Extensions">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.Compression.ZipFile">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Compression.ZipFile.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.FileSystem">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.FileSystem.DriveInfo">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.DriveInfo.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.FileSystem.Primitives">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Primitives.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.FileSystem.Watcher">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Watcher.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.IsolatedStorage">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.IsolatedStorage.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.MemoryMappedFiles">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.MemoryMappedFiles.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.Pipes">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Pipes.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.UnmanagedMemoryStream">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.UnmanagedMemoryStream.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Linq">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Linq.Expressions">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Expressions.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Linq.Parallel">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Parallel.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Linq.Queryable">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Queryable.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Net.Http.Rtc">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Http.Rtc.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Net.NameResolution">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NameResolution.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Net.NetworkInformation">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NetworkInformation.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Net.Ping">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Ping.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Net.Primitives">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Primitives.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Net.Requests">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Requests.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Net.Security">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Security.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Net.Sockets">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Sockets.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Net.WebHeaderCollection">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebHeaderCollection.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Net.WebSockets.Client">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.Client.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Net.WebSockets">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.dll</HintPath>
+ </Reference>
+ <Reference Include="System.ObjectModel">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ObjectModel.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Reflection">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Reflection.Emit">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Reflection.Emit.ILGeneration">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.ILGeneration.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Reflection.Emit.Lightweight">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.Lightweight.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Reflection.Extensions">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Reflection.Primitives">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Primitives.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Resources.Reader">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Reader.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Resources.ResourceManager">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.ResourceManager.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Resources.Writer">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Writer.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.CompilerServices.VisualC">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.CompilerServices.VisualC.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.Extensions">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.Handles">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Handles.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.InteropServices">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.Numerics">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Numerics.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.Serialization.Formatters">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Formatters.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.Serialization.Json">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.Serialization.Primitives">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Primitives.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.Serialization.Xml">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Xml.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.Claims">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Claims.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.Cryptography.Algorithms">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Algorithms.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.Cryptography.Csp">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Csp.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.Cryptography.Encoding">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Encoding.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.Cryptography.Primitives">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Primitives.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.Cryptography.X509Certificates">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.X509Certificates.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.Principal">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Principal.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security.SecureString">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.SecureString.dll</HintPath>
+ </Reference>
+ <Reference Include="System.ServiceModel.Duplex">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Duplex.dll</HintPath>
+ </Reference>
+ <Reference Include="System.ServiceModel.Http">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Http.dll</HintPath>
+ </Reference>
+ <Reference Include="System.ServiceModel.NetTcp">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.NetTcp.dll</HintPath>
+ </Reference>
+ <Reference Include="System.ServiceModel.Primitives">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Primitives.dll</HintPath>
+ </Reference>
+ <Reference Include="System.ServiceModel.Security">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Security.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Text.Encoding">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Text.Encoding.Extensions">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Text.RegularExpressions">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.RegularExpressions.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Threading">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Threading.Overlapped">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Overlapped.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Threading.Tasks">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Threading.Tasks.Parallel">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.Parallel.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Threading.Thread">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Thread.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Threading.ThreadPool">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.ThreadPool.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Threading.Timer">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Timer.dll</HintPath>
+ </Reference>
+ <Reference Include="System.ValueTuple">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ValueTuple.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml.ReaderWriter">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.ReaderWriter.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml.XDocument">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XDocument.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml.XmlDocument">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlDocument.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml.XmlSerializer">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlSerializer.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml.XPath">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml.XPath.XDocument">
+ <HintPath>D:/Program Files/Unity2020/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Unity.Puerts.Runtime.csproj">
+      <Project>{895b38b3-a016-e8ca-dd95-167cca35a5d3}</Project>
+      <Name>Unity.Puerts.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Puerts.Editor.csproj">
+      <Project>{235096ab-fff3-79c8-c966-85968f828a2b}</Project>
+      <Name>Unity.Puerts.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.FairyGUI.Editor.csproj">
+      <Project>{ea2e34b9-8a14-e584-7014-c450c7411514}</Project>
+      <Name>Unity.FairyGUI.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.FairyGUI.Runtime.csproj">
+      <Project>{6a8d0702-42f0-5d76-85ad-170ad6896d45}</Project>
+      <Name>Unity.FairyGUI.Runtime</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\ThirdParty\FairyGUI\Editor.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Editor\DisplayObjectEditor.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Editor\EditorToolSet.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Editor\PackagesWindow.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Editor\StageCameraEditor.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Editor\UIConfigEditor.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Editor\UIContentScalerEditor.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Editor\UIPainterEditor.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Editor\UIPanelEditor.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Editor\Unity.FairyGUI.Editor.asmdef" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Editor\Unity.FairyGUI.Editor.asmdef.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Extensions.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Extensions\DragonBones.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Extensions\DragonBones\DragonBonesLoader.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Extensions\Spine.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Extensions\Spine\SpineLoader.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Extensions\TextMeshPro.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Extensions\TextMeshPro\Shaders.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Extensions\TextMeshPro\Shaders\FairyGUI-TMP.shader" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Extensions\TextMeshPro\Shaders\FairyGUI-TMP.shader.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Extensions\TextMeshPro\TMPFont.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Extensions\TextMeshPro\TMPTextFormat.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Resources.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\AddOn.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\AddOn\FairyGUI-BlurFilter.shader" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\AddOn\FairyGUI-BlurFilter.shader.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-BMFont.shader" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-BMFont.shader.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-Image.shader" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-Image.shader.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-Text-Brighter.shader" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-Text-Brighter.shader.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-Text.shader" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-Text.shader.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\BlendMode.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\CaptureCamera.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Container.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\DisplayObject.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\GoWrapper.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\ColliderHitTest.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\HitTestContext.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\IHitTest.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\MeshColliderHitTest.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\PixelHitTest.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\RectHitTest.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\ShapeHitTest.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Image.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\MaterialManager.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\CompositeMesh.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\EllipseMesh.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\FillMesh.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\LineMesh.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\MeshFactory.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\PlaneMesh.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\PolygonMesh.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\RectMesh.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\RegularPolygonMesh.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\RoundedRectMesh.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\StraightLineMesh.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\VertexBuffer.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\MovieClip.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\NAudioClip.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\NGraphics.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\NTexture.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\ShaderConfig.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Shape.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Stage.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\StageCamera.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\StageEngine.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Stats.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\BaseFont.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\BitmapFont.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\CopyPastePatch.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\DynamicFont.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\Emoji.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\FontManager.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\IKeyboard.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\InputTextField.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\RichTextField.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\RTLSupport.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\SelectionShape.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\TextField.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\TextFormat.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\TouchScreenKeyboard.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\TypingEffect.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\UpdateContext.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\EventBridge.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\EventContext.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\EventDispatcher.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\EventListener.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\IEventDispatcher.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\InputEvent.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Filter.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Filter\BlurFilter.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Filter\ColorFilter.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Filter\IFilter.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\LongPressGesture.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\PinchGesture.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\RotationGesture.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\SwipeGesture.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\EaseManager.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\EaseType.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\GPath.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\GTween.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\GTweener.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\TweenManager.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\TweenPropType.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\TweenValue.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Action.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Action\ChangePageAction.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Action\ControllerAction.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Action\PlayTransitionAction.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\AsyncCreationHelper.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Controller.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\DragDropManager.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\EMRenderSupport.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\FieldTypes.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GButton.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GComboBox.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GComponent.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearAnimation.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearBase.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearColor.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearDisplay.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearDisplay2.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearFontSize.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearIcon.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearLook.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearSize.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearText.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearXY.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\IAnimationGear.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\IColorGear.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GGraph.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GGroup.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GImage.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GLabel.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GList.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GLoader.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GLoader3D.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GMovieClip.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GObject.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GObjectPool.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GProgressBar.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GRichTextField.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GRoot.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GScrollBar.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GSlider.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GTextField.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GTextInput.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GTree.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GTreeNode.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\IUISource.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Margin.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\PackageItem.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\PopupMenu.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\RelationItem.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Relations.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\ScrollPane.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Transition.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\TranslationHelper.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Tree.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Tree\TreeNode.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Tree\TreeView.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIConfig.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIContentScaler.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIObjectFactory.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIPackage.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIPainter.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIPanel.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Window.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\ByteBuffer.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlButton.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlElement.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlImage.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlInput.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlLink.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlPageContext.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlParseOptions.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlParser.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlSelect.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\IHtmlObject.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\IHtmlPageContext.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Timers.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\ToolSet.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\UBBParser.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\VirualClassObject.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\XML.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\XMLIterator.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\XMLList.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\XMLUtils.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\ZipReader.cs.meta" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Unity.FairyGUI.Runtime.asmdef" />
+    <Content Include="Assets\ThirdParty\FairyGUI\Unity.FairyGUI.Runtime.asmdef.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Gen.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Gen\Typing.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Gen\Typing\csharp.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Gen\Typing\csharp\index.d.ts.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\Android.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\Android\libs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\Android\libs\arm64-v8a.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\Android\libs\arm64-v8a\libpuerts.so" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\Android\libs\arm64-v8a\libpuerts.so.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\Android\libs\armeabi-v7a.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\Android\libs\armeabi-v7a\libpuerts.so" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\Android\libs\armeabi-v7a\libpuerts.so.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\iOS.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\iOS\libpuerts.a" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\iOS\libpuerts.a.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\iOS\libwee8.a" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\iOS\libwee8.a.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\puerts.bundle.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\puerts.bundle\Contents.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\puerts.bundle\Contents\Info.plist" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\puerts.bundle\Contents\Info.plist.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\puerts.bundle\Contents\MacOS.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\puerts.bundle\Contents\MacOS\puerts" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\puerts.bundle\Contents\MacOS\puerts.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\puerts.bundle\Contents\_CodeSignature.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\puerts.bundle\Contents\_CodeSignature\CodeResources" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\puerts.bundle\Contents\_CodeSignature\CodeResources.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\x86.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\x86\puerts.dll" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\x86\puerts.dll.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\x86_64.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\x86_64\puerts.dll" />
+    <Content Include="Assets\ThirdParty\Puerts\Plugins\x86_64\puerts.dll.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\ArgumentHelper.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\DataTranslate.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Configure.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\DocResolver.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Generator.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources\puerts.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources\puerts\gencode.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources\puerts\gencode\doT.js.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources\puerts\gencode\doT.js.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources\puerts\gencode\main.js.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources\puerts\gencode\main.js.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources\puerts\templates.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources\puerts\templates\autoreg.tpl.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources\puerts\templates\autoreg.tpl.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources\puerts\templates\type.tpl.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources\puerts\templates\type.tpl.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources\puerts\templates\typing.tpl.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Resources\puerts\templates\typing.tpl.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\U2018Compatible.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Unity.Puerts.Editor.asmdef" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Editor\Unity.Puerts.Editor.asmdef.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\GenericDelegate.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\JsEnv.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Loader.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\MethodReflection.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\NativeValueApiGeneric.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\ObjectPool.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\PuertsDLL.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\cjsload.js.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\cjsload.js.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\csharp.js.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\csharp.js.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\events.js.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\events.js.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\init.js.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\init.js.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\log.js.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\log.js.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\modular.js.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\modular.js.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\polyfill.js.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\polyfill.js.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\promises.js.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\promises.js.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\timer.js.txt" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Resources\puerts\timer.js.txt.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\StaticCallbacks.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\StaticTranslate.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\StaticWrapRegister.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\TypeExtensions.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\TypeRegister.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Unity.Puerts.Runtime.asmdef" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Unity.Puerts.Runtime.asmdef.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Src\Utils.cs.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Typing.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Typing\puerts.meta" />
+    <Content Include="Assets\ThirdParty\Puerts\Puerts\Typing\puerts\index.d.ts.meta" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Assets\ThirdParty\Puerts\Gen\Typing\csharp\index.d.ts" />
+    <TypeScriptCompile Include="Assets\ThirdParty\Puerts\Puerts\Typing\puerts\index.d.ts" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -49,15 +49,4 @@ Server/.DS_Store
 .objs/
 /Unity/.gradle
 /*.user
-packages/
-Unity/Unity.Editor.csproj
-Unity/Unity.Hotfix.csproj
-Unity/Unity.HotfixView.csproj
-Unity/Unity.Model.csproj
-Unity/Unity.ModelView.csproj
-Unity/Unity.ThirdParty.csproj
-Client-Server.sln.DotSettings
-Server/App/Server.App.csproj
-Server/Hotfix/Server.Hotfix.csproj
-Server/Model/Server.Model.csproj
 Unity/Assets/ThirdParty/Puerts/Plugins/
