@@ -1,0 +1,10 @@
+{
+    "name": "Unity.Puerts.Editor",
+    "references": [
+        "Unity.Puerts.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}

@@ -200,7 +200,11 @@ namespace ET
             {
                 this.instanceIdValue = 0;
             }
+#if SERVER
             InstanceIdStruct instanceIdStruct = new InstanceIdStruct(time, Game.Options.Process, this.instanceIdValue);
+#else
+            InstanceIdStruct instanceIdStruct = new InstanceIdStruct(time, 0, this.instanceIdValue);
+#endif
             return instanceIdStruct.ToLong();
         }
 
@@ -227,7 +231,11 @@ namespace ET
             {
                 this.value = 0;
             }
+#if SERVER
             IdStruct idStruct = new IdStruct(time, Game.Options.Process, value);
+#else
+            IdStruct idStruct = new IdStruct(time, 0, value);
+#endif
             return idStruct.ToLong();
         }
         
@@ -259,7 +267,11 @@ namespace ET
                 this.unitIdValue = 0;
             }
 
+#if SERVER
             UnitIdStruct unitIdStruct = new UnitIdStruct(zone, Game.Options.Process, time, this.unitIdValue);
+#else
+            UnitIdStruct unitIdStruct = new UnitIdStruct(zone, 0, time, this.unitIdValue);
+#endif
             return unitIdStruct.ToLong();
         }
     }

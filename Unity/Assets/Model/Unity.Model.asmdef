@@ -1,10 +1,20 @@
 {
     "name": "Unity.Model",
+    "rootNamespace": "",
     "references": [
-        "Unity.ThirdParty"
+        "Unity.ThirdParty",
+        "Unity.ResourceManager",
+        "Unity.Addressables",
+        "Unity.Puerts.Runtime",
+        "Unity.FairyGUI.Runtime"
     ],
-    "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
-    "allowUnsafeCode": true
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

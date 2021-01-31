@@ -34,12 +34,15 @@ namespace ET
 
         public static bool CheckLogLevel(int level)
         {
+#if SERVER
             if (Game.Options == null)
             {
                 return true;
             }
             
             return Game.Options.LogLevel <= level;
+#endif
+            return true;
         }
         
         public static Action<string, object[]> DebugCallback;

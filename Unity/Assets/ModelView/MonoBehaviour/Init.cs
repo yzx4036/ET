@@ -46,6 +46,21 @@ namespace ET
 		{
 			Game.EventSystem.LateUpdate();
 		}
+		
+		private void FixedUpdate()
+		{
+			Game.EventSystem.FixedUpdate();
+		}
+
+		private void OnApplicationFocus(bool hasFocus)
+		{
+			Game.EventSystem.OnApplicationFocus(hasFocus);
+		}
+
+		private void OnApplicationPause(bool pauseStatus)
+		{
+			Game.EventSystem.OnApplicationFocus(pauseStatus);
+		}
 
 		private void OnApplicationQuit()
 		{
