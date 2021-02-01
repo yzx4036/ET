@@ -1,5 +1,4 @@
-﻿import {DCET} from 'csharp';
-import {BaseJsEntity} from "./BaseJsEntity";
+﻿import {BaseJsEntity} from "./BaseJsEntity";
 import {StartSystem} from "../Base/IStartSystem";
 
 

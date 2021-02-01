@@ -11,6 +11,8 @@ var global = global || (function () { return this; }());
     
     let loadModule = function(moduleName, requiringDir) {
         let path = puerts.searchModule(requiringDir, moduleName);
+        console.log(moduleName)
+        console.log(path)
         if (!path) throw new Error("can not find " + moduleName);
         let {context, debugPath} = puerts.loadFile(path);
         return {fullPath: path, debugPath: debugPath, script: context}

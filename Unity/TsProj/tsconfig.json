@@ -11,11 +11,12 @@
 		"emitDecoratorMetadata": true,
 		"baseUrl": "src",
 		"typeRoots": [
-			"../Packages/Puerts/Puerts/Typing",
-			"../Packages/Puerts/Gen/Typing",
+			"../Assets/ThirdParty/Puerts/Puerts/Typing",
+			"../Assets/ThirdParty/Puerts/Gen/Typing",
 			"./node_modules/@types"
 		],
-	},
+      "allowSyntheticDefaultImports": true
+    },
 	"exclude": [
 		"src/addons/webapi/**/*.godot.ts",
 		"src/addons/webapi/**/*.godot.tsx"

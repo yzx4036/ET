@@ -1,6 +1,7 @@
-import {DCET, System} from 'csharp';
+import {System} from 'csharp';
 import {$typeof} from 'puerts';
 import {GameTest} from "./test/GameTest";
+import {LLogger} from "./Framework/Common/LLogger";
 
 interface IScriptLauncher
 {
@@ -40,6 +41,8 @@ class JavaScriptApplication
     {
         try
         {
+            LLogger.Init();
+            console.log("KKK1111");
             console.log(">>>>puerts initialize ...");
             this.lancher.OnJsStart = this.OnStart.bind(this);
             this.lancher.OnJsUpdate = this.OnUpdate;
