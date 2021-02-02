@@ -106,6 +106,7 @@
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\CompiledSerializer.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ProtoIgnoreAttribute.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DefaultValueDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\Puerts\Gen\AutoStaticCodeRegister.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Extensible.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\IExtension.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\NetObjectSerializer.cs" />
@@ -148,7 +149,6 @@
      <Compile Include="Assets\ThirdParty\protobuf-net\CallbackAttributes.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Meta\TypeModel.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\FieldDecorator.cs" />
-     <Compile Include="Assets\ThirdParty\Puerts\Gen\AutoStaticCodeRegister.cs" />
      <None Include="Assets\ThirdParty\Unity.ThirdParty.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/Unity2020/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

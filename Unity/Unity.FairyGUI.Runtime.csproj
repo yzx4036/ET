@@ -209,8 +209,8 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\TextField.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearAnimation.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\TweenValue.cs" />
-     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\LongPressGesture.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Extensions\TextMeshPro\TMPFont.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\LongPressGesture.cs" />
      <None Include="Assets\ThirdParty\FairyGUI\Unity.FairyGUI.Runtime.asmdef" />
      <None Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-Text.shader" />
      <None Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-Image.shader" />

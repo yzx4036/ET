@@ -37,13 +37,13 @@ class JavaScriptApplication
         this.initialize();
     }
 
-    private async initialize()
+    private initialize()
     {
         try
         {
             LLogger.Init();
-            console.log("KKK1111");
-            console.log(">>>>puerts initialize ...");
+            LLogger.log("KKK1111");
+            LLogger.log(">>>>puerts initialize ...");
             this.lancher.OnJsStart = this.OnStart.bind(this);
             this.lancher.OnJsUpdate = this.OnUpdate;
             this.lancher.OnJsLateUpdate = this.OnLateUpdate;
@@ -51,17 +51,18 @@ class JavaScriptApplication
             this.lancher.OnJsApplicationFocus = this.OnApplicationFocus;
             this.lancher.OnJsApplicationPause = this.OnApplicationPause;
             this.lancher.OnJsApplicationQuit = this.OnApplicationQuit;
-        } catch (e)
+        } 
+        catch (e)
         {
-            console.error(e.toString());
+            console.log(e.toString());
         }
-        console.log(">>>>puerts initialize finish...");
+        LLogger.log(">>>>puerts initialize finish...");
     }
 
     private OnStart()
     {
         GameTest.start()
-        console.log(">>>OnStart>1");
+        LLogger.log(">>>OnStart>1");
     }
 
     private OnUpdate()
@@ -87,7 +88,7 @@ class JavaScriptApplication
 
     private OnApplicationQuit()
     {
-        console.log(">>>>OnApplicationQuit");
+        LLogger.log(">>>>OnApplicationQuit");
         WebAPI.finalize();
     }
 }

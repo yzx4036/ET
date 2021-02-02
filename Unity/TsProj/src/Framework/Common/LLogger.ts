@@ -1,13 +1,16 @@
 ﻿//引入source-map-support,babel-plugin-source-map-support插件
+
+// @ts-ignore
+import path from './../../../node_modules/path';
 import "source-map-support/register";
-import path from "path";
 import moment from "moment";//好用的获取时间的包
 export class LLogger {
+    public static log:any;
+    
     static Init() {
 
         //重新console.log()
-        let log = console.log;
-        console.log = function (message: any, ...args: any[]) {
+        this.log = function (message: any, ...args: any[]) {
             //如果是生产环境下,不打印任何内容
             //create-react-app 这个脚手架生产的项目,
             //默认情况下,生产环境下process.env.NODE_ENV = "production", 
@@ -20,7 +23,7 @@ export class LLogger {
             //console.log("%c这是要打印的内容","color:blue")
             //这里将时间戳,行数等信息打印成不同的颜色,内容为默认的白色
             let info = `%c[${moment().format("YYYY-MM-DD HH:mm:ss.SSS")}][log][${stackInfoStr.file}:${stackInfoStr.line} (${stackInfoStr.method})] %c`;
-            log(info, "color: #48d1cc", "color: white", message, ...args);
+            console.log(info, "color: #48d1cc", "color: white", message, ...args);
         };
 
         // //重新console.info()
@@ -34,29 +37,29 @@ export class LLogger {
         //     loginfo(info, "color: #3ebe3e", "color: white", message, ...args);
         // };
 
-        //重新console.warn()
-        let warn = console.warn;
-        console.warn = function (message: any, ...args: any[]) {
-            if (process.env.NODE_ENV === "production") {
-                return;
-            }
-            let stackInfoStr = LLogger.stackInfo();
-            let info = `%c[${moment().format("YYYY-MM-DD HH:mm:ss.SSS")}][warn][${stackInfoStr.file}:${stackInfoStr.line} (${stackInfoStr.method})] %c`;
-            warn(info, "color: #dbd172", "color: #dbd172", message, ...args);
-        };
-
-        //重新console.error()
-        let error = console.error;
-        console.error = function (message: any, ...args: any[]) {
-            //如果要在生产环境下仍然打印error信息,则把这里的if判断去掉
-            if (process.env.NODE_ENV === "production") {
-                return;
-            }
-            let stackInfoStr = LLogger.stackInfo();
-            //error默认就是红色,如果特意指定颜色反而会变成白色的,不知道为什么
-            let info = `[${moment().format("YYYY-MM-DD HH:mm:ss.SSS")}][error][${stackInfoStr.file}:${stackInfoStr.line} (${stackInfoStr.method})] `;
-            error(info, message, ...args);
-        };
+        // //重新console.warn()
+        // let warn = console.warn;
+        // console.warn = function (message: any, ...args: any[]) {
+        //     if (process.env.NODE_ENV === "production") {
+        //         return;
+        //     }
+        //     let stackInfoStr = LLogger.stackInfo();
+        //     let info = `%c[${moment().format("YYYY-MM-DD HH:mm:ss.SSS")}][warn][${stackInfoStr.file}:${stackInfoStr.line} (${stackInfoStr.method})] %c`;
+        //     warn(info, "color: #dbd172", "color: #dbd172", message, ...args);
+        // };
+        //
+        // //重新console.error()
+        // let error = console.error;
+        // console.error = function (message: any, ...args: any[]) {
+        //     //如果要在生产环境下仍然打印error信息,则把这里的if判断去掉
+        //     if (process.env.NODE_ENV === "production") {
+        //         return;
+        //     }
+        //     let stackInfoStr = LLogger.stackInfo();
+        //     //error默认就是红色,如果特意指定颜色反而会变成白色的,不知道为什么
+        //     let info = `[${moment().format("YYYY-MM-DD HH:mm:ss.SSS")}][error][${stackInfoStr.file}:${stackInfoStr.line} (${stackInfoStr.method})] `;
+        //     error(info, message, ...args);
+        // };
     }
 
     //通过这个函数,来获取打印内容所在的文件,函数和行号
