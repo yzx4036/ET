@@ -22,29 +22,29 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - JS
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 4900000, guid: 9f2fd034c7fa8cf4eb50c56d98688e54, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 9f2fd034c7fa8cf4eb50c56d98688e54, type: 3}
   - m_GUID: 7308a89c7e46ba84a8de343252f84808
     m_Address: /bundle.js
     m_ReadOnly: 0
     m_SerializedLabels:
     - JS
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 4900000, guid: 7308a89c7e46ba84a8de343252f84808, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 7308a89c7e46ba84a8de343252f84808, type: 3}
   - m_GUID: 0b96dcbbb0200e4488e7e94132d52082
     m_Address: /puerts/cjsload.js.txt
     m_ReadOnly: 0
     m_SerializedLabels:
     - JS
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 4900000, guid: 0b96dcbbb0200e4488e7e94132d52082, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 0b96dcbbb0200e4488e7e94132d52082, type: 3}
   - m_GUID: da0fb330985e4714caf027a72b0729d6
     m_Address: /puerts/csharp.js.txt
     m_ReadOnly: 0
     m_SerializedLabels:
     - JS
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 4900000, guid: da0fb330985e4714caf027a72b0729d6, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: da0fb330985e4714caf027a72b0729d6, type: 3}
   - m_GUID: c8fcd7d8efe4bda4581c14d2fe4a25b0
     m_Address: /puerts/events.js.txt
     m_ReadOnly: 0
@@ -64,8 +64,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - JS
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 4900000, guid: bfefd4ca5b64882419a76f098be442eb, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: bfefd4ca5b64882419a76f098be442eb, type: 3}
   - m_GUID: cc595573da6d95b4f91ae1185d41d6ce
     m_Address: /puerts/modular.js.txt
     m_ReadOnly: 0

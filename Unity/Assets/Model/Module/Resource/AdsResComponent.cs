@@ -8,6 +8,14 @@ using UnityEngine.AddressableAssets;
 
 namespace SEyesET
 {
+	public class AdsResHelper
+	{
+		public static string GetAddressablePath(string pFileName)
+		{
+			return "";
+		}
+	}
+
 	[ObjectSystem]
 	public class AdsResComponentAwakeSystem : AwakeSystem<AdsResComponent>
 	{
@@ -102,6 +110,11 @@ namespace SEyesET
             return new List<TextAsset>();
         }
 
+        public async Task<object> LoadAssetAsync(string address)
+        {
+	        return  await Addressables.LoadAssetAsync<object>(address).Task;
+        }
+        
         public async Task<GameObject> LoadPrefab(string address)
         {
 	        return  await Addressables.LoadAssetAsync<GameObject>(address).Task;

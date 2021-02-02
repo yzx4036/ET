@@ -1,4 +1,5 @@
 ﻿using System;
+using SEyesET;
 using UnityEngine;
 
 namespace ET
@@ -9,7 +10,9 @@ namespace ET
 		{
 			try
 			{
-				string configStr = ((TextAsset)Game.Scene.GetComponent<ResourcesComponent>().GetAsset("config.unity3d", key)).text;
+				string configStr = Game.Scene.GetComponent<AdsResComponent>().LoadTextAsset($"{key}.txt").Result.text;
+
+				// string configStr = ((TextAsset)Game.Scene.GetComponent<ResourcesComponent>().GetAsset("config.unity3d", key)).text;
 				return configStr;
 			}
 			catch (Exception e)

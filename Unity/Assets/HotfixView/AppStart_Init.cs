@@ -12,15 +12,16 @@ namespace ET
             // 下载ab包
             //await BundleHelper.DownloadBundle("1111");
 
-            Game.Scene.AddComponent<AdsResComponent>();
+            var _adsResComp = Game.Scene.AddComponent<AdsResComponent>();
             Game.Scene.AddComponent<PuertsComponent>();
 
             // 加载配置
             Game.Scene.AddComponent<ResourcesComponent>();
-            
-            ResourcesComponent.Instance.LoadBundle("config.unity3d");
+
+            // var _configAsset = await _adsResComp.LoadAssetAsync("config.unity3d");
+            // ResourcesComponent.Instance.LoadBundle("config.unity3d");
             Game.Scene.AddComponent<ConfigComponent>();
-            ResourcesComponent.Instance.UnloadBundle("config.unity3d");
+            // ResourcesComponent.Instance.UnloadBundle("config.unity3d");
             
             Game.Scene.AddComponent<OpcodeTypeComponent>();
             Game.Scene.AddComponent<MessageDispatcherComponent>();

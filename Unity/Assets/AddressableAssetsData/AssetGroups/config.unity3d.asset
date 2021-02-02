@@ -18,41 +18,47 @@ MonoBehaviour:
   m_GUID: bd35a9c81ec0c8d45a13369cfbbf491d
   m_SerializeEntries:
   - m_GUID: 0f3540faabf2b7e4c83e81cb7ba6a096
-    m_Address: Assets/Bundles/Config/BuffConfig.txt
+    m_Address: /BuffConfig.txt
     m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_SerializedLabels:
+    - ConfigTxt
+    m_MainAsset: {fileID: 4900000, guid: 0f3540faabf2b7e4c83e81cb7ba6a096, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 0f3540faabf2b7e4c83e81cb7ba6a096, type: 3}
   - m_GUID: 7b39853d8c29e4f34855245bb82d8470
-    m_Address: Assets/Bundles/Config/StartMachineConfig.txt
+    m_Address: /StartMachineConfig.txt
     m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_SerializedLabels:
+    - ConfigTxt
+    m_MainAsset: {fileID: 4900000, guid: 7b39853d8c29e4f34855245bb82d8470, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 7b39853d8c29e4f34855245bb82d8470, type: 3}
   - m_GUID: 7ab151f52cd2d474fbcbbfd59355fbb9
-    m_Address: Assets/Bundles/Config/StartProcessConfig.txt
+    m_Address: /StartProcessConfig.txt
     m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_SerializedLabels:
+    - ConfigTxt
+    m_MainAsset: {fileID: 4900000, guid: 7ab151f52cd2d474fbcbbfd59355fbb9, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 7ab151f52cd2d474fbcbbfd59355fbb9, type: 3}
   - m_GUID: 656280210d67e1a4981e2300efa9177b
-    m_Address: Assets/Bundles/Config/StartSceneConfig.txt
+    m_Address: /StartSceneConfig.txt
     m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_SerializedLabels:
+    - ConfigTxt
+    m_MainAsset: {fileID: 4900000, guid: 656280210d67e1a4981e2300efa9177b, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: 656280210d67e1a4981e2300efa9177b, type: 3}
   - m_GUID: e8584de077a43b4489271bfda6e979c2
-    m_Address: Assets/Bundles/Config/StartZoneConfig.txt
+    m_Address: /StartZoneConfig.txt
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - ConfigTxt
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
   - m_GUID: c245c7dda13b3ad43b2278925e922899
-    m_Address: Assets/Bundles/Config/UnitConfig.txt
+    m_Address: /UnitConfig.txt
     m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_SerializedLabels:
+    - ConfigTxt
+    m_MainAsset: {fileID: 4900000, guid: c245c7dda13b3ad43b2278925e922899, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: c245c7dda13b3ad43b2278925e922899, type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: cede57cdfbd1cae47bedab3fab75d315, type: 2}
   m_SchemaSet:
