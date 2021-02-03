@@ -50,3 +50,14 @@ Server/.DS_Store
 /Unity/.gradle
 /*.user
 Unity/Assets/ThirdParty/Puerts/Plugins/
+Unity/Unity.Editor.csproj
+Unity/Unity.FairyGUI.Editor.csproj
+Unity/Unity.FairyGUI.Runtime.csproj
+Unity/Unity.Hotfix.csproj
+Unity/Unity.HotfixView.csproj
+Unity/Unity.Model.csproj
+Unity/Unity.ModelView.csproj
+Unity/Unity.Puerts.Editor.csproj
+Unity/Unity.Puerts.Runtime.csproj
+Unity/Unity.ThirdParty.csproj
+Unity/Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetReferenceDB.asset
