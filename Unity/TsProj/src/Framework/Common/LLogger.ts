@@ -1,8 +1,10 @@
 ﻿//引入source-map-support,babel-plugin-source-map-support插件
 
-// @ts-ignore
-import path from './../../../node_modules/path';
-import "source-map-support/register";
+var path = require('./../../../node_modules/path/path');
+
+import sourceMapSupport from 'source-map-support'
+sourceMapSupport.install()
+
 import moment from "moment";//好用的获取时间的包
 export class LLogger {
     public static log:any;

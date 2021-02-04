@@ -20,7 +20,7 @@ namespace ET
 
             // var _configAsset = await _adsResComp.LoadAssetAsync("config.unity3d");
             // ResourcesComponent.Instance.LoadBundle("config.unity3d");
-            Game.Scene.AddComponent<ConfigComponent>();
+            // Game.Scene.AddComponent<ConfigComponent>();
             // ResourcesComponent.Instance.UnloadBundle("config.unity3d");
             
             Game.Scene.AddComponent<OpcodeTypeComponent>();

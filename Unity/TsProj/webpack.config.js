@@ -50,7 +50,7 @@ module.exports = (env) => {
 				new TsconfigPathsPlugin({configFile: path.join(workSpaceDir, 'tsconfig.json')}),
 			]
 		},
-		devtool: env.production ? "source-map" : "inline-source-map",
+		devtool: env.production ? "source-map" : "source-map",
 		mode: env.production ? "production" : "development",
 		externals
 	};
