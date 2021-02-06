@@ -55124,15 +55124,6 @@ declare module 'csharp' {
         }
         
     }
-    namespace UnityEngine.InputManagerEntry {
-        
-        enum Kind { KeyOrButton = 0, Mouse = 1, Axis = 2 }
-        
-        enum Axis { X = 0, Y = 1, Third = 2, Fourth = 3, Fifth = 4, Sixth = 5, Seventh = 6, Eigth = 7 }
-        
-        enum Joy { All = 0, First = 1, Second = 2 }
-        
-    }
     namespace UnityEngine.Networking.NetworkSystem {
         
         class PeerInfoMessage extends UnityEngine.Networking.MessageBase {
@@ -55198,6 +55189,15 @@ declare module 'csharp' {
         
         type ClientMoveCallback2D = (position: $Ref<UnityEngine.Vector2>, velocity: $Ref<UnityEngine.Vector2>, rotation: $Ref<number>) => boolean;
         var ClientMoveCallback2D: {new (func: (position: $Ref<UnityEngine.Vector2>, velocity: $Ref<UnityEngine.Vector2>, rotation: $Ref<number>) => boolean): ClientMoveCallback2D;}
+        
+    }
+    namespace UnityEngine.InputManagerEntry {
+        
+        enum Kind { KeyOrButton = 0, Mouse = 1, Axis = 2 }
+        
+        enum Axis { X = 0, Y = 1, Third = 2, Fourth = 3, Fifth = 4, Sixth = 5, Seventh = 6, Eigth = 7 }
+        
+        enum Joy { All = 0, First = 1, Second = 2 }
         
     }
     namespace FairyGUI {
