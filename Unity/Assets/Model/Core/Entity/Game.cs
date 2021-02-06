@@ -34,9 +34,9 @@ namespace ET
 
         public static IdGenerater IdGenerater => IdGenerater.Instance;
 
-#if SERVER
+// #if SERVER
         public static Options Options;
-#endif
+// #endif
 
         public static List<Action> FrameFinishCallback = new List<Action>();
 
