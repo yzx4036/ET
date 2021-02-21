@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -10,11 +11,11 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <OutputPath>../../Proto/</OutputPath>
+      <OutputPath>../../ToolsApp/Proto2CS/</OutputPath>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <OutputPath>../../Proto/</OutputPath>
+      <OutputPath>../../ToolsApp/Proto2CS/</OutputPath>
     </PropertyGroup>
 
     <ItemGroup>

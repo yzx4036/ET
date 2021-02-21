@@ -6,6 +6,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE2_0;SERVER;NOT_CLIENT</DefineConstants>
@@ -19,6 +20,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Other\**" />
+    <Compile Include="..\..\Unity\Assets\Hotfix\Module\Config\ConfigComponentSystem.cs">
+      <Link>Module\Config\ConfigComponentSystem.cs</Link>
+    </Compile>
     <Compile Include="..\..\Unity\Assets\Hotfix\Module\Message\MessageDispatcherComponentSystem.cs">
       <Link>Module\Message\MessageDispatcherComponentSystem.cs</Link>
     </Compile>

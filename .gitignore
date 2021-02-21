@@ -49,6 +49,7 @@ Server/.DS_Store
 .objs/
 /Unity/.gradle
 /*.user
+/ToolsApp/
 Unity/Assets/ThirdParty/Puerts/Plugins/
 Unity/Unity.Editor.csproj
 Unity/Unity.FairyGUI.Editor.csproj

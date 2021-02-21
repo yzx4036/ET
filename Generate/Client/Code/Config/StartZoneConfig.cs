@@ -7,26 +7,26 @@ namespace ET
 {
     [ProtoContract]
     [Config]
-    public partial class (ConfigName)Category : ProtoObject
+    public partial class StartZoneConfigCategory : ProtoObject
     {
-        public static (ConfigName)Category Instance;
+        public static StartZoneConfigCategory Instance;
 		
         [ProtoIgnore]
         [BsonIgnore]
-        private Dictionary<int, (ConfigName)> dict = new Dictionary<int, (ConfigName)>();
+        private Dictionary<int, StartZoneConfig> dict = new Dictionary<int, StartZoneConfig>();
 		
         [BsonElement]
         [ProtoMember(1)]
-        private List<(ConfigName)> list = new List<(ConfigName)>();
+        private List<StartZoneConfig> list = new List<StartZoneConfig>();
 		
-        public (ConfigName)Category()
+        public StartZoneConfigCategory()
         {
             Instance = this;
         }
 		
         public override void AfterDeserialization()
         {
-            foreach ((ConfigName) config in list)
+            foreach (StartZoneConfig config in list)
             {
                 this.dict.Add(config.Id, config);
             }
@@ -34,13 +34,13 @@ namespace ET
             base.AfterDeserialization();
         }
 		
-        public (ConfigName) Get(int id)
+        public StartZoneConfig Get(int id)
         {
-            this.dict.TryGetValue(id, out (ConfigName) item);
+            this.dict.TryGetValue(id, out StartZoneConfig item);
 
             if (item == null)
             {
-                throw new Exception($"配置找不到，配置表名: {nameof ((ConfigName))}，配置id: {id}");
+                throw new Exception($"配置找不到，配置表名: {nameof (StartZoneConfig)}，配置id: {id}");
             }
 
             return item;
@@ -51,12 +51,12 @@ namespace ET
             return this.dict.ContainsKey(id);
         }
 
-        public Dictionary<int, (ConfigName)> GetAll()
+        public Dictionary<int, StartZoneConfig> GetAll()
         {
             return this.dict;
         }
 
-        public (ConfigName) GetOne()
+        public StartZoneConfig GetOne()
         {
             if (this.dict == null || this.dict.Count <= 0)
             {
@@ -67,8 +67,14 @@ namespace ET
     }
 
     [ProtoContract]
-	public partial class (ConfigName): IConfig
+	public partial class StartZoneConfig: IConfig
 	{
-(Fields)
+		[ProtoMember(1, IsRequired  = true)]
+		public int Id { get; set; }
+		[ProtoMember(2, IsRequired  = true)]
+		public string DBConnection { get; set; }
+		[ProtoMember(3, IsRequired  = true)]
+		public string DBName { get; set; }
+
 	}
 }

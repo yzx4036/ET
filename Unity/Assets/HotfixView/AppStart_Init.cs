@@ -1,27 +1,24 @@
-using SEyesET;
-
 namespace ET
 {
     public class AppStart_Init: AEvent<EventType.AppStart>
     {
         public override async ETTask Run(EventType.AppStart args)
         {
+            FunctionCallback.GetAllConfigBytes = LoadConfigHelper.LoadAllConfigBytes;
+            
             Game.Scene.AddComponent<TimerComponent>();
 
 
             // 下载ab包
             //await BundleHelper.DownloadBundle("1111");
 
-            var _adsResComp = Game.Scene.AddComponent<AdsResComponent>();
-            Game.Scene.AddComponent<PuertsComponent>();
-
             // 加载配置
             Game.Scene.AddComponent<ResourcesComponent>();
-
-            // var _configAsset = await _adsResComp.LoadAssetAsync("config.unity3d");
-            // ResourcesComponent.Instance.LoadBundle("config.unity3d");
-            // Game.Scene.AddComponent<ConfigComponent>();
-            // ResourcesComponent.Instance.UnloadBundle("config.unity3d");
+            
+            ResourcesComponent.Instance.LoadBundle("config.unity3d");
+            Game.Scene.AddComponent<ConfigComponent>();
+            ResourcesComponent.Instance.UnloadBundle("config.unity3d");
+            await ConfigComponent.Instance.LoadAsync();
             
             Game.Scene.AddComponent<OpcodeTypeComponent>();
             Game.Scene.AddComponent<MessageDispatcherComponent>();
