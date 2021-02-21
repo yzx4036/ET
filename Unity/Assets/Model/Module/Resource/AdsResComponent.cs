@@ -128,13 +128,6 @@ namespace SEyesET
             return res;
         }
 
-        public async Task<Puerts.ArrayBuffer> LoadTextBytes(string address)
-        {
-            var res = await Addressables.LoadAssetAsync<TextAsset>(address).Task;
-
-            return new Puerts.ArrayBuffer(res.bytes);
-        }
-
         public async Task<Sprite> LoadSprite(string address)
         {
             var res = await Addressables.LoadAssetAsync<Sprite>(address).Task;

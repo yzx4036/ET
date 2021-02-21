@@ -13,10 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.ModelView", "Unity.Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.HotfixView", "Unity.HotfixView.csproj", "{de4513d3-889b-5c52-8e9c-744c99ae7509}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Puerts.Runtime", "Unity.Puerts.Runtime.csproj", "{895b38b3-a016-e8ca-dd95-167cca35a5d3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Puerts.Editor", "Unity.Puerts.Editor.csproj", "{235096ab-fff3-79c8-c966-85968f828a2b}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.FairyGUI.Editor", "Unity.FairyGUI.Editor.csproj", "{ea2e34b9-8a14-e584-7014-c450c7411514}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Editor", "Unity.Editor.csproj", "{041131cd-3018-19b1-81b6-5dbee2467ffb}"
@@ -51,14 +47,6 @@ Global
 		{de4513d3-889b-5c52-8e9c-744c99ae7509}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{de4513d3-889b-5c52-8e9c-744c99ae7509}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{de4513d3-889b-5c52-8e9c-744c99ae7509}.Release|Any CPU.Build.0 = Release|Any CPU
-		{895b38b3-a016-e8ca-dd95-167cca35a5d3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{895b38b3-a016-e8ca-dd95-167cca35a5d3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{895b38b3-a016-e8ca-dd95-167cca35a5d3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{895b38b3-a016-e8ca-dd95-167cca35a5d3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{235096ab-fff3-79c8-c966-85968f828a2b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{235096ab-fff3-79c8-c966-85968f828a2b}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{235096ab-fff3-79c8-c966-85968f828a2b}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{235096ab-fff3-79c8-c966-85968f828a2b}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ea2e34b9-8a14-e584-7014-c450c7411514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ea2e34b9-8a14-e584-7014-c450c7411514}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ea2e34b9-8a14-e584-7014-c450c7411514}.Release|Any CPU.ActiveCfg = Release|Any CPU

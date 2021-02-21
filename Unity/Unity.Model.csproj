@@ -64,7 +64,6 @@
      <Compile Include="Assets\Model\Module\Message\OpcodeTypeComponent.cs" />
      <Compile Include="Assets\Model\Module\Numeric\NumericType.cs" />
      <Compile Include="Assets\Model\Generate\Config\StartMachineConfig.cs" />
-     <Compile Include="Assets\Model\Module\Puerts\PuertsComponent.cs" />
      <Compile Include="Assets\Model\Core\Helper\EnumHelper.cs" />
      <Compile Include="Assets\Model\Core\Object\BaseAttribute.cs" />
      <Compile Include="Assets\Model\Module\CoroutineLock\CoroutineLockQueueType.cs" />
@@ -106,7 +105,6 @@
      <Compile Include="Assets\Model\Module\Numeric\NumericWatcherComponent.cs" />
      <Compile Include="Assets\Model\Core\Helper\MD5Helper.cs" />
      <Compile Include="Assets\Model\Core\Helper\ObjectHelper.cs" />
-     <Compile Include="Assets\Model\Module\Puerts\PuertsLoaderComponent.cs" />
      <Compile Include="Assets\Model\Module\Message\IMHandler.cs" />
      <Compile Include="Assets\Model\Module\Message\SessionAcceptTimeoutComponent.cs" />
      <Compile Include="Assets\Model\Module\Numeric\NumericComponent.cs" />
@@ -849,10 +847,6 @@
     <ProjectReference Include="Unity.ThirdParty.csproj">
       <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
       <Name>Unity.ThirdParty</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Puerts.Runtime.csproj">
-      <Project>{895b38b3-a016-e8ca-dd95-167cca35a5d3}</Project>
-      <Name>Unity.Puerts.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.FairyGUI.Runtime.csproj">
       <Project>{6a8d0702-42f0-5d76-85ad-170ad6896d45}</Project>
