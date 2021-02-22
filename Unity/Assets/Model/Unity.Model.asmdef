@@ -2,10 +2,10 @@
     "name": "Unity.Model",
     "rootNamespace": "",
     "references": [
+        "ILRuntime",
         "Unity.ThirdParty",
         "Unity.ResourceManager",
         "Unity.Addressables",
-        "Unity.Puerts.Runtime",
         "Unity.FairyGUI.Runtime"
     ],
     "includePlatforms": [],

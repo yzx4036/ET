@@ -1,6 +1,7 @@
 {
     "name": "Unity.ModelView",
     "references": [
+        "ILRuntime",
         "GUID:997f003cfffd9ec4fae70c0ac9b0ec2b",
         "GUID:bebd02018e98e44409a761968a7cbcd9"
     ],

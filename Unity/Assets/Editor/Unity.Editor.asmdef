@@ -4,10 +4,10 @@
     "references": [
         "Unity.Model",
         "Unity.ThirdParty",
+        "ILRuntime",
         "Unity.ModelView",
         "Unity.Hotfix",
-        "Unity.HotfixView",
-        "Unity.Puerts.Editor"
+        "Unity.HotfixView"
     ],
     "includePlatforms": [
         "Editor"
