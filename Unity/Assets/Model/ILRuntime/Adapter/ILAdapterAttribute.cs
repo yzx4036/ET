@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ET
+namespace SEyesET
 {
 	[AttributeUsage(AttributeTargets.Class)]
 	public class ILAdapterAttribute : Attribute

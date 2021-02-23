@@ -1,9 +1,10 @@
 ﻿using System;
+using ET;
 using ILRuntime.CLR.Method;
 using ILRuntime.Runtime.Enviorment;
 using ILRuntime.Runtime.Intepreter;
 
-namespace ET
+namespace SEyesET
 {
 	[ILAdapter]
 	public class IDisposableClassInheritanceAdaptor : CrossBindingAdaptor

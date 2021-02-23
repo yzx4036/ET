@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using ET;
 using ILRuntime.CLR.Method;
 using ILRuntime.Runtime.Enviorment;
 using ILRuntime.Runtime.Intepreter;
 
-namespace ET
+namespace SEyesET
 {
 	/// <summary>
 	/// 用于async await适配

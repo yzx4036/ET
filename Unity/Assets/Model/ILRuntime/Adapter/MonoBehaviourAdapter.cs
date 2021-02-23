@@ -8,7 +8,7 @@ using ILRuntime.Runtime.Intepreter;
 using UnityEngine;
 using AppDomain = ILRuntime.Runtime.Enviorment.AppDomain;
 
-namespace ET
+namespace SEyesET
 {
     public class MonoBehaviourAdapter: CrossBindingAdaptor
     {
