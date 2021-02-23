@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using ET;
 using UnityEngine;
 using Object = ET.Object;
@@ -41,6 +42,12 @@ namespace SEyesET
 		public Action Update;
 		public Action LateUpdate;
 		public Action OnApplicationQuit;
+
+		public Hotfix()
+		{
+			appDomain.UnityMainThreadID = Thread.CurrentThread.ManagedThreadId;
+			appDomain.DebugService.StartDebugService(56000);
+		}
 
 		public void GotoHotfix()
 		{
