@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using ET;
+using SEyesET;
 
 namespace SEyesETEditor
 {
@@ -34,7 +35,7 @@ namespace SEyesETEditor
             //所有DLL内的类型的真实C#类型都是ILTypeInstance
             types.Add(typeof(List<ILRuntime.Runtime.Intepreter.ILTypeInstance>));
     
-            ILRuntime.Runtime.CLRBinding.BindingCodeGenerator.GenerateBindingCode(types, "Assets/Model/ILBinding");
+            ILRuntime.Runtime.CLRBinding.BindingCodeGenerator.GenerateBindingCode(types, "Assets/Model/ILRuntime/ILBinding");
     		AssetDatabase.Refresh();
         }
     
@@ -52,7 +53,7 @@ namespace SEyesETEditor
     		        domain.LoadAssembly(fs);
     		        //Crossbind Adapter is needed to generate the correct binding code
     		        ILHelper.InitILRuntime(domain);
-    		        ILRuntime.Runtime.CLRBinding.BindingCodeGenerator.GenerateBindingCode(domain, "Assets/Model/ILBinding");
+    		        ILRuntime.Runtime.CLRBinding.BindingCodeGenerator.GenerateBindingCode(domain, "Assets/Model/ILRuntime/ILBinding");
     	        }
             }
            
