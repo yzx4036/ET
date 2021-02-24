@@ -1,7 +1,9 @@
 ﻿using System;
+using ILRuntime.Other;
 
 namespace ET
 {
+	[SingleInterfaceExport]
 	public interface IAwakeSystem
 	{
 		Type Type();

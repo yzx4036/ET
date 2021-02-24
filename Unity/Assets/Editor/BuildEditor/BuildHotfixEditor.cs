@@ -5,11 +5,10 @@ using UnityEditor;
 
 namespace ETEditor
 {
-    [InitializeOnLoad]
     public class Startup
     {
         private const string ScriptAssembliesDir = "Library/ScriptAssemblies";
-        private const string CodeDir = "Assets/Res/Code~/";
+        private const string CodeDir = "Assets/Res/Code/";
         private const string HotfixDll = "Unity.Hotfix.dll";
         private const string HotfixPdb = "Unity.Hotfix.pdb";
         private const string HotfixViewDll = "Unity.HotfixView.dll";

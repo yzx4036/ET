@@ -20,6 +20,7 @@ namespace ET
 				
 				foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
 				{
+					Debug.Log($"{assembly.Location}");
 					string assemblyName = assembly.ManifestModule.Name;
 					if (!assemblyNames.Contains(assemblyName))
 					{
