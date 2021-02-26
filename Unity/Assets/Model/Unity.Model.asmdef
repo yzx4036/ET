@@ -1,6 +1,7 @@
 {
     "name": "Unity.Model",
     "references": [
+        "ILRuntime",
         "Unity.ThirdParty"
     ],
     "optionalUnityReferences": [],

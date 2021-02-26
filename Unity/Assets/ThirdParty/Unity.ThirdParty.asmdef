@@ -1,6 +1,8 @@
 {
     "name": "Unity.ThirdParty",
-    "references": [],
+    "references": [
+        "ILRuntime"
+    ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
