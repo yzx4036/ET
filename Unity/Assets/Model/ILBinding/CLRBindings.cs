@@ -110,11 +110,27 @@ namespace ILRuntime.Runtime.Generated
             UnityEngine_Physics_Binding.Register(app);
             UnityEngine_RaycastHit_Binding.Register(app);
             ETModel_Frame_ClickMap_Binding.Register(app);
-            ReferenceCollector_Binding.Register(app);
-            UnityEngine_UI_Button_Binding.Register(app);
-            ETModel_ActionHelper_Binding.Register(app);
-            ETModel_AssetBundleHelper_Binding.Register(app);
-            UnityEngine_UI_InputField_Binding.Register(app);
+            FairyGUI_GObject_Binding.Register(app);
+            System_Collections_Generic_Dictionary_2_String_ILTypeInstance_Binding.Register(app);
+            FairyGUI_GComponent_Binding.Register(app);
+            FairyGUI_GRoot_Binding.Register(app);
+            System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Binding.Register(app);
+            System_Collections_Generic_Stack_1_ILTypeInstance_Binding.Register(app);
+            ETModel_GWindow_Binding.Register(app);
+            FairyGUI_Window_Binding.Register(app);
+            UnityEngine_Rect_Binding.Register(app);
+            UnityEngine_Mathf_Binding.Register(app);
+            System_Collections_Generic_Dictionary_2_GObject_ILTypeInstance_Binding.Register(app);
+            FairyGUI_EventListener_Binding.Register(app);
+            FairyGUI_GList_Binding.Register(app);
+            FairyGUI_EventContext_Binding.Register(app);
+            System_Int32_Binding.Register(app);
+            FairyGUI_Controller_Binding.Register(app);
+            System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Binding.Register(app);
+            FairyGUI_GButton_Binding.Register(app);
+            ETModel_TimerComponent_Binding.Register(app);
+            ETModel_Component_Binding.Register(app);
+            ETModel_FUIPackageComponent_Binding.Register(app);
             Google_Protobuf_ProtoPreconditions_Binding.Register(app);
             Google_Protobuf_CodedOutputStream_Binding.Register(app);
             Google_Protobuf_CodedInputStream_Binding.Register(app);
@@ -137,7 +153,6 @@ namespace ILRuntime.Runtime.Generated
             ETModel_SessionCallbackComponent_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_Int32_Action_1_Google_Protobuf_Adapt_IMessage_Binding_Adaptor_Binding.Register(app);
             System_Action_1_Google_Protobuf_Adapt_IMessage_Binding_Adaptor_Binding.Register(app);
-            ETModel_Component_Binding.Register(app);
             ETModel_IMessagePacker_Binding.Register(app);
             ETModel_OpcodeHelper_Binding.Register(app);
             ETModel_StringHelper_Binding.Register(app);
@@ -145,11 +160,9 @@ namespace ILRuntime.Runtime.Generated
             System_Threading_CancellationToken_Binding.Register(app);
             ETModel_ErrorCode_Binding.Register(app);
             ETModel_RpcException_Binding.Register(app);
-            System_Collections_Generic_Dictionary_2_String_ILTypeInstance_Binding.Register(app);
-            System_Collections_Generic_Dictionary_2_String_ILTypeInstance_Binding_ValueCollection_Binding.Register(app);
-            System_Collections_Generic_Dictionary_2_String_ILTypeInstance_Binding_ValueCollection_Binding_Enumerator_Binding.Register(app);
-            UnityEngine_Component_Binding.Register(app);
-            UnityEngine_Canvas_Binding.Register(app);
+            FairyGUI_UIPackage_Binding.Register(app);
+            System_Threading_Tasks_TaskCompletionSource_1_ILTypeInstance_Binding.Register(app);
+            System_Int64_Binding.Register(app);
         }
 
         /// <summary>
