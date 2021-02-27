@@ -50,3 +50,7 @@ Server/.DS_Store
 /Unity/.gradle
 /*.user
 Unity/Assets/Res/Code/
+Unity/Unity.Editor.csproj
+Unity/Unity.Hotfix.csproj
+Unity/Unity.Model.csproj
+Unity/Unity.ThirdParty.csproj

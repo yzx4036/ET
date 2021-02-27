@@ -1,6 +1,7 @@
 {
     "name": "Unity.Editor",
     "references": [
+        "ILRuntime",
         "Unity.Model",
         "Unity.ThirdParty"
     ],

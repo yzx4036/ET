@@ -1,6 +1,7 @@
 {
     "name": "Unity.Hotfix",
     "references": [
+        "ILRuntime",
         "Unity.Model",
         "Unity.ThirdParty"
     ],
