@@ -34,7 +34,7 @@ namespace MongoDB.Bson.Serialization
     public class BsonClassMap
     {
         // private static fields
-        private readonly static Dictionary<Type, BsonClassMap> __classMaps = new Dictionary<Type, BsonClassMap>();
+        private static Dictionary<Type, BsonClassMap> __classMaps = new Dictionary<Type, BsonClassMap>();
         private readonly static Queue<Type> __knownTypesQueue = new Queue<Type>();
 
         private static readonly MethodInfo __getUninitializedObjectMethodInfo =
@@ -345,6 +345,7 @@ namespace MongoDB.Bson.Serialization
             try
             {
                 BsonClassMap classMap;
+
                 if (__classMaps.TryGetValue(classType, out classMap))
                 {
                     if (classMap.IsFrozen)

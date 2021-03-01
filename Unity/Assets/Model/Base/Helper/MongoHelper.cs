@@ -5,6 +5,7 @@ using MongoDB.Bson.IO;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace ETModel
 {
@@ -19,9 +20,12 @@ namespace ETModel
 				{
 					continue;
 				}
-
 				BsonClassMap.LookupClassMap(type);
 			}
+		}
+
+		public static void Init()
+		{
 		}
 
 		public static string ToJson(object obj)

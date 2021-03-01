@@ -151,6 +151,7 @@ namespace MongoDB.Driver.Core.Operations
             {
                 _channelSource?.Dispose();
                 _channel?.Dispose();
+                _binding?.Dispose();
                 _disposed = true;
             }
         }

@@ -338,7 +338,8 @@ namespace MongoDB.Driver.Core.Bindings
                     }
                 }
 
-                _serverSession.Dispose();
+                _serverSession?.Dispose();
+                _cluster?.Dispose();
                 _disposed = true;
             }
         }

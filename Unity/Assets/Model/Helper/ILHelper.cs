@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using FairyGUI;
 using ILRuntime.CLR.Method;
 using ILRuntime.CLR.TypeSystem;
 using ILRuntime.Runtime.Enviorment;
@@ -28,6 +29,27 @@ namespace ETModel
 			appdomain.DelegateManager.RegisterMethodDelegate<ILTypeInstance>();
 			appdomain.DelegateManager.RegisterFunctionDelegate<Google.Protobuf.Adapt_IMessage.Adaptor>();
 			appdomain.DelegateManager.RegisterMethodDelegate<Google.Protobuf.Adapt_IMessage.Adaptor>();
+
+			//fairygui
+			appdomain.DelegateManager.RegisterMethodDelegate<System.Int32, FairyGUI.GObject>();
+			appdomain.DelegateManager.RegisterMethodDelegate<FairyGUI.EventContext>();
+			appdomain.DelegateManager.RegisterDelegateConvertor<FairyGUI.EventCallback1>((act) =>
+			{
+				return new FairyGUI.EventCallback1((context) =>
+				{
+					((Action<FairyGUI.EventContext>)act)(context);
+				});
+			});
+			
+			appdomain.DelegateManager.RegisterDelegateConvertor<FairyGUI.ListItemRenderer>((act) =>
+			{
+				return new FairyGUI.ListItemRenderer((index, item) =>
+				{
+					((Action<System.Int32, FairyGUI.GObject>)act)(index, item);
+				});
+			});
+
+
 
 			CLRBindings.Initialize(appdomain);
 

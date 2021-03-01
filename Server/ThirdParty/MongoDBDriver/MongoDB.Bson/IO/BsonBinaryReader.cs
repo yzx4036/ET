@@ -737,6 +737,7 @@ namespace MongoDB.Bson.IO
                 try
                 {
                     Close();
+                    this._baseStream.Dispose();
                 }
                 catch { } // ignore exceptions
             }

@@ -90,6 +90,7 @@ namespace MongoDB.Driver.Core.Bindings
         {
             if (!_disposed)
             {
+                _cluster?.Dispose();
                 _session.Dispose();
                 _disposed = true;
             }

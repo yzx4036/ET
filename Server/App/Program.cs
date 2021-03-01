@@ -16,7 +16,9 @@ namespace App
 			{			
 				Game.EventSystem.Add(DLLType.Model, typeof(Game).Assembly);
 				Game.EventSystem.Add(DLLType.Hotfix, DllHelper.GetHotfixAssembly());
-
+				
+				MongoHelper.Init();
+				
 				Options options = Game.Scene.AddComponent<OptionComponent, string[]>(args).Options;
 				StartConfig startConfig = Game.Scene.AddComponent<StartConfigComponent, string, int>(options.Config, options.AppId).StartConfig;
 

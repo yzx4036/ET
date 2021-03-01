@@ -76,7 +76,7 @@ namespace MongoDB.Driver.Core.Misc
                     // ignore...
                 }
             }
-
+            _semaphore?.Dispose();
             _disposeCancellationTokenSource.Dispose();
             _linkedCancellationTokenSource.Dispose();
         }

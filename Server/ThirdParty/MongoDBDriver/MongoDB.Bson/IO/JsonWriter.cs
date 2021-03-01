@@ -696,6 +696,7 @@ namespace MongoDB.Bson.IO
                 try
                 {
                     Close();
+                    this._textWriter.Dispose();
                 }
                 catch { } // ignore exceptions
             }
