@@ -10,7 +10,7 @@ namespace ETHotfix
 		{
 			get
 			{
-				return eventSystem ?? (eventSystem = new EventSystem());
+				return eventSystem ??= new EventSystem();
 			}
 		}
 		
