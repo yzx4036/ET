@@ -20,9 +20,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-#if NET452
 using System.Runtime.Serialization;
-#endif
 using MongoDB.Bson.IO;
 using MongoDB.Bson.Serialization.Conventions;
 
@@ -38,11 +36,7 @@ namespace MongoDB.Bson.Serialization
         private readonly static Queue<Type> __knownTypesQueue = new Queue<Type>();
 
         private static readonly MethodInfo __getUninitializedObjectMethodInfo =
-            typeof(string)
-            .GetTypeInfo()
-            .Assembly
-            .GetType("System.Runtime.Serialization.FormatterServices")
-            .GetTypeInfo()
+            typeof(FormatterServices).GetTypeInfo()
             ?.GetMethod("GetUninitializedObject", BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static);
 
         private static int __freezeNestingLevel = 0;

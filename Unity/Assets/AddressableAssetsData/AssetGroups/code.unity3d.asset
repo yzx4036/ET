@@ -16,8 +16,28 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 18cdb90b85b51bb46a7e2c500217ff62
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 3b43dd0baf9d83c4894a9b47b019a45b
+    m_Address: Assets/Bundles/Independent/Code.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 184536, guid: 3b43dd0baf9d83c4894a9b47b019a45b, type: 3}
+    m_TargetAsset: {fileID: 184536, guid: 3b43dd0baf9d83c4894a9b47b019a45b, type: 3}
+  - m_GUID: ae44b218243cfc347af99a6875e9e11c
+    m_Address: Assets/Res/Code/Hotfix.dll.bytes
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4900000, guid: ae44b218243cfc347af99a6875e9e11c, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: ae44b218243cfc347af99a6875e9e11c, type: 3}
+  - m_GUID: dd08ff64f788e7a4ba0f918632ff8d0f
+    m_Address: Assets/Res/Code/Hotfix.pdb.bytes
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4900000, guid: dd08ff64f788e7a4ba0f918632ff8d0f, type: 3}
+    m_TargetAsset: {fileID: 4900000, guid: dd08ff64f788e7a4ba0f918632ff8d0f, type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 09712a4b8b6fde342b09e3695d1d02b3, type: 2}
   m_SchemaSet:
-    m_Schemas: []
+    m_Schemas:
+    - {fileID: 11400000, guid: 97a4a5821a5edb1449f939bed41f8cce, type: 2}
+    - {fileID: 11400000, guid: cab37041b14d18f478b31f85c123285a, type: 2}

@@ -1,5 +1,9 @@
-﻿using FairyGUI;
+﻿using System;
+using FairyGUI;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+
 #if !UNITY_EDITOR
 using UnityEngine;
 #endif
@@ -53,6 +57,23 @@ namespace ETModel
             AssetBundle resAssetBundle = resourcesComponent.GetAssetBundle(uiBundleResName);
             UIPackage uiPackage = UIPackage.AddPackage(desAssetBundle, resAssetBundle);
 #endif
+            // var pkgAsset = await Addressables.LoadAssetAsync<TextAsset>(address).Task;
+            //
+            // UIPackage.AddPackage(
+            //     pkgAsset.bytes,
+            //     packageName,
+            //     async (string name, string extension, Type type, PackageItem ite) => {
+            //         Log.Info($"{name}, {extension}, {type.ToString()}, {ite.ToString()}");
+            //
+            //         if (type == typeof(Texture))
+            //         {
+            //             Texture t = await Addressables.LoadAssetAsync<Texture>(name + extension).Task;
+            //             ite.owner.SetItemAsset(ite, t, DestroyMethod.Custom);
+            //
+            //         }
+            //     });
+            // Addressables.Release(pkgAsset);
+            
             packages.Add(type, uiPackage);
         }
 

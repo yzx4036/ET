@@ -21,8 +21,13 @@ namespace ETEditor
         [MenuItem("AddressableEditor/SetGroup => StaticContent")]
         public static void SetStaticContentGroup()
         {
-            foreach (AddressableAssetGroup groupAsset in Selection.objects)
+            foreach (var o in Selection.objects)
             {
+                var groupAsset = (AddressableAssetGroup) o;
+                if (groupAsset == null)
+                {
+                    Debug.Log($">invalid 类型 o {o.GetType()}");
+                }
                 for (int i = 0; i < groupAsset.Schemas.Count; i++)
                 {
                     var schema = groupAsset.Schemas[i];

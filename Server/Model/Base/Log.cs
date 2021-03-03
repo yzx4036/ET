@@ -1,9 +1,11 @@
 ﻿using System;
+using NLog;
 
 namespace ETModel
 {
 	public static class Log
 	{
+		private static bool _isShow2Window = false;
 		private static readonly ILog globalLog = new NLogAdapter();
 
 		public static void Trace(string message)

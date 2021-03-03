@@ -2,6 +2,8 @@
     "name": "Unity.Model",
     "references": [
         "ILRuntime",
+        "Unity.ResourceManager",
+        "Unity.Addressables",
         "Unity.ThirdParty"
     ],
     "optionalUnityReferences": [],
