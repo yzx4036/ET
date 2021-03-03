@@ -8,7 +8,6 @@ using ETModel;
 
 public static class ILRuntimeCLRBinding
 {
-    //[MenuItem("Tools/ILRuntime/Generate CLR Binding Code")]
     static void GenerateCLRBinding()
     {
         List<Type> types = new List<Type>();
@@ -34,7 +33,7 @@ public static class ILRuntimeCLRBinding
 		AssetDatabase.Refresh();
     }
 
-    [MenuItem("Tools/ILRuntime/Generate CLR Binding Code by Analysis")]
+    [MenuItem("ILRuntime/Generate CLR Binding Code by Analysis")]
     static void GenerateCLRBindingByAnalysis()
     {
 	    GenerateCLRBinding();

@@ -18,6 +18,14 @@ namespace ETEditor
 {
     public class AddressableEditor
     {
+        private 
+        
+        [MenuItem("AddressableEditor/SetGroup => Auto Group")]
+        public static void AutoGroupByFolder()
+        {
+            
+        }
+
         [MenuItem("AddressableEditor/SetGroup => StaticContent")]
         public static void SetStaticContentGroup()
         {
@@ -27,6 +35,7 @@ namespace ETEditor
                 if (groupAsset == null)
                 {
                     Debug.Log($">invalid 类型 o {o.GetType()}");
+                    continue;
                 }
                 for (int i = 0; i < groupAsset.Schemas.Count; i++)
                 {

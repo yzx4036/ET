@@ -7,11 +7,22 @@ using UnityEngine.AddressableAssets;
 
 namespace ETModel
 {
+	public enum BundlesResType
+	{
+		FUI = 1,
+		Effect,
+		Independent,
+		Model,
+		Shader,
+	}
+
 	public class AdsResHelper
 	{
+		public const string FUI_PACKAGE_DIR = "Bundles/UI";
+
 		public static string GetAddressablePath(string pFileName)
 		{
-			return "";
+			return $"{FUI_PACKAGE_DIR}/{pFileName}/{pFileName}";
 		}
 	}
 

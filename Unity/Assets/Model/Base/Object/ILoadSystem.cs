@@ -13,6 +13,7 @@ namespace ETModel
 		public void Run(object o)
 		{
 			this.Load((T)o);
+			Log.Info($">>{((T)o).GetType()} Load finish ");
 		}
 
 		public Type Type()

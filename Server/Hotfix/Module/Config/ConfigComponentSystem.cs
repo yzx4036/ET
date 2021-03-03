@@ -18,7 +18,7 @@ namespace ETHotfix
     {
         public override void Load(ConfigComponent self)
         {
-            self.Load();
+	        self.Load();
         }
     }
     
@@ -31,6 +31,7 @@ namespace ETHotfix
 
 		public static void Load(this ConfigComponent self)
 		{
+	        Log.Debug(">>>>>test ConfigComponentHelper load >");
 			AppType appType = StartConfigComponent.Instance.StartConfig.AppType;
 			
 			self.AllConfig.Clear();
