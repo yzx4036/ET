@@ -1,5 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 778f7c7cb6a29cb42842d3aff8e3a2aa
+=======
+<<<<<<< HEAD:Unity/Assets/ThirdParty/FairyGUI/Editor/StageCameraEditor.cs.meta
+guid: 2b99582678b83dc46986b02984c665a3
+timeCreated: 1460480287
+licenseType: Pro
+=======
+guid: 24d9931cc2764450da27b1ee176b534e
+>>>>>>> ET_upstream_master:Unity/Assets/Model/Generate/Config/StartProcessConfig.cs.meta
+>>>>>>> ET_upstream_master
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

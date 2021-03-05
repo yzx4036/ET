@@ -2,12 +2,12 @@ namespace ET
 {
     public class AppStart_Init: AEvent<EventType.AppStart>
     {
-        public override async ETTask Run(EventType.AppStart args)
+        protected override async ETTask Run(EventType.AppStart args)
         {
             FunctionCallback.GetAllConfigBytes = LoadConfigHelper.LoadAllConfigBytes;
             
             Game.Scene.AddComponent<TimerComponent>();
-
+            Game.Scene.AddComponent<CoroutineLockComponent>();
 
             // 下载ab包
             //await BundleHelper.DownloadBundle("1111");
@@ -17,12 +17,15 @@ namespace ET
             
             ResourcesComponent.Instance.LoadBundle("config.unity3d");
             Game.Scene.AddComponent<ConfigComponent>();
+            ConfigComponent.GetAllConfigBytes = LoadConfigHelper.LoadAllConfigBytes;
+            await ConfigComponent.Instance.LoadAsync();
             ResourcesComponent.Instance.UnloadBundle("config.unity3d");
             await ConfigComponent.Instance.LoadAsync();
             
             Game.Scene.AddComponent<OpcodeTypeComponent>();
             Game.Scene.AddComponent<MessageDispatcherComponent>();
             Game.Scene.AddComponent<UIEventComponent>();
+            Game.Scene.AddComponent<NetThreadComponent>();
 
             ResourcesComponent.Instance.LoadBundle("unit.unity3d");
 

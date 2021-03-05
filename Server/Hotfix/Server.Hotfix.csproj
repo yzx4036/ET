@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp5.0</TargetFramework>
-    <LangVersion>9</LangVersion>
-    <RootNamespace />
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>ET</RootNamespace>
+    <LangVersion>8</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
