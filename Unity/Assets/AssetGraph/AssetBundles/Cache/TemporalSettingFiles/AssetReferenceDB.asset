@@ -1,0 +1,392 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4bc21567f434b598a3c96ba4946372, type: 3}
+  m_Name: AssetReferenceDB
+  m_EditorClassIdentifier: 
+  m_assets:
+  - m_assetDatabaseId: 9edb3a5eab7744cd68be644c82917e41
+    m_importFrom: Assets/HotfixView/UI/UILobby/UILobbyEvent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2eb0c53e4aa562d479faa765d73aa048
+    m_importFrom: Assets/Model/Module/Network/KService.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 28d669f64ad524500b2494e1694e3e6c
+    m_importFrom: Assets/Model/Generate/Config/UnitConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 488b91e3bda785846ab71b43a873cd05
+    m_importFrom: Assets/HotfixView/UI/UILogin/LoginFinish_RemoveLoginUI.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9053a11c1bcabe04d8a2b53044ae0682
+    m_importFrom: Assets/Model/Core/Object/EventSystem.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f7aec9df9b7212e448c697d7ebf558a3
+    m_importFrom: Assets/ModelView/Unity.ModelView.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 778f7c7cb6a29cb42842d3aff8e3a2aa
+    m_importFrom: Assets/Model/Generate/Config/StartProcessConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dcdc987fc691e43b6b99042ad4351bc0
+    m_importFrom: Assets/HotfixView/UI/UIHelper.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3e411f50d32da754d8064d3dffaf49eb
+    m_importFrom: Assets/HotfixView/UI/UILoading/LoadingFinishEvent_RemoveLoadingUI.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c38338e46c7049bdbfaf34a0ab31cb52
+    m_importFrom: Assets/Model/Module/Config/ConfigComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 997f003cfffd9ec4fae70c0ac9b0ec2b
+    m_importFrom: Assets/Model/Unity.Model.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 75b4e4c782482aa4d87675b28e60ca49
+    m_importFrom: Assets/Model/Core/Object/Object.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c2fdb0eab6ee13344a13ea81e2a0f426
+    m_importFrom: Assets/Model/Module/Message/OpcodeTypeComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2952765c6bc4dc9498359d459c9f297f
+    m_importFrom: Assets/Model/Generate/Config/StartMachineConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 02960c0005c5d4e5c92829897a3cd1d1
+    m_importFrom: Assets/Model/Core/Object/TimeInfo.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ca414011ea48642cfb22d25817e81d05
+    m_importFrom: Assets/ThirdParty/protobuf-net/Meta/MetaType.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0e19c00909caacf4bb8cdd8e39e2e365
+    m_importFrom: Assets/Model/Module/Config/ConfigHelper.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0223d06ed67a2d349b0abedea86f6a40
+    m_importFrom: Assets/Model/Module/Message/OpcodeHelper.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a63db8c5f4da7da4888567c905479f23
+    m_importFrom: Assets/Hotfix/Module/Message/NetKcpComponentSystem.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8b1638755689b9046b7ff7e2c052f0ba
+    m_importFrom: Assets/Model/Generate/Config/StartSceneConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 000a53018e5e7c14aa75273e1f7be8e2
+    m_importFrom: Assets/Editor/Unity.Editor.asmdef
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b987fdc9ae42d8d4992d429058fb72b2
+    m_importFrom: Assets/HotfixView/UI/UILobby/LoginFinish_CreateLobbyUI.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 503f7b1954f4a485cbcc0c7c309365f1
+    m_importFrom: Assets/HotfixView/Scene/AfterCreateZoneScene_AddComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a7feda966d039a549bdc1e2a1642ebe3
+    m_importFrom: Assets/Model/Core/Object/IAwakeSystem.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b78b87e70906a438ba5b820ca91d645f
+    m_importFrom: Assets/Model/Generate/Message
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dab16cc3acc616f4880a9cd714ba9be0
+    m_importFrom: Assets/Model/Core/Event/IEvent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 044fa867eb79745f4b119b77e4db9c41
+    m_importFrom: Assets/Model/Generate/Message/OuterMessage.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 918113fec35224afa958d442f09ba720
+    m_importFrom: Assets/Model/Core/Async/ETTaskHelper.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 39ddf759aa679014996838fe0bec2507
+    m_importFrom: Assets/AddressableAssetsData/Windows
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e629fbd8aaeacec4bba18161f0f0fd27
+    m_importFrom: Assets/Model/Generate/Config
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 760d58aa5efbeac48a9a21fb75fa7c16
+    m_importFrom: Assets/Model/Module/NetworkTCP/TChannel.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8da8ce2d353f6e64a918bd4230056fbe
+    m_importFrom: Assets/Model/Module/Resource/ResourcesComponent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2062fdbc4d9beb64da4bc540208b479e
+    m_importFrom: Assets/Model/Generate/Config/StartZoneConfig.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 731471567040e43da827c2acfd5c2f7b
+    m_importFrom: Assets/Model/Generate/Message/OuterOpcode.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: e93a66166f3093e44bf1eb16002b3934
+    m_importFrom: Assets/Res/Js/puerts
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 94fe7b24b165f4f16a9d12665ca5b5bb
+    m_importFrom: Assets/HotfixView/AppStart_Init.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c257c01663e1c4b61bcf5f9d9ddebc36
+    m_importFrom: Assets/Hotfix/Scene/LoginHelper.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f56c40256a22744419cdc0c3051219cf
+    m_importFrom: Assets/HotfixView/Helper/LoadConfigHelper.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d36937003d983464ea92fa49808ae48a
+    m_importFrom: Assets/HotfixView/UI/UILoading/LoadingBeginEvent_CreateLoadingUI.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 72d4765473bae4943959aeab49daa948
+    m_importFrom: Assets/Plugins/MacOS/libkcp.dylib
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8ca3bab3d15364846a895a2545184b52
+    m_importFrom: Assets/HotfixView/UI/UILogin/AppStartInitFinish_CreateLoginUI.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9f2a195ef22592645aaa4a4964153c15
+    m_importFrom: Assets/HotfixView/UI/UILobby/EnterMapFinish_RemoveLobbyUI.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fd5baa7eaf9c81c42b95e54b0f749e0c
+    m_importFrom: Assets/Hotfix/Module/Numeric/NumericChangeEvent_NotifyWatcher.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 111618e15bb864e4dac1f7d1b47ae59b
+    m_importFrom: Assets/Res/Js
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a0358a06fc42a94479b98404125c357a
+    m_importFrom: Assets/Hotfix/Module/Config/ConfigComponentSystem.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a4f756ded1750bd4ab42950ee5eb2c2c
+    m_importFrom: Assets/Model/Core/Log/Log.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: ff906ecbbd0163f4094f8fa4e305d39f
+    m_importFrom: Assets/ModelView/MonoBehaviour/Init.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: deed42c610a23384085aaf344998875d
+    m_importFrom: Assets/HotfixView/Unit/AfterUnitCreate_CreateUnitView.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 913c09549beec414789ff607d25ed736
+    m_importFrom: Assets/HotfixView/Helper
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 2d5c9bc9d2d1b4b05867de024ac6ba3e
+    m_importFrom: Assets/HotfixView/UI/UILoading/UILoadingEvent.cs
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5a35c5f0a89b9654d897ccd7c8f81bd0
+    m_importFrom: Assets/Res/Unit/Skeleton/Character/Skeleton@Skin.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3077c34f7c5e8384399cf8938b9cd883
+    m_importFrom: Assets/Res/Js/webapi.js.map.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cc4ad73ac23a42743a518ee822062a61
+    m_importFrom: Assets/Res/Js/puerts/cjsload.js.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 00000000000000004000000000000000
+    m_importFrom: ProjectSettings/ProjectSettings.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dfc15c633f0d98141920018f79a042a6
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Attack.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d29829501ea9de04e8785dbccca1fd59
+    m_importFrom: Assets/AddressableAssetsData/AssetGroups/config.unity3d.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1c83852e90963e2458cdf7e6b1abd89e
+    m_importFrom: Assets/Res/Js/bundle.js
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a5ea117a2b123564a83a2dbd1c9ea4cf
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Idle.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7bf1d13bab0b772409621d39f2d6661e
+    m_importFrom: Assets/AssetGraph/Cache/AssetBundleBuildMap.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 3f452063ceb5f4150bbbfe795c0aca90
+    m_importFrom: Assets/Bundles/Config/UnitConfigCategory.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 85a62388a1bf9db438d22d5396b3744c
+    m_importFrom: Assets/Res/Js/puerts/init.js.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 5b68b797892145f46a5553c74f060976
+    m_importFrom: Assets/Resources/KV.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7a4f489ec98f74148aa406614f027e24
+    m_importFrom: Assets/Res/Js/webapi.js
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 1e768688017709245aed3bb86453c364
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Skill.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cede57cdfbd1cae47bedab3fab75d315
+    m_importFrom: Assets/AddressableAssetsData/AddressableAssetSettings.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: a749f4485b342b7469956010abf2ab25
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Death.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: bfefd4ca5b64882419a76f098be442eb
+    m_importFrom: Assets/Res/Js/puerts/log.js.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: efbef019879e5af43b9e8e5096e1b4bd
+    m_importFrom: Assets/AddressableAssetsData/AssetGroups/Schemas/config.unity3d_ContentUpdateGroupSchema.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9422539ec2130984a9001c5f87f8e061
+    m_importFrom: Assets/AddressableAssetsData/AssetGroups/Schemas/config.unity3d_BundledAssetGroupSchema.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 735531f93e0bba04c90dc9718b5edb45
+    m_importFrom: Assets/Res/Js/bundle.js.map
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 81d4af5a5190e3d4d88c97161d881bf3
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Damage.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6ead23717bdf4444cb51e4be92a00781
+    m_importFrom: Assets/Bundles/Config/StartProcessConfigCategory.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: dc25cda9b8fb58243a0451f9dd85df03
+    m_importFrom: Assets/Bundles/Config/StartZoneConfigCategory.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: b4f9dc0e8cbd502458af507b38c9a84d
+    m_importFrom: Assets/Res/Js/puerts/polyfill.js.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 00725fd3b1a2fbc419dc0dbcdf8e226a
+    m_importFrom: Assets/AddressableAssetsData/AssetGroups/code_js.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: fb6d4b23f1707a14ab4007f1fd5b7e8a
+    m_importFrom: Assets/Res/Js/bootstrap.js
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 40ccafe0c16301943907d65c62a7b104
+    m_importFrom: Assets/AssetGraph/AssetBundles/Cache/TemporalSettingFiles/AssetReferenceDB.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 49290d5a6431f174a9becbdb23776cdc
+    m_importFrom: Assets/Res/Js/puerts/csharp.js.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 80d0248e90150b94d8d086ad01d2109c
+    m_importFrom: Assets/Res/Js/puerts/promises.js.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 7212a83e3afa9de4bb8b1a98c4198a05
+    m_importFrom: Assets/Res/Js/puerts/timer.js.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cc595573da6d95b4f91ae1185d41d6ce
+    m_importFrom: Assets/Res/Js/puerts/modular.js.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 466681b91623b7f40bdb389d42988afa
+    m_importFrom: Assets/Bundles/Config/StartSceneConfigCategory.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: cfaf4529ce2243c4c85126e9d008897b
+    m_importFrom: Assets/Bundles/Unit/Unit.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 188f1042b5ff4644389fad5df1f98d7c
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Walk.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 8723db44d6028914886df6bbd99a1204
+    m_importFrom: Assets/AddressableAssetsData/Windows/addressables_content_state.bin
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 0deea0b3b021a714d8c54816d4ee5fbe
+    m_importFrom: Assets/Resources/UI/UILoading.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: c8fcd7d8efe4bda4581c14d2fe4a25b0
+    m_importFrom: Assets/Res/Js/puerts/events.js.txt
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: d8d87e53d93e234448658c9a801a9967
+    m_importFrom: Assets/Bundles/UI/UILobby.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 188047ee4b6ee5a42b7b6b2cba31bbe6
+    m_importFrom: Assets/AssetGraph/AddressableAssetGraph.asset
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: f57ee821486cd7b488adf1063a8dd207
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Run.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6f61bc53c41ba664fa527d3386ecfd1e
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Stand.FBX
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 9f6d9adc6f537764fa0fea29671e77bf
+    m_importFrom: Assets/Bundles/UI/UILogin.prefab
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 06852e44a18a8a14aa959057cd1e27fe
+    m_importFrom: Assets/Bundles/Config/StartMachineConfigCategory.bytes
+    m_exportTo: 
+    m_variantName: 
+  - m_assetDatabaseId: 6e0b4a05932877a4b89fb3fb32c3e72b
+    m_importFrom: Assets/Res/Unit/Skeleton/Ani/Skeleton@Knockback.FBX
+    m_exportTo: 
+    m_variantName: 
+  m_version: 2

@@ -13,11 +13,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{52f66610-896a-c4d1-9881-1a19df7ab80e}</ProjectGuid>
+    <ProjectGuid>{c109842f-01da-64d4-dbf2-00c6449e459e}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Unity.Hotfix</AssemblyName>
+    <AssemblyName>Unity.ModelView</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -31,7 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn></NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -41,7 +41,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn></NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
@@ -52,25 +52,26 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Hotfix\Module\Message\NetThreadComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Numeric\NumericChangeEvent_NotifyWatcher.cs" />
-     <Compile Include="Assets\Hotfix\Unit\M2C_CreateUnitsHandler.cs" />
-     <Compile Include="Assets\Hotfix\Module\Config\ConfigComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\NetKcpComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Numeric\NumericWatcher_Hp_ShowUI.cs" />
-     <Compile Include="Assets\Hotfix\Move\M2C_PathfindingResultHandler.cs" />
-     <Compile Include="Assets\Hotfix\Unit\UnitFactory.cs" />
-     <Compile Include="Assets\Hotfix\Scene\MapHelper.cs" />
-     <Compile Include="Assets\Hotfix\Unit\TurnComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Session\SessionComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\SessionAcceptTimeoutComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Scene\LoginHelper.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\SessionIdleCheckerComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\OuterMessageDispatcher.cs" />
-     <Compile Include="Assets\Hotfix\Unit\UnitComponent.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\MessageDispatcherComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\PingComponentSystem.cs" />
-     <None Include="Assets\Hotfix\Unity.Hotfix.asmdef" />
+     <Compile Include="Assets\ModelView\Module\UI\UIEventComponent.cs" />
+     <Compile Include="Assets\ModelView\MonoBehaviour\Init.cs" />
+     <Compile Include="Assets\ModelView\Scene\SceneChangeComponent.cs" />
+     <Compile Include="Assets\ModelView\Module\UI\UIComponent.cs" />
+     <Compile Include="Assets\ModelView\Opera\OperaComponent.cs" />
+     <Compile Include="Assets\ModelView\MonoBehaviour\UILayerScript.cs" />
+     <Compile Include="Assets\ModelView\MonoBehaviour\GizmosDebug.cs" />
+     <Compile Include="Assets\ModelView\Module\UI\UIType.cs" />
+     <Compile Include="Assets\ModelView\Unit\AnimatorComponent.cs" />
+     <Compile Include="Assets\ModelView\Camera\CameraComponent.cs" />
+     <Compile Include="Assets\ModelView\MonoBehaviour\ReferenceCollector.cs" />
+     <Compile Include="Assets\ModelView\Module\UI\LayerNames.cs" />
+     <Compile Include="Assets\ModelView\UI\UILobby\UILobbyComponent.cs" />
+     <Compile Include="Assets\ModelView\Module\UI\AUIEvent.cs" />
+     <Compile Include="Assets\ModelView\UI\UILogin\UILoginComponent.cs" />
+     <Compile Include="Assets\ModelView\Module\UI\UI.cs" />
+     <Compile Include="Assets\ModelView\UI\UILoading\UILoadingComponent.cs" />
+     <Compile Include="Assets\ModelView\Module\UI\CanvasConfig.cs" />
+     <Compile Include="Assets\ModelView\Module\UI\UIEventAttribute.cs" />
+     <None Include="Assets\ModelView\Unity.ModelView.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/Unity2020/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

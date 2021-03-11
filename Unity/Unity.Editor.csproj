@@ -13,11 +13,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{52f66610-896a-c4d1-9881-1a19df7ab80e}</ProjectGuid>
+    <ProjectGuid>{041131cd-3018-19b1-81b6-5dbee2467ffb}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Unity.Hotfix</AssemblyName>
+    <AssemblyName>Unity.Editor</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -52,25 +52,41 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Hotfix\Module\Message\NetThreadComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Numeric\NumericChangeEvent_NotifyWatcher.cs" />
-     <Compile Include="Assets\Hotfix\Unit\M2C_CreateUnitsHandler.cs" />
-     <Compile Include="Assets\Hotfix\Module\Config\ConfigComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\NetKcpComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Numeric\NumericWatcher_Hp_ShowUI.cs" />
-     <Compile Include="Assets\Hotfix\Move\M2C_PathfindingResultHandler.cs" />
-     <Compile Include="Assets\Hotfix\Unit\UnitFactory.cs" />
-     <Compile Include="Assets\Hotfix\Scene\MapHelper.cs" />
-     <Compile Include="Assets\Hotfix\Unit\TurnComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Session\SessionComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\SessionAcceptTimeoutComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Scene\LoginHelper.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\SessionIdleCheckerComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\OuterMessageDispatcher.cs" />
-     <Compile Include="Assets\Hotfix\Unit\UnitComponent.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\MessageDispatcherComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\PingComponentSystem.cs" />
-     <None Include="Assets\Hotfix\Unity.Hotfix.asmdef" />
+     <Compile Include="Assets\Editor\BuildEditor\BuildHelper.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\FloatTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\LongTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawerAttribute.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\AnimationCurveTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ExcelExporterEditor\ExcelExporterEditor.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\ComponentViewEditor.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\Vector4TypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\IntTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\BoolTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\DateTimeTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\Entity\EditorLayout.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\Vector3TypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ServerCommandLineEditor\ServerCommandLineEditor.cs" />
+     <Compile Include="Assets\Editor\Helper\EditorResHelper.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\DoubleTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\Proto2CsEditor\InnerProto2CS.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\StringTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\Vector2TypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ReferenceCollectorEditor\ReferenceCollectorEditor.cs" />
+     <Compile Include="Assets\Editor\BuildEditor\BuildEditor.cs" />
+     <Compile Include="Assets\Editor\RsyncEditor\RsyncEditor.cs" />
+     <Compile Include="Assets\Editor\Helper\MongoHelper.cs" />
+     <Compile Include="Assets\Editor\BuildEditor\ETBuildSettings.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\CharTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\EnumTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\BoundsTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\RectTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\ITypeDrawer.cs" />
+     <Compile Include="Assets\Editor\Proto2CsEditor\Proto2CSEditor.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\ColorTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\Entity\SerializationTypeExtension.cs" />
+     <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\UnityObjectTypeDrawer.cs" />
+     <Compile Include="Assets\Editor\RsyncEditor\RsyncConfig.cs" />
+     <None Include="Assets\Editor\Unity.Editor.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/Unity2020/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -343,6 +359,9 @@
  </Reference>
  <Reference Include="MongoDB.Bson">
  <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/MongoDB.Bson.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>E:/_Proj/my/ET/Unity/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/Program Files/Unity2020/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -695,6 +714,12 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/_Proj/my/ET/Unity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.TestRunner">
+ <HintPath>E:/_Proj/my/ET/Unity/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>E:/_Proj/my/ET/Unity/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Model.csproj">
@@ -704,6 +729,18 @@
     <ProjectReference Include="Unity.ThirdParty.csproj">
       <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
       <Name>Unity.ThirdParty</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ModelView.csproj">
+      <Project>{c109842f-01da-64d4-dbf2-00c6449e459e}</Project>
+      <Name>Unity.ModelView</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Hotfix.csproj">
+      <Project>{52f66610-896a-c4d1-9881-1a19df7ab80e}</Project>
+      <Name>Unity.Hotfix</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.HotfixView.csproj">
+      <Project>{de4513d3-889b-5c52-8e9c-744c99ae7509}</Project>
+      <Name>Unity.HotfixView</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

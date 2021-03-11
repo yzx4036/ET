@@ -13,11 +13,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{52f66610-896a-c4d1-9881-1a19df7ab80e}</ProjectGuid>
+    <ProjectGuid>{ea2e34b9-8a14-e584-7014-c450c7411514}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Unity.Hotfix</AssemblyName>
+    <AssemblyName>Unity.FairyGUI.Editor</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -31,7 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn></NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -41,7 +41,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn></NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
@@ -52,25 +52,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Hotfix\Module\Message\NetThreadComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Numeric\NumericChangeEvent_NotifyWatcher.cs" />
-     <Compile Include="Assets\Hotfix\Unit\M2C_CreateUnitsHandler.cs" />
-     <Compile Include="Assets\Hotfix\Module\Config\ConfigComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\NetKcpComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Numeric\NumericWatcher_Hp_ShowUI.cs" />
-     <Compile Include="Assets\Hotfix\Move\M2C_PathfindingResultHandler.cs" />
-     <Compile Include="Assets\Hotfix\Unit\UnitFactory.cs" />
-     <Compile Include="Assets\Hotfix\Scene\MapHelper.cs" />
-     <Compile Include="Assets\Hotfix\Unit\TurnComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Session\SessionComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\SessionAcceptTimeoutComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Scene\LoginHelper.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\SessionIdleCheckerComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\OuterMessageDispatcher.cs" />
-     <Compile Include="Assets\Hotfix\Unit\UnitComponent.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\MessageDispatcherComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\PingComponentSystem.cs" />
-     <None Include="Assets\Hotfix\Unity.Hotfix.asmdef" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\StageCameraEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\UIConfigEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\UIPainterEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\PackagesWindow.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\EditorToolSet.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\UIContentScalerEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\DisplayObjectEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Editor\UIPanelEditor.cs" />
+     <None Include="Assets\ThirdParty\FairyGUI\Editor\Unity.FairyGUI.Editor.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/Unity2020/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -343,6 +333,9 @@
  </Reference>
  <Reference Include="MongoDB.Bson">
  <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/MongoDB.Bson.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>E:/_Proj/my/ET/Unity/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/Program Files/Unity2020/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -695,15 +688,17 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/_Proj/my/ET/Unity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.TestRunner">
+ <HintPath>E:/_Proj/my/ET/Unity/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>E:/_Proj/my/ET/Unity/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.Model.csproj">
-      <Project>{9498bfb4-d9f5-c441-13e3-3f26f7700e29}</Project>
-      <Name>Unity.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ThirdParty.csproj">
-      <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
-      <Name>Unity.ThirdParty</Name>
+    <ProjectReference Include="Unity.FairyGUI.Runtime.csproj">
+      <Project>{6a8d0702-42f0-5d76-85ad-170ad6896d45}</Project>
+      <Name>Unity.FairyGUI.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

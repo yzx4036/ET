@@ -63,10 +63,7 @@ namespace ET
             {
                 return null;
             }
-<<<<<<< HEAD
 
-=======
->>>>>>> ET_upstream_master
             return this.dict.Values.GetEnumerator().Current;
         }
     }

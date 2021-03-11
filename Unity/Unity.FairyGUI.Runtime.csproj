@@ -13,11 +13,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{52f66610-896a-c4d1-9881-1a19df7ab80e}</ProjectGuid>
+    <ProjectGuid>{6a8d0702-42f0-5d76-85ad-170ad6896d45}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Unity.Hotfix</AssemblyName>
+    <AssemblyName>Unity.FairyGUI.Runtime</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -31,7 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn></NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -41,7 +41,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn></NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
@@ -52,25 +52,172 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Hotfix\Module\Message\NetThreadComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Numeric\NumericChangeEvent_NotifyWatcher.cs" />
-     <Compile Include="Assets\Hotfix\Unit\M2C_CreateUnitsHandler.cs" />
-     <Compile Include="Assets\Hotfix\Module\Config\ConfigComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\NetKcpComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Numeric\NumericWatcher_Hp_ShowUI.cs" />
-     <Compile Include="Assets\Hotfix\Move\M2C_PathfindingResultHandler.cs" />
-     <Compile Include="Assets\Hotfix\Unit\UnitFactory.cs" />
-     <Compile Include="Assets\Hotfix\Scene\MapHelper.cs" />
-     <Compile Include="Assets\Hotfix\Unit\TurnComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Session\SessionComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\SessionAcceptTimeoutComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Scene\LoginHelper.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\SessionIdleCheckerComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\OuterMessageDispatcher.cs" />
-     <Compile Include="Assets\Hotfix\Unit\UnitComponent.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\MessageDispatcherComponentSystem.cs" />
-     <Compile Include="Assets\Hotfix\Module\Message\PingComponentSystem.cs" />
-     <None Include="Assets\Hotfix\Unity.Hotfix.asmdef" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlSelect.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\TypingEffect.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIContentScaler.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\IHtmlObject.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\PackageItem.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\TweenManager.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Stats.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\HitTestContext.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\NAudioClip.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\EaseType.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\GoWrapper.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\VirualClassObject.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\VertexBuffer.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\SelectionShape.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\RectMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\XMLIterator.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GTreeNode.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Image.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\NTexture.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\Emoji.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\DisplayObject.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GGraph.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GList.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\EaseManager.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\GTweener.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\BlendMode.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\XML.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Timers.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Tree\TreeNode.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Tree\TreeView.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIObjectFactory.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\IEventDispatcher.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIPackage.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\FillMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Action\ChangePageAction.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\XMLUtils.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Filter\IFilter.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\IHitTest.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\EventDispatcher.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\RectHitTest.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Filter\BlurFilter.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\TouchScreenKeyboard.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GRichTextField.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlImage.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\RotationGesture.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\ToolSet.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GButton.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\IAnimationGear.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\DragDropManager.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Stage.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearDisplay.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\ScrollPane.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIPanel.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\MaterialManager.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\BaseFont.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\NGraphics.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Margin.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\SwipeGesture.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\UBBParser.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GRoot.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\LineMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\InputEvent.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\RTLSupport.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearText.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\FontManager.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GScrollBar.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\PinchGesture.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\MeshFactory.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Controller.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\PixelHitTest.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\GPath.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearSize.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\EllipseMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\AsyncCreationHelper.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\RelationItem.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlParser.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\TranslationHelper.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIConfig.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\RegularPolygonMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\EMRenderSupport.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\PopupMenu.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GSlider.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GProgressBar.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\ShapeHitTest.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\IHtmlPageContext.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\CaptureCamera.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\CompositeMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\PolygonMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\EventContext.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\DynamicFont.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\InputTextField.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\CopyPastePatch.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\MeshColliderHitTest.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GTree.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GLoader.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\MovieClip.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlElement.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlLink.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearDisplay2.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\IKeyboard.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearFontSize.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GTextField.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GImage.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\EventListener.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\UpdateContext.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearLook.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GComponent.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Container.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GObjectPool.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GObject.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\PlaneMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\UIPainter.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlParseOptions.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlButton.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\ByteBuffer.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\StageEngine.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GTextInput.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Relations.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GGroup.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Window.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\TextFormat.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\BitmapFont.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GComboBox.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\XMLList.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\RichTextField.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\ZipReader.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearColor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearIcon.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearXY.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\StageCamera.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\IUISource.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Transition.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearBase.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Shape.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GMovieClip.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Extensions\Spine\SpineLoader.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Filter\ColorFilter.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\StraightLineMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\HitTest\ColliderHitTest.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Mesh\RoundedRectMesh.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\IColorGear.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Event\EventBridge.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlPageContext.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GLabel.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\TweenPropType.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Utils\Html\HtmlInput.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Extensions\TextMeshPro\TMPTextFormat.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\GTween.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Action\PlayTransitionAction.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\ShaderConfig.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\FieldTypes.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Extensions\DragonBones\DragonBonesLoader.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\GLoader3D.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Action\ControllerAction.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Core\Text\TextField.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\UI\Gears\GearAnimation.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Tween\TweenValue.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Extensions\TextMeshPro\TMPFont.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Runtime\Scripts\Gesture\LongPressGesture.cs" />
+     <None Include="Assets\ThirdParty\FairyGUI\Unity.FairyGUI.Runtime.asmdef" />
+     <None Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-Text.shader" />
+     <None Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-Image.shader" />
+     <None Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-Text-Brighter.shader" />
+     <None Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\AddOn\FairyGUI-BlurFilter.shader" />
+     <None Include="Assets\ThirdParty\FairyGUI\Runtime\Resources\Shaders\FairyGUI-BMFont.shader" />
+     <None Include="Assets\ThirdParty\FairyGUI\Extensions\TextMeshPro\Shaders\FairyGUI-TMP.shader" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/Unity2020/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -697,14 +844,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.Model.csproj">
-      <Project>{9498bfb4-d9f5-c441-13e3-3f26f7700e29}</Project>
-      <Name>Unity.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ThirdParty.csproj">
-      <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
-      <Name>Unity.ThirdParty</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
