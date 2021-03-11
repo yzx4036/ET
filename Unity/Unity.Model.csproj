@@ -133,6 +133,7 @@
      <Compile Include="Assets\Model\Core\Async\ETTaskHelper.cs" />
      <Compile Include="Assets\Model\Module\NetworkTCP\TChannel.cs" />
      <Compile Include="Assets\Model\Module\Network\AChannel.cs" />
+     <Compile Include="Assets\Model\Unit\UnitPathComponent.cs" />
      <Compile Include="Assets\Model\Unit\TurnComponent.cs" />
      <Compile Include="Assets\Model\Core\DoubleMap.cs" />
      <Compile Include="Assets\Model\Module\Message\MessagePackHelper.cs" />
@@ -204,6 +205,7 @@
      <Compile Include="Assets\Model\Core\MultiMapComponent.cs" />
      <Compile Include="Assets\Model\Core\Async\ETTaskCompletionSource.cs" />
      <Compile Include="Assets\Model\Core\Helper\StringHelper.cs" />
+     <Compile Include="Assets\Model\Unit\MoveComponent.cs" />
      <Compile Include="Assets\Model\Core\Object\ObjectPool.cs" />
      <None Include="Assets\Model\Unity.Model.asmdef" />
  <Reference Include="UnityEngine">
@@ -437,35 +439,26 @@
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>D:/Program Files/Unity2020/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>E:/_Proj/my/ET/Unity/Library/PackageCache/com.unity.analytics@3.5.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="NPOI.OpenXmlFormats">
- <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/Editor/npoi/NPOI.OpenXmlFormats.dll</HintPath>
- </Reference>
- <Reference Include="NPOI.OOXML">
- <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/Editor/npoi/NPOI.OOXML.dll</HintPath>
- </Reference>
- <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/AstarPathfindingProject/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
- </Reference>
- <Reference Include="CommandLine">
- <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/CommandLine.dll</HintPath>
- </Reference>
- <Reference Include="Pathfinding.ClipperLib">
- <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/AstarPathfindingProject/Clipper/Pathfinding.ClipperLib.dll</HintPath>
- </Reference>
- <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
- </Reference>
  <Reference Include="NPOI">
  <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/Editor/npoi/NPOI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
  <HintPath>E:/_Proj/my/ET/Unity/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="NPOI.OpenXmlFormats">
+ <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/Editor/npoi/NPOI.OpenXmlFormats.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Analytics.StandardEvents">
+ <HintPath>E:/_Proj/my/ET/Unity/Library/PackageCache/com.unity.analytics@3.5.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="NPOI.OOXML">
+ <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/Editor/npoi/NPOI.OOXML.dll</HintPath>
+ </Reference>
  <Reference Include="NPOI.OpenXml4Net">
  <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/Editor/npoi/NPOI.OpenXml4Net.dll</HintPath>
+ </Reference>
+ <Reference Include="CommandLine">
+ <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/CommandLine.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
  <HintPath>E:/_Proj/my/ET/Unity/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Tracker.dll</HintPath>
@@ -473,8 +466,8 @@
  <Reference Include="ICSharpCode.NRefactory">
  <HintPath>E:/_Proj/my/ET/Unity/Library/PackageCache/com.unity.render-pipelines.core@10.2.2/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
  </Reference>
- <Reference Include="Pathfinding.Poly2Tri">
- <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/AstarPathfindingProject/Poly2Tri/Pathfinding.Poly2Tri.dll</HintPath>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="MongoDB.Bson">
  <HintPath>E:/_Proj/my/ET/Unity/Assets/Plugins/MongoDB.Bson.dll</HintPath>
