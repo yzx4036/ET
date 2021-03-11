@@ -75,7 +75,7 @@
      <Compile Include="Assets\Model\Module\Network\Kcp.cs" />
      <Compile Include="Assets\Model\Core\Log\UnityLogger.cs" />
      <Compile Include="Assets\Model\Core\Object\HideInHierarchy.cs" />
-     <Compile Include="Assets\Model\Core\Object\IFixedUpdateSystem.cs" />
+     <Compile Include="Assets\Model\SEyesET\Core\Object\IFixedUpdateSystem.cs" />
      <Compile Include="Assets\Model\Core\Object\EntityCreateComponet.cs" />
      <Compile Include="Assets\Model\Core\Object\IStartSystem.cs" />
      <Compile Include="Assets\Model\Module\Network\Circularbuffer.cs" />
@@ -111,7 +111,7 @@
      <Compile Include="Assets\Model\Core\Object\Entity.cs" />
      <Compile Include="Assets\Model\Core\MultiMap.cs" />
      <Compile Include="Assets\Model\Module\Numeric\NumericWatcherAttribute.cs" />
-     <Compile Include="Assets\Model\Core\Object\IOnApplicationFocusSystem.cs" />
+     <Compile Include="Assets\Model\SEyesET\Core\Object\IOnApplicationFocusSystem.cs" />
      <Compile Include="Assets\Model\Core\HashSetComponent.cs" />
      <Compile Include="Assets\Model\Core\Pool.cs" />
      <Compile Include="Assets\Model\Core\Object\ObjectSystemAttribute.cs" />
@@ -143,7 +143,7 @@
      <Compile Include="Assets\Model\Core\Helper\NetworkHelper.cs" />
      <Compile Include="Assets\Model\Core\Async\ETCancellationToken.cs" />
      <Compile Include="Assets\Model\Core\Object\IAwakeSystem.cs" />
-     <Compile Include="Assets\Model\Module\Resource\AdsResComponent.cs" />
+     <Compile Include="Assets\Model\SEyesET\Module\Resource\AdsResComponent.cs" />
      <Compile Include="Assets\Model\Module\Resource\AssetsLoaderAsync.cs" />
      <Compile Include="Assets\Model\Generate\Config\StartProcessConfig.cs" />
      <Compile Include="Assets\Model\Unit\Unit.cs" />
@@ -168,7 +168,7 @@
      <Compile Include="Assets\Model\Core\ThreadSynchronizationContext.cs" />
      <Compile Include="Assets\Model\Core\Log\LogHelper.cs" />
      <Compile Include="Assets\Model\Session\SessionComponent.cs" />
-     <Compile Include="Assets\Model\Core\Object\IOnApplicationPauseSystem.cs" />
+     <Compile Include="Assets\Model\SEyesET\Core\Object\IOnApplicationPauseSystem.cs" />
      <Compile Include="Assets\Model\Core\Log\ILog.cs" />
      <Compile Include="Assets\Model\Core\Log\Log.cs" />
      <Compile Include="Assets\Model\Core\Helper\RandomHelper.cs" />

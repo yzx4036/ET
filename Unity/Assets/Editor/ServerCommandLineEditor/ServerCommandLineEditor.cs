@@ -10,6 +10,13 @@ namespace ET
 {
     public class ServerCommandLineEditor: EditorWindow
     {
+        [MenuItem("Tools/服务端")]
+        public static void ShowWindow()
+        {
+            EditorWindow window = GetWindow<ServerCommandLineEditor>(true, "服务端工具");
+            window.Show();
+        }
+        
         public void OnGUI()
         {
             if (GUILayout.Button("启动"))
