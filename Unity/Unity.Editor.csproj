@@ -87,6 +87,9 @@
      <Compile Include="Assets\Editor\ComponentViewEditor\Entity\SerializationTypeExtension.cs" />
      <Compile Include="Assets\Editor\ComponentViewEditor\TypeDrawer\UnityObjectTypeDrawer.cs" />
      <Compile Include="Assets\Editor\RsyncEditor\RsyncConfig.cs" />
+     <Compile Include="Assets\Editor\SEyesET\Addressable\BuildTools.cs" />
+     <Compile Include="Assets\Editor\SEyesET\Addressable\AddressableEditor.cs" />
+     <Compile Include="Assets\Editor\SEyesET\Addressable\AddressableWindow.cs" />
      <None Include="Assets\Editor\Unity.Editor.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/Unity2020/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -699,6 +702,12 @@
  </Reference>
  <Reference Include="System.Xml.XPath.XDocument">
  <HintPath>D:/Program Files/Unity2020/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Addressables">
+ <HintPath>E:/_Proj/my/ET/Unity/Library/ScriptAssemblies/Unity.Addressables.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Addressables.Editor">
+ <HintPath>E:/_Proj/my/ET/Unity/Library/ScriptAssemblies/Unity.Addressables.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>E:/_Proj/my/ET/Unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
