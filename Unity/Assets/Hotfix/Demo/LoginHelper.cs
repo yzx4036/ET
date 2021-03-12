@@ -9,7 +9,7 @@ namespace ET
         {
             try
             {
-                // 创建一个ETModel层的Session
+                // 创建一个ET层的Session
                 R2C_Login r2CLogin;
                 using (Session session = zoneScene.GetComponent<NetKcpComponent>().Create(NetworkHelper.ToIPEndPoint(address)))
                 {

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<packageDescription id="745v0ywm">
-  <resources>
-    <component id="owjx0" name="Component1.xml" path="/" exported="true"/>
-    <component id="owjx1" name="Component2.xml" path="/" exported="true"/>
-    <image id="lhbm20" name="MuMu20201104232523.png" path="/ImagesEffect/"/>
-  </resources>
-  <publish name=""/>
-</packageDescription>

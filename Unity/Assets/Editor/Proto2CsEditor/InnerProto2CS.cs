@@ -26,8 +26,8 @@ namespace ET
 		public static void Proto2CS()
 		{
 			msgOpcode.Clear();
-			Proto2CS("ETModel", "InnerMessage.proto", serverMessagePath, "InnerOpcode", 1000);
-			GenerateOpcode("ETModel", "InnerOpcode", serverMessagePath);
+			Proto2CS("ET", "InnerMessage.proto", serverMessagePath, "InnerOpcode", 1000);
+			GenerateOpcode("ET", "InnerOpcode", serverMessagePath);
 
 			AssetDatabase.Refresh();
 		}

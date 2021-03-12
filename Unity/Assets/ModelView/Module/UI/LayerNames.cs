@@ -2,7 +2,7 @@
 
 namespace ET
 {
-	public static class LayerNames
+	public static partial class LayerNames
 	{
 		/// <summary>
 		/// UI层

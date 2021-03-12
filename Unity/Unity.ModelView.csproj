@@ -73,6 +73,12 @@
      <Compile Include="Assets\ModelView\Module\UI\UIEventAttribute.cs" />
      <Compile Include="Assets\ModelView\Global\GlobalComponent.cs" />
      <Compile Include="Assets\ModelView\Unit\GameObjectComponent.cs" />
+     <Compile Include="Assets\ModelView\SEyesET\FUI\Core\FUI.cs" />
+     <Compile Include="Assets\ModelView\SEyesET\FUI\Core\FUIPackageComponent.cs" />
+     <Compile Include="Assets\ModelView\SEyesET\FUI\Core\FUIComponent.cs" />
+     <Compile Include="Assets\ModelView\SEyesET\FUI\Core\FUIStackComponent.cs" />
+     <Compile Include="Assets\ModelView\SEyesET\FUI\Core\GObjectHelper.cs" />
+     <Compile Include="Assets\ModelView\SEyesET\FUI\Core\GComponentHelper.cs" />
      <None Include="Assets\ModelView\Unity.ModelView.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/Unity2020/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -694,6 +700,10 @@
     <ProjectReference Include="Unity.Model.csproj">
       <Project>{9498bfb4-d9f5-c441-13e3-3f26f7700e29}</Project>
       <Name>Unity.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.FairyGUI.Runtime.csproj">
+      <Project>{6a8d0702-42f0-5d76-85ad-170ad6896d45}</Project>
+      <Name>Unity.FairyGUI.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.ThirdParty.csproj">
       <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>

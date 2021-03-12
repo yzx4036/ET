@@ -5,7 +5,6 @@
         "Unity.ThirdParty",
         "Unity.ResourceManager",
         "Unity.Addressables",
-        "Unity.Puerts.Runtime",
         "Unity.FairyGUI.Runtime"
     ],
     "includePlatforms": [],
