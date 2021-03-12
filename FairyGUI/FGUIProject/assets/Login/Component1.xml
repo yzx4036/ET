@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="188,59" extention="Button">
+  <controller name="button" pages="2,up,3,down" selected="0"/>
+  <displayList>
+    <image id="n16_lhbm" name="n16" src="lhbm19" fileName="Images/server_item_bg1_64a234a9.png" xy="0,0" size="188,59">
+      <gearDisplay controller="button" pages="2"/>
+    </image>
+    <image id="n17_lhbm" name="n17" src="lhbm1a" fileName="Images/server_item_bg2_87045d21.png" xy="0,0" size="188,59">
+      <gearDisplay controller="button" pages="3"/>
+    </image>
+    <text id="n28_lhbm" name="n28" xy="64,12" size="52,34" fontSize="24" color="#2a434a" text="推荐"/>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

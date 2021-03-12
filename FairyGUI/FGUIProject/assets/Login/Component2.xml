@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="454,59" extention="Button">
+  <controller name="button" pages="2,up,3,down" selected="0"/>
+  <controller name="c1" pages="0,,1,,2," selected="2"/>
+  <displayList>
+    <image id="n16_lhbm" name="n16" src="lhbm19" fileName="Images/server_item_bg1_64a234a9.png" xy="0,0" size="454,59">
+      <gearDisplay controller="button" pages="2"/>
+    </image>
+    <image id="n17_lhbm" name="n17" src="lhbm1a" fileName="Images/server_item_bg2_87045d21.png" xy="0,0" size="454,59">
+      <gearDisplay controller="button" pages="3"/>
+    </image>
+    <text id="n28_lhbm" name="title" xy="64,12" size="52,34" fontSize="24" color="#2a434a" text="推荐"/>
+    <image id="n29_lhbm" name="n29" src="lhbm1c" fileName="Images/server_state2_d51f571e.png" xy="412,19">
+      <gearDisplay controller="c1" pages="2"/>
+    </image>
+    <image id="n30_lhbm" name="n30" src="lhbm1d" fileName="Images/server_state3_d75f91ba.png" xy="412,19">
+      <gearDisplay controller="c1" pages="1"/>
+    </image>
+    <image id="n31_lhbm" name="n31" src="lhbm1e" fileName="Images/server_state5_c633e07e.png" xy="412,19">
+      <gearDisplay controller="c1" pages="0"/>
+    </image>
+    <image id="n32_lhbm" name="imgNew" src="lhbm1k" fileName="Images/img_new_7dffa5ec.png" xy="406,0"/>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

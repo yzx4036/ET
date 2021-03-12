@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1136,640" overflow="hidden">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <graph id="n30_ftnv" name="n30" xy="0,0" size="1136,640" alpha="0.5" type="rect" lineSize="0" fillColor="#ff0099cc"/>
+    <text id="n31_ftnv" name="n31" xy="164,185" size="727,54" fontSize="40" text="这是一个在model层的界面。不能热更新"/>
+    <component id="n33_ftnv" name="n33" src="ftnv92" fileName="Component/Component1.xml" xy="479,522">
+      <Button title="我是按钮"/>
+    </component>
+  </displayList>
+</component>
