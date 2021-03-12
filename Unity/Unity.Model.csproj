@@ -52,11 +52,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Model\Helper\PathHelper.cs" />
+     <Compile Include="Assets\Model\Demo\Helper\PathHelper.cs" />
      <Compile Include="Assets\Model\Core\Entity\EntitySceneFactory.cs" />
      <Compile Include="Assets\Model\Generate\Config\StartZoneConfig.cs" />
      <Compile Include="Assets\Model\Module\Message\MessageProxy.cs" />
-     <Compile Include="Assets\Model\EventType.cs" />
      <Compile Include="Assets\Model\Core\FunctionCallback.cs" />
      <Compile Include="Assets\Model\Module\Message\SessionIdleCheckerComponent.cs" />
      <Compile Include="Assets\Model\Module\Message\MessageDispatcherComponent.cs" />
@@ -123,7 +122,7 @@
      <Compile Include="Assets\Model\Core\Object\ComponentView.cs" />
      <Compile Include="Assets\Model\Core\QueueDictionary.cs" />
      <Compile Include="Assets\Model\Generate\Message\OuterOpcode.cs" />
-     <Compile Include="Assets\Model\Helper\PositionHelper.cs" />
+     <Compile Include="Assets\Model\Demo\Helper\PositionHelper.cs" />
      <Compile Include="Assets\Model\Core\ListComponent.cs" />
      <Compile Include="Assets\Model\Core\Log\NLogger.cs" />
      <Compile Include="Assets\Model\Module\Message\MessagePool.cs" />
@@ -133,8 +132,8 @@
      <Compile Include="Assets\Model\Core\Async\ETTaskHelper.cs" />
      <Compile Include="Assets\Model\Module\NetworkTCP\TChannel.cs" />
      <Compile Include="Assets\Model\Module\Network\AChannel.cs" />
-     <Compile Include="Assets\Model\Unit\UnitPathComponent.cs" />
-     <Compile Include="Assets\Model\Unit\TurnComponent.cs" />
+     <Compile Include="Assets\Model\Demo\Unit\UnitPathComponent.cs" />
+     <Compile Include="Assets\Model\Demo\Unit\TurnComponent.cs" />
      <Compile Include="Assets\Model\Core\DoubleMap.cs" />
      <Compile Include="Assets\Model\Module\Message\MessagePackHelper.cs" />
      <Compile Include="Assets\Model\Core\UnOrderMultiMapSet.cs" />
@@ -146,7 +145,7 @@
      <Compile Include="Assets\Model\SEyesET\Module\Resource\AdsResComponent.cs" />
      <Compile Include="Assets\Model\Module\Resource\AssetsLoaderAsync.cs" />
      <Compile Include="Assets\Model\Generate\Config\StartProcessConfig.cs" />
-     <Compile Include="Assets\Model\Unit\Unit.cs" />
+     <Compile Include="Assets\Model\Demo\Unit\Unit.cs" />
      <Compile Include="Assets\Model\Generate\Message\OuterMessage.cs" />
      <Compile Include="Assets\Model\Module\Message\MessageSerializeHelper.cs" />
      <Compile Include="Assets\Model\Module\Resource\ResourcesComponent.cs" />
@@ -163,11 +162,10 @@
      <Compile Include="Assets\Model\Module\Message\SessionCallbackComponent.cs" />
      <Compile Include="Assets\Model\Core\MultiDictionary.cs" />
      <Compile Include="Assets\Model\Core\Entity\TimerComponent.cs" />
-     <Compile Include="Assets\Model\Define.cs" />
      <Compile Include="Assets\Model\Core\Async\IAwaiter.cs" />
      <Compile Include="Assets\Model\Core\ThreadSynchronizationContext.cs" />
      <Compile Include="Assets\Model\Core\Log\LogHelper.cs" />
-     <Compile Include="Assets\Model\Session\SessionComponent.cs" />
+     <Compile Include="Assets\Model\Demo\Session\SessionComponent.cs" />
      <Compile Include="Assets\Model\SEyesET\Core\Object\IOnApplicationPauseSystem.cs" />
      <Compile Include="Assets\Model\Core\Log\ILog.cs" />
      <Compile Include="Assets\Model\Core\Log\Log.cs" />
@@ -184,7 +182,7 @@
      <Compile Include="Assets\Model\Core\Object\IChangeSystem.cs" />
      <Compile Include="Assets\Model\Module\Network\AService.cs" />
      <Compile Include="Assets\Model\Core\Async\AsyncETTaskMethodBuilder.cs" />
-     <Compile Include="Assets\Model\Unit\UnitComponent.cs" />
+     <Compile Include="Assets\Model\Demo\Unit\UnitComponent.cs" />
      <Compile Include="Assets\Model\Module\Config\ConfigComponent.cs" />
      <Compile Include="Assets\Model\Module\CoroutineLock\CoroutineLockQueue.cs" />
      <Compile Include="Assets\Model\Core\Object\NoMemoryCheck.cs" />
@@ -205,8 +203,13 @@
      <Compile Include="Assets\Model\Core\MultiMapComponent.cs" />
      <Compile Include="Assets\Model\Core\Async\ETTaskCompletionSource.cs" />
      <Compile Include="Assets\Model\Core\Helper\StringHelper.cs" />
-     <Compile Include="Assets\Model\Unit\MoveComponent.cs" />
+     <Compile Include="Assets\Model\Demo\Unit\MoveComponent.cs" />
      <Compile Include="Assets\Model\Core\Object\ObjectPool.cs" />
+     <Compile Include="Assets\Model\Demo\EventType.cs" />
+     <Compile Include="Assets\Model\Core\Scene\ZoneSceneManagerComponent.cs" />
+     <Compile Include="Assets\Model\Demo\Define.cs" />
+     <Compile Include="Assets\Model\Core\Scene\ZoneSceneFlagComponent.cs" />
+     <Compile Include="Assets\Model\Core\Scene\SceneHelper.cs" />
      <None Include="Assets\Model\Unity.Model.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/Unity2020/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
