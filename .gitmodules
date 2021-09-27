@@ -1,3 +1,6 @@
 [submodule "Unity/Assets/ThirdParty/unityfs_plugin"]
 	path = Unity/Assets/ThirdParty/unityfs_plugin
 	url = git@github.com:yzx4036/unityfs_plugin.git
+[submodule "unityfs_httpserver"]
+	path = unityfs_httpserver
+	url = git@github.com:yzx4036/unityfs_httpserver.git
