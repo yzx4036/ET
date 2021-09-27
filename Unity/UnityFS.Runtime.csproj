@@ -12,12 +12,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>ET</RootNamespace>
-    <ProjectGuid>{5910fa29-5797-199c-985b-fc9fc473328e}</ProjectGuid>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{87d79db0-7e69-8d82-61fd-a79a72be7480}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Unity.Mono</AssemblyName>
+    <AssemblyName>UnityFS.Runtime</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -31,7 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn></NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -41,7 +41,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn></NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
@@ -52,35 +52,50 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Mono\Core\Helper\NetworkHelper.cs" />
-     <Compile Include="Assets\Mono\MonoBehaviour\Init.cs" />
-     <Compile Include="Assets\Mono\Core\Async\ETCancellationToken.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\ProcessHelper.cs" />
-     <Compile Include="Assets\Mono\MonoBehaviour\ReferenceCollector.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\EnumHelper.cs" />
-     <Compile Include="Assets\Mono\Core\Async\ETTask.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\FileHelper.cs" />
-     <Compile Include="Assets\Mono\Core\ThreadSynchronizationContext.cs" />
-     <Compile Include="Assets\Mono\Core\Async\AsyncETVoidMethodBuilder.cs" />
-     <Compile Include="Assets\Mono\Core\Async\AsyncMethodBuilderAttribute.cs" />
-     <Compile Include="Assets\Mono\MonoBehaviour\UILayerScript.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\ByteHelper.cs" />
-     <Compile Include="Assets\Mono\Core\Async\IAwaiter.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\JsonHelper.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\RandomHelper.cs" />
-     <Compile Include="Assets\Mono\MonoBehaviour\GizmosDebug.cs" />
-     <Compile Include="Assets\Mono\Core\Async\AsyncETTaskCompletedMethodBuilder.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\ZipHelper.cs" />
-     <Compile Include="Assets\Mono\Core\Async\AsyncETTaskMethodBuilder.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\MD5Helper.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\ObjectHelper.cs" />
-     <Compile Include="Assets\Mono\Core\Async\ETVoid.cs" />
-     <Compile Include="Assets\Mono\Core\Async\ETTaskCompleted.cs" />
-     <Compile Include="Assets\Mono\MonoBehaviour\ComponentView.cs" />
-     <Compile Include="Assets\Mono\MonoBehaviour\CanvasConfig.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\StringHelper.cs" />
-     <Compile Include="Assets\Mono\Core\Async\ETTaskHelper.cs" />
-     <None Include="Assets\Mono\Unity.Mono.asmdef" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\StreamingAssetsLoader.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\FileSystem.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\RefCounted.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\TaskManager.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\AssetHandle.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Analyzer\AnalyzerTimeline.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\BuiltinAssetProvider.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\OrdinaryFileSystem.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\NetworkMonitor.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\PrefabPools.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\EAssetHints.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\Helpers.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\MD5Hash.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\AssetProviderListener.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\UScene.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\FailureFileSystem.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\UFailureAsset.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\ReferenceHolder.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\ResourceManager.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\JobScheduler.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\UAssets.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\IDataChecker.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Manifest.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\UAsset.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\AbstractFileSystem.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\AssetListData.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider+Asset.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Metadata.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\DownloadWorker.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\AssetProvider.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\ILogger.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\_AssetDatabaseAssetProvider.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\CountdownObject.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\Crc16.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\UBundle.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\PrefabLoader.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Analyzer\AssetsAnalyzer.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\PrefabPool.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider+Job.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Task.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\TaskInspector.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\ChunkedStream.cs" />
+     <None Include="Assets\ThirdParty\unityfs_plugin\UnityFS.Runtime.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/Unity2020_3_2/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -680,10 +695,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.ThirdParty.csproj">
-      <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
-      <Name>Unity.ThirdParty</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

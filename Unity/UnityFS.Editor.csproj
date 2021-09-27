@@ -12,12 +12,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>ET</RootNamespace>
-    <ProjectGuid>{5910fa29-5797-199c-985b-fc9fc473328e}</ProjectGuid>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{b66172b1-39f9-91d0-e7a9-8d028f006841}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Unity.Mono</AssemblyName>
+    <AssemblyName>UnityFS.Editor</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -31,7 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn></NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -41,7 +41,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn></NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
@@ -52,35 +52,29 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Mono\Core\Helper\NetworkHelper.cs" />
-     <Compile Include="Assets\Mono\MonoBehaviour\Init.cs" />
-     <Compile Include="Assets\Mono\Core\Async\ETCancellationToken.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\ProcessHelper.cs" />
-     <Compile Include="Assets\Mono\MonoBehaviour\ReferenceCollector.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\EnumHelper.cs" />
-     <Compile Include="Assets\Mono\Core\Async\ETTask.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\FileHelper.cs" />
-     <Compile Include="Assets\Mono\Core\ThreadSynchronizationContext.cs" />
-     <Compile Include="Assets\Mono\Core\Async\AsyncETVoidMethodBuilder.cs" />
-     <Compile Include="Assets\Mono\Core\Async\AsyncMethodBuilderAttribute.cs" />
-     <Compile Include="Assets\Mono\MonoBehaviour\UILayerScript.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\ByteHelper.cs" />
-     <Compile Include="Assets\Mono\Core\Async\IAwaiter.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\JsonHelper.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\RandomHelper.cs" />
-     <Compile Include="Assets\Mono\MonoBehaviour\GizmosDebug.cs" />
-     <Compile Include="Assets\Mono\Core\Async\AsyncETTaskCompletedMethodBuilder.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\ZipHelper.cs" />
-     <Compile Include="Assets\Mono\Core\Async\AsyncETTaskMethodBuilder.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\MD5Helper.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\ObjectHelper.cs" />
-     <Compile Include="Assets\Mono\Core\Async\ETVoid.cs" />
-     <Compile Include="Assets\Mono\Core\Async\ETTaskCompleted.cs" />
-     <Compile Include="Assets\Mono\MonoBehaviour\ComponentView.cs" />
-     <Compile Include="Assets\Mono\MonoBehaviour\CanvasConfig.cs" />
-     <Compile Include="Assets\Mono\Core\Helper\StringHelper.cs" />
-     <Compile Include="Assets\Mono\Core\Async\ETTaskHelper.cs" />
-     <None Include="Assets\Mono\Unity.Mono.asmdef" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilder.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderWindow.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\PathUtils.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\PackagePlatforms.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\AssetAttributes.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\SearchResult.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData+BundleSplit.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\PackageSharedBuildInfo.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BaseEditorWindow.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\PackageBuildInfo+Entry.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\TreeView\BundleBuilderTreeView.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\TreeView\BundleBuilderTreeViewHeader.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\PackageBuildInfo.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData+AssetInfo.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData+BundleInfo.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\AssetListDataInspector.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData+BundleSlice.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilder+Scan.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleReportWindow.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\TreeView\BundleBuilderTreeViewItem.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleAssetTypes.cs" />
+     <None Include="Assets\ThirdParty\unityfs_plugin\Editor\UnityFS.Editor.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/Unity2020_3_2/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -323,6 +317,9 @@
  </Reference>
  <Reference Include="ICSharpCode.SharpZipLib">
  <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Assets/ThirdParty/unityfs_plugin/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/Program Files/Unity2020_3_2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -678,11 +675,17 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TestRunner">
+ <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.ThirdParty.csproj">
-      <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
-      <Name>Unity.ThirdParty</Name>
+    <ProjectReference Include="UnityFS.Runtime.csproj">
+      <Project>{87d79db0-7e69-8d82-61fd-a79a72be7480}</Project>
+      <Name>UnityFS.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
