@@ -52,49 +52,49 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\StreamingAssetsLoader.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\FileSystem.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\RefCounted.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\TaskManager.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\AssetHandle.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Analyzer\AnalyzerTimeline.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\BuiltinAssetProvider.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\OrdinaryFileSystem.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\NetworkMonitor.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\PrefabPools.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\EAssetHints.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\Helpers.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\MD5Hash.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\AssetProviderListener.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\UScene.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\FailureFileSystem.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\UFailureAsset.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\ReferenceHolder.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\ResourceManager.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\JobScheduler.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\UAssets.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\IDataChecker.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Manifest.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\UAsset.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\AbstractFileSystem.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\AssetListData.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider+Asset.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Analyzer\AssetsAnalyzer.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Task.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Analyzer\AnalyzerTimeline.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\OrdinaryFileSystem.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\Metadata.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\DownloadWorker.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\AssetProvider.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\MD5Hash.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\UScene.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\AbstractFileSystem.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\CountdownObject.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\ChunkedStream.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\ILogger.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\_AssetDatabaseAssetProvider.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\CountdownObject.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\Crc16.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\UBundle.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\PrefabLoader.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Analyzer\AssetsAnalyzer.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\PrefabPool.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider+Job.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Task.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\AssetListData.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\NetworkMonitor.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\PrefabPools.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\TaskInspector.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\ChunkedStream.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\Helpers.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider+Asset.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\RefCounted.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\Crc16.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\AssetProvider.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\UAsset.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\StreamingAssetsLoader.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\AssetProviderListener.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Manifest.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\UFailureAsset.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\IDataChecker.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\FileSystem.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\TaskManager.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\EAssetHints.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\FailureFileSystem.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\ResourceManager.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\DownloadWorker.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\AssetHandle.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\BuiltinAssetProvider.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\JobScheduler.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\ReferenceHolder.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\UBundle.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\PrefabPool.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\PrefabLoader.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider+Job.cs" />
      <None Include="Assets\ThirdParty\unityfs_plugin\UnityFS.Runtime.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/Unity2020_3_2/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -330,14 +330,14 @@
  <Reference Include="UnityEditor.UWP.Extensions">
  <HintPath>D:/Program Files/Unity2020_3_2/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Assets/ThirdParty/unityfs_plugin/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
  <Reference Include="CommandLine">
  <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Assets/Plugins/CommandLine.dll</HintPath>
  </Reference>
  <Reference Include="MongoDB.Bson">
  <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Assets/Plugins/MongoDB.Bson.dll</HintPath>
- </Reference>
- <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Assets/ThirdParty/unityfs_plugin/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/Program Files/Unity2020_3_2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

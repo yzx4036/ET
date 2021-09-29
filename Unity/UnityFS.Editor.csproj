@@ -52,27 +52,27 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData+BundleSplit.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\PackageBuildInfo+Entry.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilder.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BaseEditorWindow.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\SearchResult.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\AssetListDataInspector.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderWindow.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\TreeView\BundleBuilderTreeViewHeader.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData+BundleSlice.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\PathUtils.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\PackagePlatforms.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\AssetAttributes.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\SearchResult.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData+BundleSplit.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\PackageSharedBuildInfo.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BaseEditorWindow.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\PackageBuildInfo+Entry.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\TreeView\BundleBuilderTreeView.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\TreeView\BundleBuilderTreeViewHeader.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\PackageBuildInfo.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData+AssetInfo.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData+BundleInfo.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\AssetListDataInspector.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData+BundleSlice.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilder+Scan.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleReportWindow.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\PackageBuildInfo.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\TreeView\BundleBuilderTreeView.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData+AssetInfo.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\AssetAttributes.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilderData.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\TreeView\BundleBuilderTreeViewItem.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleBuilder+Scan.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\PackageSharedBuildInfo.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleReportWindow.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\Editor\BundleAssetTypes.cs" />
      <None Include="Assets\ThirdParty\unityfs_plugin\Editor\UnityFS.Editor.asmdef" />
  <Reference Include="UnityEngine">
@@ -309,14 +309,14 @@
  <Reference Include="UnityEditor.UWP.Extensions">
  <HintPath>D:/Program Files/Unity2020_3_2/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Assets/ThirdParty/unityfs_plugin/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
  <Reference Include="CommandLine">
  <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Assets/Plugins/CommandLine.dll</HintPath>
  </Reference>
  <Reference Include="MongoDB.Bson">
  <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Assets/Plugins/MongoDB.Bson.dll</HintPath>
- </Reference>
- <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Assets/ThirdParty/unityfs_plugin/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>D:/__Doc/Proj/UnityProj/ET_Old/Unity/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
