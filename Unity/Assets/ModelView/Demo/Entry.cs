@@ -5,6 +5,14 @@ using System.Threading;
 
 namespace ET
 {
+	public static class TestEntry
+	{
+		public static void Test()
+		{
+			UnityEngine.Debug.Log("111111111111111111111111111ffff TestEntry");
+		}
+	}
+	
 	public class Entry : IEntry
 	{
 		public void Start()
@@ -27,7 +35,7 @@ namespace ET
 				
 				Game.Options = new Options();
 				
-				Game.EventSystem.Publish(new EventType.AppStart());
+				Game.EventSystem.Publish(new EventType.AppStart()).Coroutine();
 			}
 			catch (Exception e)
 			{

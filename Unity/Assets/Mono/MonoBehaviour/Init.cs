@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Threading;
 using UnityEngine;
 
@@ -22,17 +24,40 @@ namespace ET
 			SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
 			
 			DontDestroyOnLoad(gameObject);
-			
+
 			Assembly modelAssembly = null;
-			foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+
+			if (Define.IsEditor)
 			{
-				string assemblyName = $"{assembly.GetName().Name}.dll";
-				if (assemblyName != "Unity.ModelView.dll")
+				UnityEngine.Debug.Log("unity editor mode!");
+				foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
 				{
-					continue;
+					string assemblyName = $"{assembly.GetName().Name}.dll";
+					if (assemblyName != "Unity.ModelView.dll")
+					{
+						continue;
+					}
+
+					modelAssembly = assembly;
+					break;
 				}
-				modelAssembly = assembly;
-				break;
+			}
+			else
+			{
+				byte[] log = new byte[1024];
+				Interpreter.InterpreterSetLog((buff, n) =>
+				{
+					Marshal.Copy(buff, log, 0, n);
+					UnityEngine.Debug.Log(log.Utf8ToStr(0, n));
+				});
+				Interpreter.InterpreterInit(@"E:\ET\Unity\UnityScript\", "Unity.Script.dll");
+				
+				/*
+				UnityEngine.Debug.Log("unity script mode!");
+				byte[] dllBytes = File.ReadAllBytes("./Temp/Bin/Debug/Unity.Script.dll");
+				byte[] pdbBytes = File.ReadAllBytes("./Temp/Bin/Debug/Unity.Script.pdb");
+				modelAssembly = Assembly.Load(dllBytes, pdbBytes);
+				*/
 			}
 
 			Type initType = modelAssembly.GetType("ET.Entry");
