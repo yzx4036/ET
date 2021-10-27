@@ -8,7 +8,7 @@ namespace ET
 {
 	using OneTypeSystems = UnOrderMultiMap<Type, object>;
 
-	public sealed class EventSystem: IDisposable
+	public sealed partial class EventSystem: IDisposable
 	{
 		private class TypeSystems
 		{
@@ -145,6 +145,8 @@ namespace ET
 				}
 				this.allEvents[eventType].Add(obj);
 			}
+			
+			CustomTypesLogic(this.types);
 			
 			this.Load();
 		}
