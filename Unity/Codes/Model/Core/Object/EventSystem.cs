@@ -146,7 +146,7 @@ namespace ET
 				this.allEvents[eventType].Add(obj);
 			}
 			
-			CustomTypesLogic(this.types);
+			// CustomTypesLogic(this.types);
 			
 			this.Load();
 		}
