@@ -24,7 +24,7 @@ namespace ET
                 Game.EventSystem.Add(DllHelper.GetHotfixAssembly());
 				
                 ProtobufHelper.Init();
-                MongoHelper.Init();
+                MongoRegister.Init();
 				
                 // 命令行参数
                 Options options = null;
@@ -32,9 +32,9 @@ namespace ET
                         .WithNotParsed(error => throw new Exception($"命令行格式错误!"))
                         .WithParsed(o => { options = o; });
 
-                Game.Options = options;
+                Options.Instance = options;
 
-                Game.ILog = new NLogger(Game.Options.AppType.ToString());
+                Log.ILog = new NLogger(Game.Options.AppType.ToString());
                 
                 LogManager.Configuration.Variables["appIdFormat"] = $"{Game.Options.Process:000000}";
 				
