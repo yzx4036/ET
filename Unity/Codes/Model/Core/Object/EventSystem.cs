@@ -69,7 +69,9 @@ namespace ET
 		private readonly Dictionary<long, Entity> allEntities = new Dictionary<long, Entity>();
 
 		private readonly Dictionary<string, Assembly> assemblies = new Dictionary<string, Assembly>();
-		
+
+		private readonly Dictionary<string, Type> allTypes = new Dictionary<string, Type>();
+
 		private readonly UnOrderMultiMapSet<Type, Type> types = new UnOrderMultiMapSet<Type, Type>();
 
 		private readonly Dictionary<Type, List<object>> allEvents = new Dictionary<Type, List<object>>();
@@ -87,76 +89,52 @@ namespace ET
 
 		private EventSystem()
 		{
-			this.Add(typeof(EventSystem).Assembly);
 		}
 
-		public void Add(List<Type> addTypes)
-		{
-			this.types.Clear();
 
+		private static List<Type> GetBaseAttributes(Type[] addTypes)
+		{
+			List<Type> attributeTypes = new List<Type>();
+			foreach (Type type in addTypes)
+			{
+				if (type.IsAbstract)
+				{
+					continue;
+				}
+                
+				if (type.IsSubclassOf(typeof(BaseAttribute)))
+				{
+					attributeTypes.Add(type);
+				}
+			}
+			return attributeTypes;
+		}
+
+		public void Add(Type[] addTypes)
+		{
+			this.allTypes.Clear();
 			foreach (Type addType in addTypes)
 			{
-				this.types.Add(addType.GetType(), addType);
-			}
-
-			this.typeSystems = new TypeSystems();
-			
-			foreach (Type type in this.GetTypes(typeof(ObjectSystemAttribute)))
-			{
-				object obj = Activator.CreateInstance(type);
-
-				if (obj is ISystemType iSystemType)
-				{
-					OneTypeSystems oneTypeSystems = this.typeSystems.GetOrCreateOneTypeSystems(iSystemType.Type());
-					oneTypeSystems.Add(iSystemType.SystemType(), obj);
-				}
-			}
-
-			this.allEvents.Clear();
-			foreach (Type type in types[typeof(EventAttribute)])
-			{
-				IEvent obj = Activator.CreateInstance(type) as IEvent;
-				if (obj == null)
-				{
-					throw new Exception($"type not is AEvent: {obj.GetType().Name}");
-				}
-
-				Type eventType = obj.GetEventType();
-				if (!this.allEvents.ContainsKey(eventType))
-				{
-					this.allEvents.Add(eventType, new List<object>());
-				}
-				this.allEvents[eventType].Add(obj);
+				this.allTypes[addType.FullName] = addType;
 			}
 			
-			this.Load();
-		}
-
-		public void Add(Assembly assembly)
-		{
-			this.assemblies[$"{assembly.GetName().Name}.dll"] = assembly;
-
-			List<Type> addTypes = new List<Type>();
 			this.types.Clear();
-			foreach (Assembly value in this.assemblies.Values)
+			
+			List<Type> baseAttributeTypes = GetBaseAttributes(addTypes);
+			foreach (Type baseAttributeType in baseAttributeTypes)
 			{
-				foreach (Type type in value.GetTypes())
+				foreach (Type type in addTypes)
 				{
 					if (type.IsAbstract)
 					{
 						continue;
 					}
-
-					object[] objects = type.GetCustomAttributes(typeof(BaseAttribute), true);
+					object[] objects = type.GetCustomAttributes(baseAttributeType, true);
 					if (objects.Length == 0)
 					{
 						continue;
 					}
-
-					foreach (BaseAttribute baseAttribute in objects)
-					{
-						this.types.Add(baseAttribute.AttributeType, type);
-					}
+					this.types.Add(baseAttributeType, type);
 				}
 			}
 
@@ -195,11 +173,18 @@ namespace ET
 			this.Load();
 		}
 
-
-		
-		public Assembly GetAssembly(string name)
+		public void Add(Assembly assembly)
 		{
-			return this.assemblies[name];
+			this.assemblies[$"{assembly.GetName().Name}.dll"] = assembly;
+
+			List<Type> addTypes = new List<Type>();
+
+			foreach (Assembly ass in this.assemblies.Values)
+			{
+				addTypes.AddRange(ass.GetTypes());
+			}
+			
+			this.Add(addTypes.ToArray());
 		}
 		
 		public HashSet<Type> GetTypes(Type systemAttributeType)
@@ -211,19 +196,14 @@ namespace ET
 			return this.types[systemAttributeType];
 		}
 		
-		public List<Type> GetTypes()
+		public Dictionary<string, Type> GetTypes()
 		{
-			List<Type> allTypes = new List<Type>();
-			foreach (Assembly assembly in this.assemblies.Values)
-			{
-				allTypes.AddRange(assembly.GetTypes());
-			}
 			return allTypes;
 		}
 
 		public Type GetType(string typeName)
 		{
-			return typeof (Game).Assembly.GetType(typeName);
+			return this.allTypes[typeName];
 		}
 
 		public void RegisterSystem(Entity component, bool isRegister = true)
@@ -583,26 +563,34 @@ namespace ET
 				return;
 			}
 
-			using (var list = ListComponent<ETTask>.Create())
+			ListComponent<ETTask> list = null;
+			try
 			{
-				foreach (object obj in iEvents)
+				list = ListComponent<ETTask>.Create();
 				{
-					if (!(obj is AEvent<T> aEvent))
+					foreach (object obj in iEvents)
 					{
-						Log.Error($"event error: {obj.GetType().Name}");
-						continue;
-					}
+						if (!(obj is AEvent<T> aEvent))
+						{
+							Log.Error($"event error: {obj.GetType().Name}");
+							continue;
+						}
 
-					list.List.Add(aEvent.Handle(a));
+						list.List.Add(aEvent.Handle(a));
+					}
+					try
+					{
+						await ETTaskHelper.WaitAll(list.List);
+					}
+					catch (Exception e)
+					{
+						Log.Error(e);
+					}
 				}
-				try
-				{
-					await ETTaskHelper.WaitAll(list.List);
-				}
-				catch (Exception e)
-				{
-					Log.Error(e);
-				}
+			}
+			finally
+			{
+				list?.Dispose();
 			}
 		}
 

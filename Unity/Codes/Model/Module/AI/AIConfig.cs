@@ -8,6 +8,8 @@ namespace ET
 {
 	public partial class AIConfigCategory
 	{
+		[ProtoIgnore]
+		[BsonIgnore]
 		public Dictionary<int, SortedDictionary<int, AIConfig>> AIConfigs = new Dictionary<int, SortedDictionary<int, AIConfig>>();
 
 		public SortedDictionary<int, AIConfig> GetAI(int aiConfigId)
@@ -15,10 +17,8 @@ namespace ET
 			return this.AIConfigs[aiConfigId];
 		}
 		
-		public override void EndInit()
+		public override void AfterEndInit()
 		{
-			base.EndInit();
-			
 			foreach (var kv in this.GetAll())
 			{
 				SortedDictionary<int, AIConfig> aiNodeConfig;
