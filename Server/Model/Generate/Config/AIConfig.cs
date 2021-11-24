@@ -28,10 +28,9 @@ namespace ET
         {
             foreach (AIConfig config in list)
             {
+                config.EndInit();
                 this.dict.Add(config.Id, config);
-            }
-            list.Clear();
-            
+            }            
             this.AfterEndInit();
         }
 		

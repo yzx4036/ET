@@ -28,10 +28,9 @@ namespace ET
         {
             foreach (StartProcessConfig config in list)
             {
+                config.EndInit();
                 this.dict.Add(config.Id, config);
-            }
-            list.Clear();
-            
+            }            
             this.AfterEndInit();
         }
 		
