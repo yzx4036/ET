@@ -87,76 +87,46 @@ namespace ET
 
 		private EventSystem()
 		{
-			this.Add(typeof(EventSystem).Assembly);
 		}
 
-		public void Add(List<Type> addTypes)
+
+		private static List<Type> GetBaseAttributes(Type[] addTypes)
 		{
-			this.types.Clear();
-
-			foreach (Type addType in addTypes)
+			List<Type> attributeTypes = new List<Type>();
+			foreach (Type type in addTypes)
 			{
-				this.types.Add(addType.GetType(), addType);
-			}
-
-			this.typeSystems = new TypeSystems();
-			
-			foreach (Type type in this.GetTypes(typeof(ObjectSystemAttribute)))
-			{
-				object obj = Activator.CreateInstance(type);
-
-				if (obj is ISystemType iSystemType)
+				if (type.IsAbstract)
 				{
-					OneTypeSystems oneTypeSystems = this.typeSystems.GetOrCreateOneTypeSystems(iSystemType.Type());
-					oneTypeSystems.Add(iSystemType.SystemType(), obj);
+					continue;
+				}
+                
+				if (type.IsSubclassOf(typeof(BaseAttribute)))
+				{
+					attributeTypes.Add(type);
 				}
 			}
-
-			this.allEvents.Clear();
-			foreach (Type type in types[typeof(EventAttribute)])
-			{
-				IEvent obj = Activator.CreateInstance(type) as IEvent;
-				if (obj == null)
-				{
-					throw new Exception($"type not is AEvent: {obj.GetType().Name}");
-				}
-
-				Type eventType = obj.GetEventType();
-				if (!this.allEvents.ContainsKey(eventType))
-				{
-					this.allEvents.Add(eventType, new List<object>());
-				}
-				this.allEvents[eventType].Add(obj);
-			}
-			
-			this.Load();
+			return attributeTypes;
 		}
 
-		public void Add(Assembly assembly)
+		public void Add(Type[] addTypes)
 		{
-			this.assemblies[$"{assembly.GetName().Name}.dll"] = assembly;
-
-			List<Type> addTypes = new List<Type>();
 			this.types.Clear();
-			foreach (Assembly value in this.assemblies.Values)
+			
+			List<Type> baseAttributeTypes = GetBaseAttributes(addTypes);
+			foreach (Type baseAttributeType in baseAttributeTypes)
 			{
-				foreach (Type type in value.GetTypes())
+				foreach (Type type in addTypes)
 				{
 					if (type.IsAbstract)
 					{
 						continue;
 					}
-
-					object[] objects = type.GetCustomAttributes(typeof(BaseAttribute), true);
+					object[] objects = type.GetCustomAttributes(baseAttributeType, true);
 					if (objects.Length == 0)
 					{
 						continue;
 					}
-
-					foreach (BaseAttribute baseAttribute in objects)
-					{
-						this.types.Add(baseAttribute.AttributeType, type);
-					}
+					this.types.Add(baseAttributeType, type);
 				}
 			}
 
@@ -195,11 +165,18 @@ namespace ET
 			this.Load();
 		}
 
-
-		
-		public Assembly GetAssembly(string name)
+		public void Add(Assembly assembly)
 		{
-			return this.assemblies[name];
+			this.assemblies[$"{assembly.GetName().Name}.dll"] = assembly;
+
+			List<Type> addTypes = new List<Type>();
+
+			foreach (Assembly ass in this.assemblies.Values)
+			{
+				addTypes.AddRange(ass.GetTypes());
+			}
+			
+			this.Add(addTypes.ToArray());
 		}
 		
 		public HashSet<Type> GetTypes(Type systemAttributeType)

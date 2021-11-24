@@ -318,6 +318,15 @@
  <Reference Include="MongoDB.Bson">
  <HintPath>F:/_Proj/_My/ET/Unity/Assets/Plugins/MongoDB.Bson.dll</HintPath>
  </Reference>
+ <Reference Include="ILRuntime.Mono.Cecil.Mdb">
+ <HintPath>F:/_Proj/_My/ET/Unity/Assets/ThirdParty/ILRuntime/Plugins/ILRuntime.Mono.Cecil.Mdb.dll</HintPath>
+ </Reference>
+ <Reference Include="ILRuntime.Mono.Cecil">
+ <HintPath>F:/_Proj/_My/ET/Unity/Assets/ThirdParty/ILRuntime/Plugins/ILRuntime.Mono.Cecil.dll</HintPath>
+ </Reference>
+ <Reference Include="ILRuntime.Mono.Cecil.Pdb">
+ <HintPath>F:/_Proj/_My/ET/Unity/Assets/ThirdParty/ILRuntime/Plugins/ILRuntime.Mono.Cecil.Pdb.dll</HintPath>
+ </Reference>
  <Reference Include="nunit.framework">
  <HintPath>F:/_Proj/_My/ET/Unity/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>

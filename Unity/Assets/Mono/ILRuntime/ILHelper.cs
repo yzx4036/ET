@@ -8,6 +8,7 @@ using ILRuntime.CLR.TypeSystem;
 using ILRuntime.Runtime.Enviorment;
 using ILRuntime.Runtime.Generated;
 using ILRuntime.Runtime.Intepreter;
+using ProtoBuf;
 using UnityEngine;
 
 namespace ET
@@ -44,22 +45,21 @@ namespace ET
             appdomain.DelegateManager.RegisterFunctionDelegate<KeyValuePair<int, List<int>>, bool>();
             appdomain.DelegateManager.RegisterFunctionDelegate<KeyValuePair<int, int>, KeyValuePair<int, int>, int>();
             
+            // 注册适配器
+            RegisterAdaptor(appdomain);
+            
             //注册Json的CLR
             LitJson.JsonMapper.RegisterILRuntimeCLRRedirection(appdomain);
             //注册ProtoBuf的CLR
-            ProtoBuf.PBType.RegisterILRuntimeCLRRedirection(appdomain);
+            PType.RegisterILRuntimeCLRRedirection(appdomain);
             
             CLRBindings.Initialize(appdomain);
-            
-            // 注册适配器
-            RegisterAdaptor(appdomain);
         }
         
         public static void RegisterAdaptor(ILRuntime.Runtime.Enviorment.AppDomain appdomain)
         {
             //注册自己写的适配器
             appdomain.RegisterCrossBindingAdaptor(new IAsyncStateMachineClassInheritanceAdaptor());
-            appdomain.RegisterCrossBindingAdaptor(new ISupportInitializeAdapter());
             appdomain.RegisterCrossBindingAdaptor(new IDisposableAdapter());
         }
     }
