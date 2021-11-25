@@ -486,11 +486,11 @@ namespace ET
                 // LoadFromFileAsync部分可以并发加载
                 using (ListComponent<ETTask> tasks = ListComponent<ETTask>.Create())
                 {
+                    Log.Debug($"111111111111111111111111111111111111ggggga1");
                     foreach (string dependency in dependencies)
                     {
                         tasks.Add(LoadDependency(dependency, abInfos.List));
                     }
-
                     await ETTaskHelper.WaitAll(tasks.List);
 
                     // ab包从硬盘加载完成，可以再并发加载all assets
@@ -499,7 +499,6 @@ namespace ET
                     {
                         tasks.Add(LoadOneBundleAllAssets(abInfo));
                     }
-
                     await ETTaskHelper.WaitAll(tasks.List);
                 }
             }
@@ -515,7 +514,6 @@ namespace ET
                 //Log.Debug($"---------------load one bundle {assetBundleName} refcount: {abInfo.RefCount}");
                 return null;
             }
-
             string p = "";
             AssetBundle assetBundle = null;
 
@@ -548,13 +546,11 @@ namespace ET
                     return abInfo;
                 }
             }
-
             p = Path.Combine(PathHelper.AppHotfixResPath, assetBundleName);
             if (!File.Exists(p))
             {
                 p = Path.Combine(PathHelper.AppResPath, assetBundleName);
             }
-
             Log.Debug("Async load bundle BundleName : " + p);
 
             // if (!File.Exists(p))
@@ -562,16 +558,13 @@ namespace ET
             //     Log.Error("Async load bundle not exist! BundleName : " + p);
             //     return null;
             // }
-
             assetBundle = await AssetBundleHelper.UnityLoadBundleAsync(p);
-
             if (assetBundle == null)
             {
                 // 获取资源的时候会抛异常，这个地方不直接抛异常，因为有些地方需要Load之后判断是否Load成功
                 Log.Warning($"assets bundle not found: {assetBundleName}");
                 return null;
             }
-
             abInfo = this.AddChild<ABInfo, string, AssetBundle>(assetBundleName, assetBundle);
             this.bundles[assetBundleName] = abInfo;
             return abInfo;

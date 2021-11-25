@@ -676,11 +676,11 @@ namespace ET
             Entity component;
             if (isFromPool)
             {
-                component = (Entity)ObjectPool.Instance.Fetch(type);
+                component = ObjectPool.Instance.Fetch(type) as Entity;
             }
             else
             {
-                component = (Entity)Activator.CreateInstance(type);
+                component = Activator.CreateInstance(type) as Entity;
             }
             component.IsFromPool = isFromPool;
             component.IsCreate = true;
@@ -835,13 +835,12 @@ namespace ET
             return component;
         }
 
-        public T AddChildWithId<T>(long id, bool isFromPool = false) where T : Entity
+        public T AddChildWithId<T>(long id, bool isFromPool = false) where T : Entity, new()
         {
             Type type = typeof (T);
-            T component = (T) Entity.Create(type, isFromPool);
+            T component = Entity.Create(type, isFromPool) as T;
             component.Id = id;
             component.Parent = this;
-
             EventSystem.Instance.Awake(component);
             return component;
         }
