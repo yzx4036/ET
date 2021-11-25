@@ -120,7 +120,6 @@ namespace ET
             }
 
             this.types.Clear();
-
             List<Type> baseAttributeTypes = GetBaseAttributes(addTypes);
             foreach (Type baseAttributeType in baseAttributeTypes)
             {
