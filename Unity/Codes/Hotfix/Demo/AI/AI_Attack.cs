@@ -27,7 +27,7 @@ namespace ET
             // 停在当前位置
             zoneScene.GetComponent<SessionComponent>().Session.Send(new C2M_Stop());
             
-            Log.Debug("开始攻击");
+            Log.Debug("开始攻击 测试热重载<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 
             for (int i = 0; i < 100000; ++i)
             {
