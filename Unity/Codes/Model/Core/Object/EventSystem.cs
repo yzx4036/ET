@@ -8,7 +8,7 @@ namespace ET
 {
     using OneTypeSystems = UnOrderMultiMap<Type, object>;
 
-    public sealed partial class EventSystem: IDisposable
+    public sealed class EventSystem: IDisposable
     {
         private class TypeSystems
         {

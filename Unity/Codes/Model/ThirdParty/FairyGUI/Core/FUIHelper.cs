@@ -37,6 +37,16 @@ namespace ET
         private static Dictionary<Type, FUIInstArgs> FUIInstArgsDict = new Dictionary<Type, FUIInstArgs>();
 
         #region 创建FUI实例
+        static FUIHelper()
+        {
+            var types = EventSystem.Instance.GetTypes(typeof (FUIAttribute));
+            List<Type> fuiAttrTypeList = new List<Type>();
+            foreach (Type type in types)
+            {
+                fuiAttrTypeList.Add(type);
+            }
+            LoadFUIAttribute(fuiAttrTypeList);
+        }
 
         public static void Open<T>(Entity domain, Action<FUI> callBack) where T:FUI
         {
@@ -112,8 +122,15 @@ namespace ET
         {
             Game.Scene.GetComponent<FUIComponent>().Remove(name);
         }
-
-        public static void LoadFUIAttribute(List<Type> fuiTypeList)
+        
+        public static FUIInstArgs GetFUIInstArgsByType(Type uiType)
+        {
+            FUIInstArgs fuiInstArgs = null;
+            FUIInstArgsDict.TryGetValue(uiType, out fuiInstArgs);
+            return fuiInstArgs;
+        }
+        
+        private static void LoadFUIAttribute(List<Type> fuiTypeList)
         {
             for (int i = 0; i < fuiTypeList.Count; i++)
             {
@@ -130,11 +147,5 @@ namespace ET
             }
         }
 
-        public static FUIInstArgs GetFUIInstArgsByType(Type uiType)
-        {
-            FUIInstArgs fuiInstArgs = null;
-            FUIInstArgsDict.TryGetValue(uiType, out fuiInstArgs);
-            return fuiInstArgs;
-        }
     }
 }
