@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1920" adaptationTest="FitSize">
+  <controller name="c1" pages="0,Login,1,Register" selected="0"/>
+  <displayList>
+    <image id="n25_qnau" name="n25" src="uvgs0" fileName="Sprite/EquipBG.png" xy="0,0" size="1080,1920" aspect="true" pkg="4nyd2ns5">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n2_qnau" name="n2" src="uvgs1" fileName="Sprite/InputField.png" xy="307,609" size="598,75" group="n13_qnau" pkg="4nyd2ns5">
+      <relation target="" sidePair="width-width%"/>
+    </image>
+    <text id="n3_qnau" name="n3" xy="185,620" size="120,49" group="n13_qnau" font="KaiTi" fontSize="45" color="#a69a67" align="right" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" singleLine="true" text="账号:">
+      <relation target="n2_qnau" sidePair="right-left%"/>
+    </text>
+    <image id="n4_qnau" name="n4" src="uvgs1" fileName="Sprite/InputField.png" xy="306,723" size="598,75" group="n13_qnau" pkg="4nyd2ns5">
+      <relation target="" sidePair="width-width%"/>
+    </image>
+    <text id="n5_qnau" name="n5" xy="187,732" size="120,49" group="n13_qnau" font="KaiTi" fontSize="45" color="#a69a67" align="right" vAlign="middle" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" text="密码:">
+      <relation target="n4_qnau" sidePair="right-left%"/>
+    </text>
+    <image id="n6_qnau" name="n6" src="uvgs1" fileName="Sprite/InputField.png" xy="307,838" size="598,75" group="n13_qnau" pkg="4nyd2ns5">
+      <relation target="" sidePair="width-width%"/>
+    </image>
+    <text id="n7_qnau" name="n7" xy="189,858" size="120,49" group="n13_qnau" font="KaiTi" fontSize="45" color="#a69a67" align="right" vAlign="middle" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" text="确认:">
+      <relation target="n6_qnau" sidePair="right-left%"/>
+    </text>
+    <text id="n8_qnau" name="RegisterAccount" xy="313,616" size="582,62" group="n13_qnau" input="true" font="KaiTi" fontSize="45" color="#a69a67" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,-1" text="">
+      <relation target="n2_qnau" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n9_qnau" name="RegisterPassword" xy="313,726" size="582,68" group="n13_qnau" input="true" font="KaiTi" fontSize="45" color="#a69a67" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,-1" text="">
+      <relation target="n4_qnau" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n10_qnau" name="RegisterPassword_1" xy="313,841" size="582,68" group="n13_qnau" input="true" font="KaiTi" fontSize="45" color="#a69a67" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,-1" text="">
+      <relation target="n6_qnau" sidePair="width-width,height-height"/>
+    </text>
+    <component id="n11_qnau" name="RegisterBtn" src="uvgs12" fileName="Button4_Normal.xml" pkg="o9z9wblx" xy="633,966" size="230,65" group="n13_qnau" blend="screen">
+      <relation target="" sidePair="right-center"/>
+      <Button title="注册" titleColor="#a69a67" titleFontSize="45"/>
+    </component>
+    <component id="n12_qnau" name="ReturnBtn" src="uvgs12" fileName="Button4_Normal.xml" pkg="o9z9wblx" xy="308,968" size="230,65" group="n13_qnau" blend="screen">
+      <relation target="" sidePair="left-left%"/>
+      <Button title="返回" titleColor="#a69a67" titleFontSize="45"/>
+    </component>
+    <group id="n13_qnau" name="Register" xy="185,609" size="720,424" advanced="true" collapsed="true">
+      <gearDisplay controller="c1" pages="1"/>
+      <relation target="" sidePair="center-center%,middle-middle%"/>
+    </group>
+    <image id="n15_qnau" name="n15" src="uvgs1" fileName="Sprite/InputField.png" xy="307,697" size="598,75" group="n24_qnau" pkg="4nyd2ns5">
+      <relation target="" sidePair="width-width%"/>
+    </image>
+    <text id="n16_qnau" name="n16" xy="188,704" size="118,49" group="n24_qnau" font="KaiTi" fontSize="45" color="#a69a67" align="right" vAlign="middle" autoSize="height" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" singleLine="true" text="账号:">
+      <relation target="n15_qnau" sidePair="right-left%"/>
+    </text>
+    <image id="n17_qnau" name="n17" src="uvgs1" fileName="Sprite/InputField.png" xy="306,811" size="598,75" group="n24_qnau" pkg="4nyd2ns5">
+      <relation target="" sidePair="width-width%"/>
+    </image>
+    <text id="n18_qnau" name="n18" xy="185,822" size="118,49" group="n24_qnau" font="KaiTi" fontSize="45" color="#a69a67" align="right" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" singleLine="true" text="密码:">
+      <relation target="n17_qnau" sidePair="right-left%"/>
+    </text>
+    <text id="n19_qnau" name="LoginAccount" xy="313,704" size="582,62" group="n24_qnau" input="true" font="KaiTi" fontSize="45" color="#a69a67" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,-1" text="">
+      <relation target="n15_qnau" sidePair="width-width%,height-height%"/>
+    </text>
+    <text id="n20_qnau" name="LoginPassword" xy="313,814" size="582,68" group="n24_qnau" input="true" font="KaiTi" fontSize="45" color="#a69a67" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,-1" text="">
+      <relation target="n17_qnau" sidePair="width-width%,height-height%"/>
+    </text>
+    <component id="n21_qnau" name="LoginBtn" src="uvgs12" fileName="Button4_Normal.xml" pkg="o9z9wblx" xy="630,965" group="n24_qnau" blend="screen">
+      <relation target="" sidePair="right-center"/>
+      <Button title="登陆" titleColor="#a69a67" titleFontSize="45"/>
+    </component>
+    <component id="n22_qnau" name="ToRegisterBtn" src="uvgs12" fileName="Button4_Normal.xml" pkg="o9z9wblx" xy="306,965" group="n24_qnau" blend="screen">
+      <relation target="" sidePair="left-left%"/>
+      <Button title="注册" titleColor="#a69a67" titleFontSize="45"/>
+    </component>
+    <group id="n24_qnau" name="Login" xy="185,697" size="720,333" advanced="true" collapsed="true">
+      <gearDisplay controller="c1" pages="0"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

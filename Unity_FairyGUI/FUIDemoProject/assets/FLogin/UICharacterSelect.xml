@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1920" adaptationTest="FitSize">
+  <controller name="ClassButtonC" pages="0,,1,,2,,3," selected="0"/>
+  <controller name="GenderBtnC" pages="0,,1,,2," selected="0"/>
+  <controller name="CreatePanelC" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n2_dh8k" name="n2" src="qo3y16" fileName="Sprite/CharacterSelectBG.jpg" pkg="4nyd2ns5" xy="0,0" size="1080,1920">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <component id="n5_dh8k" name="StartBtn" src="dh8k1f" fileName="Button6_Normal.xml" pkg="o9z9wblx" xy="647,1772" group="n44_dh8k">
+      <relation target="" sidePair="right-right,bottom-bottom"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <Button title="开始游戏" titleColor="#a69a67" titleFontSize="45"/>
+    </component>
+    <component id="n6_dh8k" name="ToCreateBtn" src="dh8k1f" fileName="Button6_Normal.xml" pkg="o9z9wblx" xy="102,1772" group="n44_dh8k">
+      <relation target="" sidePair="left-left,bottom-bottom"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <Button title="创建角色" titleColor="#a69a67" titleFontSize="45"/>
+    </component>
+    <list id="n45_azyp" name="CharacterList" xy="50,205" size="982,564" group="n44_dh8k" layout="flow_hz" overflow="scroll" margin="10,10,20,20" lineGap="30" colGap="30" lineItemCount="2" defaultItem="ui://o9z9wblxdh8k9" autoItemSize="true" align="center" vAlign="middle" autoClearItems="true">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,center-center%"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <loader id="n33_dh8k" name="CharacterIcon" xy="264,746" size="551,738" group="n44_dh8k" url="ui://o9z9wblxdh8k15" align="center" vAlign="middle" fill="scaleNoBorder">
+      <relation target="" sidePair="bottom-bottom%,center-center"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+    </loader>
+    <group id="n44_dh8k" name="SelectPanel" xy="50,205" size="982,1677" advanced="true">
+      <gearDisplay controller="CreatePanelC" pages="0,1"/>
+    </group>
+    <image id="n7_dh8k" name="n7" src="dh8k6" fileName="Sprite/BG_CreatePanel.png" pkg="4nyd2ns5" xy="221,531" size="663,895" group="n18_dh8k">
+      <relation target="" sidePair="center-center%,middle-middle%"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+    </image>
+    <component id="n32_dh8k" name="n32" src="dh8k8" fileName="Mask.xml" xy="0,0" size="1080,1920" group="n18_dh8k">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <component id="n8_dh8k" name="BtnClose" src="dh8k17" fileName="Button_Close.xml" pkg="o9z9wblx" xy="819,536" size="58,58" group="n18_dh8k" aspect="true">
+      <relation target="n7_dh8k" sidePair="right-right%,top-top%"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+    </component>
+    <component id="n10_dh8k" name="Button_Z" src="dh8k1g" fileName="ButtonZ.xml" pkg="o9z9wblx" xy="363,652" group="n18_dh8k">
+      <relation target="n7_dh8k" sidePair="left-left%,top-top%"/>
+      <relation target="n7_dh8k" sidePair="width-width%,height-height%"/>
+      <Button controller="ClassButtonC" page="1"/>
+    </component>
+    <component id="n11_dh8k" name="ButtonF" src="dh8k1h" fileName="Button_F.xml" pkg="o9z9wblx" xy="487,652" group="n18_dh8k">
+      <relation target="n7_dh8k" sidePair="left-left%,top-top%"/>
+      <relation target="n7_dh8k" sidePair="width-width%,height-height%"/>
+      <Button controller="ClassButtonC" page="2"/>
+    </component>
+    <component id="n12_dh8k" name="Button_D" src="dh8k1i" fileName="Button_D.xml" pkg="o9z9wblx" xy="614,652" group="n18_dh8k">
+      <relation target="n7_dh8k" sidePair="left-left%,top-top%"/>
+      <relation target="n7_dh8k" sidePair="width-width%,height-height%"/>
+      <Button controller="ClassButtonC" page="3"/>
+    </component>
+    <component id="n13_dh8k" name="BoyBtn" src="dh8k1j" fileName="Button_Boy.xml" pkg="o9z9wblx" xy="424,906" group="n18_dh8k">
+      <relation target="n7_dh8k" sidePair="left-left%,top-top%"/>
+      <relation target="n7_dh8k" sidePair="width-width%,height-height%"/>
+      <Button controller="GenderBtnC" page="1"/>
+    </component>
+    <component id="n14_dh8k" name="GrilBtn" src="dh8k1k" fileName="Button_Gril.xml" pkg="o9z9wblx" xy="550,905" group="n18_dh8k">
+      <relation target="n7_dh8k" sidePair="left-left%,top-top%"/>
+      <relation target="n7_dh8k" sidePair="width-width%,height-height%"/>
+      <Button controller="GenderBtnC" page="2"/>
+    </component>
+    <image id="n15_dh8k" name="n15" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="335,1175" size="423,56" group="n18_dh8k">
+      <relation target="n7_dh8k" sidePair="left-left%,top-top%"/>
+      <relation target="n7_dh8k" sidePair="width-width%,height-height%"/>
+    </image>
+    <component id="n16_dh8k" name="CreateBtn" src="dh8k18" fileName="Button_Create.xml" pkg="o9z9wblx" xy="457,1287" group="n18_dh8k">
+      <relation target="n7_dh8k" sidePair="left-left%,bottom-bottom%"/>
+      <relation target="n7_dh8k" sidePair="width-width%,height-height%"/>
+    </component>
+    <text id="n17_dh8k" name="CharacterName" xy="335,1174" size="423,56" group="n18_dh8k" input="true" fontSize="35" color="#a69a67" align="center" vAlign="middle" autoSize="none" singleLine="true" autoClearText="true" text="冷大坑">
+      <relation target="n15_dh8k" sidePair="center-center,middle-middle"/>
+      <relation target="n15_dh8k" sidePair="width-width,height-height"/>
+    </text>
+    <group id="n18_dh8k" name="CreatePanel" xy="0,0" size="1080,1920" advanced="true">
+      <gearDisplay controller="CreatePanelC" pages="1"/>
+    </group>
+  </displayList>
+</component>

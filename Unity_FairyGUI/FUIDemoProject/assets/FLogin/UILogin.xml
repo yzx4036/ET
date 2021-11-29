@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1920">
+  <displayList>
+    <image id="n0_ln1c" name="n0" src="uvgs0" fileName="Sprite/EquipBG.png" xy="0,0" size="1080,1920" aspect="true" pkg="4nyd2ns5">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n1_ln1c" name="n1" src="uvgs1" fileName="Sprite/InputField.png" xy="288,697" size="598,75" pkg="4nyd2ns5">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </image>
+    <text id="n2_ln1c" name="n2" xy="44,704" size="243,73" font="KaiTi" fontSize="45" color="#a69a67" align="right" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" text="账号:">
+      <relation target="" sidePair="width-width,height-height"/>
+      <relation target="n1_ln1c" sidePair=""/>
+    </text>
+    <image id="n3_ln1c" name="n3" src="uvgs1" fileName="Sprite/InputField.png" xy="287,811" size="598,75" pkg="4nyd2ns5">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </image>
+    <text id="n4_ln1c" name="n4" xy="45,814" size="243,73" font="KaiTi" fontSize="45" color="#a69a67" align="right" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" text="密码:">
+      <relation target="n3_ln1c" sidePair=""/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n15_ln1c" name="LoginAccount" xy="294,704" size="582,62" input="true" font="KaiTi" fontSize="45" color="#a69a67" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,-1" text="">
+      <relation target="n1_ln1c" sidePair=""/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <text id="n17_ln1c" name="LoginPassword" xy="294,814" size="582,68" input="true" font="KaiTi" fontSize="45" color="#a69a67" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,-1" text="">
+      <relation target="n3_ln1c" sidePair=""/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <component id="n23_uvgs" name="LoginBtn" src="uvgs12" fileName="Button4_Normal.xml" xy="611,965" blend="screen" pkg="o9z9wblx">
+      <Button title="登陆" titleColor="#a69a67" titleFontSize="45"/>
+    </component>
+    <component id="n24_qo3y" name="ToRegisterBtn" src="uvgs12" fileName="Button4_Normal.xml" xy="287,965" blend="screen" pkg="o9z9wblx">
+      <Button title="注册" titleColor="#a69a67" titleFontSize="45"/>
+    </component>
+  </displayList>
+</component>

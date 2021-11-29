@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="400,35">
+  <displayList>
+    <image id="n10_oeq7" name="n10" src="oeq767" fileName="Sprite/TipsBGMid.png" pkg="4nyd2ns5" xy="0,0" size="400,36" alpha="0.92">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="center-center%,top-top%"/>
+    </image>
+    <text id="n2_oeq7" name="AttrText" xy="16,0" size="384,36" fontSize="20" color="#ffffff" vAlign="middle" autoSize="none" singleLine="true" autoClearText="true" text="攻击: 2-5">
+      <relation target="n10_oeq7" sidePair="width-width%,height-height%"/>
+      <relation target="n10_oeq7" sidePair="left-left%,top-top%"/>
+    </text>
+  </displayList>
+</component>

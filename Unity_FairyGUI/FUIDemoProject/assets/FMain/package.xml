@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="t4ymdfnh" hasFavorites="true">
+  <resources>
+    <component id="ci540" name="UIMainPanel.xml" path="/" exported="true" favorite="true"/>
+    <component id="ia595z" name="UIMain.xml" path="/"/>
+  </resources>
+  <publish name="FMain"/>
+</packageDescription>

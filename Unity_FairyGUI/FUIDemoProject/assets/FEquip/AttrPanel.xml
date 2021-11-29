@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="931,1400">
+  <displayList>
+    <image id="n0_ci54" name="AttrBG" src="ci542" fileName="Sprite/BG.png" pkg="4nyd2ns5" xy="0,0" size="931,1400">
+      <relation target="" sidePair="width-width%,height-height%"/>
+    </image>
+    <component id="n4_ci54" name="CloseBtn" src="dh8k17" fileName="Button_Close.xml" pkg="o9z9wblx" xy="861,16" size="65,65" aspect="true">
+      <relation target="" sidePair="right-right%,top-top%"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+    </component>
+    <text id="n30_ci54" name="n30" xy="6,16" size="925,68" fontSize="45" color="#a69a67" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" text="详细属性">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%"/>
+    </text>
+    <text id="n1_ci54" name="n1" xy="45,143" size="179,49" group="n5_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="物理攻击 ">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n2_ci54" name="n2" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="221,140" size="211,44" group="n5_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n3_ci54" name="ADAttack" xy="220,143" size="211,39" group="n5_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n5_ci54" name="n5" xy="45,140" size="387,52" collapsed="true"/>
+    <text id="n6_ci54" name="n6" xy="45,223" size="179,49" group="n9_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="魔法攻击 ">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n7_ci54" name="n7" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="220,220" size="211,44" group="n9_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n8_ci54" name="APAttack" xy="219,223" size="211,39" group="n9_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n9_ci54" name="n9" xy="45,220" size="387,52" collapsed="true"/>
+    <text id="n10_ci54" name="n10" xy="45,303" size="179,49" group="n13_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="道术攻击 ">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n11_ci54" name="n11" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="220,300" size="211,44" group="n13_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n12_ci54" name="DSAttack" xy="219,303" size="211,39" group="n13_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n13_ci54" name="n13" xy="45,300" size="386,52"/>
+    <text id="n14_ci54" name="n14" xy="45,383" size="179,49" group="n17_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="物理防御">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n15_ci54" name="n15" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="220,380" size="211,44" group="n17_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n16_ci54" name="ADDef" xy="219,383" size="211,39" group="n17_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n17_ci54" name="n17" xy="45,380" size="386,52"/>
+    <text id="n18_ci54" name="n18" xy="45,463" size="179,49" group="n21_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="魔法防御">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n19_ci54" name="n19" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="220,460" size="211,44" group="n21_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n20_ci54" name="APDef" xy="219,463" size="211,39" group="n21_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n21_ci54" name="n21" xy="45,460" size="386,52"/>
+    <text id="n22_ci54" name="n22" xy="45,543" size="179,49" group="n25_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="生命值">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n23_ci54" name="n23" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="219,540" size="211,44" group="n25_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n24_ci54" name="HP" xy="218,543" size="211,39" group="n25_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n25_ci54" name="n25" xy="45,540" size="386,52"/>
+    <text id="n26_ci54" name="n26" xy="45,623" size="179,49" group="n29_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="魔法值 ">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n27_ci54" name="n27" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="219,620" size="211,44" group="n29_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n28_ci54" name="MP" xy="218,623" size="211,39" group="n29_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n29_ci54" name="n29" xy="45,620" size="385,52"/>
+    <text id="n31_ci54" name="n31" xy="500,143" size="179,49" group="n34_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="命中">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n32_ci54" name="n32" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="674,140" size="211,44" group="n34_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n33_ci54" name="Hit" xy="673,143" size="211,39" group="n34_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n34_ci54" name="n34" xy="500,140" size="385,52"/>
+    <text id="n35_ci54" name="n35" xy="500,223" size="179,49" group="n38_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="闪避">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n36_ci54" name="n36" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="674,220" size="211,44" group="n38_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n37_ci54" name="Miss" xy="673,223" size="211,39" group="n38_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n38_ci54" name="n38" xy="500,220" size="385,52"/>
+    <text id="n39_ci54" name="n39" xy="500,303" size="179,49" group="n42_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="魔法闪避">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n40_ci54" name="n40" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="673,300" size="211,44" group="n42_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n41_ci54" name="MagicMiss" xy="672,303" size="211,39" group="n42_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n42_ci54" name="n42" xy="500,300" size="385,52"/>
+    <text id="n43_ci54" name="n43" xy="500,383" size="179,49" group="n46_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="幸运">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n44_ci54" name="n44" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="673,380" size="211,44" group="n46_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n45_ci54" name="Luckey" xy="672,383" size="211,39" group="n46_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n46_ci54" name="n46" xy="500,380" size="384,52"/>
+    <text id="n47_ci54" name="n47" xy="500,462" size="179,49" group="n50_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="暴击">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n48_ci54" name="n48" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="673,460" size="211,44" group="n50_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n49_ci54" name="Cri" xy="672,462" size="211,39" group="n50_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n50_ci54" name="n50" xy="500,460" size="384,52"/>
+    <text id="n51_ci54" name="n51" xy="46,702" size="179,49" group="n54_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="生命恢复">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n52_ci54" name="n52" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="219,700" size="211,44" group="n54_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n53_ci54" name="HPRec" xy="218,702" size="211,39" group="n54_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n54_ci54" name="n54" xy="46,700" size="384,51"/>
+    <text id="n55_ci54" name="n55" xy="47,782" size="179,49" group="n58_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="魔法恢复">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n56_ci54" name="n56" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="220,780" size="211,44" group="n58_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n57_ci54" name="MPRec" xy="219,782" size="211,39" group="n58_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n58_ci54" name="n58" xy="47,780" size="384,51"/>
+    <text id="n59_ci54" name="n59" xy="500,542" size="179,49" group="n62_ci54" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="攻击速度">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n60_ci54" name="n60" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="673,540" size="211,44" group="n62_ci54">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n61_ci54" name="AtkSpeed" xy="672,542" size="211,39" group="n62_ci54" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n62_ci54" name="n62" xy="500,540" size="384,51"/>
+    <component id="n71_ci54" name="CloseBtnD" src="uvgs12" fileName="Button4_Normal.xml" pkg="o9z9wblx" xy="346,1212">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="center-center,bottom-bottom%"/>
+      <Button title="关闭" titleColor="#a69a67" titleFontSize="45"/>
+    </component>
+    <text id="n72_q2hx" name="n72" xy="500,622" size="179,49" group="n75_q2hx" fontSize="45" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" text="吸血">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <image id="n73_q2hx" name="n73" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="673,620" size="211,44" group="n75_q2hx">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </image>
+    <text id="n74_q2hx" name="SuckHP" xy="672,622" size="211,39" group="n75_q2hx" fontSize="35" color="#ffffff" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" singleLine="true" text="100-300&#xA;">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,left-left%"/>
+    </text>
+    <group id="n75_q2hx" name="n75" xy="500,620" size="384,51"/>
+  </displayList>
+</component>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1656" adaptationTest="FitSize">
+  <displayList>
+    <image id="n87_azrp" name="n87" src="ci544" fileName="Sprite/BG_NoClose.png" pkg="4nyd2ns5" xy="0,156" size="1080,1499" group="n90_azrp">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="center-center%,middle-middle%"/>
+    </image>
+    <text id="n88_azrp" name="n88" xy="0,156" size="1080,105" group="n90_azrp" fontSize="50" color="#a69a67" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,-1" text="设置">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,center-center%"/>
+    </text>
+    <image id="n89_azrp" name="n89" src="uvgs0" fileName="Sprite/EquipBG.png" pkg="4nyd2ns5" xy="10,282" size="1060,1084" group="n90_azrp" aspect="true">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,center-center%"/>
+    </image>
+    <group id="n90_azrp" name="BG" xy="0,156" size="1080,1500" advanced="true" collapsed="true"/>
+    <component id="n78_ufll" name="OKBtn" src="uvgs12" fileName="Button4_Normal.xml" pkg="o9z9wblx" xy="411,1460" size="231,117">
+      <relation target="" sidePair="center-center%,bottom-bottom%"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <Button title="确定" titleFontSize="35"/>
+    </component>
+    <text id="n82_d9lf" name="n82" xy="138,483" size="117,119" fontSize="45" color="#a69a67" align="center" vAlign="middle" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" singleLine="true" text="音乐">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="left-left%,top-top%"/>
+    </text>
+    <text id="n83_d9lf" name="n83" xy="138,659" size="117,119" fontSize="45" color="#a69a67" align="center" vAlign="middle" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" singleLine="true" text="音效">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="left-left%,top-top%"/>
+    </text>
+    <component id="n85_d9lf" name="KeyBtn" src="uvgs13" fileName="Button_Normal.xml" pkg="o9z9wblx" xy="138,876" size="266,131">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="left-left%,top-top%"/>
+      <Button title="使用激活码"/>
+    </component>
+    <component id="n86_d9lf" name="ExitBtn" src="uvgs13" fileName="Button_Normal.xml" pkg="o9z9wblx" xy="631,876" size="285,130">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="left-left%,top-top%"/>
+      <Button title="退出账号"/>
+    </component>
+    <component id="n91_azrp" name="CloseBtn" src="dh8k17" fileName="Button_Close.xml" pkg="o9z9wblx" xy="998,171" size="74,74" aspect="true">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="right-right%,top-top%"/>
+    </component>
+  </displayList>
+</component>

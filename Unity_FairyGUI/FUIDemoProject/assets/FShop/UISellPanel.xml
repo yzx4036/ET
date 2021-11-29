@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1565">
+  <displayList>
+    <image id="n0_s0zo" name="n0" src="ci544" fileName="Sprite/BG_NoClose.png" pkg="4nyd2ns5" xy="0,156" size="1080,1500" group="n2_s0zo">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="center-center%,middle-middle%"/>
+    </image>
+    <text id="n1_s0zo" name="Title" xy="0,179" size="1080,69" group="n2_s0zo" fontSize="50" color="#a69a67" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,-1" text="出售">
+      <relation target="" sidePair="top-top%,center-center%"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+    </text>
+    <group id="n2_s0zo" name="BG" xy="0,156" size="1080,1500" advanced="true"/>
+    <component id="n3_s0zo" name="CloseBtn" src="dh8k17" fileName="Button_Close.xml" pkg="o9z9wblx" xy="998,172" size="74,73" aspect="true">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="right-right%,top-top%"/>
+    </component>
+    <list id="n4_s0zo" name="ItemList" xy="19,253" size="1042,1247" layout="pagination" selectionMode="multipleSingleClick" overflow="scroll" margin="5,5,5,5" lineGap="5" colGap="5" lineItemCount="8" lineItemCount2="10" defaultItem="ui://o9z9wblxs0zo6h" autoItemSize="true" align="center" autoClearItems="true">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="center-center%,top-top%"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <image id="n5_s0zo" name="n5" src="ci545" fileName="Sprite/DownTips.png" pkg="4nyd2ns5" xy="8,1496" size="1064,151">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="bottom-bottom%,center-center%"/>
+    </image>
+    <component id="n7_s0zo" name="SellBtn" src="uvgs12" fileName="Button4_Normal.xml" pkg="o9z9wblx" xy="778,1545" size="220,80">
+      <relation target="n5_s0zo" sidePair="width-width%,height-height%"/>
+      <relation target="n5_s0zo" sidePair="bottom-bottom%,right-right%"/>
+      <Button title="出售" titleFontSize="40"/>
+    </component>
+    <text id="n8_s0zo" name="SellPrice" xy="326,1552" size="275,66" fontSize="45" color="#a69a67" vAlign="middle" autoSize="shrink" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" singleLine="true" text="0">
+      <relation target="n9_s0zo" sidePair="left-left%,top-top%"/>
+      <relation target="n9_s0zo" sidePair="width-width%,height-height%"/>
+    </text>
+    <image id="n9_s0zo" name="n9" src="12ay3m" fileName="Sprite/icgoods117.png" pkg="4nyd2ns5" xy="253,1552" size="71,71" aspect="true">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="left-left%,bottom-bottom%"/>
+    </image>
+  </displayList>
+</component>
