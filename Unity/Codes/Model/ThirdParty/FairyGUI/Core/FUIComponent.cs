@@ -35,7 +35,7 @@ namespace ET
             return UIPackage.CreateObject(uiPackageName, uiResName);
         }
 
-        private T CreateFUIInst<T>(string uiPackageName, string uiResName, long pHashCodeId, Entity domain) where T : FUI
+        private T CreateFUIInst<T>(string uiPackageName, string uiResName, long pHashCodeId) where T : FUI
         {
             var gObj = CreateGObject(uiPackageName, uiResName);
             return AddChildWithId<T, GObject>(pHashCodeId, gObj);
@@ -43,11 +43,11 @@ namespace ET
 
         #endregion
 
-        public void Open<T>(string uiPackageName, string uiResName, Entity domain, long pHashCodeId, Action<FUI> callBack) where T : FUI
+        public void Open<T>(string uiPackageName, string uiResName, long pHashCodeId, Action<FUI> callBack) where T : FUI
         {
             Game.Scene.GetComponent<FUIPackageComponent>().EnsurePackageLoaded(uiPackageName, () =>
             {
-                var fui = CreateFUIInst<T>(uiPackageName, uiResName, pHashCodeId, domain);
+                var fui = CreateFUIInst<T>(uiPackageName, uiResName, pHashCodeId);
                 Add<T>(fui, true);
 
                 if (callBack != null)
@@ -58,10 +58,10 @@ namespace ET
 
         }
         
-        public async ETTask<T> OpenAsync<T>(string uiPackageName, string uiResName, Entity domain) where T:FUI
+        public async ETTask<T> OpenAsync<T>(string uiPackageName, string uiResName, long pHashCodeId) where T:FUI
         {
             await Game.Scene.GetComponent<FUIPackageComponent>().EnsurePackageLoadedAsync(uiPackageName);
-            var fui = CreateFUIInst<T>(uiPackageName, uiResName, domain);
+            var fui = CreateFUIInst<T>(uiPackageName, uiResName, pHashCodeId);
             // Debug.Log($">>>>>>>>>>>>>>>>Open {uiType}");
             Add(fui, true);
             return fui;

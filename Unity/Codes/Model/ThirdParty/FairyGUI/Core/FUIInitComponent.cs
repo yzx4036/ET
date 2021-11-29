@@ -10,8 +10,8 @@ namespace ET
     {
         private readonly string[] _initPackageArray =
         {
-            FUIPackage.CommonAsset,
-            FUIPackage.CommonComp,
+            // FUIPackage.CommonAsset,
+            // FUIPackage.CommonComp,
             // FUIPackage.FLogin,
         };
         public async ETTask Init()
@@ -44,7 +44,7 @@ namespace ET
                 return;
             }
 
-            Game.Scene.GetComponent<FUIPackageComponent>().RemovePackage(FUIPackage.FLogin);
+            // Game.Scene.GetComponent<FUIPackageComponent>().RemovePackage(FUIPackage.FLogin);
             base.Dispose();
         }
     }

@@ -156,7 +156,7 @@ namespace ET
 
         public void Remove<T>(string name) where T : FUI
         {
-            GetChild<T>()
+            // GetChild<T>()
         }
 
         public void Remove(string name)

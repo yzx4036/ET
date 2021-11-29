@@ -19,19 +19,21 @@ namespace ET
             {
                 return;
             }
-
-            AssetsHelper.LoadAsset<TextAsset>(type + "_fui", AssetsType.FUI, desTextAsset =>
-            {
-                if (desTextAsset != null)
-                {
-                    s_Packages.Add(type, SEyesSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(desTextAsset.bytes, type, LoadPackageInternalPackageItem));
-                    Debug.Log($">>>>>>AddPackage  desTextAsset :{desTextAsset}");
-                    if (onAddPackageCompleteCallback != null)
-                    {
-                        onAddPackageCompleteCallback();
-                    }
-                }
-            });
+            // AssetsBundleHelper
+            
+            //todo 接入资源管理后 
+            // AssetsHelper.LoadAsset<TextAsset>(type + "_fui", AssetsType.FUI, desTextAsset =>
+            // {
+            //     if (desTextAsset != null)
+            //     {
+            //         s_Packages.Add(type, SEyesSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(desTextAsset.bytes, type, LoadPackageInternalPackageItem));
+            //         Debug.Log($">>>>>>AddPackage  desTextAsset :{desTextAsset}");
+            //         if (onAddPackageCompleteCallback != null)
+            //         {
+            //             onAddPackageCompleteCallback();
+            //         }
+            //     }
+            // });
             
             
         }
@@ -46,10 +48,10 @@ namespace ET
         private static void LoadPackageInternalPackageItem(string name, string extension, System.Type type,
             PackageItem item)
         {
-            AssetsHelper.LoadAsset<Texture>(name + extension, AssetsType.FUISprite, texture =>
-            {
-                item.owner.SetItemAsset(item, texture, DestroyMethod.Unload);
-            });
+            // AssetsHelper.LoadAsset<Texture>(name + extension, AssetsType.FUISprite, texture =>
+            // {
+            //     item.owner.SetItemAsset(item, texture, DestroyMethod.Unload);
+            // });
         }
         
         public async ETTask AddPackageAsync(string type)
@@ -59,12 +61,12 @@ namespace ET
                 return;
             }
 
-            TextAsset desTextAsset =
-                await AssetsHelper.LoadAssetAsync<TextAsset>(type + "_fui", AssetsType.FUI);
-            if (desTextAsset != null)
-            {
-                s_Packages.Add(type, SEyesSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(desTextAsset.bytes, type, LoadPackageInternalAsync));
-            }
+            // TextAsset desTextAsset =
+            //     await AssetsHelper.LoadAssetAsync<TextAsset>(type + "_fui", AssetsType.FUI);
+            // if (desTextAsset != null)
+            // {
+            //     s_Packages.Add(type, SEyesSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(desTextAsset.bytes, type, LoadPackageInternalAsync));
+            // }
         }
 
         /// <summary>
@@ -77,10 +79,10 @@ namespace ET
         private static async void LoadPackageInternalAsync(string name, string extension, System.Type type,
             PackageItem item)
         {
-            Texture texture =
-                await AssetsHelper.LoadAssetAsync<Texture>(name + extension, AssetsType.FUISprite);
-
-            item.owner.SetItemAsset(item, texture, DestroyMethod.Unload);
+            // Texture texture =
+            //     await AssetsHelper.LoadAssetAsync<Texture>(name + extension, AssetsType.FUISprite);
+            //
+            // item.owner.SetItemAsset(item, texture, DestroyMethod.Unload);
         }
 
         public bool IsPackageLoaded(string pkgName)
