@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<packageDescription id="ghgmkgsf" hasFavorites="true">
-  <resources>
-    <component id="ia5960" name="UISetting.xml" path="/" exported="true" favorite="true"/>
-  </resources>
-  <publish name="FSetting"/>
-</packageDescription>

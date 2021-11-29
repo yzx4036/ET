@@ -48,8 +48,8 @@ namespace ET
             LoadFUIAttribute(fuiAttrTypeList);
         }
 
-        public static void Open<T>(Entity domain, Action<FUI> callBack) where T:FUI
-        {
+        public static void Open<T>(Action<FUI> callBack) where T:FUI
+        { 
             FUIInstArgs uiArgs = null;
             Type uiType = typeof (T);
             if (FUIInstArgsDict.TryGetValue(uiType, out uiArgs))
@@ -62,7 +62,7 @@ namespace ET
             }
         }
         
-        public static async ETTask<T> OpenAsync<T>(Entity domain) where T : FUI
+        public static async ETTask<T> OpenAsync<T>() where T : FUI
         {
             FUIInstArgs uiArgs = null;
             Type uiType = typeof (T);
