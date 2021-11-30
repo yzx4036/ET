@@ -12,11 +12,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{03938ccd-4b40-8dfb-6b9b-21988d5cac0a}</ProjectGuid>
+    <ProjectGuid>{d152f4ae-18e0-6b5f-6e30-4039a7afc765}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Unity.Locus.BundleSystem</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -30,7 +30,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169,0649</NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
@@ -41,10 +41,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Samples\Locus Bundle System\1.1.10\Sample\ApiSampleScript\LocusBundleSample.cs" />
-     <Compile Include="Assets\Samples\Locus Bundle System\1.1.10\Sample\ApiSampleScript\SampleGameManager.cs" />
-     <Compile Include="Assets\Samples\Locus Bundle System\1.1.10\Sample\ApiSampleScript\SampleTitleScene.cs" />
-     <None Include="Assets\link.xml" />
+     <Compile Include="Packages\Locus-Bundle-System\Runtime\AssetbundleBuildSettings.cs" />
+     <Compile Include="Packages\Locus-Bundle-System\Runtime\BundleManager.cs" />
+     <Compile Include="Packages\Locus-Bundle-System\Runtime\AssetbundleBuildManifest.cs" />
+     <Compile Include="Packages\Locus-Bundle-System\Runtime\AssetbundleUtilities.cs" />
+     <Compile Include="Packages\Locus-Bundle-System\Runtime\BundleManager.Memory.cs" />
+     <Compile Include="Packages\Locus-Bundle-System\Runtime\BundledAssetPath.cs" />
+     <Compile Include="Packages\Locus-Bundle-System\Runtime\FolderReference.cs" />
+     <Compile Include="Packages\Locus-Bundle-System\Runtime\EditorAssetMap.cs" />
+     <Compile Include="Packages\Locus-Bundle-System\Runtime\BundleManager.Collection.cs" />
+     <Compile Include="Packages\Locus-Bundle-System\Runtime\BundleManager.Api.cs" />
+     <Compile Include="Packages\Locus-Bundle-System\Runtime\BundleManager.Debug.cs" />
+     <None Include="Packages\Locus-Bundle-System\Runtime\Unity.Locus.BundleSystem.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
@@ -257,6 +265,18 @@
      </Reference>
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.Graphs">
+     <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.Android.Extensions">
+     <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+     <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UWP.Extensions">
+     <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll</HintPath>
      </Reference>
      <Reference Include="CommandLine">
      <HintPath>F:/_Proj/_My/ET/Unity/Assets/Plugins/CommandLine.dll</HintPath>
@@ -612,61 +632,14 @@
      <Reference Include="System.Xml.XPath.XDocument">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Timeline.Editor">
-     <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Timeline">
-     <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-     </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Rider.Editor">
-     <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
      <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.TextMeshPro">
-     <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEditor.CacheServer">
-     <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/UnityEditor.CacheServer.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.ScriptableBuildPipeline">
-     <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-     <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
-     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.Mono.csproj">
-      <Project>{5910fa29-5797-199c-985b-fc9fc473328e}</Project>
-      <Name>Unity.Mono</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Editor.csproj">
-      <Project>{041131cd-3018-19b1-81b6-5dbee2467ffb}</Project>
-      <Name>Unity.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ThirdParty.csproj">
-      <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
-      <Name>Unity.ThirdParty</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Locus.BundleSystem.csproj">
-      <Project>{d152f4ae-18e0-6b5f-6e30-4039a7afc765}</Project>
-      <Name>Unity.Locus.BundleSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Locus.BundleSystem.Editor.csproj">
-      <Project>{df60f0aa-faef-6016-2cc4-4abd3bc44101}</Project>
-      <Name>Unity.Locus.BundleSystem.Editor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
