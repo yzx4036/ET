@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using UnityEngine;
 
 namespace ET
 {
@@ -101,7 +102,7 @@ namespace ET
                 {
                     continue;
                 }
-
+                Debug.Log($">>>{type.FullName}");
                 if (type.IsSubclassOf(typeof (BaseAttribute)))
                 {
                     attributeTypes.Add(type);
@@ -582,7 +583,7 @@ namespace ET
 
                 try
                 {
-                    await ETTaskHelper.WaitAll(list.List);
+                    await ETTaskHelper.WaitAll(list);
                 }
                 catch (Exception e)
                 {
