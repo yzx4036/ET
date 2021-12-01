@@ -102,7 +102,6 @@ namespace ET
                 {
                     continue;
                 }
-                Debug.Log($">>>{type.FullName}");
                 if (type.IsSubclassOf(typeof (BaseAttribute)))
                 {
                     attributeTypes.Add(type);
