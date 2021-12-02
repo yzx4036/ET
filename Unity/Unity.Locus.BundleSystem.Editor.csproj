@@ -41,13 +41,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Packages\Locus-Bundle-System\Editor\AssetbundleUploader.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Editor\TypeLinkerGenerator.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Editor\AssetbundleBuildProcessors.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Editor\AssetDependencyTree.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Editor\AssetbundleBuilder.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Editor\AssetbundleBuildSettingsInspector.cs" />
-     <None Include="Packages\Locus-Bundle-System\Editor\Unity.Locus.BundleSystem.Editor.asmdef" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Editor\AssetbundleUploader.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Editor\TypeLinkerGenerator.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Editor\AssetbundleBuildProcessors.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Editor\AssetDependencyTree.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Editor\AssetbundleBuilder.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Editor\AssetbundleBuildSettingsInspector.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
