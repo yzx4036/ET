@@ -1,6 +1,6 @@
 {
     "name": "Unity.ThirdParty",
-    "references": [],
+    "references": ["Unity.Locus.BundleSystem"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
