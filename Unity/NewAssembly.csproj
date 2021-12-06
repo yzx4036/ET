@@ -12,11 +12,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{df60f0aa-faef-6016-2cc4-4abd3bc44101}</ProjectGuid>
+    <ProjectGuid>{875151ab-afd7-6e99-d239-d967d7e1fab8}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Unity.Locus.BundleSystem.Editor</AssemblyName>
+    <AssemblyName>NewAssembly</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -41,13 +41,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Packages\Locus-Bundle-System\Editor\AssetbundleUploader.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Editor\TypeLinkerGenerator.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Editor\AssetbundleBuildProcessors.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Editor\AssetDependencyTree.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Editor\AssetbundleBuilder.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Editor\AssetbundleBuildSettingsInspector.cs" />
-     <None Include="Packages\Locus-Bundle-System\Editor\Unity.Locus.BundleSystem.Editor.asmdef" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\EditorToolSet.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\StageCameraEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\UIContentScalerEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\DisplayObjectEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\UIConfigEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\UIPanelEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\UIPainterEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\PackagesWindow.cs" />
+     <None Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\Unity.FairyGUI.Editor.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
@@ -648,12 +650,6 @@
      <Reference Include="System.Xml.XPath.XDocument">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-     <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.ScriptableBuildPipeline">
-     <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.dll</HintPath>
-     </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>F:/_Proj/_My/ET/Unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
      </Reference>
@@ -668,9 +664,9 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.Locus.BundleSystem.csproj">
-      <Project>{d152f4ae-18e0-6b5f-6e30-4039a7afc765}</Project>
-      <Name>Unity.Locus.BundleSystem</Name>
+    <ProjectReference Include="Unity.ThirdParty.csproj">
+      <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
+      <Name>Unity.ThirdParty</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

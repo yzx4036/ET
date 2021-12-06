@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Locus.BundleSystem", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Editor", "Unity.Editor.csproj", "{041131cd-3018-19b1-81b6-5dbee2467ffb}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewAssembly", "NewAssembly.csproj", "{875151ab-afd7-6e99-d239-d967d7e1fab8}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Locus.BundleSystem.Editor", "Unity.Locus.BundleSystem.Editor.csproj", "{df60f0aa-faef-6016-2cc4-4abd3bc44101}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{03938ccd-4b40-8dfb-6b9b-21988d5cac0a}"
@@ -26,6 +28,8 @@ Global
 		{d152f4ae-18e0-6b5f-6e30-4039a7afc765}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{041131cd-3018-19b1-81b6-5dbee2467ffb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{041131cd-3018-19b1-81b6-5dbee2467ffb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{875151ab-afd7-6e99-d239-d967d7e1fab8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{875151ab-afd7-6e99-d239-d967d7e1fab8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{df60f0aa-faef-6016-2cc4-4abd3bc44101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{df60f0aa-faef-6016-2cc4-4abd3bc44101}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03938ccd-4b40-8dfb-6b9b-21988d5cac0a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
