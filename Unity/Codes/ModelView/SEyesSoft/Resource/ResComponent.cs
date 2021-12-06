@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using BundleSystem;
 using ET;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace SEyesSoft.ET
 {
@@ -47,5 +48,30 @@ namespace SEyesSoft.ET
             BundleManager.Clear();
             Instance = null;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pBundleName"></param>
+        /// <param name="pAssetName"></param>
+        public GameObject Instantiate(string pBundleName, string pAssetName)
+        {
+            var loadedAsset = BundleManager.Load<GameObject>(pBundleName, pAssetName);
+            GameObject go = null;
+            if(loadedAsset != null)
+            {
+                go = BundleManager.Instantiate(loadedAsset);
+                BundleManager.ReleaseObject(loadedAsset);
+            }
+            return go;
+        }
+
+        // public T GetAsset<T>(string pBundleName, string pAssetName) where T : UnityEngine.Object
+        // {
+        //     var loadedAsset = BundleManager.Load<T>(pBundleName, pAssetName);
+        //     
+        //     BundleManager.ReleaseObject(loadedAsset);
+        //     
+        // }
     }
 }
