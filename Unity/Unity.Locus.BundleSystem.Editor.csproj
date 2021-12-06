@@ -47,6 +47,7 @@
      <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Editor\AssetDependencyTree.cs" />
      <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Editor\AssetbundleBuilder.cs" />
      <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Editor\AssetbundleBuildSettingsInspector.cs" />
+     <None Include="Assets\ThirdParty\Locus-Bundle-System\Editor\Unity.Locus.BundleSystem.Editor.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
@@ -667,9 +668,9 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.Locus.BundleSystem.csproj">
-      <Project>{d152f4ae-18e0-6b5f-6e30-4039a7afc765}</Project>
-      <Name>Unity.Locus.BundleSystem</Name>
+    <ProjectReference Include="Unity.ThirdParty.csproj">
+      <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
+      <Name>Unity.ThirdParty</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
