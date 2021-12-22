@@ -16,6 +16,7 @@ namespace SEyesSoft.Editor
         
         public static string GetCurrentAssetDirectory()
         {
+            
             foreach (var obj in Selection.GetFiltered<Object>(SelectionMode.Assets))
             {
                 var path = AssetDatabase.GetAssetPath(obj);
