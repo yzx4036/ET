@@ -323,6 +323,22 @@
      <Compile Include="Assets\Mono\SEyesSoft\Greeting.cs" />
      <Compile Include="Assets\Mono\SEyesSoft\Updater.cs" />
      <Compile Include="Assets\Mono\SEyesSoft\CompositeFileSystem.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\FairyGUI_UIConfig_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_Dictionary_2_String_UIPackage_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\UnityFS_UScene_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\FairyGUI_GComponent_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\FairyGUI_GRoot_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\UnityFS_ResourceManager_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\ET_ETTask_1_UScene_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\FairyGUI_Window_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_Stack_1_ILTypeInstance_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\UnityEngine_Rect_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\ET_ETAsyncTaskMethodBuilder_1_UScene_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\BundleSystem_BundleManager_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_Dictionary_2_GObject_ILTypeInstance_Bindin.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\FairyGUI_UIPackage_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\FairyGUI_GObject_Binding.cs" />
      <None Include="Assets\Mono\Unity.Mono.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>D:/Program Files/Unity2020_3/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
