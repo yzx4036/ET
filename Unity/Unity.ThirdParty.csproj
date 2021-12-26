@@ -103,8 +103,8 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Event\EventContext.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\AssemblyHashAlgorithm.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono\Disposable.cs" />
-     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ImmutableCollectionDecorator.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\CountdownObject.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ImmutableCollectionDecorator.cs" />
      <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Runtime\BundleManager.Debug.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\ByteBufferEqualityComparer.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\TextMap.cs" />
@@ -262,8 +262,8 @@
      <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Runtime\AssetbundleBuildSettings.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\TypeSystem.cs" />
      <Compile Include="Assets\ThirdParty\LitJson\JsonException.cs" />
-     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\BlendMode.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\CLRBinding\BindingGeneratorExtensions.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\BlendMode.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\CharSerializer.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\NullDecorator.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Container.cs" />
@@ -574,8 +574,8 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Tween\GTween.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.ELDC.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Mesh\EllipseMesh.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\JobScheduler.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\Action\PlayTransitionAction.cs" />
+     <Compile Include="Assets\ThirdParty\unityfs_plugin\JobScheduler.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\NetObjectCache.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\ShaderConfig.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ServiceModel\ProtoEndpointBehavior.cs" />
