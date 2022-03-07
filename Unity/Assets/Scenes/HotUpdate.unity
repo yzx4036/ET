@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initScene: Init.unity
-  developMode: 1
+  developMode: 0
   bufferSize: 4096
   password: test
   listDataPath: 

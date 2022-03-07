@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 25
   freeIdList: 
-  build: 2
-  encryptionKey: 
+  build: 5
+  encryptionKey: test
   chunkSize: 4096
   bundles:
   - id: 1
