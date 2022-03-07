@@ -7,15 +7,6 @@ namespace ET
 {   
     public class System_ExceptionAdapter : CrossBindingAdaptor
     {
-        static CrossBindingFunctionInfo<System.String> mget_Message_0 = new CrossBindingFunctionInfo<System.String>("get_Message");
-        static CrossBindingFunctionInfo<System.Collections.IDictionary> mget_Data_1 = new CrossBindingFunctionInfo<System.Collections.IDictionary>("get_Data");
-        static CrossBindingFunctionInfo<System.Exception> mGetBaseException_2 = new CrossBindingFunctionInfo<System.Exception>("GetBaseException");
-        static CrossBindingFunctionInfo<System.String> mget_StackTrace_3 = new CrossBindingFunctionInfo<System.String>("get_StackTrace");
-        static CrossBindingFunctionInfo<System.String> mget_HelpLink_4 = new CrossBindingFunctionInfo<System.String>("get_HelpLink");
-        static CrossBindingMethodInfo<System.String> mset_HelpLink_5 = new CrossBindingMethodInfo<System.String>("set_HelpLink");
-        static CrossBindingFunctionInfo<System.String> mget_Source_6 = new CrossBindingFunctionInfo<System.String>("get_Source");
-        static CrossBindingMethodInfo<System.String> mset_Source_7 = new CrossBindingMethodInfo<System.String>("set_Source");
-        static CrossBindingMethodInfo<System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext> mGetObjectData_8 = new CrossBindingMethodInfo<System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext>("GetObjectData");
         public override Type BaseCLRType
         {
             get
@@ -39,6 +30,17 @@ namespace ET
 
         public class Adapter : System.Exception, CrossBindingAdaptorType
         {
+            CrossBindingFunctionInfo<System.String> mget_Message_0 = new CrossBindingFunctionInfo<System.String>("get_Message");
+            CrossBindingFunctionInfo<System.Collections.IDictionary> mget_Data_1 = new CrossBindingFunctionInfo<System.Collections.IDictionary>("get_Data");
+            CrossBindingFunctionInfo<System.Exception> mGetBaseException_2 = new CrossBindingFunctionInfo<System.Exception>("GetBaseException");
+            CrossBindingFunctionInfo<System.String> mget_StackTrace_3 = new CrossBindingFunctionInfo<System.String>("get_StackTrace");
+            CrossBindingFunctionInfo<System.String> mget_HelpLink_4 = new CrossBindingFunctionInfo<System.String>("get_HelpLink");
+            CrossBindingMethodInfo<System.String> mset_HelpLink_5 = new CrossBindingMethodInfo<System.String>("set_HelpLink");
+            CrossBindingFunctionInfo<System.String> mget_Source_6 = new CrossBindingFunctionInfo<System.String>("get_Source");
+            CrossBindingMethodInfo<System.String> mset_Source_7 = new CrossBindingMethodInfo<System.String>("set_Source");
+            CrossBindingMethodInfo<System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext> mGetObjectData_8 = new CrossBindingMethodInfo<System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext>("GetObjectData");
+
+            bool isInvokingToString;
             ILTypeInstance instance;
             ILRuntime.Runtime.Enviorment.AppDomain appdomain;
 
@@ -153,7 +155,15 @@ namespace ET
                 m = instance.Type.GetVirtualMethod(m);
                 if (m == null || m is ILMethod)
                 {
-                    return instance.ToString();
+                    if (!isInvokingToString)
+                    {
+                        isInvokingToString = true;
+                        string res = instance.ToString();
+                        isInvokingToString = false;
+                        return res;
+                    }
+                    else
+                        return instance.Type.FullName;
                 }
                 else
                     return instance.Type.FullName;

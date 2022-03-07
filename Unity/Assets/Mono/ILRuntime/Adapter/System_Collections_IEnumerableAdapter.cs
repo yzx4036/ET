@@ -7,7 +7,6 @@ namespace ET
 {   
     public class System_Collections_IEnumerableAdapter : CrossBindingAdaptor
     {
-        static CrossBindingFunctionInfo<System.Collections.IEnumerator> mGetEnumerator_0 = new CrossBindingFunctionInfo<System.Collections.IEnumerator>("GetEnumerator");
         public override Type BaseCLRType
         {
             get
@@ -31,6 +30,9 @@ namespace ET
 
         public class Adapter : System.Collections.IEnumerable, CrossBindingAdaptorType
         {
+            CrossBindingFunctionInfo<System.Collections.IEnumerator> mGetEnumerator_0 = new CrossBindingFunctionInfo<System.Collections.IEnumerator>("GetEnumerator");
+
+            bool isInvokingToString;
             ILTypeInstance instance;
             ILRuntime.Runtime.Enviorment.AppDomain appdomain;
 
@@ -58,7 +60,15 @@ namespace ET
                 m = instance.Type.GetVirtualMethod(m);
                 if (m == null || m is ILMethod)
                 {
-                    return instance.ToString();
+                    if (!isInvokingToString)
+                    {
+                        isInvokingToString = true;
+                        string res = instance.ToString();
+                        isInvokingToString = false;
+                        return res;
+                    }
+                    else
+                        return instance.Type.FullName;
                 }
                 else
                     return instance.Type.FullName;
