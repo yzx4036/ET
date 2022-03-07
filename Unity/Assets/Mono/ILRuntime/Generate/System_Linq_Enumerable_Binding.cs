@@ -157,6 +157,11 @@ namespace ILRuntime.Runtime.Generated
 
             var result_of_this_method = System.Linq.Enumerable.OrderByDescending<System.Collections.Generic.KeyValuePair<System.Type, System.Int32>, System.Int32>(@source, @keySelector);
 
+            object obj_result_of_this_method = result_of_this_method;
+            if(obj_result_of_this_method is CrossBindingAdaptorType)
+            {    
+                return ILIntepreter.PushObject(__ret, __mStack, ((CrossBindingAdaptorType)obj_result_of_this_method).ILInstance);
+            }
             return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
         }
 
@@ -193,6 +198,11 @@ namespace ILRuntime.Runtime.Generated
 
             var result_of_this_method = System.Linq.Enumerable.OrderBy<System.Collections.Generic.KeyValuePair<System.String, System.Int32>, System.Int32>(@source, @keySelector);
 
+            object obj_result_of_this_method = result_of_this_method;
+            if(obj_result_of_this_method is CrossBindingAdaptorType)
+            {    
+                return ILIntepreter.PushObject(__ret, __mStack, ((CrossBindingAdaptorType)obj_result_of_this_method).ILInstance);
+            }
             return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
         }
 
@@ -213,6 +223,11 @@ namespace ILRuntime.Runtime.Generated
 
             var result_of_this_method = System.Linq.Enumerable.Select<System.Collections.Generic.KeyValuePair<System.String, System.Int32>, System.String>(@source, @selector);
 
+            object obj_result_of_this_method = result_of_this_method;
+            if(obj_result_of_this_method is CrossBindingAdaptorType)
+            {    
+                return ILIntepreter.PushObject(__ret, __mStack, ((CrossBindingAdaptorType)obj_result_of_this_method).ILInstance);
+            }
             return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
         }
 

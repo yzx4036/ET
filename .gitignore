@@ -58,3 +58,4 @@ Server/.DS_Store
 /Unity/Assembly-CSharp.csproj
 Unity_FairyGUI/FUIProject
 /Excel/~$*.xlsx
+unityfs_httpserver/node_modules

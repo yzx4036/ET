@@ -1,13 +1,5 @@
 {
   "dependencies": {
-    "com.locus.bundlesystem": {
-      "version": "file:Locus-Bundle-System",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {
-        "com.unity.scriptablebuildpipeline": "1.19.1"
-      }
-    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
@@ -34,8 +26,8 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.scriptablebuildpipeline": {
-      "version": "1.19.1",
-      "depth": 1,
+      "version": "1.19.3",
+      "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"

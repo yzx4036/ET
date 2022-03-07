@@ -176,6 +176,11 @@ namespace ILRuntime.Runtime.Generated
 
             var result_of_this_method = instance_of_this_method.transform;
 
+            object obj_result_of_this_method = result_of_this_method;
+            if(obj_result_of_this_method is CrossBindingAdaptorType)
+            {    
+                return ILIntepreter.PushObject(__ret, __mStack, ((CrossBindingAdaptorType)obj_result_of_this_method).ILInstance);
+            }
             return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
         }
 
@@ -191,6 +196,11 @@ namespace ILRuntime.Runtime.Generated
 
             var result_of_this_method = instance_of_this_method.GetComponent<UnityEngine.UI.Text>();
 
+            object obj_result_of_this_method = result_of_this_method;
+            if(obj_result_of_this_method is CrossBindingAdaptorType)
+            {    
+                return ILIntepreter.PushObject(__ret, __mStack, ((CrossBindingAdaptorType)obj_result_of_this_method).ILInstance);
+            }
             return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
         }
 
@@ -224,6 +234,11 @@ namespace ILRuntime.Runtime.Generated
 
             var result_of_this_method = instance_of_this_method.GetComponent<global::ReferenceCollector>();
 
+            object obj_result_of_this_method = result_of_this_method;
+            if(obj_result_of_this_method is CrossBindingAdaptorType)
+            {    
+                return ILIntepreter.PushObject(__ret, __mStack, ((CrossBindingAdaptorType)obj_result_of_this_method).ILInstance);
+            }
             return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
         }
 
@@ -239,6 +254,11 @@ namespace ILRuntime.Runtime.Generated
 
             var result_of_this_method = instance_of_this_method.GetComponent<UnityEngine.UI.Button>();
 
+            object obj_result_of_this_method = result_of_this_method;
+            if(obj_result_of_this_method is CrossBindingAdaptorType)
+            {    
+                return ILIntepreter.PushObject(__ret, __mStack, ((CrossBindingAdaptorType)obj_result_of_this_method).ILInstance);
+            }
             return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
         }
 
@@ -254,6 +274,11 @@ namespace ILRuntime.Runtime.Generated
 
             var result_of_this_method = instance_of_this_method.GetComponent<UnityEngine.UI.InputField>();
 
+            object obj_result_of_this_method = result_of_this_method;
+            if(obj_result_of_this_method is CrossBindingAdaptorType)
+            {    
+                return ILIntepreter.PushObject(__ret, __mStack, ((CrossBindingAdaptorType)obj_result_of_this_method).ILInstance);
+            }
             return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
         }
 
@@ -284,6 +309,11 @@ namespace ILRuntime.Runtime.Generated
 
             var result_of_this_method = instance_of_this_method.GetComponent<ET.UILayerScript>();
 
+            object obj_result_of_this_method = result_of_this_method;
+            if(obj_result_of_this_method is CrossBindingAdaptorType)
+            {    
+                return ILIntepreter.PushObject(__ret, __mStack, ((CrossBindingAdaptorType)obj_result_of_this_method).ILInstance);
+            }
             return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
         }
 
@@ -299,6 +329,11 @@ namespace ILRuntime.Runtime.Generated
 
             var result_of_this_method = instance_of_this_method.AddComponent<ET.ComponentView>();
 
+            object obj_result_of_this_method = result_of_this_method;
+            if(obj_result_of_this_method is CrossBindingAdaptorType)
+            {    
+                return ILIntepreter.PushObject(__ret, __mStack, ((CrossBindingAdaptorType)obj_result_of_this_method).ILInstance);
+            }
             return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
         }
 

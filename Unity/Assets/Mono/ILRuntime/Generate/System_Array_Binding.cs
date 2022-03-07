@@ -35,6 +35,20 @@ namespace ILRuntime.Runtime.Generated
                     lst.Add(m);
                 }
             }
+            args = new Type[]{typeof(System.Object)};
+            if (genericMethods.TryGetValue("Empty", out lst))
+            {
+                foreach(var m in lst)
+                {
+                    if(m.MatchGenericParameters(args, typeof(System.Object[])))
+                    {
+                        method = m.MakeGenericMethod(args);
+                        app.RegisterCLRMethodRedirection(method, Empty_0);
+
+                        break;
+                    }
+                }
+            }
             args = new Type[]{typeof(System.String)};
             if (genericMethods.TryGetValue("Empty", out lst))
             {
@@ -43,7 +57,7 @@ namespace ILRuntime.Runtime.Generated
                     if(m.MatchGenericParameters(args, typeof(System.String[])))
                     {
                         method = m.MakeGenericMethod(args);
-                        app.RegisterCLRMethodRedirection(method, Empty_0);
+                        app.RegisterCLRMethodRedirection(method, Empty_1);
 
                         break;
                     }
@@ -55,6 +69,17 @@ namespace ILRuntime.Runtime.Generated
 
 
         static StackObject* Empty_0(ILIntepreter __intp, StackObject* __esp, IList<object> __mStack, CLRMethod __method, bool isNewObj)
+        {
+            ILRuntime.Runtime.Enviorment.AppDomain __domain = __intp.AppDomain;
+            StackObject* __ret = ILIntepreter.Minus(__esp, 0);
+
+
+            var result_of_this_method = System.Array.Empty<System.Object>();
+
+            return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
+        }
+
+        static StackObject* Empty_1(ILIntepreter __intp, StackObject* __esp, IList<object> __mStack, CLRMethod __method, bool isNewObj)
         {
             ILRuntime.Runtime.Enviorment.AppDomain __domain = __intp.AppDomain;
             StackObject* __ret = ILIntepreter.Minus(__esp, 0);

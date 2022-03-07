@@ -1,0 +1,423 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba571c4fc5746744a8dfbbbee4eecee, type: 3}
+  m_Name: unityfs
+  m_EditorClassIdentifier: 
+  id: 25
+  freeIdList: 
+  build: 5
+  encryptionKey: test
+  chunkSize: 4096
+  bundles:
+  - id: 1
+    buildOrder: 1000
+    name: bundle_CommonAsset_res.pkg
+    note: CommonAsset_res
+    tag: FUI
+    type: 0
+    load: 0
+    enabled: 1
+    streamingAssets: 0
+    priority: 0
+    targets:
+    - _id: 12
+      enabled: 1
+      targetPath: Assets/Bundles/FUI/CommonAsset_atlas0.png
+      platform: 0
+    - _id: 13
+      enabled: 1
+      targetPath: Assets/Bundles/FUI/CommonAsset_atlas0_1.png
+      platform: 0
+    splits:
+    - encrypted: 0
+      name: 
+      sliceObjects: 0
+      rules: []
+      slices:
+      - name: bundle_commonasset_res_cyarae3cnn6_lgrad3.pkg
+        capacity: 0
+        streamingAssets: 0
+        platform: 0
+        assetPathHistroy:
+        - Assets/Bundles/FUI/CommonAsset_atlas0.png
+        - Assets/Bundles/FUI/CommonAsset_atlas0_1.png
+        totalRawSize: 7934239
+        lastBuildSize: 3010481
+        _assetPaths:
+        - Assets/Bundles/FUI/CommonAsset_atlas0.png
+        - Assets/Bundles/FUI/CommonAsset_atlas0_1.png
+  - id: 2
+    buildOrder: 1000
+    name: bundle_CommonAsset_desc.pkg
+    note: CommonAsset_desc
+    tag: FUI
+    type: 0
+    load: 0
+    enabled: 1
+    streamingAssets: 0
+    priority: 0
+    targets:
+    - _id: 14
+      enabled: 1
+      targetPath: Assets/Bundles/FUI/CommonAsset_fui.bytes
+      platform: 0
+    splits:
+    - encrypted: 0
+      name: 
+      sliceObjects: 0
+      rules: []
+      slices:
+      - name: bundle_commonasset_desc_rierae3cnn6_8dugr6.pkg
+        capacity: 0
+        streamingAssets: 0
+        platform: 0
+        assetPathHistroy:
+        - Assets/Bundles/FUI/CommonAsset_fui.bytes
+        totalRawSize: 4036
+        lastBuildSize: 3113
+        _assetPaths:
+        - Assets/Bundles/FUI/CommonAsset_fui.bytes
+  - id: 3
+    buildOrder: 1000
+    name: bundle_CommonComp_res.pkg
+    note: CommonComp_res
+    tag: FUI
+    type: 0
+    load: 0
+    enabled: 1
+    streamingAssets: 0
+    priority: 0
+    targets:
+    - _id: 15
+      enabled: 1
+      targetPath: Assets/Bundles/FUI/CommonComp_atlas0.png
+      platform: 0
+    splits:
+    - encrypted: 0
+      name: 
+      sliceObjects: 0
+      rules: []
+      slices:
+      - name: bundle_commoncomp_res_rierae3cnn6_8gtdw5.pkg
+        capacity: 0
+        streamingAssets: 0
+        platform: 0
+        assetPathHistroy:
+        - Assets/Bundles/FUI/CommonComp_atlas0.png
+        totalRawSize: 51230
+        lastBuildSize: 20777
+        _assetPaths:
+        - Assets/Bundles/FUI/CommonComp_atlas0.png
+  - id: 4
+    buildOrder: 1000
+    name: bundle_CommonComp_desc.pkg
+    note: CommonComp_desc
+    tag: FUI
+    type: 0
+    load: 0
+    enabled: 1
+    streamingAssets: 0
+    priority: 0
+    targets:
+    - _id: 16
+      enabled: 1
+      targetPath: Assets/Bundles/FUI/CommonComp_fui.bytes
+      platform: 0
+    splits:
+    - encrypted: 0
+      name: 
+      sliceObjects: 0
+      rules: []
+      slices:
+      - name: bundle_commoncomp_desc_rierae3cnn6_cqbr87.pkg
+        capacity: 0
+        streamingAssets: 0
+        platform: 0
+        assetPathHistroy:
+        - Assets/Bundles/FUI/CommonComp_fui.bytes
+        totalRawSize: 10564
+        lastBuildSize: 4300
+        _assetPaths:
+        - Assets/Bundles/FUI/CommonComp_fui.bytes
+  - id: 5
+    buildOrder: 1000
+    name: bundle_CommonUI_desc.pkg
+    note: CommonUI_desc
+    tag: FUI
+    type: 0
+    load: 0
+    enabled: 1
+    streamingAssets: 0
+    priority: 0
+    targets:
+    - _id: 17
+      enabled: 1
+      targetPath: Assets/Bundles/FUI/CommonUI_fui.bytes
+      platform: 0
+    splits:
+    - encrypted: 0
+      name: 
+      sliceObjects: 0
+      rules: []
+      slices:
+      - name: bundle_commonui_desc_rierae3cnn6_ygegy6.pkg
+        capacity: 0
+        streamingAssets: 0
+        platform: 0
+        assetPathHistroy:
+        - Assets/Bundles/FUI/CommonUI_fui.bytes
+        totalRawSize: 7358
+        lastBuildSize: 4149
+        _assetPaths:
+        - Assets/Bundles/FUI/CommonUI_fui.bytes
+  - id: 6
+    buildOrder: 1000
+    name: bundle_FBag_desc.pkg
+    note: FBag_desc
+    tag: FUI
+    type: 0
+    load: 0
+    enabled: 1
+    streamingAssets: 0
+    priority: 0
+    targets:
+    - _id: 18
+      enabled: 1
+      targetPath: Assets/Bundles/FUI/FBag_fui.bytes
+      platform: 0
+    splits:
+    - encrypted: 0
+      name: 
+      sliceObjects: 0
+      rules: []
+      slices:
+      - name: bundle_fbag_desc_rierae3cnn6_zwsj55.pkg
+        capacity: 0
+        streamingAssets: 0
+        platform: 0
+        assetPathHistroy:
+        - Assets/Bundles/FUI/FBag_fui.bytes
+        totalRawSize: 1310
+        lastBuildSize: 1924
+        _assetPaths:
+        - Assets/Bundles/FUI/FBag_fui.bytes
+  - id: 7
+    buildOrder: 1000
+    name: bundle_FEquip_desc.pkg
+    note: FEquip_desc
+    tag: FUI
+    type: 0
+    load: 0
+    enabled: 1
+    streamingAssets: 0
+    priority: 0
+    targets:
+    - _id: 19
+      enabled: 1
+      targetPath: Assets/Bundles/FUI/FEquip_fui.bytes
+      platform: 0
+    splits:
+    - encrypted: 0
+      name: 
+      sliceObjects: 0
+      rules: []
+      slices:
+      - name: bundle_fequip_desc_rierae3cnn6_alnec6.pkg
+        capacity: 0
+        streamingAssets: 0
+        platform: 0
+        assetPathHistroy:
+        - Assets/Bundles/FUI/FEquip_fui.bytes
+        totalRawSize: 11255
+        lastBuildSize: 4309
+        _assetPaths:
+        - Assets/Bundles/FUI/FEquip_fui.bytes
+  - id: 8
+    buildOrder: 1000
+    name: bundle_FLogin_desc.pkg
+    note: FLogin_desc
+    tag: FUI
+    type: 0
+    load: 0
+    enabled: 1
+    streamingAssets: 0
+    priority: 0
+    targets:
+    - _id: 20
+      enabled: 1
+      targetPath: Assets/Bundles/FUI/FLogin_fui.bytes
+      platform: 0
+    splits:
+    - encrypted: 0
+      name: 
+      sliceObjects: 0
+      rules: []
+      slices:
+      - name: bundle_flogin_desc_rierae3cnn6_mnp7x3.pkg
+        capacity: 0
+        streamingAssets: 0
+        platform: 0
+        assetPathHistroy:
+        - Assets/Bundles/FUI/FLogin_fui.bytes
+        totalRawSize: 5958
+        lastBuildSize: 3589
+        _assetPaths:
+        - Assets/Bundles/FUI/FLogin_fui.bytes
+  - id: 9
+    buildOrder: 1000
+    name: bundle_FMain_desc.pkg
+    note: FMain_desc
+    tag: FUI
+    type: 0
+    load: 0
+    enabled: 1
+    streamingAssets: 0
+    priority: 0
+    targets:
+    - _id: 21
+      enabled: 1
+      targetPath: Assets/Bundles/FUI/FMain_fui.bytes
+      platform: 0
+    splits:
+    - encrypted: 0
+      name: 
+      sliceObjects: 0
+      rules: []
+      slices:
+      - name: bundle_fmain_desc_rierae3cnn6_4xg3q6.pkg
+        capacity: 0
+        streamingAssets: 0
+        platform: 0
+        assetPathHistroy:
+        - Assets/Bundles/FUI/FMain_fui.bytes
+        totalRawSize: 6103
+        lastBuildSize: 3701
+        _assetPaths:
+        - Assets/Bundles/FUI/FMain_fui.bytes
+  - id: 10
+    buildOrder: 1000
+    name: bundle_FSetting_desc.pkg
+    note: FSetting_desc
+    tag: FUI
+    type: 0
+    load: 0
+    enabled: 1
+    streamingAssets: 0
+    priority: 0
+    targets:
+    - _id: 22
+      enabled: 1
+      targetPath: Assets/Bundles/FUI/FSetting_fui.bytes
+      platform: 0
+    splits:
+    - encrypted: 0
+      name: 
+      sliceObjects: 0
+      rules: []
+      slices:
+      - name: bundle_fsetting_desc_rierae3cnn6_6vjvj.pkg
+        capacity: 0
+        streamingAssets: 0
+        platform: 0
+        assetPathHistroy:
+        - Assets/Bundles/FUI/FSetting_fui.bytes
+        totalRawSize: 1612
+        lastBuildSize: 2003
+        _assetPaths:
+        - Assets/Bundles/FUI/FSetting_fui.bytes
+  - id: 11
+    buildOrder: 1000
+    name: bundle_FShop_desc.pkg
+    note: FShop_desc
+    tag: FUI
+    type: 0
+    load: 0
+    enabled: 1
+    streamingAssets: 0
+    priority: 0
+    targets:
+    - _id: 23
+      enabled: 1
+      targetPath: Assets/Bundles/FUI/FShop_fui.bytes
+      platform: 0
+    splits:
+    - encrypted: 0
+      name: 
+      sliceObjects: 0
+      rules: []
+      slices:
+      - name: bundle_fshop_desc_rierae3cnn6_aj6bd6.pkg
+        capacity: 0
+        streamingAssets: 0
+        platform: 0
+        assetPathHistroy:
+        - Assets/Bundles/FUI/FShop_fui.bytes
+        totalRawSize: 9287
+        lastBuildSize: 4116
+        _assetPaths:
+        - Assets/Bundles/FUI/FShop_fui.bytes
+  - id: 24
+    buildOrder: 1000
+    name: bundle_24.pkg
+    note: Code
+    tag: 
+    type: 0
+    load: 1
+    enabled: 1
+    streamingAssets: 0
+    priority: 10000
+    targets:
+    - _id: 25
+      enabled: 1
+      targetPath: Assets/Bundles/Code
+      platform: 0
+    splits:
+    - encrypted: 0
+      name: 
+      sliceObjects: 0
+      rules: []
+      slices:
+      - name: bundle_24_u9frjzcqon6_456un5.pkg
+        capacity: 0
+        streamingAssets: 0
+        platform: 0
+        assetPathHistroy:
+        - Assets/Bundles/Code/Code.dll.bytes
+        - Assets/Bundles/Code/Code.pdb.bytes
+        totalRawSize: 363032
+        lastBuildSize: 191504
+        _assetPaths:
+        - Assets/Bundles/Code/Code.dll.bytes
+        - Assets/Bundles/Code/Code.pdb.bytes
+  assetAttributesMap:
+    _keys: []
+    _values: []
+  assetBundlePath: out/bundles
+  zipArchivePath: out/zipArchives
+  packagePath: out/packages
+  priorityMax: 10000
+  showBundleDetails: 0
+  disableTypeTree: 0
+  lz4Compression: 1
+  deterministicAssetBundle: 1
+  extractShaderVariantCollections: 1
+  streamingAssetsAnyway: 0
+  streamingAssetsManifest: 0
+  _mainAssetListPath: 
+  skipExts:
+    _values:
+    - .xlsx
+    - .xlsm
+    - .xls
+    - .docx
+    - .doc
+    - .cs

@@ -41,18 +41,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Packages\Locus-Bundle-System\Runtime\BundleManager.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Runtime\BundleManager.Memory.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Runtime\EditorAssetMap.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Runtime\BundleManager.Collection.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Runtime\BundleManager.Debug.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Runtime\AssetbundleBuildManifest.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Runtime\AssetbundleUtilities.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Runtime\AssetbundleBuildSettings.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Runtime\BundleManager.Api.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Runtime\BundledAssetPath.cs" />
-     <Compile Include="Packages\Locus-Bundle-System\Runtime\FolderReference.cs" />
-     <None Include="Packages\Locus-Bundle-System\Runtime\Unity.Locus.BundleSystem.asmdef" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Runtime\BundleManager.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Runtime\BundleManager.Memory.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Runtime\EditorAssetMap.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Runtime\BundleManager.Collection.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Runtime\BundleManager.Debug.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Runtime\AssetbundleBuildManifest.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Runtime\AssetbundleUtilities.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Runtime\AssetbundleBuildSettings.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Runtime\BundleManager.Api.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Runtime\BundledAssetPath.cs" />
+     <Compile Include="Assets\ThirdParty\Locus-Bundle-System\Runtime\FolderReference.cs" />
      <Reference Include="UnityEngine">
      <HintPath>D:/Program Files/Unity2020_3/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

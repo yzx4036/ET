@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using FairyGUI;
 using UnityEngine;
 
@@ -61,6 +62,7 @@ namespace ET
                 return;
             }
 
+            await Task.CompletedTask;
             // TextAsset desTextAsset =
             //     await AssetsHelper.LoadAssetAsync<TextAsset>(type + "_fui", AssetsType.FUI);
             // if (desTextAsset != null)
@@ -79,6 +81,7 @@ namespace ET
         private static async void LoadPackageInternalAsync(string name, string extension, System.Type type,
             PackageItem item)
         {
+            await Task.CompletedTask;
             // Texture texture =
             //     await AssetsHelper.LoadAssetAsync<Texture>(name + extension, AssetsType.FUISprite);
             //

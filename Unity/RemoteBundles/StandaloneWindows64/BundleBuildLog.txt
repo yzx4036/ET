@@ -1,0 +1,11 @@
+Build Time : 2021-12-06 13:14:25
+
+----File Path : F:/_Proj/_My/ET/Unity/RemoteBundles/StandaloneWindows64/LocalScene----
+   0.00010 mb - Packages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs
+
+----File Path : F:/_Proj/_My/ET/Unity/RemoteBundles/StandaloneWindows64/Local----
+   0.00020 mb - Assets/ThirdParty/Locus-Bundle-System/Samples/Sample/LocalResources/Square.png
+
+----File Path : F:/_Proj/_My/ET/Unity/RemoteBundles/StandaloneWindows64/Remote----
+   0.00090 mb - Assets/ThirdParty/Locus-Bundle-System/Samples/Sample/RemoteResources/CubeMat.mat
+
