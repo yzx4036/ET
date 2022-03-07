@@ -288,6 +288,9 @@
      <Reference Include="ICSharpCode.SharpZipLib">
      <HintPath>D:/_Proj/UnityProj/ET/Unity/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
      </Reference>
+     <Reference Include="ICSharpCode.NRefactory">
+     <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/PackageCache/com.unity.render-pipelines.core@10.8.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+     </Reference>
      <Reference Include="nunit.framework">
      <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
      </Reference>
@@ -638,12 +641,6 @@
      </Reference>
      <Reference Include="System.Xml.XPath.XDocument">
      <HintPath>D:/Program Files/Unity2020_3/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-     <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.ScriptableBuildPipeline">
-     <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>

@@ -16,7 +16,7 @@ namespace ET
         }
     }
 
-    public class FUI : Entity
+    public class FUI : Entity, IAwake, IAwake<GObject>
     {
         public GObject GObject;
 

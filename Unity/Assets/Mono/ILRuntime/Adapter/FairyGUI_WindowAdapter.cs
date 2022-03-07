@@ -7,88 +7,6 @@ namespace ET
 {   
     public class FairyGUI_WindowAdapter : CrossBindingAdaptor
     {
-        static CrossBindingMethodInfo mLayoutModalWaitPane_0 = new CrossBindingMethodInfo("LayoutModalWaitPane");
-        static CrossBindingMethodInfo mOnInit_1 = new CrossBindingMethodInfo("OnInit");
-        static CrossBindingMethodInfo mOnShown_2 = new CrossBindingMethodInfo("OnShown");
-        static CrossBindingMethodInfo mOnHide_3 = new CrossBindingMethodInfo("OnHide");
-        static CrossBindingMethodInfo mDoShowAnimation_4 = new CrossBindingMethodInfo("DoShowAnimation");
-        static CrossBindingMethodInfo mDoHideAnimation_5 = new CrossBindingMethodInfo("DoHideAnimation");
-        static CrossBindingMethodInfo mDispose_6 = new CrossBindingMethodInfo("Dispose");
-        static CrossBindingMethodInfo<FairyGUI.EventContext> mcloseEventHandler_7 = new CrossBindingMethodInfo<FairyGUI.EventContext>("closeEventHandler");
-        static CrossBindingMethodInfo mCreateDisplayObject_8 = new CrossBindingMethodInfo("CreateDisplayObject");
-        static CrossBindingFunctionInfo<FairyGUI.GObject, System.Int32, FairyGUI.GObject> mAddChildAt_9 = new CrossBindingFunctionInfo<FairyGUI.GObject, System.Int32, FairyGUI.GObject>("AddChildAt");
-        static CrossBindingFunctionInfo<System.Int32, System.Boolean, FairyGUI.GObject> mRemoveChildAt_10 = new CrossBindingFunctionInfo<System.Int32, System.Boolean, FairyGUI.GObject>("RemoveChildAt");
-        static CrossBindingFunctionInfo<System.Int32> mGetFirstChildInView_11 = new CrossBindingFunctionInfo<System.Int32>("GetFirstChildInView");
-        static CrossBindingMethodInfo mHandleSizeChanged_12 = new CrossBindingMethodInfo("HandleSizeChanged");
-        static CrossBindingMethodInfo mHandleGrayedChanged_13 = new CrossBindingMethodInfo("HandleGrayedChanged");
-        static CrossBindingMethodInfo<FairyGUI.Controller> mHandleControllerChanged_14 = new CrossBindingMethodInfo<FairyGUI.Controller>("HandleControllerChanged");
-        static CrossBindingMethodInfo mUpdateBounds_15 = new CrossBindingMethodInfo("UpdateBounds");
-        class GetSnappingPositionWithDir_16Info : CrossBindingMethodInfo
-        {
-            static Type[] pTypes = new Type[] {typeof(System.Single).MakeByRefType(), typeof(System.Single).MakeByRefType(), typeof(System.Single), typeof(System.Single)};
-
-            public GetSnappingPositionWithDir_16Info()
-                : base("GetSnappingPositionWithDir")
-            {
-
-            }
-
-            protected override Type ReturnType { get { return null; } }
-
-            protected override Type[] Parameters { get { return pTypes; } }
-            public void Invoke(ILTypeInstance instance, ref System.Single xValue, ref System.Single yValue, System.Single xDir, System.Single yDir)
-            {
-                EnsureMethod(instance);
-
-                if (method != null)
-                {
-                    invoking = true;
-                    try
-                    {
-                        using (var ctx = domain.BeginInvoke(method))
-                        {
-                            ctx.PushObject(xValue);
-                            ctx.PushObject(yValue);
-                            ctx.PushObject(instance);
-                            ctx.PushReference(0);
-                            ctx.PushReference(1);
-                            ctx.PushInteger(xDir);
-                            ctx.PushInteger(yDir);
-                            ctx.Invoke();
-                            xValue = ctx.ReadObject<System.Single>(0);
-                            yValue = ctx.ReadObject<System.Single>(1);
-                        }
-                    }
-                    finally
-                    {
-                        invoking = false;
-                    }
-                }
-            }
-
-            public override void Invoke(ILTypeInstance instance)
-            {
-                throw new NotSupportedException();
-            }
-        }
-        static GetSnappingPositionWithDir_16Info mGetSnappingPositionWithDir_16 = new GetSnappingPositionWithDir_16Info();
-        static CrossBindingMethodInfo mOnUpdate_17 = new CrossBindingMethodInfo("OnUpdate");
-        static CrossBindingMethodInfo mConstructFromResource_18 = new CrossBindingMethodInfo("ConstructFromResource");
-        static CrossBindingMethodInfo<FairyGUI.Utils.ByteBuffer> mConstructExtension_19 = new CrossBindingMethodInfo<FairyGUI.Utils.ByteBuffer>("ConstructExtension");
-        static CrossBindingMethodInfo<FairyGUI.Utils.XML> mConstructFromXML_20 = new CrossBindingMethodInfo<FairyGUI.Utils.XML>("ConstructFromXML");
-        static CrossBindingMethodInfo<FairyGUI.Utils.ByteBuffer, System.Int32> mSetup_AfterAdd_21 = new CrossBindingMethodInfo<FairyGUI.Utils.ByteBuffer, System.Int32>("Setup_AfterAdd");
-        static CrossBindingFunctionInfo<FairyGUI.IFilter> mget_filter_22 = new CrossBindingFunctionInfo<FairyGUI.IFilter>("get_filter");
-        static CrossBindingMethodInfo<FairyGUI.IFilter> mset_filter_23 = new CrossBindingMethodInfo<FairyGUI.IFilter>("set_filter");
-        static CrossBindingFunctionInfo<FairyGUI.BlendMode> mget_blendMode_24 = new CrossBindingFunctionInfo<FairyGUI.BlendMode>("get_blendMode");
-        static CrossBindingMethodInfo<FairyGUI.BlendMode> mset_blendMode_25 = new CrossBindingMethodInfo<FairyGUI.BlendMode>("set_blendMode");
-        static CrossBindingFunctionInfo<System.String> mget_text_26 = new CrossBindingFunctionInfo<System.String>("get_text");
-        static CrossBindingMethodInfo<System.String> mset_text_27 = new CrossBindingMethodInfo<System.String>("set_text");
-        static CrossBindingFunctionInfo<System.String> mget_icon_28 = new CrossBindingFunctionInfo<System.String>("get_icon");
-        static CrossBindingMethodInfo<System.String> mset_icon_29 = new CrossBindingMethodInfo<System.String>("set_icon");
-        static CrossBindingMethodInfo mHandlePositionChanged_30 = new CrossBindingMethodInfo("HandlePositionChanged");
-        static CrossBindingMethodInfo mHandleScaleChanged_31 = new CrossBindingMethodInfo("HandleScaleChanged");
-        static CrossBindingMethodInfo mHandleAlphaChanged_32 = new CrossBindingMethodInfo("HandleAlphaChanged");
-        static CrossBindingMethodInfo<FairyGUI.Utils.ByteBuffer, System.Int32> mSetup_BeforeAdd_33 = new CrossBindingMethodInfo<FairyGUI.Utils.ByteBuffer, System.Int32>("Setup_BeforeAdd");
         public override Type BaseCLRType
         {
             get
@@ -112,6 +30,90 @@ namespace ET
 
         public class Adapter : FairyGUI.Window, CrossBindingAdaptorType
         {
+            CrossBindingMethodInfo mLayoutModalWaitPane_0 = new CrossBindingMethodInfo("LayoutModalWaitPane");
+            CrossBindingMethodInfo mOnInit_1 = new CrossBindingMethodInfo("OnInit");
+            CrossBindingMethodInfo mOnShown_2 = new CrossBindingMethodInfo("OnShown");
+            CrossBindingMethodInfo mOnHide_3 = new CrossBindingMethodInfo("OnHide");
+            CrossBindingMethodInfo mDoShowAnimation_4 = new CrossBindingMethodInfo("DoShowAnimation");
+            CrossBindingMethodInfo mDoHideAnimation_5 = new CrossBindingMethodInfo("DoHideAnimation");
+            CrossBindingMethodInfo mDispose_6 = new CrossBindingMethodInfo("Dispose");
+            CrossBindingMethodInfo<FairyGUI.EventContext> mcloseEventHandler_7 = new CrossBindingMethodInfo<FairyGUI.EventContext>("closeEventHandler");
+            CrossBindingMethodInfo mCreateDisplayObject_8 = new CrossBindingMethodInfo("CreateDisplayObject");
+            CrossBindingFunctionInfo<FairyGUI.GObject, System.Int32, FairyGUI.GObject> mAddChildAt_9 = new CrossBindingFunctionInfo<FairyGUI.GObject, System.Int32, FairyGUI.GObject>("AddChildAt");
+            CrossBindingFunctionInfo<System.Int32, System.Boolean, FairyGUI.GObject> mRemoveChildAt_10 = new CrossBindingFunctionInfo<System.Int32, System.Boolean, FairyGUI.GObject>("RemoveChildAt");
+            CrossBindingFunctionInfo<System.Int32> mGetFirstChildInView_11 = new CrossBindingFunctionInfo<System.Int32>("GetFirstChildInView");
+            CrossBindingMethodInfo mHandleSizeChanged_12 = new CrossBindingMethodInfo("HandleSizeChanged");
+            CrossBindingMethodInfo mHandleGrayedChanged_13 = new CrossBindingMethodInfo("HandleGrayedChanged");
+            CrossBindingMethodInfo<FairyGUI.Controller> mHandleControllerChanged_14 = new CrossBindingMethodInfo<FairyGUI.Controller>("HandleControllerChanged");
+            CrossBindingMethodInfo mUpdateBounds_15 = new CrossBindingMethodInfo("UpdateBounds");
+            class GetSnappingPositionWithDir_16Info : CrossBindingMethodInfo
+            {
+                static Type[] pTypes = new Type[] {typeof(System.Single).MakeByRefType(), typeof(System.Single).MakeByRefType(), typeof(System.Single), typeof(System.Single)};
+
+                public GetSnappingPositionWithDir_16Info()
+                    : base("GetSnappingPositionWithDir")
+                {
+
+                }
+
+                protected override Type ReturnType { get { return null; } }
+
+                protected override Type[] Parameters { get { return pTypes; } }
+                public void Invoke(ILTypeInstance instance, ref System.Single xValue, ref System.Single yValue, System.Single xDir, System.Single yDir)
+                {
+                    EnsureMethod(instance);
+
+                    if (method != null)
+                    {
+                        invoking = true;
+                        try
+                        {
+                            using (var ctx = domain.BeginInvoke(method))
+                            {
+                            ctx.PushFloat(xValue);
+                            ctx.PushFloat(yValue);
+                                ctx.PushObject(instance);
+                                ctx.PushReference(0);
+                                ctx.PushReference(1);
+                            ctx.PushFloat(xDir);
+                            ctx.PushFloat(yDir);
+                                ctx.Invoke();
+                            xValue = ctx.ReadFloat(0);
+                            yValue = ctx.ReadFloat(1);
+                            }
+                        }
+                        finally
+                        {
+                            invoking = false;
+                        }
+                    }
+                }
+
+                public override void Invoke(ILTypeInstance instance)
+                {
+                    throw new NotSupportedException();
+                }
+            }
+            GetSnappingPositionWithDir_16Info mGetSnappingPositionWithDir_16 = new GetSnappingPositionWithDir_16Info();
+            CrossBindingMethodInfo mOnUpdate_17 = new CrossBindingMethodInfo("OnUpdate");
+            CrossBindingMethodInfo mConstructFromResource_18 = new CrossBindingMethodInfo("ConstructFromResource");
+            CrossBindingMethodInfo<FairyGUI.Utils.ByteBuffer> mConstructExtension_19 = new CrossBindingMethodInfo<FairyGUI.Utils.ByteBuffer>("ConstructExtension");
+            CrossBindingMethodInfo<FairyGUI.Utils.XML> mConstructFromXML_20 = new CrossBindingMethodInfo<FairyGUI.Utils.XML>("ConstructFromXML");
+            CrossBindingMethodInfo<FairyGUI.Utils.ByteBuffer, System.Int32> mSetup_AfterAdd_21 = new CrossBindingMethodInfo<FairyGUI.Utils.ByteBuffer, System.Int32>("Setup_AfterAdd");
+            CrossBindingFunctionInfo<FairyGUI.IFilter> mget_filter_22 = new CrossBindingFunctionInfo<FairyGUI.IFilter>("get_filter");
+            CrossBindingMethodInfo<FairyGUI.IFilter> mset_filter_23 = new CrossBindingMethodInfo<FairyGUI.IFilter>("set_filter");
+            CrossBindingFunctionInfo<FairyGUI.BlendMode> mget_blendMode_24 = new CrossBindingFunctionInfo<FairyGUI.BlendMode>("get_blendMode");
+            CrossBindingMethodInfo<FairyGUI.BlendMode> mset_blendMode_25 = new CrossBindingMethodInfo<FairyGUI.BlendMode>("set_blendMode");
+            CrossBindingFunctionInfo<System.String> mget_text_26 = new CrossBindingFunctionInfo<System.String>("get_text");
+            CrossBindingMethodInfo<System.String> mset_text_27 = new CrossBindingMethodInfo<System.String>("set_text");
+            CrossBindingFunctionInfo<System.String> mget_icon_28 = new CrossBindingFunctionInfo<System.String>("get_icon");
+            CrossBindingMethodInfo<System.String> mset_icon_29 = new CrossBindingMethodInfo<System.String>("set_icon");
+            CrossBindingMethodInfo mHandlePositionChanged_30 = new CrossBindingMethodInfo("HandlePositionChanged");
+            CrossBindingMethodInfo mHandleScaleChanged_31 = new CrossBindingMethodInfo("HandleScaleChanged");
+            CrossBindingMethodInfo mHandleAlphaChanged_32 = new CrossBindingMethodInfo("HandleAlphaChanged");
+            CrossBindingMethodInfo<FairyGUI.Utils.ByteBuffer, System.Int32> mSetup_BeforeAdd_33 = new CrossBindingMethodInfo<FairyGUI.Utils.ByteBuffer, System.Int32>("Setup_BeforeAdd");
+
+            bool isInvokingToString;
             ILTypeInstance instance;
             ILRuntime.Runtime.Enviorment.AppDomain appdomain;
 
@@ -422,7 +424,15 @@ namespace ET
                 m = instance.Type.GetVirtualMethod(m);
                 if (m == null || m is ILMethod)
                 {
-                    return instance.ToString();
+                    if (!isInvokingToString)
+                    {
+                        isInvokingToString = true;
+                        string res = instance.ToString();
+                        isInvokingToString = false;
+                        return res;
+                    }
+                    else
+                        return instance.Type.FullName;
                 }
                 else
                     return instance.Type.FullName;

@@ -15,7 +15,7 @@ namespace ET
 	/// <summary>
 	/// 挂上这个组件，就成为了一个窗口
 	/// </summary>
-	public class FUIWindowComponent: Entity
+	public class FUIWindowComponent: Entity, IAwake
 	{
 		public GWindow Window;
 		

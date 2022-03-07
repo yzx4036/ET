@@ -154,7 +154,6 @@
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_Dictionary_2_Type_UInt16_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\ET_ETTaskCompleted_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\UnityEngine_Rect_Binding.cs" />
-     <Compile Include="Assets\Mono\ILRuntime\Generate\ET_ComponentView_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\IDisposableAdapter.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\ET_NetworkHelper_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\ET_ErrorCore_Binding.cs" />
@@ -210,7 +209,6 @@
      <Compile Include="Assets\Mono\ILRuntime\Generate\FairyGUI_GRoot_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_List_1_String_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\FairyGUI_Window_Binding.cs" />
-     <Compile Include="Assets\Mono\ILRuntime\Generate\ET_UILayerScript_Binding.cs" />
      <Compile Include="Assets\Mono\Module\Mongo\BsonIgnoreIfDefaultAttribute.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_ValueTuple_3_Int32_Int64_Int32_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_Dictionary_2_Int64_ILTypeInstance_Binding.cs" />
@@ -257,7 +255,6 @@
      <Compile Include="Assets\Mono\ILRuntime\Generate\ET_ETTask_1_Boolean_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\UnityEngine_RaycastHit_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_SortedDictionary_2_Int64_List_1_Int64_Bind_t1.cs" />
-     <Compile Include="Assets\Mono\ILRuntime\Generate\BundleSystem_BundleManager_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_Dictionary_2_Int32_Transform_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Adapter\System_Runtime_CompilerServices_ICriticalNotifyCompletionAdapter.cs" />
      <Compile Include="Assets\Mono\Module\NetworkTCP\TService.cs" />
@@ -339,6 +336,14 @@
      <Compile Include="Assets\Mono\ILRuntime\Generate\UnityEngine_Quaternion_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_HashSet_1_AService_Binding_Enumerator_Bind.cs" />
      <Compile Include="Assets\Mono\Define.cs" />
+     <Compile Include="Assets\Mono\Core\Helper\MathHelper.cs" />
+     <Compile Include="Assets\Mono\Module\NetworkTCP\WChannel.cs" />
+     <Compile Include="Assets\Mono\Module\NetworkTCP\WService.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_Dictionary_2_String_Int64_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\ET_Recast_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\System_Func_2_String_Byte_Array_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\System_Single_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\ET_MathHelper_Binding.cs" />
      <None Include="Assets\Mono\Unity.Mono.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>D:/Program Files/Unity2020_3/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -570,6 +575,9 @@
      </Reference>
      <Reference Include="ICSharpCode.SharpZipLib">
      <HintPath>D:/_Proj/UnityProj/ET/Unity/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+     </Reference>
+     <Reference Include="ICSharpCode.NRefactory">
+     <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/PackageCache/com.unity.render-pipelines.core@10.8.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
      </Reference>
      <Reference Include="mscorlib">
      <HintPath>D:/Program Files/Unity2020_3/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

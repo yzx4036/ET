@@ -9,7 +9,6 @@
 //----------------------------------------------------------------*/
 
 using System.Collections.Generic;
-using BundleSystem;
 using ET;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -25,16 +24,13 @@ namespace SEyesSoft.ET
         }
     }
 
-    public class ResComponent: Entity
+    public class ResComponent: Entity, IAwake
     {
         public static ResComponent Instance { get; set; }
 
         public void Awake()
         {
-            if (!BundleManager.Initialized)
-            {
-                BundleManager.Initialize();
-            }
+            
         }
         
         public override void Dispose()
@@ -45,7 +41,6 @@ namespace SEyesSoft.ET
             }
 
             base.Dispose();
-            BundleManager.Clear();
             Instance = null;
         }
 
@@ -56,13 +51,13 @@ namespace SEyesSoft.ET
         /// <param name="pAssetName"></param>
         public GameObject Instantiate(string pBundleName, string pAssetName)
         {
-            var loadedAsset = BundleManager.Load<GameObject>(pBundleName, pAssetName);
+            // var loadedAsset = BundleManager.Load<GameObject>(pBundleName, pAssetName);
             GameObject go = null;
-            if(loadedAsset != null)
-            {
-                go = BundleManager.Instantiate(loadedAsset);
-                BundleManager.ReleaseObject(loadedAsset);
-            }
+            // if(loadedAsset != null)
+            // {
+            //     go = BundleManager.Instantiate(loadedAsset);
+            //     BundleManager.ReleaseObject(loadedAsset);
+            // }
             return go;
         }
 

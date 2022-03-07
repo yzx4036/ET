@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 25
   freeIdList: 
-  build: 5
+  build: 6
   encryptionKey: test
   chunkSize: 4096
   bundles:
@@ -393,8 +393,8 @@ MonoBehaviour:
         assetPathHistroy:
         - Assets/Bundles/Code/Code.dll.bytes
         - Assets/Bundles/Code/Code.pdb.bytes
-        totalRawSize: 363032
-        lastBuildSize: 191504
+        totalRawSize: 388120
+        lastBuildSize: 204124
         _assetPaths:
         - Assets/Bundles/Code/Code.dll.bytes
         - Assets/Bundles/Code/Code.pdb.bytes
