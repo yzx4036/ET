@@ -458,10 +458,10 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\Section.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\BinaryStreamReader.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Mesh\PlaneMesh.cs" />
-     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\UIPainter.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\KeyValuePairProxy.cs" />
      <Compile Include="Assets\ThirdParty\LitJson\JsonWriter.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\UIPainter.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Enviorment\CrossBindingMethodInfo.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DateTimeSerializer.cs" />
      <Compile Include="Assets\ThirdParty\ETTask\IAwaiter.cs" />
@@ -549,8 +549,8 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\GuidHeap.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Reflection\Extensions.cs" />
      <Compile Include="Assets\ThirdParty\ETTask\ETVoid.cs" />
-     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GMovieClip.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\TypeAttributes.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GMovieClip.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\PropertyReference.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Enviorment\ValueTypeBinder.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Cil\Instruction.cs" />
@@ -1212,6 +1212,12 @@
      </Reference>
      <Reference Include="System.Xml.XPath.XDocument">
      <HintPath>D:/Program Files/Unity2020_3/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ScriptableBuildPipeline">
+     <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+     <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>

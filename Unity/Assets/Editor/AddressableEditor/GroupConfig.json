@@ -1,0 +1,15 @@
+{
+    "Config":
+    [
+        {
+            "Name": "Config",
+            "Dir": "Assets/Bundles/Config",
+            "PackType": 0,
+            "Extension":
+            [
+                ".bytes"
+            ],
+            "Labels": "config"
+        }
+    ]
+}

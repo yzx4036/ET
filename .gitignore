@@ -60,3 +60,6 @@ unityfs_httpserver/node_modules
 Unity_FairyGUI/FUIProject
 /Excel/~$*.xlsx
 /.vscode
+Unity/AssetBundleBackup
+Unity/ServerData
+Unity/Assets/AddressableAssetsData/Windows
