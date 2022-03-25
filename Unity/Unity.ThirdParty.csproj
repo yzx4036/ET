@@ -458,10 +458,10 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\Section.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\BinaryStreamReader.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Mesh\PlaneMesh.cs" />
-     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\UIPainter.cs" />
      <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\KeyValuePairProxy.cs" />
      <Compile Include="Assets\ThirdParty\LitJson\JsonWriter.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\UIPainter.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Enviorment\CrossBindingMethodInfo.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DateTimeSerializer.cs" />
      <Compile Include="Assets\ThirdParty\ETTask\IAwaiter.cs" />
@@ -549,8 +549,8 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\GuidHeap.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Reflection\Extensions.cs" />
      <Compile Include="Assets\ThirdParty\ETTask\ETVoid.cs" />
-     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GMovieClip.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\TypeAttributes.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GMovieClip.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\PropertyReference.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Enviorment\ValueTypeBinder.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Cil\Instruction.cs" />

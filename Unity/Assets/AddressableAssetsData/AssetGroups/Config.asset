@@ -10,40 +10,46 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: config.unity3d
+  m_Name: Config
   m_EditorClassIdentifier: 
-  m_GroupName: config.unity3d
+  m_GroupName: Config
   m_Data:
     m_SerializedData: []
-  m_GUID: 5b6d9b269c3633549b1010bd92ab6b80
+  m_GUID: 871e690d949118e4fa962952d941b80a
   m_SerializeEntries:
   - m_GUID: 277d58db3067742a7b32f9994984b3bc
     m_Address: Assets/Bundles/Config/AIConfigCategory.bytes
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - config
   - m_GUID: 40aebe92b34144ab187964caf41b2104
     m_Address: Assets/Bundles/Config/StartMachineConfigCategory.bytes
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - config
   - m_GUID: f62068aa635af4f189781cb7900fa538
     m_Address: Assets/Bundles/Config/StartProcessConfigCategory.bytes
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - config
   - m_GUID: f5aaffc264fbd427f907e6180178fa65
     m_Address: Assets/Bundles/Config/StartSceneConfigCategory.bytes
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - config
   - m_GUID: 2f76d9d7f3caf49b89a8292eb2ee302c
     m_Address: Assets/Bundles/Config/StartZoneConfigCategory.bytes
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - config
   - m_GUID: 3f452063ceb5f4150bbbfe795c0aca90
     m_Address: Assets/Bundles/Config/UnitConfigCategory.bytes
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - config
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fba6c196efaf6c44692df230323aa228, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 28cb90cf03974c643821b2edb8e591a5, type: 2}
-    - {fileID: 11400000, guid: b65a65a9d7ffcd14480bf5156bfad9c7, type: 2}
+    - {fileID: 11400000, guid: f18f2f7f6af846f409dd7639ef276155, type: 2}
+    - {fileID: 11400000, guid: 52157455e387dc84085e8d6ca4a7b8eb, type: 2}
