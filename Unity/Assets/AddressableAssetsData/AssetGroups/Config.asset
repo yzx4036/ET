@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Config
   m_Data:
     m_SerializedData: []
-  m_GUID: 871e690d949118e4fa962952d941b80a
+  m_GUID: a545769494327db4c9850c15148ebbd9
   m_SerializeEntries:
   - m_GUID: 277d58db3067742a7b32f9994984b3bc
     m_Address: Assets/Bundles/Config/AIConfigCategory.bytes
