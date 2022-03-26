@@ -4,7 +4,9 @@ using System.IO;
 using System.Reflection;
 using UnityEngine;
 using System.Linq;
-using UnityFS;
+using System.Resources;
+using System.Threading.Tasks;
+using SEyesSoft;
 
 namespace ET
 {
@@ -33,16 +35,20 @@ namespace ET
 			this.appDomain?.Dispose();
 		}
 		
-		public void Start()
+		public async Task Start()
 		{
 			switch (this.CodeMode)
 			{
 				case CodeMode.Mono:
 				{
-					var _textAsset = ResourceManager.TryLoadAssetSync("Assets/Bundles/Code/Code.dll.bytes", typeof(TextAsset), null);
-					byte[] assBytes  = _textAsset.ReadAllBytes();
-					var _textAsset1 = ResourceManager.TryLoadAssetSync("Assets/Bundles/Code/Code.pdb.bytes", typeof(TextAsset), null);
-					byte[] pdbBytes  = _textAsset1.ReadAllBytes();
+					var _textAsset = await AddressableMgr.Instance.LoadAssetAsync<TextAsset>("Code.dll");
+					byte[] assBytes  = _textAsset.bytes;
+					var _textAsset1 = await AddressableMgr.Instance.LoadAssetAsync<TextAsset>("Code.pdb");
+					byte[] pdbBytes  = _textAsset1.bytes;
+					// var _textAsset = ResourceManager.TryLoadAssetSync("Assets/Bundles/Code/Code.dll.bytes", typeof(TextAsset), null);
+					// byte[] assBytes  = _textAsset.ReadAllBytes();
+					// var _textAsset1 = ResourceManager.TryLoadAssetSync("Assets/Bundles/Code/Code.pdb.bytes", typeof(TextAsset), null);
+					// byte[] pdbBytes  = _textAsset1.ReadAllBytes();
 					assembly = Assembly.Load(assBytes, pdbBytes);
 					this.allTypes = assembly.GetTypes();
 					IStaticMethod start = new MonoStaticMethod(assembly, "ET.Entry", "Start");
@@ -51,10 +57,10 @@ namespace ET
 				}
 				case CodeMode.ILRuntime:
 				{
-					var _textAsset = ResourceManager.TryLoadAssetSync("Assets/Bundles/Code/Code.dll.bytes", typeof(TextAsset), null);
-					byte[] assBytes  = _textAsset.ReadAllBytes();
-					var _textAsset1 = ResourceManager.TryLoadAssetSync("Assets/Bundles/Code/Code.pdb.bytes", typeof(TextAsset), null);
-					byte[] pdbBytes  = _textAsset1.ReadAllBytes();
+					var _textAsset = await AddressableMgr.Instance.LoadAssetAsync<TextAsset>("Code.dll");
+					byte[] assBytes  = _textAsset.bytes;
+					var _textAsset1 = await AddressableMgr.Instance.LoadAssetAsync<TextAsset>("Code.pdb");
+					byte[] pdbBytes  = _textAsset1.bytes;
 					
 					//byte[] assBytes = File.ReadAllBytes(Path.Combine("../Unity/", Define.BuildOutputDir, "Code.dll"));
 					//byte[] pdbBytes = File.ReadAllBytes(Path.Combine("../Unity/", Define.BuildOutputDir, "Code.pdb"));

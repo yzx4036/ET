@@ -584,7 +584,6 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\AssemblyFlags.cs" />
      <Compile Include="Assets\ThirdParty\Addressables\AddressablesMgr.cs" />
      <Compile Include="Assets\ThirdParty\Common\SingerMonoManager.cs" />
-     <Compile Include="Assets\ThirdParty\Common\AsyncOperationHandleEx.cs" />
      <None Include="Assets\ThirdParty\FairyGUI\Resources\Shaders\FairyGUI-Text.shader" />
      <None Include="Assets\ThirdParty\FairyGUI\Resources\Shaders\FairyGUI-Image.shader" />
      <None Include="Assets\ThirdParty\FairyGUI\Resources\Shaders\AddOn\FairyGUI-BlurFilter.shader" />

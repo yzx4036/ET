@@ -84,6 +84,7 @@
      <Compile Include="Assets\Mono\ILRuntime\Generate\ET_ETCancellationToken_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_SortedDictionary_2_Int32_ILTypeInstance_Bi_t1.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_Dictionary_2_Int32_ILTypeInstance_Binding_.cs" />
+     <Compile Include="Assets\Mono\SEyesSoft\NetworkMonitor.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\ProtoBuf_Meta_TypeModel_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\ET_AService_Binding.cs" />
      <Compile Include="Assets\Mono\Module\Message\RpcException.cs" />
@@ -128,7 +129,6 @@
      <Compile Include="Assets\Mono\Module\NetworkTCP\TChannel.cs" />
      <Compile Include="Assets\Mono\Module\NetworkTCP\PacketParser.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Adapter\System_ExceptionAdapter.cs" />
-     <Compile Include="Assets\Mono\SEyesSoft\CompositeFileSystem.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_List_1_UnityWebRequest_Binding_Enumerator_.cs" />
      <Compile Include="Assets\Mono\Core\Helper\ZipHelper.cs" />
      <Compile Include="Assets\Mono\Helper\PathHelper.cs" />
@@ -155,7 +155,6 @@
      <Compile Include="Assets\Mono\ILRuntime\Generate\ET_ObjectHelper_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Math_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_Stack_1_ILTypeInstance_Binding.cs" />
-     <Compile Include="Assets\Mono\ILRuntime\Generate\ET_ETAsyncTaskMethodBuilder_1_UScene_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_List_1_UnityWebRequest_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_KeyValuePair_2_String_Int32_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_HashSet_1_AService_Binding.cs" />
@@ -165,7 +164,6 @@
      <Compile Include="Assets\Mono\Core\Options.cs" />
      <Compile Include="Assets\Mono\Module\NetworkTCP\WService.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\UnityEngine_Resources_Binding.cs" />
-     <Compile Include="Assets\Mono\ILRuntime\Generate\UnityFS_UScene_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_HashSet_1_String_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\ET_CodeLoader_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_Dictionary_2_String_Int64_Binding.cs" />
@@ -185,7 +183,6 @@
      <Compile Include="Assets\Mono\ILRuntime\Generate\UnityEngine_Quaternion_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\UnityEngine_AssetBundle_Binding.cs" />
      <Compile Include="Assets\Mono\SEyesSoft\Common\Util.cs" />
-     <Compile Include="Assets\Mono\ILRuntime\Generate\UnityFS_ResourceManager_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\UnityEngine_Events_UnityEvent_Binding.cs" />
      <Compile Include="Assets\Mono\Module\Mongo\BsonDictionaryOptionsAttribute.cs" />
      <Compile Include="Assets\Mono\Core\Log\NLogger.cs" />
@@ -319,7 +316,6 @@
      <Compile Include="Assets\Mono\ILRuntime\Generate\ET_ETTask_1_AssetBundle_Binding.cs" />
      <Compile Include="Assets\Mono\MonoBehaviour\CanvasConfig.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_SortedDictionary_2_Int64_List_1_ILTypeInst.cs" />
-     <Compile Include="Assets\Mono\ILRuntime\Generate\ET_ETTask_1_UScene_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_IO_File_Binding.cs" />
      <Compile Include="Assets\Mono\Core\MultiMap.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_SortedDictionary_2_Int64_List_1_ILTypeInst_t1.cs" />
@@ -924,6 +920,9 @@
      </Reference>
      <Reference Include="System.Xml.XPath.XDocument">
      <HintPath>D:/Program Files/Unity2020_3/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ResourceManager">
+     <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/ScriptAssemblies/Unity.ResourceManager.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>

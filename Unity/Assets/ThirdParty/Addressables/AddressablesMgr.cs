@@ -1,9 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.AddressableAssets.ResourceLocators;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceLocations;
+using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D;
 using static UnityEngine.AddressableAssets.Addressables;
@@ -16,7 +22,7 @@ using uObject = UnityEngine.Object;
 /// </summary>
 namespace SEyesSoft
 {
-    public class AddressableMgr : SingerMonoManager<AddressableMgr>
+    public class AddressableMgr: SingerMonoManager<AddressableMgr>
     {
         //private struct LoadingData
         //{
@@ -29,6 +35,7 @@ namespace SEyesSoft
         private static readonly string LUA_BYTES_PATH = "Assets/LuaBytes/{0}.bytes";
         private static readonly string LUA_FILE_PATH = "{0}/LuaScripts/{1}.lua";
         private static readonly string PROTO_FILE_DIR = "{0}/Pb";
+
         private static readonly string ATLAS_PATH = "Assets/Res/UI/Atlas/{0}.spriteatlas";
         //private static AddressableMgr _instance = null;
         //private static GameObject _instanceGO = null;
@@ -46,6 +53,7 @@ namespace SEyesSoft
 
         private Dictionary<string, byte[]> _luaBytesDic = new Dictionary<string, byte[]>();
         private byte[][] _protoFileBytes = null;
+
         public static bool IsAssetBundle
         {
             get
@@ -60,17 +68,17 @@ namespace SEyesSoft
 
         protected AddressableMgr()
         {
-
         }
 
         //***********************************公共方法*************************************
-        public void InitAddressableAsync(Action complete, Action<float, long> progress = null, Action<Exception> error = null)
+        public async Task InitAddressableAsync(Action complete, Action<float, long> progress = null, Action<Exception> error = null)
         {
             if (_initCor != null)
             {
                 Debug.LogError($"AddressableMgr正在初始化，请勿重复调用");
                 return;
             }
+
             if (_isInited)
             {
                 progress?.Invoke(1f, 0);
@@ -81,7 +89,7 @@ namespace SEyesSoft
                 _initProgressCallback = progress;
                 _initCompleteCallback = complete;
                 _initErrorCallback = error;
-                _initCor = StartCoroutine(_InitAddressable());
+                await _InitAddressable();
             }
         }
 
@@ -91,25 +99,28 @@ namespace SEyesSoft
             {
                 Debug.LogError("AddressableMgr未完成初始化");
             }
+
             return _isInited;
         }
 
-        public void InitPreloadResAsync(Action complete, Action<float> progress = null, Action<Exception> error = null)
+        public async Task InitPreloadResAsync(Action complete, Action<float> progress = null, Action<Exception> error = null)
         {
             if (!CheckAddressableInited(true))
             {
                 return;
             }
+
             if (_preloadCor != null)
             {
                 Debug.LogError("预加载正在加载中，请勿重复调用");
                 return;
             }
+
             ReleasePreloadRes();
             _preloadCompleteCallback = complete;
             _preloadProgressCallback = progress;
             _preloadErrorCallback = error;
-            _preloadCor = StartCoroutine(_InitPreload());
+            await _InitPreload();
         }
 
         public void ReleasePreloadRes()
@@ -147,6 +158,7 @@ namespace SEyesSoft
 #endif
                 }
             }
+
             return null;
         }
 
@@ -155,25 +167,26 @@ namespace SEyesSoft
             if (CheckAddressableInited(true))
             {
                 return _protoFileBytes;
-//                if (IsAssetBundle)
-//                {
-//                    return _protoFileBytes;
-//                }
-//                else
-//                {
-//#if UNITY_EDITOR
-//                    System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(string.Format(PROTO_FILE_DIR, Application.dataPath));
-//                    var fiArr = di.GetFiles("*.bytes");
-//                    int count = fiArr.Length;
-//                    byte[][] fileBytes = new byte[count][];
-//                    for (int i = 0; i < count; i++)
-//                    {
-//                        fileBytes[i] = System.IO.File.ReadAllBytes(fiArr[i].FullName);
-//                    }
-//                    return fileBytes;
-//#endif
-//                }
+                //                if (IsAssetBundle)
+                //                {
+                //                    return _protoFileBytes;
+                //                }
+                //                else
+                //                {
+                //#if UNITY_EDITOR
+                //                    System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(string.Format(PROTO_FILE_DIR, Application.dataPath));
+                //                    var fiArr = di.GetFiles("*.bytes");
+                //                    int count = fiArr.Length;
+                //                    byte[][] fileBytes = new byte[count][];
+                //                    for (int i = 0; i < count; i++)
+                //                    {
+                //                        fileBytes[i] = System.IO.File.ReadAllBytes(fiArr[i].FullName);
+                //                    }
+                //                    return fileBytes;
+                //#endif
+                //                }
             }
+
             return null;
         }
 
@@ -182,82 +195,35 @@ namespace SEyesSoft
             _protoFileBytes = null;
         }
 
-        public void LoadAssetAsync<TObject>(sObject key, Action<TObject> complete = null)
+        public async Task<TObject> LoadAssetAsync<TObject>(sObject key)
         {
-            if (!CheckAddressableInited(true))
+            if (CheckAddressableInited(true))
             {
-                return;
+                return await Addressables.LoadAssetAsync<TObject>(key).Task;
             }
-            var handler = Addressables.LoadAssetAsync<TObject>(key);
-            if (complete != null)
-            {
-                handler.Completed += (obj) =>
-                {
-                    if (obj.Status == AsyncOperationStatus.Failed)
-                    {
-                        Debug.LogError(obj.OperationException.Message);
-                    }
-                    complete.Invoke(obj.Result);
-                    complete = null;
-                };
-            }
+
+            return default;
         }
 
-        public void LoadAssetSync<TObject>(sObject key, Action<TObject> complete = null)
+        public async Task<TObject> LoadAssetSync<TObject>(sObject key)
         {
             if (!CheckAddressableInited(true))
             {
-                return;
+                return default;
             }
-            var handler = Addressables.LoadAssetAsync<TObject>(key);
-            handler.WaitForCompletion();
-            if (complete != null)
-            {
-                if (handler.Status == AsyncOperationStatus.Failed)
-                {
-                    Debug.LogError(handler.OperationException.Message);
-                }
-                complete.Invoke(handler.Result);
-            }
+
+            return await Addressables.LoadAssetAsync<TObject>(key).Task;
         }
 
-        public void LoadAssetsAsync<TObject>(IEnumerable keys, Action<AsyncOperationHandle<IList<TObject>>> complete = null, MergeMode mode = MergeMode.Union)
+        [ItemCanBeNull]
+        public async Task<IList<TObject>> LoadAssetsAsync<TObject>(IEnumerable keys, MergeMode mode = MergeMode.Union)
         {
             if (!CheckAddressableInited(true))
             {
-                return;
+                return default;
             }
-            var handler = Addressables.LoadAssetsAsync<TObject>(keys, null, mode);
-            if (complete != null)
-            {
-                handler.Completed += (obj) =>
-                {
-                    if (obj.Status == AsyncOperationStatus.Failed)
-                    {
-                        Debug.LogError(obj.OperationException.Message);
-                    }
-                    complete.Invoke(obj);
-                    complete = null;
-                };
-            }
-        }
 
-        public void LoadAssetsSync<TObject>(IEnumerable keys, Action<AsyncOperationHandle<IList<TObject>>> complete = null, MergeMode mode = MergeMode.Union)
-        {
-            if (!CheckAddressableInited(true))
-            {
-                return;
-            }
-            var handler = Addressables.LoadAssetsAsync<TObject>(keys, null, mode);
-            handler.WaitForCompletion();
-            if (complete != null)
-            {
-                if (handler.Status == AsyncOperationStatus.Failed)
-                {
-                    Debug.LogError(handler.OperationException.Message);
-                }
-                complete.Invoke(handler);
-            }
+            return await Addressables.LoadAssetsAsync<TObject>(keys, null, mode).Task;
         }
 
         public void InstantiateAsync(sObject key, Action<GameObject> complete = null, Transform parent = null, bool instantiateInWorldSpace = false)
@@ -266,6 +232,7 @@ namespace SEyesSoft
             {
                 return;
             }
+
             var handler = Addressables.InstantiateAsync(key, parent, instantiateInWorldSpace);
             if (complete != null)
             {
@@ -275,27 +242,10 @@ namespace SEyesSoft
                     {
                         Debug.LogError(obj.OperationException.Message);
                     }
+
                     complete.Invoke(obj.Result);
                     complete = null;
                 };
-            }
-        }
-
-        public void InstantiateSync(sObject key, Action<GameObject> complete = null, Transform parent = null, bool instantiateInWorldSpace = false)
-        {
-            if (!CheckAddressableInited(true))
-            {
-                return;
-            }
-            var handler = Addressables.InstantiateAsync(key, parent, instantiateInWorldSpace);
-            handler.WaitForCompletion();
-            if (complete != null)
-            {
-                if (handler.Status == AsyncOperationStatus.Failed)
-                {
-                    Debug.LogError(handler.OperationException.Message);
-                }
-                complete.Invoke(handler.Result);
             }
         }
 
@@ -313,84 +263,49 @@ namespace SEyesSoft
         {
             return Addressables.ReleaseInstance(instance);
         }
-        //
-        // public void LoadSceneAsync(sObject key, Action<AsyncOperationHandle<SceneInstance>> complete = null, LoadSceneMode loadMode = LoadSceneMode.Single, bool activateOnLoad = true)
-        // {
-        //     if (!CheckAddressableInited(true))
-        //     {
-        //         return;
-        //     }
-        //     var handler = Addressables.LoadSceneAsync(key, loadMode, activateOnLoad);
-        //     if (complete != null)
-        //     {
-        //         handler.Completed += (obj) =>
-        //         {
-        //             if (obj.Status == AsyncOperationStatus.Failed)
-        //             {
-        //                 Debug.LogError(obj.OperationException.Message);
-        //             }
-        //             complete.Invoke(obj);
-        //             complete = null;
-        //         };
-        //     }
-        // }
-        //
-        // public void LoadSceneSync(sObject key, Action<AsyncOperationHandle<SceneInstance>> complete = null, LoadSceneMode loadMode = LoadSceneMode.Single, bool activateOnLoad = true)
-        // {
-        //     if (!CheckAddressableInited(true))
-        //     {
-        //         return;
-        //     }
-        //     var handler = Addressables.LoadSceneAsync(key, loadMode, activateOnLoad);
-        //     handler.WaitForCompletion();
-        //     if (complete != null)
-        //     {
-        //         if (handler.Status == AsyncOperationStatus.Failed)
-        //         {
-        //             Debug.LogError(handler.OperationException.Message);
-        //         }
-        //         complete.Invoke(handler);
-        //     }
-        // }
-        //
-        // public void UnloadSceneAsync(AsyncOperationHandle<SceneInstance> sceneHandle, Action<bool> complete = null)
-        // {
-        //     var handler = Addressables.UnloadSceneAsync(sceneHandle);
-        //     if (complete != null)
-        //     {
-        //         handler.Completed += (obj) =>
-        //         {
-        //             if (obj.Status == AsyncOperationStatus.Succeeded)
-        //             {
-        //                 complete.Invoke(true);
-        //             }
-        //             else
-        //             {
-        //                 Debug.LogError(obj.OperationException.Message);
-        //                 complete.Invoke(false);
-        //             }
-        //             complete = null;
-        //         };
-        //     }
-        // }
-        //
-        // public void UnloadSceneSync(AsyncOperationHandle<SceneInstance> sceneHandle, Action<bool> complete = null)
-        // {
-        //     var handler = Addressables.UnloadSceneAsync(sceneHandle);
-        //     handler.WaitForCompletion();
-        //     if (complete != null)
-        //     {
-        //         if (handler.Status == AsyncOperationStatus.Succeeded)
-        //         {
-        //             complete.Invoke(true);
-        //         }
-        //         else
-        //         {
-        //             Debug.LogError(handler.OperationException.Message);
-        //             complete.Invoke(false);
-        //         }
-        //     }
-        // }
+
+        public async Task LoadSceneAsync(sObject key, Action<AsyncOperationHandle<SceneInstance>> complete = null,
+        LoadSceneMode loadMode = LoadSceneMode.Single, bool activateOnLoad = true)
+        {
+            if (!CheckAddressableInited(true))
+            {
+                return;
+            }
+
+            var handler = Addressables.LoadSceneAsync(key, loadMode, activateOnLoad);
+            await handler.Task;
+            handler.Completed += (obj) =>
+            {
+                if (obj.Status == AsyncOperationStatus.Failed)
+                {
+                    Debug.LogError(obj.OperationException.Message);
+                }
+
+                complete.Invoke(obj);
+                complete = null;
+            };
+        }
+
+        public async Task UnloadSceneAsync(AsyncOperationHandle<SceneInstance> sceneHandle, Action<bool> complete = null)
+        {
+            var handler = Addressables.UnloadSceneAsync(sceneHandle);
+            await handler.Task;
+
+            handler.Completed += (obj) =>
+            {
+                if (obj.Status == AsyncOperationStatus.Succeeded)
+                {
+                    complete.Invoke(true);
+                }
+                else
+                {
+                    Debug.LogError(obj.OperationException.Message);
+                    complete.Invoke(false);
+                }
+
+                complete = null;
+            };
+        }
 
         //public void AtlasRequest(string atlasName, Action<SpriteAtlas> callback)
         //{
@@ -415,79 +330,10 @@ namespace SEyesSoft
             {
                 value = handler.Result as TObject;
             }
+
             Addressables.Release(handler);
             return value;
         }
-
-        //***********************************静态方法*************************************
-        public static void StaticLoadAssetAsync<TObject>(sObject key, Action<TObject> complete = null)
-        {
-            Instance.LoadAssetAsync<TObject>(key, complete);
-        }
-
-        public static void StaticLoadAssetSync<TObject>(sObject key, Action<TObject> complete = null)
-        {
-            Instance.LoadAssetSync<TObject>(key, complete);
-        }
-
-        public static void StaticLoadAssetsAsync<TObject>(sObject[] keys, Action<AsyncOperationHandle<IList<TObject>>> complete = null, MergeMode mode = MergeMode.Union)
-        {
-            List<sObject> keyList = new List<sObject>();
-            keyList.AddRange(keys);
-            Instance.LoadAssetsAsync<TObject>(keyList, complete, mode);
-        }
-
-        public static void StaticLoadAssetsSync<TObject>(sObject[] keys, Action<AsyncOperationHandle<IList<TObject>>> complete = null, MergeMode mode = MergeMode.Union)
-        {
-            List<sObject> keyList = new List<sObject>();
-            keyList.AddRange(keys);
-            Instance.LoadAssetsSync<TObject>(keyList, complete, mode);
-        }
-
-        public static void StaticInstantiateAsync(sObject key, Action<GameObject> complete = null, Transform parent = null, bool instantiateInWorldSpace = false)
-        {
-            Instance.InstantiateAsync(key, complete, parent, instantiateInWorldSpace);
-        }
-
-        public static void StaticInstantiateSync(sObject key, Action<GameObject> complete = null, Transform parent = null, bool instantiateInWorldSpace = false)
-        {
-            Instance.InstantiateSync(key, complete, parent, instantiateInWorldSpace);
-        }
-
-        public static void StaticReleaseObject<TObject>(TObject obj)
-        {
-            Instance.ReleaseObject(obj);
-        }
-
-        public static void StaticReleaseHandle<T>(AsyncOperationHandle<T> handle)
-        {
-            Instance.ReleaseHandle(handle);
-        }
-
-        public static bool StaticReleaseInstance(GameObject instance)
-        {
-            return Instance.ReleaseInstance(instance);
-        }
-        //
-        // public static void StaticLoadSceneAsync(sObject key, Action<AsyncOperationHandle<SceneInstance>> complete = null, LoadSceneMode loadMode = LoadSceneMode.Single, bool activateOnLoad = true)
-        // {
-        //     Instance.LoadSceneAsync(key, complete, loadMode, activateOnLoad);
-        // }
-        //
-        // public static void StaticLoadSceneSync(sObject key, Action<AsyncOperationHandle<SceneInstance>> complete = null, LoadSceneMode loadMode = LoadSceneMode.Single, bool activateOnLoad = true)
-        // {
-        //     Instance.LoadSceneSync(key, complete, loadMode, activateOnLoad);
-        // }
-        //
-        // public static void StaticUnloadSceneAsync(AsyncOperationHandle<SceneInstance> sceneHandle, Action<bool> complete = null)
-        // {
-        //     Instance.UnloadSceneAsync(sceneHandle, complete);
-        // }
-        //
-        // public static void StaticUnloadSceneSync(AsyncOperationHandle<SceneInstance> sceneHandle, Action<bool> complete = null)
-        // {
-        //     Instance.UnloadSceneSync(sceneHandle, complete);
-        // }
 
         public static byte[][] StaticLoadProtoFile()
         {
@@ -505,12 +351,11 @@ namespace SEyesSoft
         }
 
         //***********************************私有方法*************************************
-        private IEnumerator _InitAddressable()
+        private async Task _InitAddressable()
         {
             var initHandler = Addressables.InitializeAsync();
-            yield return initHandler;
-            yield return StartCoroutine(_HotUpdate());
-            yield return null;
+            await initHandler.Task;
+            await _HotUpdate();
 
             _initCor = null;
             _isInited = true;
@@ -519,29 +364,31 @@ namespace SEyesSoft
             _initProgressCallback = null;
         }
 
-        private IEnumerator _HotUpdate()
+        private async Task _HotUpdate()
         {
             Debug.Log("检查Catalog");
             var checkHandler = Addressables.CheckForCatalogUpdates(false);
-            yield return checkHandler;
+            var updateList = await checkHandler.Task;
             if (checkHandler.Status == AsyncOperationStatus.Failed)
             {
                 _initErrorCallback?.Invoke(checkHandler.OperationException);
-                yield break;
+                return;
             }
 
-            if (checkHandler.Result.Count > 0)
+            if (updateList.Count > 0)
             {
                 Debug.Log("开始更新Catalog");
-                var updateHandler = Addressables.UpdateCatalogs(checkHandler.Result, false);
-                yield return updateHandler;
+                var updateHandler = Addressables.UpdateCatalogs(updateList, false);
+                await updateHandler.Task;
                 if (updateHandler.Status == AsyncOperationStatus.Failed)
                 {
                     _initErrorCallback?.Invoke(updateHandler.OperationException);
-                    yield break;
+                    return;
                 }
+
                 Addressables.Release(updateHandler);
             }
+
             Addressables.Release(checkHandler);
             Debug.Log("Catalog检查完毕");
 
@@ -549,28 +396,28 @@ namespace SEyesSoft
             foreach (var locator in Addressables.ResourceLocators)
             {
                 var sizeHandler = Addressables.GetDownloadSizeAsync(locator.Keys);
-                yield return sizeHandler;
+                long downloadSize = await sizeHandler.Task;
                 if (sizeHandler.Status == AsyncOperationStatus.Failed)
                 {
                     _initErrorCallback?.Invoke(sizeHandler.OperationException);
-                    yield break;
+                    return;
                 }
 
-                long downloadSize = sizeHandler.Result;
                 Addressables.Release(sizeHandler);
                 if (downloadSize > 0)
                 {
                     _initProgressCallback?.Invoke(0f, downloadSize);
                     var downloadHandler = Addressables.DownloadDependenciesAsync(locator.Keys, Addressables.MergeMode.Union, false);
+                    await downloadHandler.Task;
                     while (!downloadHandler.IsDone)
                     {
                         _initProgressCallback?.Invoke(downloadHandler.PercentComplete, downloadSize);
-                        yield return null;
                     }
+
                     if (downloadHandler.Status == AsyncOperationStatus.Failed)
                     {
                         _initErrorCallback?.Invoke(downloadHandler.OperationException);
-                        yield break;
+                        return;
                     }
 
                     _initProgressCallback?.Invoke(1f, downloadSize);
@@ -582,24 +429,26 @@ namespace SEyesSoft
                     _initProgressCallback?.Invoke(1f, 0);
                     Debug.Log("无可下载文件");
                 }
+
                 break;
             }
+
             Debug.Log("更新完成");
         }
 
-        private IEnumerator _InitPreload()
+        private async Task _InitPreload()
         {
             _preloadProgressCallback?.Invoke(0f);
-            yield return StartCoroutine(_InitPreloadRes());
+            await _InitPreloadRes();
             if (IsAssetBundle)
             {
                 _preloadProgressCallback?.Invoke(0.5f);
-                yield return StartCoroutine(_InitPreloadLua());
+                // await _InitPreloadLua();
             }
+
             _preloadProgressCallback?.Invoke(0.75f);
-            yield return StartCoroutine(_InitPreloadProto());
+            // yield return StartCoroutine(_InitPreloadProto());
             _preloadProgressCallback?.Invoke(1f);
-            yield return null;
 
             Debug.Log("预加载资源完成");
             _preloadCor = null;
@@ -608,19 +457,19 @@ namespace SEyesSoft
             _preloadProgressCallback = null;
         }
 
-        private IEnumerator _InitPreloadRes()
+        private async Task _InitPreloadRes()
         {
             Debug.Log("预加载资源文件");
             foreach (var locator in Addressables.ResourceLocators)
             {
-                if (locator.Locate(PRELOAD_FILE_KEY, typeof(TextAsset), out var locations))
+                if (locator.Locate(PRELOAD_FILE_KEY, typeof (TextAsset), out var locations))
                 {
                     var preloadHandler = Addressables.LoadAssetAsync<TextAsset>(locations[0]);
-                    yield return preloadHandler;
+                    await preloadHandler.Task;
                     if (preloadHandler.Status == AsyncOperationStatus.Failed)
                     {
                         _preloadErrorCallback?.Invoke(preloadHandler.OperationException);
-                        yield break;
+                        return;
                     }
 
                     string fileStr = preloadHandler.Result.text;
@@ -632,22 +481,24 @@ namespace SEyesSoft
                         resPathList.AddRange(fileStr.Split('\n'));
                         preloadResHandler = Addressables.LoadAssetsAsync<uObject>(resPathList, null, Addressables.MergeMode.Union);
                         var resHandler = preloadResHandler.Value;
+                        await resHandler.Task;
                         while (!resHandler.IsDone)
                         {
                             _preloadProgressCallback?.Invoke(0.5f * resHandler.PercentComplete);
-                            yield return null;
                         }
+
                         if (resHandler.Status == AsyncOperationStatus.Failed)
                         {
                             _preloadErrorCallback?.Invoke(resHandler.OperationException);
-                            yield break;
+                            return;
                         }
                     }
+
                     Debug.Log("预加载资源文件完成");
                 }
+
                 break;
             }
-            yield return null;
         }
 
         private IEnumerator _InitPreloadLua()
@@ -655,7 +506,7 @@ namespace SEyesSoft
             Debug.Log("预加载lua代码");
             foreach (var locator in Addressables.ResourceLocators)
             {
-                if (locator.Locate("lua", typeof(TextAsset), out var locations))
+                if (locator.Locate("lua", typeof (TextAsset), out var locations))
                 {
                     var luaHandler = Addressables.LoadAssetsAsync<TextAsset>(locations, null);
                     while (!luaHandler.IsDone)
@@ -663,6 +514,7 @@ namespace SEyesSoft
                         _preloadProgressCallback?.Invoke(0.25f * luaHandler.PercentComplete + 0.5f);
                         yield return null;
                     }
+
                     if (luaHandler.Status == AsyncOperationStatus.Failed)
                     {
                         _preloadErrorCallback?.Invoke(luaHandler.OperationException);
@@ -683,12 +535,14 @@ namespace SEyesSoft
                             _luaBytesDic.Add(key, assetList[i].bytes);
                         }
                     }
+
                     Addressables.Release(luaHandler);
                 }
                 else
                 {
                     Debug.LogError("无法通过Labels定位Lua文件信息");
                 }
+
                 break;
             }
         }
@@ -702,17 +556,20 @@ namespace SEyesSoft
                 _preloadProgressCallback?.Invoke(0.25f * protoHandler.PercentComplete + 0.75f);
                 yield return null;
             }
+
             if (protoHandler.Status == AsyncOperationStatus.Failed)
             {
                 _preloadErrorCallback?.Invoke(protoHandler.OperationException);
                 yield break;
             }
+
             int count = protoHandler.Result.Count;
             _protoFileBytes = new byte[count][];
             for (int i = 0; i < count; i++)
             {
                 _protoFileBytes[i] = protoHandler.Result[i].bytes;
             }
+
             Addressables.Release(protoHandler);
         }
 
@@ -746,6 +603,7 @@ namespace SEyesSoft
                 StopCoroutine(_initCor);
                 _initCor = null;
             }
+
             if (_preloadCor != null)
             {
                 StopCoroutine(_preloadCor);

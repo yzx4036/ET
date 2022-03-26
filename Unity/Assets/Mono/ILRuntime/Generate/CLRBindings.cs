@@ -240,10 +240,6 @@ namespace ILRuntime.Runtime.Generated
             System_Collections_Generic_List_1_ETTask_Binding.Register(app);
             ET_ETTaskHelper_Binding.Register(app);
             ET_ListComponent_1_String_Binding.Register(app);
-            ET_ETAsyncTaskMethodBuilder_1_UScene_Binding.Register(app);
-            ET_ETTask_1_UScene_Binding.Register(app);
-            UnityFS_ResourceManager_Binding.Register(app);
-            UnityFS_UScene_Binding.Register(app);
         }
 
         /// <summary>
