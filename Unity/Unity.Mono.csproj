@@ -338,6 +338,8 @@
      <Compile Include="Assets\Mono\ILRuntime\Generate\ET_MathHelper_Binding.cs" />
      <Compile Include="Assets\Mono\ILRuntime\Generate\System_Collections_Generic_HashSet_1_AService_Binding_Enumerator_Bind.cs" />
      <Compile Include="Assets\Mono\Define.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\LitJson_JsonMapper_Binding.cs" />
+     <Compile Include="Assets\Mono\ILRuntime\Generate\SEyesSoft_SingerMonoManager_1_AddressableMgr_Binding.cs" />
      <None Include="Assets\Mono\Unity.Mono.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>D:/Program Files/Unity2020_3/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

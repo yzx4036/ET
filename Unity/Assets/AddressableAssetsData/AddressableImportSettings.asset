@@ -36,17 +36,6 @@ MonoBehaviour:
     groupTemplateApplicationMode: 0
     simplified: 1
     addressReplacement: 
-  - path: Assets/Res/UI/CommonPrefabs/**
-    matchType: 0
-    groupName: CommonPrefabs
-    LabelMode: 0
-    labelRefs:
-    - m_LabelString: Preload
-    dynamicLabels: []
-    groupTemplate: {fileID: 0}
-    groupTemplateApplicationMode: 0
-    simplified: 1
-    addressReplacement: 
   - path: Assets/Bundles/Scenes/(?<category>[^/]+)/*.unity
     matchType: 1
     groupName: ${category}
@@ -58,12 +47,12 @@ MonoBehaviour:
     groupTemplateApplicationMode: 0
     simplified: 0
     addressReplacement: 
-  - path: Assets/Plugins/TextMesh Pro/Shaders/**.shader
+  - path: Assets/Bundles/Config/*
     matchType: 0
-    groupName: TextMeshShader
+    groupName: Config
     LabelMode: 0
     labelRefs:
-    - m_LabelString: Preload
+    - m_LabelString: config
     dynamicLabels: []
     groupTemplate: {fileID: 0}
     groupTemplateApplicationMode: 0

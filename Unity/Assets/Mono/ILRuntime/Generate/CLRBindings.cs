@@ -22,6 +22,7 @@ namespace ILRuntime.Runtime.Generated
         /// </summary>
         public static void Initialize(ILRuntime.Runtime.Enviorment.AppDomain app)
         {
+            SEyesSoft_SingerMonoManager_1_AddressableMgr_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_Int32_ILTypeInstance_Binding.Register(app);
             ET_TimeHelper_Binding.Register(app);
             ET_ETAsyncTaskMethodBuilder_Binding.Register(app);
@@ -122,6 +123,7 @@ namespace ILRuntime.Runtime.Generated
             System_Action_Binding.Register(app);
             ET_MonoPool_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_Int64_ILTypeInstance_Binding.Register(app);
+            LitJson_JsonMapper_Binding.Register(app);
             System_Collections_Generic_HashSet_1_ILTypeInstance_Binding.Register(app);
             System_Collections_Generic_HashSet_1_ILTypeInstance_Binding_Enumerator_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_Type_ILTypeInstance_Binding.Register(app);

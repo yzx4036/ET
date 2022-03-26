@@ -223,7 +223,10 @@ namespace SEyesSoft
                 return default;
             }
 
-            return await Addressables.LoadAssetsAsync<TObject>(keys, null, mode).Task;
+            var handler = Addressables.LoadAssetsAsync<TObject>(keys, null, mode);
+            IList<TObject> result = await handler.Task;
+            Addressables.Release(handler);
+            return result;
         }
 
         public void InstantiateAsync(sObject key, Action<GameObject> complete = null, Transform parent = null, bool instantiateInWorldSpace = false)

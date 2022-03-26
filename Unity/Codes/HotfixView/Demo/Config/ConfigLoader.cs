@@ -1,18 +1,20 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using SEyesSoft.ET;
 using UnityEngine;
 
 namespace ET
 {
     public class ConfigLoader: IConfigLoader
     {
-        public void GetAllConfigBytes(Dictionary<string, byte[]> output)
+        public async Task GetAllConfigBytes(Dictionary<string, byte[]> output)
         {
-            Dictionary<string, UnityEngine.Object> keys = ResourcesComponent.Instance.GetBundleAll("config.unity3d");
-
+            Debug.Log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SSSSSSSSSSSSSSSSS");
+            var keys = await ResComponent.Instance.GetBundleAll("config");
             foreach (var kv in keys)
             {
-                TextAsset v = kv.Value as TextAsset;
-                string key = kv.Key;
+                TextAsset v = kv as TextAsset;
+                string key = v.name;
                 output[key] = v.bytes;
             }
         }

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: UI
   m_Data:
     m_SerializedData: []
-  m_GUID: 99e8529b4bbb1a04495960b041754b8c
+  m_GUID: cf872345ede52b74d8e67644b06d4d39
   m_SerializeEntries:
   - m_GUID: c54e8d9624286b24fa23519e5df2ed0a
     m_Address: Assets/Bundles/UI/UIHelp.prefab

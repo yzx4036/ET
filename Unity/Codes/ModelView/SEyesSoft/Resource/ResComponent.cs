@@ -9,6 +9,7 @@
 //----------------------------------------------------------------*/
 
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using ET;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -26,11 +27,13 @@ namespace SEyesSoft.ET
 
     public class ResComponent: Entity, IAwake
     {
+        public AddressableMgr addressableMgrInst;
         public static ResComponent Instance { get; set; }
 
         public void Awake()
         {
-            
+            Instance = this;
+            addressableMgrInst = AddressableMgr.Instance;
         }
         
         public override void Dispose()
@@ -59,6 +62,11 @@ namespace SEyesSoft.ET
             //     BundleManager.ReleaseObject(loadedAsset);
             // }
             return go;
+        }
+
+        public async Task<IList<object>> GetBundleAll(string label)
+        {
+             return await this.addressableMgrInst.LoadAssetsAsync<object>(new []{label});
         }
 
         // public T GetAsset<T>(string pBundleName, string pAssetName) where T : UnityEngine.Object
