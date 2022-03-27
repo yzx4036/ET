@@ -1,3 +1,5 @@
+using SEyesSoft.ET;
+
 namespace ET
 {
     public class AppStart_Init: AEvent<EventType.AppStart>
@@ -8,11 +10,12 @@ namespace ET
             Game.Scene.AddComponent<CoroutineLockComponent>();
 
             // 加载配置
-            Game.Scene.AddComponent<ResourcesComponent>();
-            await ResourcesComponent.Instance.LoadBundleAsync("config.unity3d");
+            // Game.Scene.AddComponent<ResourcesComponent>();
+            Game.Scene.AddComponent<ResComponent>();
+            // await ResourcesComponent.Instance.LoadBundleAsync("config.unity3d");
             Game.Scene.AddComponent<ConfigComponent>();
-            ConfigComponent.Instance.Load();
-            ResourcesComponent.Instance.UnloadBundle("config.unity3d");
+            await ConfigComponent.Instance.LoadAsync();
+            // ResourcesComponent.Instance.UnloadBundle("config.unity3d");
             
             Game.Scene.AddComponent<OpcodeTypeComponent>();
             Game.Scene.AddComponent<MessageDispatcherComponent>();
@@ -24,7 +27,7 @@ namespace ET
             Game.Scene.AddComponent<GlobalComponent>();
             Game.Scene.AddComponent<NumericWatcherComponent>();
             Game.Scene.AddComponent<AIDispatcherComponent>();
-            await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
+            // await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
             
             Scene zoneScene = SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
             

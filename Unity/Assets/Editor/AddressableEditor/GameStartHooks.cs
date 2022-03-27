@@ -18,7 +18,7 @@ public static class GameStartHooks
         {
             if (!AddressableEditor.CheckLoadType(2))
             {
-                AddressableEditor.ApplyGroupConfig();
+                // AddressableEditor.ApplyGroupConfig();
             }
         }
     }

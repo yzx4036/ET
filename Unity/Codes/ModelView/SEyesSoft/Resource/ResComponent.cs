@@ -8,7 +8,9 @@
 //
 //----------------------------------------------------------------*/
 
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using ET;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -26,11 +28,15 @@ namespace SEyesSoft.ET
 
     public class ResComponent: Entity, IAwake
     {
+        private GameObjectMgr goMgrInst;
+        private AddressableMgr addressableMgrInst;
         public static ResComponent Instance { get; set; }
 
         public void Awake()
         {
-            
+            Instance = this;
+            goMgrInst = GameObjectMgr.Instance;
+            addressableMgrInst = AddressableMgr.Instance;
         }
         
         public override void Dispose()
@@ -49,24 +55,24 @@ namespace SEyesSoft.ET
         /// </summary>
         /// <param name="pBundleName"></param>
         /// <param name="pAssetName"></param>
-        public GameObject Instantiate(string pBundleName, string pAssetName)
+        public async Task<GameObject> InstantiateAsync(string pAdsPath, Transform parent = null, bool instantiateInWorldSpace = false)
         {
-            // var loadedAsset = BundleManager.Load<GameObject>(pBundleName, pAssetName);
-            GameObject go = null;
-            // if(loadedAsset != null)
-            // {
-            //     go = BundleManager.Instantiate(loadedAsset);
-            //     BundleManager.ReleaseObject(loadedAsset);
-            // }
-            return go;
+            return await this.goMgrInst.GetGameObjectAsync(pAdsPath, parent, instantiateInWorldSpace);
         }
 
-        // public T GetAsset<T>(string pBundleName, string pAssetName) where T : UnityEngine.Object
-        // {
-        //     var loadedAsset = BundleManager.Load<T>(pBundleName, pAssetName);
-        //     
-        //     BundleManager.ReleaseObject(loadedAsset);
-        //     
-        // }
+        public void RecycleGameObject(string pAdsPath, GameObject go)
+        {
+            if (go == null)
+            {
+                return;
+            }
+            this.goMgrInst.RecycleGameObject(pAdsPath, go);
+        }
+
+        public async Task<IList<object>> GetBundleAll(string label)
+        {
+             return await this.addressableMgrInst.LoadAssetsAsync<object>(new []{label});
+        }
+
     }
 }

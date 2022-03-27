@@ -57,7 +57,7 @@ namespace ET
 		{
 			try
 			{
-				self.UIEvents[uiType].OnRemove(uiComponent);
+				self.UIEvents[uiType].OnRemove(uiComponent, uiType);
 			}
 			catch (Exception e)
 			{

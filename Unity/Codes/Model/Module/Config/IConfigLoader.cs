@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ET
 {
     public interface IConfigLoader
     {
-        void GetAllConfigBytes(Dictionary<string, byte[]> output);
+        Task GetAllConfigBytes(Dictionary<string, byte[]> output);
         byte[] GetOneConfigBytes(string configName);
     }
 }

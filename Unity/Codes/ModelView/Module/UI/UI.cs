@@ -43,8 +43,9 @@ namespace ET
 			{
 				ui.Dispose();
 			}
-			
-			UnityEngine.Object.Destroy(this.GameObject);
+
+			this.GameObject = null; //这里置为null gameObject由UI管理回收对象池
+			// UnityEngine.Object.Destroy(this.GameObject);
 			this.nameChildren.Clear();
 		}
 

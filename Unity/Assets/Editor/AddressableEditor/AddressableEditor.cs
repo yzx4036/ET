@@ -102,8 +102,8 @@ public class AddressableEditor : Editor
         public List<GroupConfigJsonData> Config;
     }
 
-    private readonly static string META_EXTENSION = ".meta";
-    private readonly static string CONFIG_PATH = "Assets/Editor/AddressableEditor/GroupConfig.json";
+    // private readonly static string META_EXTENSION = ".meta";
+    // private readonly static string CONFIG_PATH = "Assets/Editor/AddressableEditor/GroupConfig.json";
     private readonly static string DATA_DIR = Application.dataPath + "/" + "AddressableAssetsData";
 
     [MenuItem("可寻址操作/自动设置Group")]
@@ -174,88 +174,90 @@ public class AddressableEditor : Editor
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             
-            
-            string configPath = Path.Combine(Application.dataPath, CONFIG_PATH.Substring(7));
-            if (File.Exists(configPath))
-            {
-                var result = AssetDatabase.LoadAssetAtPath<TextAsset>(CONFIG_PATH);
-                var config = JsonUtility.FromJson<GroupConfigJson>(result.text);
-                var settings = AddressableAssetSettingsDefaultObject.Settings;
-                settings.DisableCatalogUpdateOnStartup = true;
-                settings.BuildRemoteCatalog = true;
-                settings.NonRecursiveBuilding = true;
-                foreach (var data in config.Config)
-                {
-                    if (!string.IsNullOrEmpty(data.Labels))
-                    {
-                        settings.AddLabel(data.Labels);
-                    }
-                    if (!TryGetGroup(data.Name, out var group))
-                    {
-                        group = settings.CreateGroup(data.Name, false, false, false, null, typeof(BundledAssetGroupSchema), typeof(ContentUpdateGroupSchema));
-                        var assetSchema = group.GetSchema<BundledAssetGroupSchema>();
-                        assetSchema.BundleMode = (BundledAssetGroupSchema.BundlePackingMode)data.PackType;
-                        assetSchema.UseAssetBundleCrc = false;
-                        assetSchema.UseAssetBundleCrcForCachedBundles = false;
-                        //注释掉加密
-                        // SetFieldByReflection<BundledAssetGroupSchema>("m_DataStreamProcessorType", assetSchema, new SerializedType { Value = typeof(CustomStreamProcessor) });
-                        group.GetSchema<ContentUpdateGroupSchema>().StaticContent = true;
-                    }
-                    if (!string.IsNullOrEmpty(data.Path))
-                    {
-                        var filePath = Path.Combine(Application.dataPath, data.Path.Substring(7));
-                        if (File.Exists(filePath))
-                        {
-                            string guid = AssetDatabase.AssetPathToGUID(data.Path);
-                            var entry = settings.CreateOrMoveEntry(guid, group);
-                            entry.SetAddress(data.Path);
-                            if (!string.IsNullOrEmpty(data.Labels))
-                            {
-                                entry.SetLabel(data.Labels, true);
-                            }
-                        }
-                        else
-                        {
-                            Debug.LogError("不存在文件" + data.Path);
-                        }
-                    }
-                    if (!string.IsNullOrEmpty(data.Dir))
-                    {
-                        var directoryPath = Path.Combine(Application.dataPath, data.Dir.Substring(7));
-                        if (Directory.Exists(directoryPath))
-                        {
-                            DirectoryInfo di = new DirectoryInfo(directoryPath);
-                            var fiArr = di.GetFiles("*", SearchOption.AllDirectories);
-                            int subLen = directoryPath.Length + 1;
-                            foreach (var fi in fiArr)
-                            {
-                                if (fi.Extension != META_EXTENSION && (data.Extension.Count == 0 || data.Extension.Contains(fi.Extension)))
-                                {
-                                    string assetPath = data.Dir + "/" + fi.FullName.Substring(subLen).Replace('\\', '/');
-                                    string guid = AssetDatabase.AssetPathToGUID(assetPath);
-                                    var entry = settings.CreateOrMoveEntry(guid, group);
-                                    entry.SetAddress(assetPath);
-                                    if (!string.IsNullOrEmpty(data.Labels))
-                                    {
-                                        entry.SetLabel(data.Labels, true);
-                                    }
-                                }
-                            }
-                        }
-                        else
-                        {
-                            Debug.LogError("不存在路径" + data.Dir);
-                        }
-                    }
-                }
-                AssetDatabase.SaveAssets();
-                AssetDatabase.Refresh();
-                Debug.Log("<color=#00ff00>Group生成成功</color>");
-            }
-            else
-            {
-                Debug.LogError("找不到Config文件，Path = " + configPath);
-            }
+            AddressableImporter.FolderImporter.ReimportFolders(new []{"Assets/Bundles/"});
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+            // string configPath = Path.Combine(Application.dataPath, CONFIG_PATH.Substring(7));
+            // if (File.Exists(configPath))
+            // {
+            //     var result = AssetDatabase.LoadAssetAtPath<TextAsset>(CONFIG_PATH);
+            //     var config = JsonUtility.FromJson<GroupConfigJson>(result.text);
+            //     var settings = AddressableAssetSettingsDefaultObject.Settings;
+            //     settings.DisableCatalogUpdateOnStartup = true;
+            //     settings.BuildRemoteCatalog = true;
+            //     settings.NonRecursiveBuilding = true;
+            //     foreach (var data in config.Config)
+            //     {
+            //         if (!string.IsNullOrEmpty(data.Labels))
+            //         {
+            //             settings.AddLabel(data.Labels);
+            //         }
+            //         if (!TryGetGroup(data.Name, out var group))
+            //         {
+            //             group = settings.CreateGroup(data.Name, false, false, false, null, typeof(BundledAssetGroupSchema), typeof(ContentUpdateGroupSchema));
+            //             var assetSchema = group.GetSchema<BundledAssetGroupSchema>();
+            //             assetSchema.BundleMode = (BundledAssetGroupSchema.BundlePackingMode)data.PackType;
+            //             assetSchema.UseAssetBundleCrc = false;
+            //             assetSchema.UseAssetBundleCrcForCachedBundles = false;
+            //             //注释掉加密
+            //             // SetFieldByReflection<BundledAssetGroupSchema>("m_DataStreamProcessorType", assetSchema, new SerializedType { Value = typeof(CustomStreamProcessor) });
+            //             group.GetSchema<ContentUpdateGroupSchema>().StaticContent = true;
+            //         }
+            //         if (!string.IsNullOrEmpty(data.Path))
+            //         {
+            //             var filePath = Path.Combine(Application.dataPath, data.Path.Substring(7));
+            //             if (File.Exists(filePath))
+            //             {
+            //                 string guid = AssetDatabase.AssetPathToGUID(data.Path);
+            //                 var entry = settings.CreateOrMoveEntry(guid, group);
+            //                 entry.SetAddress(data.Path);
+            //                 if (!string.IsNullOrEmpty(data.Labels))
+            //                 {
+            //                     entry.SetLabel(data.Labels, true);
+            //                 }
+            //             }
+            //             else
+            //             {
+            //                 Debug.LogError("不存在文件" + data.Path);
+            //             }
+            //         }
+            //         if (!string.IsNullOrEmpty(data.Dir))
+            //         {
+            //             var directoryPath = Path.Combine(Application.dataPath, data.Dir.Substring(7));
+            //             if (Directory.Exists(directoryPath))
+            //             {
+            //                 DirectoryInfo di = new DirectoryInfo(directoryPath);
+            //                 var fiArr = di.GetFiles("*", SearchOption.AllDirectories);
+            //                 int subLen = directoryPath.Length + 1;
+            //                 foreach (var fi in fiArr)
+            //                 {
+            //                     if (fi.Extension != META_EXTENSION && (data.Extension.Count == 0 || data.Extension.Contains(fi.Extension)))
+            //                     {
+            //                         string assetPath = data.Dir + "/" + fi.FullName.Substring(subLen).Replace('\\', '/');
+            //                         string guid = AssetDatabase.AssetPathToGUID(assetPath);
+            //                         var entry = settings.CreateOrMoveEntry(guid, group);
+            //                         entry.SetAddress(assetPath);
+            //                         if (!string.IsNullOrEmpty(data.Labels))
+            //                         {
+            //                             entry.SetLabel(data.Labels, true);
+            //                         }
+            //                     }
+            //                 }
+            //             }
+            //             else
+            //             {
+            //                 Debug.LogError("不存在路径" + data.Dir);
+            //             }
+            //         }
+            //     }
+            //     AssetDatabase.SaveAssets();
+            //     AssetDatabase.Refresh();
+            //     Debug.Log("<color=#00ff00>Group生成成功</color>");
+            // }
+            // else
+            // {
+            //     Debug.LogError("找不到Config文件，Path = " + configPath);
+            // }
         }
         catch (Exception e)
         {

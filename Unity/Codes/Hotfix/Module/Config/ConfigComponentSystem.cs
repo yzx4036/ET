@@ -53,7 +53,7 @@ namespace ET
 			HashSet<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
 			
 			Dictionary<string, byte[]> configBytes = new Dictionary<string, byte[]>();
-			self.ConfigLoader.GetAllConfigBytes(configBytes);
+			await self.ConfigLoader.GetAllConfigBytes(configBytes);
 
 			using (ListComponent<Task> listTasks = ListComponent<Task>.Create())
 			{

@@ -49,12 +49,8 @@
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\MapDecorator.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Text\TypingEffect.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\FileAttributes.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Analyzer\AssetsAnalyzer.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Cil\PortablePdb.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Task.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\UIContentScaler.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Analyzer\AnalyzerTimeline.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Metadata.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Utils\Html\IHtmlObject.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\PackageItem.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\GuidSerializer.cs" />
@@ -66,8 +62,6 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\IConstantProvider.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\VariantType.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Meta\CallbackSet.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\UScene.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\AbstractFileSystem.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\AssemblyHashAlgorithm.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono\Disposable.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ImmutableCollectionDecorator.cs" />
@@ -85,7 +79,6 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\NAudioClip.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Tween\EaseType.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\IExtension.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\ILogger.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\GoWrapper.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\ImageReader.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\CLRBinding\ValueTypeBindingGenerator.cs" />
@@ -132,8 +125,6 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Tween\GTweener.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\mdb\Mono.CompilerServices.SymbolWriter\MonoSymbolTable.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\ParameterReference.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\NetworkMonitor.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\PrefabPools.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Intepreter\RegisterVM\JITCompiler.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\WireType.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Mono.Cecil.Pdb\PdbHelper.cs" />
@@ -175,10 +166,8 @@
      <Compile Include="Assets\ThirdParty\LitJson\JsonData.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\TypeResolver.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ByteSerializer.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\Helpers.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\BclHelpers.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\CLRBinding\CommonBindingGenerator.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider+Asset.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Meta\BasicList.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Filter\IFilter.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\PdbFile.cs" />
@@ -232,15 +221,12 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\Margin.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Stack\StackObjectAllocator.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Collections.Generic\ReadOnlyCollection.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Manifest.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Gesture\SwipeGesture.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Utils\UBBParser.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\BooleanSerializer.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\PdbTokenLine.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DoubleSerializer.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\UFailureAsset.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Security.Cryptography\CryptoService.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\IDataChecker.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\TableHeap.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\SubItemToken.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Meta\SubType.cs" />
@@ -248,7 +234,6 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\FunctionPointerType.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\FieldDefinition.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\GenericInstanceMethod.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\FileSystem.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\Import.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono\StreamExtensions.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\IExtensible.cs" />
@@ -262,7 +247,6 @@
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\Int16Serializer.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Mesh\LineMesh.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Event\InputEvent.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\FailureFileSystem.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ProtoMapAttribute.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\MethodSemanticsAttributes.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Text\RTLSupport.cs" />
@@ -284,7 +268,6 @@
      <Compile Include="Assets\ThirdParty\protobuf-net\Compiler\Local.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\Heap.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\Controller.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\BuiltinAssetProvider.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\Protocol\SCThreadStarted.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\CLR\Method\ILMethod.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\HitTest\PixelHitTest.cs" />
@@ -294,7 +277,6 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\Gears\GearSize.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ProtoMemberAttribute.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Mesh\EllipseMesh.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\JobScheduler.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\NetObjectCache.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ServiceModel\ProtoEndpointBehavior.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\AssemblyInfo.cs" />
@@ -304,13 +286,11 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\AsyncCreationHelper.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\RelationItem.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\Int32Serializer.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\ReferenceHolder.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\SystemTypeSerializer.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Intepreter\RegisterVM\ILIntepreter.Register.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Utils\Html\HtmlParser.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\TranslationHelper.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\UIConfig.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\UBundle.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Reflection\ILRuntimeWrapperType.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\IMetadataTokenProvider.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\DefaultAssemblyResolver.cs" />
@@ -322,7 +302,6 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\CLR\TypeSystem\ILGenericParameterType.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\Consts.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\EMRenderSupport.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\PrefabPool.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Reflection\ILRuntimeConstructorInfo.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\mdb\Mono.CompilerServices.SymbolWriter\MonoSymbolFile.cs" />
      <Compile Include="Assets\ThirdParty\ETTask\ETTaskHelper.cs" />
@@ -331,14 +310,12 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\PopupMenu.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\ImageWriter.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Meta\TypeModel.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\UAssets.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\TypeSpecification.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GSlider.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ListDecorator.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\Protocol\CSResolveVariable.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GProgressBar.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\HitTest\ShapeHitTest.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\OrdinaryFileSystem.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\Protocol\SCBindBreakpointResult.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\PropertyDecorator.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ArrayDecorator.cs" />
@@ -352,14 +329,11 @@
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\IProtoSerializer.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Mesh\CompositeMesh.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Mesh\PolygonMesh.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\MD5Hash.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Meta\TypeFormatEventArgs.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\MethodReferenceComparer.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Event\EventContext.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\CountdownObject.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\TextMap.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Intepreter\ILRuntimeException.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\ChunkedStream.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.InlineMethod.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializer.cs" />
      <Compile Include="Assets\ThirdParty\ETTask\ETCancellationToken.cs" />
@@ -398,7 +372,6 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Utils\Html\HtmlElement.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\SingleSerializer.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Utils\Html\HtmlLink.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\_AssetDatabaseAssetProvider.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Cil\VariableDefinition.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\Gears\GearDisplay2.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Text\IKeyboard.cs" />
@@ -415,7 +388,6 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Event\EventListener.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\TagDecorator.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\UpdateContext.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\AssetListData.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ProtoConverterAttribute.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\UserStringHeap.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\CLR\TypeSystem\IType.cs" />
@@ -447,7 +419,6 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\BreakpointInfo.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ExtensibleUtil.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\CLR\TypeSystem\CLRType.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\TaskInspector.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GObject.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\Protocol\SCEnumChildrenResult.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Intepreter\ILIntepreter.cs" />
@@ -458,7 +429,6 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\Section.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\BinaryStreamReader.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Mesh\PlaneMesh.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\KeyValuePairProxy.cs" />
      <Compile Include="Assets\ThirdParty\LitJson\JsonWriter.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\UIPainter.cs" />
@@ -474,25 +444,21 @@
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\CompiledSerializer.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Enviorment\CrossBindingCodeGenerator.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\mdb\Mono.Cecil.Mdb\MdbReader.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\RefCounted.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\SentinelType.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Intepreter\ILTypeInstance.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\StageEngine.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\Protocol\CSDeleteBreakpoint.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\Crc16.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\ManifestResourceAttributes.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\StringHeap.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GTextInput.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\Relations.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GGroup.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\BitAccess.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\AssetProvider.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\SerializationContext.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\MethodDefinition.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\Window.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\PdbScope.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Cil\ExceptionHandler.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\UAsset.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\BaseAssemblyResolver.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\MemberDefinitionCollection.cs" />
      <Compile Include="Assets\ThirdParty\ETTask\AsyncETTaskCompletedMethodBuilder.cs" />
@@ -512,7 +478,6 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Intepreter\OpCodes\OpCodeEnum.cs" />
      <Compile Include="Assets\ThirdParty\LitJson\JsonMapper.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Text\RichTextField.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\StreamingAssetsLoader.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\CodedIndex.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\Protocol\SCModuleLoaded.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ProtoReader.cs" />
@@ -521,7 +486,6 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\DbiSecCon.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\Gears\GearColor.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\ModuleReference.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\AssetProviderListener.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Metadata\PdbHeap.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\GenericInstanceType.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\MsfDirectory.cs" />
@@ -554,14 +518,10 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\PropertyReference.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Enviorment\ValueTypeBinder.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Cil\Instruction.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\TaskManager.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\EAssetHints.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Extensions\Spine\SpineLoader.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\ResourceManager.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\AssemblyWriter.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\CLRBinding\MethodBindingGenerator.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Cil\OpCodes.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\DownloadWorker.cs" />
      <Compile Include="Assets\ThirdParty\ETTask\ETTaskCompleted.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Filter\ColorFilter.cs" />
      <Compile Include="Assets\ThirdParty\LitJson\ParserToken.cs" />
@@ -580,7 +540,6 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Mono.Cecil.Pdb\NativePdbReader.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Utils\Html\HtmlPageContext.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Reflection\ILRuntimeType.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\AssetHandle.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GLabel.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ProtoEnumAttribute.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\IMethodSignature.cs" />
@@ -621,10 +580,8 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Gesture\LongPressGesture.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\PdbConstant.cs" />
      <Compile Include="Assets\ThirdParty\LitJson\IJsonWrapper.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\Utils\PrefabLoader.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\UInt16Serializer.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\AssemblyFlags.cs" />
-     <Compile Include="Assets\ThirdParty\unityfs_plugin\BundleAssetProvider+Job.cs" />
      <None Include="Assets\ThirdParty\FairyGUI\Resources\Shaders\FairyGUI-Text.shader" />
      <None Include="Assets\ThirdParty\FairyGUI\Resources\Shaders\FairyGUI-Image.shader" />
      <None Include="Assets\ThirdParty\FairyGUI\Resources\Shaders\AddOn\FairyGUI-BlurFilter.shader" />
@@ -1218,6 +1175,9 @@
      </Reference>
      <Reference Include="Unity.ScriptableBuildPipeline.Editor">
      <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ResourceManager">
+     <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/ScriptAssemblies/Unity.ResourceManager.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>D:/_Proj/UnityProj/ET/Unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>

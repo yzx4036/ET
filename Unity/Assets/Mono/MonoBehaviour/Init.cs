@@ -1,4 +1,6 @@
 ﻿using System.Threading;
+using System.Threading.Tasks;
+using SEyesSoft;
 using UnityEngine;
 
 namespace ET
@@ -39,24 +41,25 @@ namespace ET
 			CodeLoader.Instance.CodeMode = this.CodeMode;
 		}
 
-		private void Start()
+		private async Task Start()
 		{
-			CodeLoader.Instance.Start();
+			await Updater.Start();
+			await CodeLoader.Instance.Start();
 		}
 
 		private void Update()
 		{
-			CodeLoader.Instance.Update();
+			CodeLoader.Instance.Update?.Invoke();
 		}
 
 		private void LateUpdate()
 		{
-			CodeLoader.Instance.LateUpdate();
+			CodeLoader.Instance.LateUpdate?.Invoke();
 		}
 
 		private void OnApplicationQuit()
 		{
-			CodeLoader.Instance.OnApplicationQuit();
+			CodeLoader.Instance.OnApplicationQuit?.Invoke();
 			CodeLoader.Instance.Dispose();
 		}
 	}

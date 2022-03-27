@@ -4,7 +4,7 @@
     "references": [
         "Unity.Mono",
         "Unity.ThirdParty",
-        "UnityFS.Editor",
+        "Unity.AddressableImporter.Editor",
         "Unity.Addressables.Editor"
     ],
     "includePlatforms": [
