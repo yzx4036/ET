@@ -15,10 +15,10 @@ MonoBehaviour:
   m_GroupName: Map2
   m_Data:
     m_SerializedData: []
-  m_GUID: 1339bf44ea6a28d47bf8763ee94b9a69
+  m_GUID: 0a7f366b2e261ca4b89e0d9e27a54704
   m_SerializeEntries:
   - m_GUID: 064123f1e5067b249a9fd8967ddbde09
-    m_Address: Assets/Bundles/Scenes/Map2.unity
+    m_Address: Map2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload

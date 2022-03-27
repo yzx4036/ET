@@ -1,4 +1,5 @@
-﻿using UnityEngine.SceneManagement;
+﻿using SEyesSoft.ET;
+using UnityEngine.SceneManagement;
 
 namespace ET
 {
@@ -6,19 +7,17 @@ namespace ET
     {
         public override void Update(SceneChangeComponent self)
         {
-            if (!self.loadMapOperation.isDone)
+            if (!self.loadMapOperation.HasValue)
             {
                 return;
             }
 
-            if (self.tcs == null)
+            if (self.loadMapOperation.Value.IsDone)
             {
                 return;
             }
-            
-            ETTask tcs = self.tcs;
-            self.tcs = null;
-            tcs.SetResult();
+
+            self.Process();
         }
     }
 	
@@ -36,20 +35,25 @@ namespace ET
     {
         public static async ETTask ChangeSceneAsync(this SceneChangeComponent self, string sceneName)
         {
-            self.tcs = ETTask.Create(true);
-            // 加载map
-            self.loadMapOperation = SceneManager.LoadSceneAsync(sceneName);
-            //this.loadMapOperation.allowSceneActivation = false;
-            await self.tcs;
+            // self.tcs = ETTask.Create(true);
+            // // 加载map
+            // self.loadMapOperation = SceneManager.LoadSceneAsync(sceneName);
+            // //this.loadMapOperation.allowSceneActivation = false;
+            // await self.tcs;
+            await AddressablesResComponent.Instance.LoadSceneAsync(sceneName, handle =>
+            {
+                self.loadMapOperation = handle;
+            });
         }
         
-        public static int Process(this SceneChangeComponent self)
+        public static void Process(this SceneChangeComponent self)
         {
-            if (self.loadMapOperation == null)
+            if (!self.loadMapOperation.HasValue)
             {
-                return 0;
+                return;
             }
-            return (int)(self.loadMapOperation.progress * 100);
+            var _progress  = (int)(self.loadMapOperation.Value.PercentComplete * 100);
+            Log.Debug($">>>>>>Process :{_progress}");
         }
     }
 }

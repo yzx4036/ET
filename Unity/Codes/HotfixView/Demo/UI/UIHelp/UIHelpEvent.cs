@@ -1,4 +1,5 @@
 ﻿using System;
+using SEyesSoft.ET;
 using UnityEngine;
 
 namespace ET
@@ -10,9 +11,10 @@ namespace ET
         {
 	        try
 	        {
-		        await uiComponent.Domain.GetComponent<ResourcesLoaderComponent>().LoadAsync(UIType.UIHelp.StringToAB());
-		        GameObject bundleGameObject = (GameObject) ResourcesComponent.Instance.GetAsset(UIType.UIHelp.StringToAB(), UIType.UIHelp);
-		        GameObject gameObject = UnityEngine.Object.Instantiate(bundleGameObject, UIEventComponent.Instance.UILayers[(int)uiLayer]);
+		        // await uiComponent.Domain.GetComponent<ResourcesLoaderComponent>().LoadAsync(UIType.UIHelp.StringToAB());
+		        // GameObject bundleGameObject = (GameObject) ResourcesComponent.Instance.GetAsset(UIType.UIHelp.StringToAB(), UIType.UIHelp);
+		        // GameObject gameObject = UnityEngine.Object.Instantiate(bundleGameObject, UIEventComponent.Instance.UILayers[(int)uiLayer]);
+		        var  gameObject = await AddressablesResComponent.Instance.InstantiateAsync("Assets/Bundles/UI/UIHelp.prefab", UIEventComponent.Instance.UILayers[(int)uiLayer]);
 		        UI ui = uiComponent.AddChild<UI, string, GameObject>(UIType.UIHelp, gameObject);
 
 				ui.AddComponent<UIHelpComponent>();
@@ -27,6 +29,7 @@ namespace ET
 
         public override void OnRemove(UIComponent uiComponent, string uiType)
         {
+	        base.OnRemove(uiComponent, uiType);
         }
     }
 }

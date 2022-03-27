@@ -282,8 +282,7 @@ namespace SEyesSoft
             return Addressables.ReleaseInstance(instance);
         }
 
-        public async Task LoadSceneAsync(sObject key, Action<AsyncOperationHandle<SceneInstance>> complete = null,
-        LoadSceneMode loadMode = LoadSceneMode.Single, bool activateOnLoad = true)
+        public async Task LoadSceneAsync(sObject key, Action<AsyncOperationHandle<SceneInstance>> pResultHandleCallback, LoadSceneMode loadMode = LoadSceneMode.Single, bool activateOnLoad = true)
         {
             if (!CheckAddressableInited(true))
             {
@@ -291,6 +290,7 @@ namespace SEyesSoft
             }
 
             var handler = Addressables.LoadSceneAsync(key, loadMode, activateOnLoad);
+            pResultHandleCallback(handler);
             await handler.Task;
             handler.Completed += (obj) =>
             {
@@ -298,12 +298,8 @@ namespace SEyesSoft
                 {
                     Debug.LogError(obj.OperationException.Message);
                 }
-
-                complete.Invoke(obj);
-                complete = null;
             };
             Addressables.Release(handler);
-
         }
 
         public async Task UnloadSceneAsync(AsyncOperationHandle<SceneInstance> sceneHandle, Action<bool> complete = null)

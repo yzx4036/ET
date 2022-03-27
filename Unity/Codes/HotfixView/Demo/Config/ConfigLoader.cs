@@ -10,18 +10,17 @@ namespace ET
         public async Task GetAllConfigBytes(Dictionary<string, byte[]> output)
         {
             Debug.Log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>SSSSSSSSSSSSSSSSS");
-            var keys = await ResComponent.Instance.GetBundleAll("config");
-            foreach (var kv in keys)
+            var _textAssetList = await AddressablesResComponent.Instance.GetAssetsAsync<TextAsset>("config");
+            foreach (var textAsset in _textAssetList)
             {
-                TextAsset v = kv as TextAsset;
-                string key = v.name;
-                output[key] = v.bytes;
+                string key = textAsset.name;
+                output[key] = textAsset.bytes;
             }
         }
 
-        public byte[] GetOneConfigBytes(string configName)
+        public async Task<byte[]> GetOneConfigBytes(string configName)
         {
-            TextAsset v = ResourcesComponent.Instance.GetAsset("config.unity3d", configName) as TextAsset;
+            TextAsset v = await AddressablesResComponent.Instance.GetAssetAsync<TextAsset>(configName);
             return v.bytes;
         }
     }

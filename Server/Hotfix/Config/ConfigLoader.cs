@@ -15,9 +15,9 @@ namespace ET
             }
         }
         
-        public byte[] GetOneConfigBytes(string configName)
+        public async Task<byte[]> GetOneConfigBytes(string configName)
         {
-            byte[] configBytes = File.ReadAllBytes($"../Config/{configName}.bytes");
+            byte[] configBytes = await File.ReadAllBytesAsync($"../Config/{configName}.bytes");
             return configBytes;
         }
     }

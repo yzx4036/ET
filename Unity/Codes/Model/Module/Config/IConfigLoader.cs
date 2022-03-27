@@ -6,6 +6,6 @@ namespace ET
     public interface IConfigLoader
     {
         Task GetAllConfigBytes(Dictionary<string, byte[]> output);
-        byte[] GetOneConfigBytes(string configName);
+        Task<byte[]> GetOneConfigBytes(string configName);
     }
 }

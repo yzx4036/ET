@@ -12,7 +12,7 @@ namespace ET
             if (uiComponent.UIs.TryGetValue(uiType, out _ui))
             {
                 Log.Debug($">>>>go{_ui.GameObject.name} 回收{_ui.GameObject.GetInstanceID()}");
-                ResComponent.Instance.RecycleGameObject($"Assets/Bundles/UI/{uiType}.prefab", _ui.GameObject);
+                AddressablesResComponent.Instance.RecycleGameObject($"Assets/Bundles/UI/{uiType}.prefab", _ui.GameObject);
             }
         }
     }

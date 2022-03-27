@@ -45,7 +45,7 @@ MonoBehaviour:
     dynamicLabels: []
     groupTemplate: {fileID: 0}
     groupTemplateApplicationMode: 0
-    simplified: 0
+    simplified: 1
     addressReplacement: 
   - path: Assets/Bundles/Config/*
     matchType: 0
