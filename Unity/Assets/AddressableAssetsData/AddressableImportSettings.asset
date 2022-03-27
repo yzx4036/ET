@@ -58,3 +58,13 @@ MonoBehaviour:
     groupTemplateApplicationMode: 0
     simplified: 1
     addressReplacement: 
+  - path: Assets/Bundles/Unit/*
+    matchType: 0
+    groupName: Units
+    LabelMode: 0
+    labelRefs: []
+    dynamicLabels: []
+    groupTemplate: {fileID: 0}
+    groupTemplateApplicationMode: 0
+    simplified: 1
+    addressReplacement: 

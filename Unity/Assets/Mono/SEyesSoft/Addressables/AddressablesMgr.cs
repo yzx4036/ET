@@ -13,6 +13,7 @@ using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D;
 using static UnityEngine.AddressableAssets.Addressables;
+using Log = ET.Log;
 using sObject = System.Object;
 using uObject = UnityEngine.Object;
 
@@ -229,27 +230,41 @@ namespace SEyesSoft
             return result;
         }
 
-        public void InstantiateAsync(sObject key, Action<GameObject> complete = null, Transform parent = null, bool instantiateInWorldSpace = false)
+        public async Task<GameObject> InstantiateAsync(sObject key, Transform parent = null, bool instantiateInWorldSpace = false)
         {
+            GameObject go = null;
             if (!CheckAddressableInited(true))
             {
-                return;
+                return go;
+            }
+            var handler = Addressables.InstantiateAsync(key, parent, instantiateInWorldSpace);
+            go = await handler.Task;
+            return go;
+        }
+        
+        public GameObject InstantiateSync(sObject key, Action<GameObject> complete = null, Transform parent = null, bool instantiateInWorldSpace = false)
+        {
+            GameObject newInstGo = null;
+            if (!CheckAddressableInited(true))
+            {
+                return newInstGo;
             }
 
             var handler = Addressables.InstantiateAsync(key, parent, instantiateInWorldSpace);
+            handler.WaitForCompletion();
             if (complete != null)
             {
-                handler.Completed += (obj) =>
+                if (handler.Status == AsyncOperationStatus.Failed)
                 {
-                    if (obj.Status == AsyncOperationStatus.Failed)
-                    {
-                        Debug.LogError(obj.OperationException.Message);
-                    }
-
-                    complete.Invoke(obj.Result);
-                    complete = null;
-                };
+                    Debug.LogError(handler.OperationException.Message);
+                }
+                else
+                {
+                    newInstGo = handler.Result;
+                    complete(newInstGo);
+                }
             }
+            return newInstGo;
         }
 
         public void ReleaseObject<TObject>(TObject obj)
@@ -287,6 +302,8 @@ namespace SEyesSoft
                 complete.Invoke(obj);
                 complete = null;
             };
+            Addressables.Release(handler);
+
         }
 
         public async Task UnloadSceneAsync(AsyncOperationHandle<SceneInstance> sceneHandle, Action<bool> complete = null)
@@ -308,6 +325,7 @@ namespace SEyesSoft
 
                 complete = null;
             };
+            Addressables.Release(handler);
         }
 
         //public void AtlasRequest(string atlasName, Action<SpriteAtlas> callback)
@@ -375,6 +393,7 @@ namespace SEyesSoft
             if (checkHandler.Status == AsyncOperationStatus.Failed)
             {
                 _initErrorCallback?.Invoke(checkHandler.OperationException);
+                Addressables.Release(checkHandler);
                 return;
             }
 
@@ -403,6 +422,7 @@ namespace SEyesSoft
                 if (sizeHandler.Status == AsyncOperationStatus.Failed)
                 {
                     _initErrorCallback?.Invoke(sizeHandler.OperationException);
+                    Addressables.Release(sizeHandler);
                     return;
                 }
 
@@ -472,11 +492,12 @@ namespace SEyesSoft
                     if (preloadHandler.Status == AsyncOperationStatus.Failed)
                     {
                         _preloadErrorCallback?.Invoke(preloadHandler.OperationException);
+                        ReleaseHandle(preloadHandler);
                         return;
                     }
 
                     string fileStr = preloadHandler.Result.text;
-                    Addressables.Release(preloadHandler);
+                    ReleaseHandle(preloadHandler);
                     if (!string.IsNullOrEmpty(fileStr))
                     {
                         fileStr = fileStr.Replace("\r\n", "\n");
@@ -493,8 +514,10 @@ namespace SEyesSoft
                         if (resHandler.Status == AsyncOperationStatus.Failed)
                         {
                             _preloadErrorCallback?.Invoke(resHandler.OperationException);
+                            ReleaseHandle(resHandler);
                             return;
                         }
+                        ReleaseHandle(resHandler);
                     }
 
                     Debug.Log("预加载资源文件完成");
@@ -538,8 +561,7 @@ namespace SEyesSoft
                             _luaBytesDic.Add(key, assetList[i].bytes);
                         }
                     }
-
-                    Addressables.Release(luaHandler);
+                    ReleaseHandle(luaHandler);
                 }
                 else
                 {
@@ -573,7 +595,7 @@ namespace SEyesSoft
                 _protoFileBytes[i] = protoHandler.Result[i].bytes;
             }
 
-            Addressables.Release(protoHandler);
+            ReleaseHandle(protoHandler);
         }
 
         //private void Update()

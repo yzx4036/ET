@@ -10,9 +10,8 @@ namespace ET
             Game.Scene.AddComponent<CoroutineLockComponent>();
 
             // 加载配置
-            Game.Scene.AddComponent<ResourcesComponent>();
+            // Game.Scene.AddComponent<ResourcesComponent>();
             Game.Scene.AddComponent<ResComponent>();
-            // ResComponent.Instance.addressableMgrInst.
             // await ResourcesComponent.Instance.LoadBundleAsync("config.unity3d");
             Game.Scene.AddComponent<ConfigComponent>();
             await ConfigComponent.Instance.LoadAsync();
@@ -28,7 +27,7 @@ namespace ET
             Game.Scene.AddComponent<GlobalComponent>();
             Game.Scene.AddComponent<NumericWatcherComponent>();
             Game.Scene.AddComponent<AIDispatcherComponent>();
-            await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
+            // await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
             
             Scene zoneScene = SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
             

@@ -25,7 +25,7 @@ namespace ET
 	        }
 		}
 
-        public override void OnRemove(UIComponent uiComponent)
+        public override void OnRemove(UIComponent uiComponent, string uiType)
         {
         }
     }

@@ -18,7 +18,7 @@ namespace ET
             return ui;
         }
 
-        public override void OnRemove(UIComponent uiComponent)
+        public override void OnRemove(UIComponent uiComponent, string uiType)
         {
             ResourcesComponent.Instance.UnloadBundle(UIType.UILobby.StringToAB());
         }

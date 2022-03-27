@@ -22,12 +22,17 @@ namespace ILRuntime.Runtime.Generated
         /// </summary>
         public static void Initialize(ILRuntime.Runtime.Enviorment.AppDomain app)
         {
+            SEyesSoft_SingerMonoManager_1_GameObjectMgr_Binding.Register(app);
             SEyesSoft_SingerMonoManager_1_AddressableMgr_Binding.Register(app);
+            System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_IList_1_Object_Binding.Register(app);
+            System_String_Binding.Register(app);
+            SEyesSoft_AddressableMgr_Binding.Register(app);
+            System_Threading_Tasks_Task_1_IList_1_Object_Binding.Register(app);
+            System_Runtime_CompilerServices_TaskAwaiter_1_IList_1_Object_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_Int32_ILTypeInstance_Binding.Register(app);
             ET_TimeHelper_Binding.Register(app);
             ET_ETAsyncTaskMethodBuilder_Binding.Register(app);
             ET_Log_Binding.Register(app);
-            System_String_Binding.Register(app);
             ET_ETTask_1_Boolean_Binding.Register(app);
             ET_ETTask_1_Int32_Binding.Register(app);
             ET_ETTask_1_ILTypeInstance_Binding.Register(app);
@@ -66,10 +71,10 @@ namespace ILRuntime.Runtime.Generated
             System_Collections_Generic_Dictionary_2_Type_Object_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_String_Byte_Array_Binding.Register(app);
             System_Threading_Monitor_Binding.Register(app);
-            ET_ListComponent_1_Task_Binding.Register(app);
             System_Threading_Tasks_Task_Binding.Register(app);
-            System_Collections_Generic_List_1_Task_Binding.Register(app);
             System_Runtime_CompilerServices_TaskAwaiter_Binding.Register(app);
+            ET_ListComponent_1_Task_Binding.Register(app);
+            System_Collections_Generic_List_1_Task_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_UInt16_List_1_ILTypeInstance_Binding.Register(app);
             ET_TService_Binding.Register(app);
             ET_AService_Binding.Register(app);
@@ -89,10 +94,13 @@ namespace ILRuntime.Runtime.Generated
             ET_StringHelper_Binding.Register(app);
             FairyGUI_GObject_Binding.Register(app);
             FairyGUI_GComponent_Binding.Register(app);
-            System_Collections_Generic_Dictionary_2_String_Object_Binding.Register(app);
-            System_Collections_Generic_Dictionary_2_String_Object_Binding_Enumerator_Binding.Register(app);
-            System_Collections_Generic_KeyValuePair_2_String_Object_Binding.Register(app);
+            System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Binding.Register(app);
             UnityEngine_TextAsset_Binding.Register(app);
+            UnityEngine_Debug_Binding.Register(app);
+            System_Collections_Generic_IEnumerable_1_Object_Binding.Register(app);
+            System_Collections_Generic_IEnumerator_1_Object_Binding.Register(app);
+            UnityEngine_Object_Binding.Register(app);
+            System_Collections_IEnumerator_Binding.Register(app);
             UnityEngine_GameObject_Binding.Register(app);
             UnityEngine_LayerMask_Binding.Register(app);
             UnityEngine_Input_Binding.Register(app);
@@ -104,7 +112,6 @@ namespace ILRuntime.Runtime.Generated
             UnityEngine_SceneManagement_SceneManager_Binding.Register(app);
             ET_ETAsyncTaskMethodBuilder_1_ILTypeInstance_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_Int32_Transform_Binding.Register(app);
-            UnityEngine_Object_Binding.Register(app);
             UnityEngine_Resources_Binding.Register(app);
             ReferenceCollector_Binding.Register(app);
             UnityEngine_UI_Button_Binding.Register(app);
@@ -157,7 +164,6 @@ namespace ILRuntime.Runtime.Generated
             System_Collections_Generic_IEnumerable_1_KeyValuePair_2_Type_Int32_Binding.Register(app);
             System_Collections_Generic_IEnumerator_1_KeyValuePair_2_Type_Int32_Binding.Register(app);
             System_Collections_Generic_KeyValuePair_2_Type_Int32_Binding.Register(app);
-            System_Collections_IEnumerator_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_Type_UnOrderMultiMap_2_Type_Object_Binding.Register(app);
             System_DateTime_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_Type_Queue_1_ILTypeInstance_Binding.Register(app);
@@ -231,6 +237,7 @@ namespace ILRuntime.Runtime.Generated
             System_Collections_Generic_Dictionary_2_String_Int32_Binding.Register(app);
             System_Collections_Generic_List_1_String_Binding.Register(app);
             System_Collections_Generic_List_1_String_Binding_Enumerator_Binding.Register(app);
+            System_Collections_Generic_Dictionary_2_String_Object_Binding.Register(app);
             System_IO_Path_Binding.Register(app);
             ET_PathHelper_Binding.Register(app);
             System_IO_File_Binding.Register(app);

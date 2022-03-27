@@ -3,7 +3,9 @@
     "rootNamespace": "",
     "references": [
         "Unity.ResourceManager",
-        "Unity.ThirdParty"
+        "Unity.ThirdParty",
+        "Unity.Addressables.Editor",
+        "Unity.Addressables"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

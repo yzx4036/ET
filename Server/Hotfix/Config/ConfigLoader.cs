@@ -1,16 +1,17 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace ET
 {
     public class ConfigLoader: IConfigLoader
     {
-        public void GetAllConfigBytes(Dictionary<string, byte[]> output)
+        public async Task GetAllConfigBytes(Dictionary<string, byte[]> output)
         {
             foreach (string file in Directory.GetFiles($"../Config", "*.bytes"))
             {
                 string key = Path.GetFileNameWithoutExtension(file);
-                output[key] = File.ReadAllBytes(file);
+                output[key] = await File.ReadAllBytesAsync(file);
             }
         }
         
