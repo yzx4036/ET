@@ -40,6 +40,7 @@ namespace ET
             // self.loadMapOperation = SceneManager.LoadSceneAsync(sceneName);
             // //this.loadMapOperation.allowSceneActivation = false;
             // await self.tcs;
+            Log.Debug($">>>>>>ChangeSceneAsync :{sceneName}");
             await AddressablesResComponent.Instance.LoadSceneAsync(sceneName, handle =>
             {
                 self.loadMapOperation = handle;
