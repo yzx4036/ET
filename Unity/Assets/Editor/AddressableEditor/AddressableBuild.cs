@@ -41,7 +41,7 @@ public static class AddressableBuild
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
         DefaultBuild();
-        RevertLuaBytes();
+        // RevertLuaBytes();
         Debug.Log("<color=#00ff00>生成整包AB包 成功</color>");
     }
 
@@ -57,7 +57,7 @@ public static class AddressableBuild
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
         UpdateBuild();
-        RevertLuaBytes();
+        // RevertLuaBytes();
         Debug.Log("<color=#00ff00>生成热更AB包 成功</color>");
     }
 
