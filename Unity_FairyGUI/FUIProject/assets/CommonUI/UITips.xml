@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="400,400" bgColor="#121312" adaptationTest="FitSize">
+  <controller name="ShowTypeC" pages="2,Bag,4,BagUse,3,BagEquip,5,EquipPanel,6,Ring&amp;SZ,7,SavePanel,8,ShopItem" selected="6"/>
+  <displayList>
+    <image id="n58_oeq7" name="n58" src="oeq769" fileName="Sprite/TipsBGDown.png" pkg="4nyd2ns5" xy="0,330" size="400,79" alpha="0.92">
+      <gearDisplay controller="ShowTypeC" pages="4,3,5,6,7"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="n45_oeq7" sidePair="top-bottom%,center-center%"/>
+    </image>
+    <image id="n45_oeq7" name="n45" src="oeq769" fileName="Sprite/TipsBGDown.png" pkg="4nyd2ns5" xy="0,256" size="400,77" alpha="0.92">
+      <relation target="n46_oeq7" sidePair="top-bottom%,center-center%"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+    </image>
+    <image id="n34_oeq7" name="n34" src="oeq768" fileName="Sprite/TipsBGUP.png" pkg="4nyd2ns5" xy="0,0" size="400,56" alpha="0.92">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="center-center%,top-top%"/>
+    </image>
+    <image id="n38_oeq7" name="n38" src="oeq767" fileName="Sprite/TipsBGMid.png" pkg="4nyd2ns5" xy="0,53" size="400,131" alpha="0.92">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="n34_oeq7" sidePair="center-center%,top-bottom%"/>
+    </image>
+    <image id="n35_oeq7" name="n35" src="oeq766" fileName="Sprite/TipsBGLine.png" pkg="4nyd2ns5" xy="50,53" size="297,3">
+      <relation target="n34_oeq7" sidePair="width-width%"/>
+      <relation target="n34_oeq7" sidePair="center-center%,bottom-bottom%"/>
+    </image>
+    <image id="n37_oeq7" name="n37" src="oeq766" fileName="Sprite/TipsBGLine.png" pkg="4nyd2ns5" xy="49,275" size="297,3">
+      <relation target="n45_oeq7" sidePair="width-width%"/>
+      <relation target="n45_oeq7" sidePair="top-top%,center-center%"/>
+    </image>
+    <image id="n36_oeq7" name="n36" src="oeq766" fileName="Sprite/TipsBGLine.png" pkg="4nyd2ns5" xy="49,165" size="297,3">
+      <relation target="n38_oeq7" sidePair="width-width%"/>
+      <relation target="n38_oeq7" sidePair="center-center%,bottom-bottom%"/>
+    </image>
+    <text id="n40_oeq7" name="ItemType" xy="253,0" size="132,52" fontSize="23" color="#ffffff" align="right" vAlign="middle" autoSize="shrink" singleLine="true" autoClearText="true" text="武器">
+      <relation target="n34_oeq7" sidePair="width-width%,height-height%"/>
+      <relation target="n34_oeq7" sidePair="right-right%,top-top%"/>
+    </text>
+    <text id="n39_oeq7" name="ItemName" xy="18,0" size="132,52" fontSize="23" color="#ffffff" vAlign="middle" autoSize="shrink" singleLine="true" autoClearText="true" text="新手木棍">
+      <relation target="n34_oeq7" sidePair="width-width%,height-height%"/>
+      <relation target="n34_oeq7" sidePair="left-left%,top-top%"/>
+    </text>
+    <image id="n41_oeq7" name="n41" src="uvgst" fileName="Sprite/Slot.png" pkg="4nyd2ns5" xy="19,62" size="90,90" aspect="true">
+      <relation target="n38_oeq7" sidePair="width-width%,height-height%"/>
+      <relation target="n38_oeq7" sidePair="left-left%,middle-middle%"/>
+    </image>
+    <loader id="n42_oeq7" name="ItemIcon" xy="32,73" size="65,65" align="center" vAlign="middle" fill="scaleNoBorder">
+      <relation target="n41_oeq7" sidePair="width-width%,height-height%"/>
+      <relation target="n41_oeq7" sidePair="center-center%,middle-middle%"/>
+    </loader>
+    <text id="n43_oeq7" name="ItemLevel" xy="120,61" size="173,47" fontSize="23" color="#ffff00" vAlign="middle" autoSize="shrink" singleLine="true" autoClearText="true" text="需要等级:1">
+      <relation target="n38_oeq7" sidePair="width-width%,height-height%"/>
+      <relation target="n38_oeq7" sidePair="left-left%,top-top%"/>
+    </text>
+    <text id="n44_oeq7" name="ItemClass" xy="120,106" size="173,47" fontSize="23" color="#ffff00" vAlign="middle" autoSize="shrink" singleLine="true" autoClearText="true" text="需要职业:战士">
+      <relation target="n38_oeq7" sidePair="width-width%,height-height%"/>
+      <relation target="n38_oeq7" sidePair="left-left%,top-top%"/>
+    </text>
+    <list id="n46_oeq7" name="AttrList" xy="0,184" size="400,72" selectionMode="none" lineGap="1" defaultItem="ui://o9z9wblxoeq71" autoClearItems="true">
+      <relation target="n38_oeq7" sidePair="width-width%"/>
+      <relation target="n38_oeq7" sidePair="top-top%,center-center%"/>
+      <item/>
+      <item/>
+    </list>
+    <text id="n47_oeq7" name="SellPrice" xy="6,289" size="174,27" fontSize="23" color="#ffffff" vAlign="middle" autoSize="shrink" singleLine="true" autoClearText="true" text="回收价格:25">
+      <relation target="n45_oeq7" sidePair="width-width%,height-height%"/>
+      <relation target="n45_oeq7" sidePair="left-left%,top-top%"/>
+    </text>
+    <text id="n48_oeq7" name="Endurance" xy="231,291" size="159,27" fontSize="23" color="#ffffff" align="right" vAlign="middle" autoSize="shrink" singleLine="true" autoClearText="true" text="耐久:8/8">
+      <relation target="n45_oeq7" sidePair="width-width%,height-height%"/>
+      <relation target="n45_oeq7" sidePair="left-left%,top-top%"/>
+    </text>
+    <component id="n52_oeq7" name="EquipBtn" src="oeq76b" fileName="Button_Tips.xml" pkg="o9z9wblx" xy="143,349" size="82,36">
+      <gearDisplay controller="ShowTypeC" pages="3"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="n45_oeq7" sidePair="right-right%,top-top%"/>
+      <Button title="装备"/>
+    </component>
+    <component id="n60_oeq7" name="UseBtn" src="oeq76b" fileName="Button_Tips.xml" pkg="o9z9wblx" xy="143,349" size="82,36">
+      <gearDisplay controller="ShowTypeC" pages="4"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="n45_oeq7" sidePair="center-center%,top-top%"/>
+      <Button title="使用"/>
+    </component>
+    <component id="n62_oeq7" name="UnEquipBtn" src="oeq76b" fileName="Button_Tips.xml" pkg="o9z9wblx" xy="143,349" size="82,36">
+      <gearDisplay controller="ShowTypeC" pages="5"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="n45_oeq7" sidePair="center-center%,top-top%"/>
+      <Button title="卸下"/>
+    </component>
+    <component id="n63_oeq7" name="LeftBtn" src="oeq76b" fileName="Button_Tips.xml" pkg="o9z9wblx" xy="28,349" size="82,36">
+      <gearDisplay controller="ShowTypeC" pages="6"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="n45_oeq7" sidePair="left-left%,top-top%"/>
+      <Button title="左"/>
+    </component>
+    <component id="n64_oeq7" name="RightBtn" src="oeq76b" fileName="Button_Tips.xml" pkg="o9z9wblx" xy="273,349" size="82,36">
+      <gearDisplay controller="ShowTypeC" pages="6"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="n45_oeq7" sidePair="right-right%,top-top%"/>
+      <Button title="右"/>
+    </component>
+    <component id="n65_oeq7" name="GetBtn" src="oeq76b" fileName="Button_Tips.xml" pkg="o9z9wblx" xy="143,349" size="82,36">
+      <gearDisplay controller="ShowTypeC" pages="7"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="n45_oeq7" sidePair="center-center%,top-top%"/>
+      <Button title="取出"/>
+    </component>
+    <component id="n67_grmd" name="LockBtn" src="oeq76b" fileName="Button_Tips.xml" pkg="o9z9wblx" xy="334,85" size="47,44">
+      <gearDisplay controller="ShowTypeC" pages="2,3,6"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="n38_oeq7" sidePair="right-right%,middle-middle%"/>
+      <Button title="锁定"/>
+    </component>
+  </displayList>
+</component>

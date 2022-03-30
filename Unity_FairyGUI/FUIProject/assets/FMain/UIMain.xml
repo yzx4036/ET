@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1491" overflow="scroll" scroll="horizontal" scrollBarFlags="144" scrollBar="hidden" adaptationTest="FitSize">
+  <displayList>
+    <image id="n80_ia59" name="n80" src="er0b62" fileName="Sprite/MainMapBG.jpg" pkg="4nyd2ns5" xy="0,0" size="1861,1491" aspect="true">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="center-center%,middle-middle%"/>
+    </image>
+    <component id="n83_ia59" name="EquipShopBtn" src="ia591p" fileName="Button_Shop.xml" pkg="o9z9wblx" xy="973,332" size="150,50" rotation="35">
+      <relation target="n80_ia59" sidePair="width-width%,height-height%"/>
+      <relation target="n80_ia59" sidePair="left-left%,top-top%"/>
+      <Button title="服装店"/>
+    </component>
+    <component id="n92_ia59" name="NotionShopBtn" src="ia591p" fileName="Button_Shop.xml" pkg="o9z9wblx" xy="1241,660" size="150,50" rotation="-36.9">
+      <relation target="n80_ia59" sidePair="width-width%,height-height%"/>
+      <relation target="n80_ia59" sidePair="left-left%,top-top%"/>
+      <Button title="流浪汉"/>
+    </component>
+    <component id="n93_ia59" name="OldManBtn" src="ia591p" fileName="Button_Shop.xml" pkg="o9z9wblx" xy="1191,568" size="94,50" rotation="39.2">
+      <relation target="n80_ia59" sidePair="width-width%,height-height%"/>
+      <relation target="n80_ia59" sidePair="left-left%,top-top%"/>
+      <Button title="老兵"/>
+    </component>
+    <component id="n94_ia59" name="DrugstoreBtn" src="ia591p" fileName="Button_Shop.xml" pkg="o9z9wblx" xy="1457,582" size="150,50" rotation="35">
+      <relation target="n80_ia59" sidePair="width-width%,height-height%"/>
+      <relation target="n80_ia59" sidePair="left-left%,top-top%"/>
+      <Button title="药贩"/>
+    </component>
+    <component id="n95_ia59" name="RingShopBtn" src="ia591p" fileName="Button_Shop.xml" pkg="o9z9wblx" xy="756,491" size="150,50" rotation="-36.9">
+      <relation target="n80_ia59" sidePair="width-width%,height-height%"/>
+      <relation target="n80_ia59" sidePair="left-left%,top-top%"/>
+      <Button title="首饰店"/>
+    </component>
+    <component id="n96_ia59" name="WeaponShopBtn" src="ia591p" fileName="Button_Shop.xml" pkg="o9z9wblx" xy="534,619" size="150,50" rotation="39.6">
+      <relation target="n80_ia59" sidePair="width-width%,height-height%"/>
+      <relation target="n80_ia59" sidePair="left-left%,top-top%"/>
+      <Button title="武器店"/>
+    </component>
+    <component id="n97_ia59" name="SkillShopBtn" src="ia591p" fileName="Button_Shop.xml" pkg="o9z9wblx" xy="438,920" size="150,50" rotation="-36.9">
+      <relation target="n80_ia59" sidePair="width-width%,height-height%"/>
+      <relation target="n80_ia59" sidePair="left-left%,top-top%"/>
+      <Button title="书店"/>
+    </component>
+    <component id="n98_ia59" name="InnShopBtn" src="ia591p" fileName="Button_Shop.xml" pkg="o9z9wblx" xy="858,997" size="150,50" rotation="35">
+      <relation target="n80_ia59" sidePair="width-width%,height-height%"/>
+      <relation target="n80_ia59" sidePair="left-left%,top-top%"/>
+      <Button title="客栈"/>
+    </component>
+    <component id="n99_jiqg" name="GuildBtn" src="ia591p" fileName="Button_Shop.xml" pkg="o9z9wblx" xy="271,803" size="150,50" rotation="-36.9">
+      <relation target="n80_ia59" sidePair="width-width%,height-height%"/>
+      <relation target="n80_ia59" sidePair="left-left%,top-top%"/>
+      <Button title="行会"/>
+    </component>
+  </displayList>
+</component>

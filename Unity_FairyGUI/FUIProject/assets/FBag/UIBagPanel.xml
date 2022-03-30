@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1656" adaptationTest="FitSize">
+  <displayList>
+    <image id="n0_azrp" name="n0" src="ci544" fileName="Sprite/BG_NoClose.png" pkg="4nyd2ns5" xy="0,156" size="1080,1500" group="n2_azrp">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="center-center%,middle-middle%"/>
+    </image>
+    <text id="n1_azrp" name="n1" xy="0,179" size="1080,69" group="n2_azrp" fontSize="50" color="#a69a67" align="center" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,-1" text="背包">
+      <relation target="" sidePair="top-top%,center-center%"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+    </text>
+    <group id="n2_azrp" name="BG" xy="0,156" size="1080,1500" advanced="true" collapsed="true"/>
+    <component id="n3_azrp" name="CloseBtn" src="dh8k17" fileName="Button_Close.xml" pkg="o9z9wblx" xy="998,172" size="74,73" aspect="true">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="right-right%,top-top%"/>
+    </component>
+    <list id="n4_azrp" name="ItemList" xy="19,253" size="1042,1247" layout="pagination" overflow="scroll" margin="5,5,5,5" lineGap="5" colGap="5" lineItemCount="8" lineItemCount2="10" defaultItem="ui://o9z9wblxci549" autoItemSize="true" align="center" autoClearItems="true">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="center-center%,top-top%"/>
+      <item url="ui://4nyd2ns5uvgst"/>
+      <item url="ui://4nyd2ns5uvgst"/>
+      <item url="ui://4nyd2ns5uvgst"/>
+      <item url="ui://4nyd2ns5uvgst"/>
+      <item url="ui://4nyd2ns5uvgst"/>
+      <item url="ui://4nyd2ns5uvgst"/>
+      <item url="ui://4nyd2ns5uvgst"/>
+      <item url="ui://4nyd2ns5uvgst"/>
+    </list>
+    <image id="n5_azrp" name="n5" src="ci545" fileName="Sprite/DownTips.png" pkg="4nyd2ns5" xy="8,1496" size="1064,151">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="bottom-bottom%,center-center%"/>
+    </image>
+    <component id="n6_azrp" name="RefreshBtn" src="uvgs12" fileName="Button4_Normal.xml" pkg="o9z9wblx" xy="784,1548" size="192,65">
+      <relation target="n5_azrp" sidePair="width-width%,height-height%"/>
+      <relation target="n5_azrp" sidePair="bottom-bottom%,right-right%"/>
+      <Button title="整理" titleFontSize="35"/>
+    </component>
+    <component id="n7_azrp" name="SellBtn" src="uvgs12" fileName="Button4_Normal.xml" pkg="o9z9wblx" xy="505,1548" size="192,65">
+      <relation target="n5_azrp" sidePair="width-width%,height-height%"/>
+      <relation target="n5_azrp" sidePair="bottom-bottom%,right-right%"/>
+      <Button title="回收" titleFontSize="35"/>
+    </component>
+  </displayList>
+</component>

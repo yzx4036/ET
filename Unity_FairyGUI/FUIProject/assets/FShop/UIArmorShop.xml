@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1656">
+  <controller name="ShopPanelC" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n4_q2hx" name="SelectBG" src="f2qf63" fileName="Kelvin142_2.png" pkg="4nyd2ns5" xy="80,525" group="n6_q2hx" filter="color" filterData="0,0,-0.5,0">
+      <relation target="" sidePair="center-center%,middle-middle%,width-width%,height-height%"/>
+    </image>
+    <text id="n5_q2hx" name="n5" xy="469,550" size="151,48" group="n6_q2hx" fontSize="40" color="#a69a67" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" text="服装店">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="n4_q2hx" sidePair="bottom-bottom%,center-center%"/>
+    </text>
+    <component id="n7_q2hx" name="CloseBtn" src="uvgs13" fileName="Button_Normal.xml" pkg="o9z9wblx" xy="455,949" size="165,68" group="n6_q2hx">
+      <relation target="" sidePair="width-width%,height-height%,center-center%,bottom-bottom%"/>
+      <Button title="关闭"/>
+    </component>
+    <component id="n9_q2hx" name="ToBuyBtn" src="ia591p" fileName="Button_Shop.xml" pkg="o9z9wblx" xy="460,677" group="n6_q2hx">
+      <relation target="" sidePair="center-center%,top-top%,width-width%,height-height%"/>
+      <Button title="购买装备"/>
+    </component>
+    <component id="n12_q2hx" name="ToSellBtn" src="ia591p" fileName="Button_Shop.xml" pkg="o9z9wblx" xy="460,747" group="n6_q2hx">
+      <relation target="" sidePair="center-center%,top-top%,width-width%,height-height%"/>
+      <Button title="出售装备"/>
+    </component>
+    <component id="n13_q2hx" name="ToFixBtn" src="ia591p" fileName="Button_Shop.xml" pkg="o9z9wblx" xy="460,817" group="n6_q2hx">
+      <relation target="" sidePair="center-center%,top-top%,width-width%,height-height%"/>
+      <Button title="修理装备" controller="ShopPanelC" page="1"/>
+    </component>
+    <component id="n32_nv37" name="FixPanel" src="s0zo2" fileName="UIFixPanel.xml" xy="0,0" group="n6_q2hx">
+      <gearDisplay controller="ShopPanelC" pages="1"/>
+      <relation target="" sidePair="width-width%,height-height%,center-center%,top-top%"/>
+    </component>
+    <group id="n6_q2hx" name="StartPanel" xy="0,0" size="1080,1656" advanced="true"/>
+  </displayList>
+</component>

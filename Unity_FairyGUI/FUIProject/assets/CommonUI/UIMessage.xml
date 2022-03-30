@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="600,80">
+  <displayList>
+    <image id="n0_yaaw" name="n0" src="uvgs1" fileName="Sprite/InputField.png" pkg="4nyd2ns5" xy="0,0" size="600,80" alpha="0.73">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n1_yaaw" name="Message" xy="7,5" size="586,68" fontSize="45" color="#a69a67" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" text="账号密码错误">
+      <relation target="n0_yaaw" sidePair="width-width%,height-height%"/>
+      <relation target="n0_yaaw" sidePair="center-center%,middle-middle%"/>
+    </text>
+  </displayList>
+</component>
