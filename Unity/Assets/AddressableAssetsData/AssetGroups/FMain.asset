@@ -10,20 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Code
+  m_Name: FMain
   m_EditorClassIdentifier: 
-  m_GroupName: Code
+  m_GroupName: FMain
   m_Data:
     m_SerializedData: []
-  m_GUID: 0811107a203190940bbbc93180668588
+  m_GUID: 539a92cfa66eb824d875f63be62ebe69
   m_SerializeEntries:
-  - m_GUID: b2e2ec89fef0f5a4cb1cca10b6ef77df
-    m_Address: Code.dll
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Preload
-  - m_GUID: 14d85f8b92428844fbb28ad4fef3cb5c
-    m_Address: Code.pdb
+  - m_GUID: fdb3a4e7b02451144b409c83040f2b93
+    m_Address: Assets/Bundles/FUI/FMain_fui.bytes
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
@@ -31,5 +26,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: fba6c196efaf6c44692df230323aa228, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: b48e1385a7c771547a14ed45afd7b466, type: 2}
-    - {fileID: 11400000, guid: 243d037d8ed9bb24cb04d16dd50a1344, type: 2}
+    - {fileID: 11400000, guid: 2751e6811293533448f43692f32b90e9, type: 2}
+    - {fileID: 11400000, guid: 471cee61b77a08f4cb956716fb5142de, type: 2}

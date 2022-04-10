@@ -68,3 +68,25 @@ MonoBehaviour:
     groupTemplateApplicationMode: 0
     simplified: 1
     addressReplacement: 
+  - path: Assets/Bundles/FUI/(?<asset>.*)_(?<asset1>.*)_.*\.*
+    matchType: 1
+    groupName: ${asset}
+    LabelMode: 0
+    labelRefs:
+    - m_LabelString: Preload
+    dynamicLabels: []
+    groupTemplate: {fileID: 11400000, guid: 35a09e2dd7da1da42af3af9346b5047b, type: 2}
+    groupTemplateApplicationMode: 0
+    simplified: 0
+    addressReplacement: 
+  - path: Assets/Bundles/FUI/(?<asset>.*)_.*\.*
+    matchType: 1
+    groupName: ${asset}
+    LabelMode: 0
+    labelRefs:
+    - m_LabelString: Preload
+    dynamicLabels: []
+    groupTemplate: {fileID: 11400000, guid: 35a09e2dd7da1da42af3af9346b5047b, type: 2}
+    groupTemplateApplicationMode: 0
+    simplified: 0
+    addressReplacement: 
