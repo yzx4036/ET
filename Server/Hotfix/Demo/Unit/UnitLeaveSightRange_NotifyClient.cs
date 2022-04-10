@@ -1,12 +1,14 @@
-﻿namespace ET
+﻿using System.Threading.Tasks;
+using ET.EventType;
+
+namespace ET
 {
     // 离开视野
     [Event]
     public class UnitLeaveSightRange_NotifyClient: AEvent<EventType.UnitLeaveSightRange>
     {
-        protected override async ETTask Run(EventType.UnitLeaveSightRange args)
+        protected override void Run(UnitLeaveSightRange args)
         {
-            await ETTask.CompletedTask;
             AOIEntity a = args.A;
             AOIEntity b = args.B;
             if (a.Unit.Type != UnitType.Player)

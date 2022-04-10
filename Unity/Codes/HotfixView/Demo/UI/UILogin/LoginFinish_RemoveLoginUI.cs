@@ -1,12 +1,15 @@
 ﻿
 
+using System.Threading.Tasks;
+using ET.EventType;
+
 namespace ET
 {
 	public class LoginFinish_RemoveLoginUI: AEvent<EventType.LoginFinish>
 	{
-		protected override async ETTask Run(EventType.LoginFinish args)
+		protected override void Run(LoginFinish args)
 		{
-			await UIHelper.Remove(args.ZoneScene, UIType.UILogin);
+			UIHelper.Remove(args.ZoneScene, UIType.UILogin).Coroutine();
 		}
 	}
 }

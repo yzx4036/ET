@@ -1,12 +1,14 @@
-﻿namespace ET
+﻿using System.Threading.Tasks;
+using ET.EventType;
+
+namespace ET
 {
     // 进入视野通知
     [Event]
     public class UnitEnterSightRange_NotifyClient: AEvent<EventType.UnitEnterSightRange>
     {
-        protected override async ETTask Run(EventType.UnitEnterSightRange args)
+        protected override void Run(UnitEnterSightRange args)
         {
-            await ETTask.CompletedTask;
             AOIEntity a = args.A;
             AOIEntity b = args.B;
             if (a.Id == b.Id)
