@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: CommonUI
   m_Data:
     m_SerializedData: []
-  m_GUID: 239e807995116884f9e6c7dd7064469c
+  m_GUID: d5f0cd0a16000cc4d9a1bdc4f927fd5b
   m_SerializeEntries:
   - m_GUID: 1b4cbf9af8be538419e5682e7dc8b5e2
     m_Address: Assets/Bundles/FUI/CommonUI_fui.bytes

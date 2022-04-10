@@ -28,6 +28,7 @@ namespace ET
 		{
 			byte[] oneConfigBytes =  await self.ConfigLoader.GetOneConfigBytes(configType.FullName);
 
+			Log.Info($">>>>>>>>>>>>LoadOneConfig {configType.Name}");
 			object category = ProtobufHelper.FromBytes(configType, oneConfigBytes, 0, oneConfigBytes.Length);
 
 			self.AllConfig[configType] = category;
@@ -47,23 +48,16 @@ namespace ET
 			}
 		}
 		
-		public static async ETTask LoadAsync(this ConfigComponent self)
+		public static async Task LoadAsync(this ConfigComponent self)
 		{
 			self.AllConfig.Clear();
 			List<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
 			
 			Dictionary<string, byte[]> configBytes = new Dictionary<string, byte[]>();
 			await self.ConfigLoader.GetAllConfigBytes(configBytes);
-
-			using (ListComponent<Task> listTasks = ListComponent<Task>.Create())
+			foreach (Type type in types)
 			{
-				foreach (Type type in types)
-				{
-					Task task = Task.Run(() => self.LoadOneInThread(type, configBytes));
-					listTasks.Add(task);
-				}
-
-				await Task.WhenAll(listTasks.ToArray());
+				self.LoadOneInThread(type, configBytes);
 			}
 		}
 
@@ -74,7 +68,7 @@ namespace ET
 				byte[] oneConfigBytes = configBytes[configType.Name];
 
 				object category = ProtobufHelper.FromBytes(configType, oneConfigBytes, 0, oneConfigBytes.Length);
-
+				
 				lock (self)
 				{
 					self.AllConfig[configType] = category;	
