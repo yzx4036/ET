@@ -107,5 +107,9 @@ namespace ET
         {
             public Unit Unit;
         }
+        
+        public struct EventSystemOnLoadTypes
+        {
+        }
     }
 }

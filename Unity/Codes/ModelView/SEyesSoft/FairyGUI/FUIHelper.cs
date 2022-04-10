@@ -36,9 +36,9 @@ namespace ET
     {
         private static Dictionary<Type, FUIInstArgs> FUIInstArgsDict = new Dictionary<Type, FUIInstArgs>();
 
-        #region 创建FUI实例
-        static FUIHelper()
+        public static void Init()
         {
+            Debug.Log(">>>>>>>>>>FUIHelper Init");
             var types = EventSystem.Instance.GetTypes(typeof (FUIAttribute));
             List<Type> fuiAttrTypeList = new List<Type>();
             foreach (Type type in types)
@@ -47,6 +47,8 @@ namespace ET
             }
             LoadFUIAttribute(fuiAttrTypeList);
         }
+        
+        #region 创建FUI实例
 
         public static void Open<T>(Action<FUI> callBack) where T:FUI
         { 
@@ -54,7 +56,12 @@ namespace ET
             Type uiType = typeof (T);
             if (FUIInstArgsDict.TryGetValue(uiType, out uiArgs))
             {
-                Game.Scene.GetComponent<FUIComponent>().Open<T>(uiArgs.UIPackageName, uiArgs.UIResName, uiArgs.FuiTypeHashCode, callBack);
+                var _fuiComp = Game.Scene.GetComponent<FUIComponent>();
+                if (_fuiComp == null)
+                {
+                    _fuiComp = Game.Scene.AddComponent<FUIComponent>();
+                }
+                _fuiComp.Open<T>(uiArgs.UIPackageName, uiArgs.UIResName, uiArgs.FuiTypeHashCode, callBack);
             }
             else
             {

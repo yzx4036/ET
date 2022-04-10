@@ -6,22 +6,27 @@ using static FairyGUI.UIContentScaler;
 
 namespace ET
 {
-    public class FUIInitComponent: Entity
+    public class FUIInitComponent: Entity, IAwake
     {
         private readonly string[] _initPackageArray =
         {
-            // FUIPackage.CommonAsset,
-            // FUIPackage.CommonComp,
-            // FUIPackage.FLogin,
+            FUIPackage.CommonAsset,
+            FUIPackage.CommonComp,
+            FUIPackage.FLogin,
         };
         public async ETTask Init()
         {
+            var _fuiPackComp = Game.Scene.GetComponent<FUIPackageComponent>();
+            if (_fuiPackComp == null)
+            {
+                _fuiPackComp = Game.Scene.AddComponent<FUIPackageComponent>();
+            }
+
             GRoot.inst.SetContentScaleFactor(1080,1920,ScreenMatchMode.MatchWidthOrHeight);
             UIConfig.defaultFont = "KaiTi";
-
             for (int i = 0; i < _initPackageArray.Length; i++)
             {
-                await Game.Scene.GetComponent<FUIPackageComponent>().AddPackageAsync(_initPackageArray[i]);
+                await _fuiPackComp.AddPackageAsync(_initPackageArray[i]);
             }
             
             // await Game.Scene.GetComponent<FUIPackageComponent>().AddPackageAsync(FUIPackage.FLogin);

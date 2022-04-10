@@ -34,7 +34,8 @@ namespace ET
             Game.Scene.AddComponent<NumericWatcherComponent>();
             Game.Scene.AddComponent<AIDispatcherComponent>();
             // await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
-            
+            var _fUIInitComponent = Game.Scene.AddComponent<FUIInitComponent>();
+            await _fUIInitComponent.Init();
             Scene zoneScene = SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
             
             Game.EventSystem.Publish(new EventType.AppStartInitFinish() { ZoneScene = zoneScene });

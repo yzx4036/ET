@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FairyGUI;
+using SEyesSoft.ET;
 using UnityEngine;
 
 
@@ -10,7 +11,7 @@ namespace ET
     /// <summary>
     /// 管理所有UI Package
     /// </summary>
-    public class FUIPackageComponent : Entity
+    public class FUIPackageComponent : Entity, IAwake
     {
         private static Dictionary<string, UIPackage> s_Packages = new Dictionary<string, UIPackage>();
 
@@ -23,6 +24,8 @@ namespace ET
             // AssetsBundleHelper
             
             //todo 接入资源管理后 
+            // TextAsset v = await AddressablesResComponent.Instance.GetAssetAsync<TextAsset>(type + "_fui", AssetsType.FUI);
+            // AddressablesResComponent.Instance.
             // AssetsHelper.LoadAsset<TextAsset>(type + "_fui", AssetsType.FUI, desTextAsset =>
             // {
             //     if (desTextAsset != null)
@@ -62,6 +65,12 @@ namespace ET
                 return;
             }
 
+            var _addressPath = AssetsHelper.GetPath(type + "_fui", AssetsType.FUI);
+            TextAsset desTextAsset = await AddressablesResComponent.Instance.GetAssetAsync<TextAsset>(_addressPath);
+            if (desTextAsset != null)
+            {
+                s_Packages.Add(type, SEyesSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(desTextAsset.bytes, type, LoadPackageInternalAsync));
+            }
             await Task.CompletedTask;
             // TextAsset desTextAsset =
             //     await AssetsHelper.LoadAssetAsync<TextAsset>(type + "_fui", AssetsType.FUI);
@@ -81,11 +90,10 @@ namespace ET
         private static async void LoadPackageInternalAsync(string name, string extension, System.Type type,
             PackageItem item)
         {
+            var _addressPath = AssetsHelper.GetPath(name + extension, AssetsType.FUISprite);
+            Texture texture  = await AddressablesResComponent.Instance.GetAssetAsync<Texture>(_addressPath);
+            item.owner.SetItemAsset(item, texture, DestroyMethod.Unload);
             await Task.CompletedTask;
-            // Texture texture =
-            //     await AssetsHelper.LoadAssetAsync<Texture>(name + extension, AssetsType.FUISprite);
-            //
-            // item.owner.SetItemAsset(item, texture, DestroyMethod.Unload);
         }
 
         public bool IsPackageLoaded(string pkgName)
