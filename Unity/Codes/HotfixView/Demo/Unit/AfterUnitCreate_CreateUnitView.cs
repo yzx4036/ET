@@ -1,11 +1,13 @@
-﻿using SEyesSoft.ET;
+﻿using System.Threading.Tasks;
+using ET.EventType;
+using SEyesSoft.ET;
 using UnityEngine;
 
 namespace ET
 {
-    public class AfterUnitCreate_CreateUnitView: AEvent<EventType.AfterUnitCreate>
+    public class AfterUnitCreate_CreateUnitView: AEventAsync<EventType.AfterUnitCreate>
     {
-        protected override async ETTask Run(EventType.AfterUnitCreate args)
+        protected override async ETTask Run(AfterUnitCreate args)
         {
             // Unit View层
             // 这里可以改成异步加载，demo就不搞了

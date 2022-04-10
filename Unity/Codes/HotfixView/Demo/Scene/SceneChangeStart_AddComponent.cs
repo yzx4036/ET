@@ -1,8 +1,16 @@
+using System.Threading.Tasks;
+using ET.EventType;
+
 namespace ET
 {
     public class SceneChangeStart_AddComponent: AEvent<EventType.SceneChangeStart>
     {
-        protected override async ETTask Run(EventType.SceneChangeStart args)
+        protected override void Run(SceneChangeStart args)
+        {
+            RunAsync(args).Coroutine();
+        }
+        
+        private async ETTask RunAsync(EventType.SceneChangeStart args)
         {
             Scene currentScene = args.ZoneScene.CurrentScene();
             
