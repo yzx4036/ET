@@ -168,6 +168,10 @@ namespace ET
                     this.allEvents[eventType].Add(iEvent);
                 }
             }
+            
+#if !NOT_UNITY
+            Game.EventSystem.Publish(new EventType.EventSystemOnLoadTypes());
+#endif
         }
 
         public void Add(Assembly assembly)
