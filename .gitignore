@@ -59,6 +59,7 @@ Server/.DS_Store
 unityfs_httpserver/node_modules
 /Excel/~$*.xlsx
 /.vscode
+/Unity/.vsconfig
 Unity/AssetBundleBackup
 Unity/ServerData
 Unity/Assets/AddressableAssetsData/Windows

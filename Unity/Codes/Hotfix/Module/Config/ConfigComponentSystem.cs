@@ -22,6 +22,7 @@ namespace ET
 	    }
     }
     
+    [FriendClass(typeof(ConfigComponent))]
     public static class ConfigComponentSystem
 	{
 		public static async Task LoadOneConfig(this ConfigComponent self, Type configType)
