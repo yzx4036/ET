@@ -38,7 +38,7 @@ namespace ET
             await _fUIInitComponent.Init();
             Scene zoneScene = SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
             
-            Game.EventSystem.Publish(new EventType.AppStartInitFinish() { ZoneScene = zoneScene });
+            await Game.EventSystem.PublishAsync(new EventType.AppStartInitFinish() { ZoneScene = zoneScene });
             await ETTask.CompletedTask;
         }
     }

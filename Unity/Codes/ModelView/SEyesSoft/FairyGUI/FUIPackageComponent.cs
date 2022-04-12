@@ -72,6 +72,7 @@ namespace ET
                 s_Packages.Add(type, SEyesSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(desTextAsset.bytes, type, LoadPackageInternalAsync));
             }
             await Task.CompletedTask;
+            Log.Debug(">>>>>>>>>>>>>>>AddPackageAsync");
             // TextAsset desTextAsset =
             //     await AssetsHelper.LoadAssetAsync<TextAsset>(type + "_fui", AssetsType.FUI);
             // if (desTextAsset != null)
@@ -91,6 +92,7 @@ namespace ET
             PackageItem item)
         {
             var _addressPath = AssetsHelper.GetPath(name + extension, AssetsType.FUISprite);
+            Log.Debug($"LoadPackageInternalAsync>>>>>>>>>{_addressPath}");
             Texture texture  = await AddressablesResComponent.Instance.GetAssetAsync<Texture>(_addressPath);
             item.owner.SetItemAsset(item, texture, DestroyMethod.Unload);
             await Task.CompletedTask;

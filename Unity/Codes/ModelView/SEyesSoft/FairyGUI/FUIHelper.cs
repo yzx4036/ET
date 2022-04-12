@@ -75,7 +75,13 @@ namespace ET
             Type uiType = typeof (T);
             if (FUIInstArgsDict.TryGetValue(uiType, out uiArgs))
             {
-                return await Game.Scene.GetComponent<FUIComponent>().OpenAsync<T>(uiArgs.UIPackageName, uiArgs.UIResName, uiArgs.FuiTypeHashCode);
+                var _fuiComp = Game.Scene.GetComponent<FUIComponent>();
+                if (_fuiComp == null)
+                {
+                    _fuiComp = Game.Scene.AddComponent<FUIComponent>();
+                }
+                Log.Debug(">>>>>>>>>>>>>>>FUIHelper OpenAsync");
+                return await _fuiComp.OpenAsync<T>(uiArgs.UIPackageName, uiArgs.UIResName, uiArgs.FuiTypeHashCode);
             }
 
             throw new Exception($"找不到对应FUIInstArgs uiType = {uiType}");

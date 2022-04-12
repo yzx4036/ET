@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using FairyGUI;
+using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using static FairyGUI.UIContentScaler;
 
 namespace ET
@@ -23,6 +25,11 @@ namespace ET
             }
 
             GRoot.inst.SetContentScaleFactor(1080,1920,ScreenMatchMode.MatchWidthOrHeight);
+            // 摄像机堆叠处理
+            var stageCamera = FairyGUI.StageCamera.main;
+            var cameraData = stageCamera.GetUniversalAdditionalCameraData();
+            cameraData.renderType = CameraRenderType.Overlay;
+            Camera.main.GetUniversalAdditionalCameraData().cameraStack.Add(stageCamera);
             UIConfig.defaultFont = "KaiTi";
             for (int i = 0; i < _initPackageArray.Length; i++)
             {

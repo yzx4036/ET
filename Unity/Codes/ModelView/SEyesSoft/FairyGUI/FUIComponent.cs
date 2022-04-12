@@ -11,7 +11,8 @@ namespace ET
         public override void Awake(FUIComponent self)
         {
             
-            self.AddComponent<FUI, GObject>(GRoot.inst);
+            self.Root = self.AddComponent<FUI, GObject>(GRoot.inst);
+            Log.Debug(">>>>>>>>> self.AddComponent<FUI, GObject>(GRoot.inst); ");
             // self.Root = EntityFactory.Create<FUI, GObject>(Game.Scene, GRoot.inst);
             // self._loadedUI = new Dictionary<Type, FUI>();
             // self._openedUI = new Dictionary<Type, FUI>();
@@ -62,6 +63,7 @@ namespace ET
         {
             await Game.Scene.GetComponent<FUIPackageComponent>().EnsurePackageLoadedAsync(uiPackageName);
             var fui = CreateFUIInst<T>(uiPackageName, uiResName, pHashCodeId);
+            Log.Debug(">>>>>>>>>>>>>>>FUIComponent OpenAsync");
             // Debug.Log($">>>>>>>>>>>>>>>>Open {uiType}");
             Add(fui, true);
             return fui;

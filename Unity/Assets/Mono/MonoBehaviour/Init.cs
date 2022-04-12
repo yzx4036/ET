@@ -41,8 +41,8 @@ namespace ET
 			Options.Instance = new Options();
 
 			CodeLoader.Instance.CodeMode = this.CodeMode;
-			Options.Instance.Develop = 0;
-			Options.Instance.LogLevel = 6;
+			Options.Instance.Develop = 1;
+			Options.Instance.LogLevel = 2;
 		}
 
 		private async Task Start()
