@@ -172,7 +172,8 @@ local function genCode(handler)
 
 		writer:writeln('\t'..[[private T CreateFUICompInst<T>(GObject gObject) where T : Entity, IAwake<FUI>, new()
         {
-	        return FUIHelper1.CreateFUICompInst<T, %s>(this, gObject);
+			var _fui = this.AddChild<FUI, GObject>(gObject);
+	        return _fui.AddComponent<T, FUI>(_fui);
         }
 		]], classInfo.className)
 		
