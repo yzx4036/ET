@@ -113,23 +113,25 @@ local function genCode(handler)
 		writer:startBlock()
 		-- 1
 		writer:writeln([[[ObjectSystem]
-    public class %sAwakeSystem : AwakeSystem<%s, GObject>
+    public class %sAwakeSystem : AwakeSystem<%s, FUI>
     {
-        public override void Awake(%s self, GObject go)
+        public override void Awake(%s self, FUI fui)
         {
-            self.Awake(go);
+            self.Awake(fui);
         }
     }
         ]], classInfo.className, classInfo.className, classInfo.className)
 		
-		--如果是收藏的组件，生成[FUI]属性
+		writer:writeln(string.format("[FriendClass(typeof(FUI))]"))
+		
+		--如果是收藏的组件，生成[FUI]属性 用这个区分哪些是UI面板
 		if classInfo.res.exported
 				and classInfo.res.type == "component"
 				and classInfo.res.favorite then
 			writer:writeln(string.format("[FUI(typeof(%s), UIPackageName, UIResName)]", classInfo.className))
 		end
 		
-		writer:writeln([[public sealed class %s : FUI
+		writer:writeln([[public sealed class %s : Entity, IAwake<FUI>
     {	
         public const string UIPackageName = "%s";
         public const string UIResName = "%s";
@@ -145,87 +147,45 @@ local function genCode(handler)
 			local memberInfo = members[j]
 			_typeDict[classInfo.className] = _typeDict[classInfo.className] or {}
 			local type = _typeDict[classInfo.className][memberInfo.varName] or memberInfo.type
-			writer:writeln('public %s %s;', type, memberInfo.varName)
+			writer:writeln('    public %s %s;', type, memberInfo.varName)
 		end
-		writer:writeln('public const string URL = "ui://%s%s";', handler.pkg.id, classInfo.resId)
+		writer:writeln([[    public const string URL = "ui://%s%s";]], handler.pkg.id, classInfo.resId)
 		writer:writeln()
 		
-		writer:writeln([[private static GObject CreateGObject()
-    {
-        return UIPackage.CreateObject(UIPackageName, UIResName);
-    }
-    
-    private static void CreateGObjectAsync(UIPackage.CreateObjectCallback result)
-    {
-        UIPackage.CreateObjectAsync(UIPackageName, UIResName, result);
-    }
-        ]])
-		
-		writer:writeln([[public static %s CreateInstance(Entity domain)
-    {			
-        return EntityFactory.Create<%s, GObject>(domain, CreateGObject());
-    }
+		writer:writeln([[    /// <summary>
+        /// 通过此方法获取的FUI，在Dispose时不会释放GObject，需要自行管理（一般在配合FGUI的Pool机制时使用）。
+        /// </summary>
+        //public static %s GetFormPool(Entity domain, GObject go)
+        //{
+			//  var fui = go.Get<%s>();
+
+            //if(fui == null)
+            //{
+			//  fui = Create(domain, go);
+			//}
+
+			//fui.isFromFGUIPool = true;
+
+			//return fui;
+		//}
         ]], classInfo.className, classInfo.className)
-		
-		writer:writeln([[public static Task<%s> CreateInstanceAsync(Entity domain)
-    {
-        TaskCompletionSource<%s> tcs = new TaskCompletionSource<%s>();
 
-        CreateGObjectAsync((go) =>
+		writer:writeln('\t'..[[private T CreateFUICompInst<T>(GObject gObject) where T : Entity, IAwake<FUI>, new()
         {
-            tcs.SetResult(EntityFactory.Create<%s, GObject>(domain, go));
-        });
-
-        return tcs.Task;
-    }
-        ]], classInfo.className, classInfo.className, classInfo.className, classInfo.className)
-		
-		writer:writeln([[public static %s Create(Entity domain, GObject go)
-    {
-        return EntityFactory.Create<%s, GObject>(domain, go);
-    }
-        ]], classInfo.className, classInfo.className)
-		
-		writer:writeln([[/// <summary>
-    /// 通过此方法获取的FUI，在Dispose时不会释放GObject，需要自行管理（一般在配合FGUI的Pool机制时使用）。
-    /// </summary>
-    public static %s GetFormPool(Entity domain, GObject go)
-    {
-        var fui = go.Get<%s>();
-
-        if(fui == null)
-        {
-            fui = Create(domain, go);
+	        return FUIHelper1.CreateFUICompInst<T, %s>(this, gObject);
         }
-
-        fui.isFromFGUIPool = true;
-
-        return fui;
-    }
-        ]], classInfo.className, classInfo.className)
+		]], classInfo.className)
 		
-		writer:writeln([[public void Awake(GObject go)
-    {
-        if(go == null)
+		writer:writeln([[    public void Awake(FUI fui)
         {
-            return;
-        }
+			self = (%s)fui.gObject;
         
-        GObject = go;	
+			self.Add(fui);
         
-        if (string.IsNullOrWhiteSpace(Name))
-        {
-            Name = UIResName;
-        }
-        
-        self = (%s)go;
-        
-        self.Add(this);
-        
-        var com = go.asCom;
+			var com = fui.gObject.asCom;
             
-        if(com != null)
-        {]], classInfo.superClassName)
+			if(com != null)
+			{]], classInfo.superClassName)
 		
 		--print_r(_typeDict)
 		
@@ -243,37 +203,39 @@ local function genCode(handler)
 			if memberInfo.group == 0 then
 				if getMemberByName then
 					if isCustomComponent then
-						writer:writeln('\t\t%s = %s.Create(domain, com.GetChild("%s"));', memberInfo.varName, typeName, memberInfo.name)
+						writer:writeln('\t\t\t%s = CreateFUICompInst<%s>(com.GetChildAt(%s));', memberInfo.varName, typeName, memberInfo.index)
+						-- writer:writeln('\t\t%s = %s.Create(domain, com.GetChild("%s"));', memberInfo.varName, typeName, memberInfo.name)
 					else
-						writer:writeln('\t\t%s = (%s)com.GetChild("%s");', memberInfo.varName, typeName, memberInfo.name)
+						writer:writeln('\t\t\t%s = (%s)com.GetChild("%s");', memberInfo.varName, typeName, memberInfo.name)
 					end
 				else
 					if isCustomComponent then
-						writer:writeln('\t\t%s = %s.Create(domain, com.GetChildAt(%s));', memberInfo.varName, typeName, memberInfo.index)
+						writer:writeln('\t\t\t%s = CreateFUICompInst<%s>(com.GetChildAt(%s));', memberInfo.varName, typeName, memberInfo.index)
+						-- writer:writeln('\t\t%s = %s.Create(domain, com.GetChildAt(%s));', memberInfo.varName, typeName, memberInfo.index)
 					else
-						writer:writeln('\t\t%s = (%s)com.GetChildAt(%s);', memberInfo.varName, typeName, memberInfo.index)
+						writer:writeln('\t\t\t%s = (%s)com.GetChildAt(%s);', memberInfo.varName, typeName, memberInfo.index)
 					end
 				end
 			elseif memberInfo.group == 1 then
 				if getMemberByName then
-					writer:writeln('\t\t%s = com.GetController("%s");', memberInfo.varName, memberInfo.name)
+					writer:writeln('\t\t\t%s = com.GetController("%s");', memberInfo.varName, memberInfo.name)
 				else
-					writer:writeln('\t\t%s = com.GetControllerAt(%s);', memberInfo.varName, memberInfo.index)
+					writer:writeln('\t\t\t%s = com.GetControllerAt(%s);', memberInfo.varName, memberInfo.index)
 				end
 			else
 				if getMemberByName then
-					writer:writeln('\t\t%s = com.GetTransition("%s");', memberInfo.varName, memberInfo.name)
+					writer:writeln('\t\t\t%s = com.GetTransition("%s");', memberInfo.varName, memberInfo.name)
 				else
-					writer:writeln('\t\t%s = com.GetTransitionAt(%s);', memberInfo.varName, memberInfo.index)
+					writer:writeln('\t\t\t%s = com.GetTransitionAt(%s);', memberInfo.varName, memberInfo.index)
 				end
 			end
 		end
+		writer:writeln('\t\t}')
+		
 		writer:writeln('\t}')
 		
-		writer:endBlock()
-		
-		writer:writeln([[       public override void Dispose()
-       {
+		writer:writeln([[    public override void Dispose()
+		{
             if(IsDisposed)
             {
                 return;
@@ -291,30 +253,30 @@ local function genCode(handler)
 			if memberInfo.group == 0 then
 				if getMemberByName then
 					if string.find(typeName, 'FUI') then
-						writer:writeln('\t\t\t%s.Dispose();', memberInfo.varName)
+						writer:writeln('\t\t%s.Dispose();', memberInfo.varName)
 					end
-					writer:writeln('\t\t\t%s = null;', memberInfo.varName)
+					writer:writeln('\t\t%s = null;', memberInfo.varName)
 				else
 					if string.find(typeName, 'FUI') then
-						writer:writeln('\t\t\t%s.Dispose();', memberInfo.varName)
+						writer:writeln('\t\t%s.Dispose();', memberInfo.varName)
 					end
-					writer:writeln('\t\t\t%s = null;', memberInfo.varName)
+					writer:writeln('\t\t%s = null;', memberInfo.varName)
 				end
 			elseif memberInfo.group == 1 then
 				if getMemberByName then
-					writer:writeln('\t\t\t%s = null;', memberInfo.varName)
+					writer:writeln('\t\t%s = null;', memberInfo.varName)
 				else
-					writer:writeln('\t\t\t%s = null;', memberInfo.varName)
+					writer:writeln('\t\t%s = null;', memberInfo.varName)
 				end
 			else
 				if getMemberByName then
-					writer:writeln('\t\t\t%s = null;', memberInfo.varName)
+					writer:writeln('\t\t%s = null;', memberInfo.varName)
 				else
-					writer:writeln('\t\t\t%s = null;', memberInfo.varName)
+					writer:writeln('\t\t%s = null;', memberInfo.varName)
 				end
 			end
 		end
-		writer:writeln('\t\t}')
+		writer:writeln('\t}')
 		
 		writer:endBlock() --class
 		writer:endBlock() --namepsace
