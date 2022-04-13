@@ -139,7 +139,8 @@ local function genCode(handler)
         /// <summary>
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
         /// </summary>
-        public %s self;
+        public %s selfGObj;
+		public FUI selfFUIRoot;
             ]], classInfo.className, codePkgName, classInfo.resName, classInfo.superClassName)
 		
 		local memberCnt = members.Count
@@ -179,9 +180,10 @@ local function genCode(handler)
 		
 		writer:writeln([[    public void Awake(FUI fui)
         {
-			self = (%s)fui.gObject;
+			selfFUIRoot = fui;
+			selfGObj = (%s)fui.gObject;
         
-			self.Add(fui);
+			selfGObj.Add(fui);
         
 			var com = fui.gObject.asCom;
             
@@ -244,8 +246,10 @@ local function genCode(handler)
             
             base.Dispose();
             
-            self.Remove();
-            self = null;
+            selfGObj.Remove();
+            selfGObj = null;
+			selfFUIRoot.Dispose();
+			selfFUIRoot = null;
             ]])
 		
 		for j = 0, memberCnt - 1 do
