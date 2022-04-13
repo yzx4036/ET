@@ -89,7 +89,7 @@ namespace ET
             }
         }
 
-        private Dictionary<string, FUI1> fuiChildren = new Dictionary<string, FUI1>();
+        private Dictionary<string, FUI> fuiChildren = new Dictionary<string, FUI>();
 
         protected bool isFromFGUIPool = false;
 
@@ -103,7 +103,7 @@ namespace ET
             base.Dispose();
 
             // 从父亲中删除自己
-            GetParent<FUI1>()?.RemoveNoDispose(Name);
+            GetParent<FUI>()?.RemoveNoDispose(Name);
             //
             // // 删除所有的孩子
             // foreach (FUI ui in fuiChildren.Values.ToArray())
@@ -123,7 +123,7 @@ namespace ET
             isFromFGUIPool = false;
         }
 
-        public void Add(FUI1 ui, bool asChildGObject)
+        public void Add(FUI ui, bool asChildGObject)
         {
             if (ui == null || ui.IsEmpty)
             {
@@ -161,7 +161,7 @@ namespace ET
                 return;
             }
 
-            FUI1 ui;
+            FUI ui;
 
             if (fuiChildren.TryGetValue(name, out ui))
             {
@@ -182,14 +182,14 @@ namespace ET
         /// <summary>
         /// 一般情况不要使用此方法，如需使用，需要自行管理返回值的FUI的释放。
         /// </summary>
-        public FUI1 RemoveNoDispose(string name)
+        public FUI RemoveNoDispose(string name)
         {
             if (IsDisposed)
             {
                 return null;
             }
 
-            FUI1 ui;
+            FUI ui;
 
             if (fuiChildren.TryGetValue(name, out ui))
             {
@@ -219,9 +219,9 @@ namespace ET
             fuiChildren.Clear();
         }
 
-        public FUI1 Get(string name)
+        public FUI Get(string name)
         {
-            FUI1 child;
+            FUI child;
 
             if (fuiChildren.TryGetValue(name, out child))
             {
@@ -231,7 +231,7 @@ namespace ET
             return null;
         }
 
-        public FUI1[] GetAll()
+        public FUI[] GetAll()
         {
             return fuiChildren.Values.ToArray();
         }

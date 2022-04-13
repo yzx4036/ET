@@ -8,7 +8,7 @@ namespace ET
     /// </summary>
     public class FUIStackComponent: Entity
     {
-        private readonly Stack<FUI1> uis = new Stack<FUI1>();
+        private readonly Stack<FUI> uis = new Stack<FUI>();
 
         public int Count
         {
@@ -18,7 +18,7 @@ namespace ET
             }
         }
 
-        public void Push(FUI1 fui)
+        public void Push(FUI fui)
         {
             var fui1s = uis;
             if (fui1s != null && fui1s.Count >= 1)
@@ -28,7 +28,7 @@ namespace ET
 
         public void Pop()
         {
-            FUI1 fui = uis.Pop();
+            FUI fui = uis.Pop();
             fui.Dispose();
             if (uis.Count > 0)
             {
@@ -40,7 +40,7 @@ namespace ET
         {
             while (uis.Count > 0)
             {
-                FUI1 fui = uis.Pop();
+                FUI fui = uis.Pop();
                 fui.Dispose();
             }
         }

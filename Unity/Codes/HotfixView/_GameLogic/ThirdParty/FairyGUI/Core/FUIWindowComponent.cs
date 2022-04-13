@@ -1,13 +1,13 @@
 ﻿
 namespace ET
 {
-	[FriendClass(typeof(FUI1))]
+	[FriendClass(typeof(FUI))]
 	[ObjectSystem]
 	public class FUIWindowComponentAwakeSystem : AwakeSystem<FUIWindowComponent>
 	{
 		public override void Awake(FUIWindowComponent self)
 		{
-			FUI1 fui = self.GetParent<FUI1>();
+			FUI fui = self.GetParent<FUI>();
 			self.Window = new GWindow();
 			self.Window.contentPane = fui.gObject.asCom;
 		}

@@ -36,15 +36,15 @@ namespace ET
             return UIPackage.CreateObject(uiPackageName, uiResName);
         }
 
-        private FUI1 CreateFUIInst(string uiPackageName, string uiResName, long pHashCodeId)
+        private FUI CreateFUIInst(string uiPackageName, string uiResName, long pHashCodeId)
         {
             var gObj = CreateGObject(uiPackageName, uiResName);
-            return AddChildWithId<FUI1, GObject>(pHashCodeId, gObj);
+            return AddChildWithId<FUI, GObject>(pHashCodeId, gObj);
         }
 
         #endregion
 
-        public async ETTask<FUI1> OpenAsync(string uiPackageName, string uiResName, long pHashCodeId)
+        public async ETTask<FUI> OpenAsync(string uiPackageName, string uiResName, long pHashCodeId)
         {
             await Game.Scene.GetComponent<FUIPackageComponent>().EnsurePackageLoadedAsync(uiPackageName);
             var fui = CreateFUIInst(uiPackageName, uiResName, pHashCodeId);
@@ -58,7 +58,7 @@ namespace ET
             Remove(uiType);
         }
 
-        public void Add(FUI1 ui, bool asChildGObject)
+        public void Add(FUI ui, bool asChildGObject)
         {
             Root?.Add(ui, asChildGObject);
         }
@@ -75,12 +75,12 @@ namespace ET
             }
         }
 
-        public FUI1 Get(string name)
+        public FUI Get(string name)
         {
             return Root?.Get(name);
         }
 
-        public FUI1[] GetAll()
+        public FUI[] GetAll()
         {
             return Root?.GetAll();
         }

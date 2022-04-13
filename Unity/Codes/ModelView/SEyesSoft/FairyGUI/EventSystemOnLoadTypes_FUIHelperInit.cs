@@ -7,7 +7,7 @@ namespace ET
     {
         protected override void Run(EventSystemOnLoadTypes a)
         {
-            FUIHelper1.Init();
+            FUIHelper.Init();
         }
     }
 }

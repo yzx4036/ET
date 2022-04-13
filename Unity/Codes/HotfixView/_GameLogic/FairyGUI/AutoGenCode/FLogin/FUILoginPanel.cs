@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 namespace ET
 {
     [ObjectSystem]
-    public class FUILoginPanelAwakeSystem : AwakeSystem<FUILoginPanel, FUI1>
+    public class FUILoginPanelAwakeSystem : AwakeSystem<FUILoginPanel, FUI>
     {
-        public override void Awake(FUILoginPanel self, FUI1 fui1)
+        public override void Awake(FUILoginPanel self, FUI fui)
         {
-            self.Awake(fui1);
+            self.Awake(fui);
         }
     }
         
-    [FriendClass(typeof(FUI1))]
+    [FriendClass(typeof(FUI))]
     [FUI(typeof(FUILoginPanel), UIPackageName, UIResName)]
-    public sealed class FUILoginPanel : Entity, IAwake<FUI1>
-    {
-	    public const string UIPackageName = "FLogin";
+    public sealed class FUILoginPanel : Entity, IAwake<FUI>
+    {	
+        public const string UIPackageName = "FLogin";
         public const string UIResName = "UILoginPanel";
         
         /// <summary>
@@ -37,8 +37,8 @@ namespace ET
         public GTextInput RegisterAccount;
         public GTextInput RegisterPassword;
         public GTextInput RegisterPassword_1;
-        // public FButton4_Normal RegisterBtn;
-        // public FButton4_Normal ReturnBtn;
+        public FButton4_Normal RegisterBtn;
+        public FButton4_Normal ReturnBtn;
         public GGroup Register;
         public GImage n15;
         public GTextField n16;
@@ -46,8 +46,8 @@ namespace ET
         public GTextField n18;
         public GTextInput LoginAccount;
         public GTextInput LoginPassword;
-        // public FButton4_Normal LoginBtn;
-        // public FButton4_Normal ToRegisterBtn;
+        public FButton4_Normal LoginBtn;
+        public FButton4_Normal ToRegisterBtn;
         public GGroup Login;
         public const string URL = "ui://nstug1quqo3ye";
 
@@ -68,13 +68,19 @@ namespace ET
 			//return fui;
 		//}
         
-        public void Awake(FUI1 fui1)
+    	private T CreateFUICompInst<T>(GObject gObject) where T : Entity, IAwake<FUI>, new()
         {
-	        self = (GComponent)fui1.gObject;
+			var _fui = this.AddChild<FUI, GObject>(gObject);
+	        return _fui.AddComponent<T, FUI>(_fui);
+        }
+		
+        public void Awake(FUI fui)
+        {
+			self = (GComponent)fui.gObject;
         
-			self.Add(fui1);
+			self.Add(fui);
         
-			var com = fui1.gObject.asCom;
+			var com = fui.gObject.asCom;
             
 			if(com != null)
 			{
@@ -89,8 +95,8 @@ namespace ET
     			RegisterAccount = (GTextInput)com.GetChildAt(7);
     			RegisterPassword = (GTextInput)com.GetChildAt(8);
     			RegisterPassword_1 = (GTextInput)com.GetChildAt(9);
-    			// RegisterBtn = AddChild<FButton4_Normal, GObject>(com.GetChildAt(10));
-    			// ReturnBtn = AddChild<FButton4_Normal, GObject>(com.GetChildAt(11));
+    			RegisterBtn = CreateFUICompInst<FButton4_Normal>(com.GetChildAt(10));
+    			ReturnBtn = CreateFUICompInst<FButton4_Normal>(com.GetChildAt(11));
     			Register = (GGroup)com.GetChildAt(12);
     			n15 = (GImage)com.GetChildAt(13);
     			n16 = (GTextField)com.GetChildAt(14);
@@ -98,8 +104,8 @@ namespace ET
     			n18 = (GTextField)com.GetChildAt(16);
     			LoginAccount = (GTextInput)com.GetChildAt(17);
     			LoginPassword = (GTextInput)com.GetChildAt(18);
-    			// LoginBtn = AddChild<FButton4_Normal, GObject>(com.GetChildAt(19));
-    			// ToRegisterBtn = AddChild<FButton4_Normal, GObject>(com.GetChildAt(20));
+    			LoginBtn = CreateFUICompInst<FButton4_Normal>(com.GetChildAt(19));
+    			ToRegisterBtn = CreateFUICompInst<FButton4_Normal>(com.GetChildAt(20));
     			Login = (GGroup)com.GetChildAt(21);
     		}
     	}
@@ -126,8 +132,8 @@ namespace ET
     		RegisterAccount = null;
     		RegisterPassword = null;
     		RegisterPassword_1 = null;
-    		// RegisterBtn = null;
-    		// ReturnBtn = null;
+    		RegisterBtn = null;
+    		ReturnBtn = null;
     		Register = null;
     		n15 = null;
     		n16 = null;
@@ -135,8 +141,8 @@ namespace ET
     		n18 = null;
     		LoginAccount = null;
     		LoginPassword = null;
-    		// LoginBtn = null;
-    		// ToRegisterBtn = null;
+    		LoginBtn = null;
+    		ToRegisterBtn = null;
     		Login = null;
     	}
 }
