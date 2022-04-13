@@ -5,19 +5,19 @@ namespace ET
 {
     public static class GObjectHelper
     {
-        private static Dictionary<GObject, FUI> keyValuePairs = new Dictionary<GObject, FUI>();
+        private static Dictionary<GObject, FUI1> keyValuePairs = new Dictionary<GObject, FUI1>();
 
-        public static T Get<T>(this GObject self) where T : FUI
+        public static FUI1 Get(this GObject self)
         {
             if (self != null && keyValuePairs.ContainsKey(self))
             {
-                return keyValuePairs[self] as T;
+                return keyValuePairs[self];
             }
 
-            return default(T);
+            return default;
         }
 
-        public static void Add(this GObject self, FUI fui)
+        public static void Add(this GObject self, FUI1 fui)
         {
             if (self != null && fui != null)
             {
@@ -25,7 +25,7 @@ namespace ET
             }
         }
 
-        public static FUI Remove(this GObject self)
+        public static FUI1 Remove(this GObject self)
         {
             if (self != null && keyValuePairs.ContainsKey(self))
             {

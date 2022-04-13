@@ -2,12 +2,13 @@
 
 namespace ET
 {
+    
     /// <summary>
     /// UI栈
     /// </summary>
     public class FUIStackComponent: Entity
     {
-        private readonly Stack<FUI> uis = new Stack<FUI>();
+        private readonly Stack<FUI1> uis = new Stack<FUI1>();
 
         public int Count
         {
@@ -17,16 +18,17 @@ namespace ET
             }
         }
 
-        public void Push(FUI fui)
+        public void Push(FUI1 fui)
         {
-            if (this.uis.Count >= 1)
+            var fui1s = uis;
+            if (fui1s != null && fui1s.Count >= 1)
                 uis.Peek().Visible = false;
             uis.Push(fui);
         }
 
         public void Pop()
         {
-            FUI fui = uis.Pop();
+            FUI1 fui = uis.Pop();
             fui.Dispose();
             if (uis.Count > 0)
             {
@@ -38,7 +40,7 @@ namespace ET
         {
             while (uis.Count > 0)
             {
-                FUI fui = uis.Pop();
+                FUI1 fui = uis.Pop();
                 fui.Dispose();
             }
         }

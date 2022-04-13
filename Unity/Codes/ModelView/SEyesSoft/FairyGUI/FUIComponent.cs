@@ -11,7 +11,7 @@ namespace ET
         public override void Awake(FUIComponent self)
         {
             
-            self.Root = self.AddComponent<FUI, GObject>(GRoot.inst);
+            self.Root = self.AddComponent<FUIRootComponent, GObject>(GRoot.inst);
             Log.Debug(">>>>>>>>> self.AddComponent<FUI, GObject>(GRoot.inst); ");
             // self.Root = EntityFactory.Create<FUI, GObject>(Game.Scene, GRoot.inst);
             // self._loadedUI = new Dictionary<Type, FUI>();
@@ -24,7 +24,7 @@ namespace ET
     /// </summary>
     public class FUIComponent : Entity, IAwake
     {
-        public FUI Root;
+        public FUIRootComponent Root;
 
         // public Dictionary<Type, FUI> _loadedUI = null;
         // public Dictionary<Type, FUI> _openedUI = null;
@@ -36,35 +36,19 @@ namespace ET
             return UIPackage.CreateObject(uiPackageName, uiResName);
         }
 
-        private T CreateFUIInst<T>(string uiPackageName, string uiResName, long pHashCodeId) where T : FUI
+        private FUI1 CreateFUIInst(string uiPackageName, string uiResName, long pHashCodeId)
         {
             var gObj = CreateGObject(uiPackageName, uiResName);
-            return AddChildWithId<T, GObject>(pHashCodeId, gObj);
+            return AddChildWithId<FUI1, GObject>(pHashCodeId, gObj);
         }
 
         #endregion
 
-        public void Open<T>(string uiPackageName, string uiResName, long pHashCodeId, Action<FUI> callBack) where T : FUI
-        {
-            Game.Scene.GetComponent<FUIPackageComponent>().EnsurePackageLoaded(uiPackageName, () =>
-            {
-                var fui = CreateFUIInst<T>(uiPackageName, uiResName, pHashCodeId);
-                Add<T>(fui, true);
-
-                if (callBack != null)
-                {
-                    callBack(fui);
-                }
-            });
-
-        }
-        
-        public async ETTask<T> OpenAsync<T>(string uiPackageName, string uiResName, long pHashCodeId) where T:FUI
+        public async ETTask<FUI1> OpenAsync(string uiPackageName, string uiResName, long pHashCodeId)
         {
             await Game.Scene.GetComponent<FUIPackageComponent>().EnsurePackageLoadedAsync(uiPackageName);
-            var fui = CreateFUIInst<T>(uiPackageName, uiResName, pHashCodeId);
-            Log.Debug(">>>>>>>>>>>>>>>FUIComponent OpenAsync");
-            // Debug.Log($">>>>>>>>>>>>>>>>Open {uiType}");
+            var fui = CreateFUIInst(uiPackageName, uiResName, pHashCodeId);
+            fui.Name = uiResName;
             Add(fui, true);
             return fui;
         }
@@ -74,7 +58,7 @@ namespace ET
             Remove(uiType);
         }
 
-        public void Add<T>(T ui, bool asChildGObject) where T : FUI
+        public void Add(FUI1 ui, bool asChildGObject)
         {
             Root?.Add(ui, asChildGObject);
         }
@@ -91,12 +75,12 @@ namespace ET
             }
         }
 
-        public FUI Get(string name)
+        public FUI1 Get(string name)
         {
             return Root?.Get(name);
         }
 
-        public FUI[] GetAll()
+        public FUI1[] GetAll()
         {
             return Root?.GetAll();
         }

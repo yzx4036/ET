@@ -8,7 +8,7 @@ namespace ET
 
 	public class FUICharacterSelectComponent : Entity
 	{
-		public FUICharacterSelect fui;
+		// public FUICharacterSelect fui;
 		public int characterClass = 0;
 		public int gender = 0;
 		public int index = 0;

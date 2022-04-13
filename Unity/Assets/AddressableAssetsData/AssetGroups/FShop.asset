@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: FShop
   m_Data:
     m_SerializedData: []
-  m_GUID: 5535cc9ec25589142a14a3f27b950e2a
+  m_GUID: 42128bf144b4df14f9e41650eaf61eed
   m_SerializeEntries:
   - m_GUID: fc0b26c8fecd0224e81e931087524276
     m_Address: Assets/Bundles/FUI/FShop_fui.bytes

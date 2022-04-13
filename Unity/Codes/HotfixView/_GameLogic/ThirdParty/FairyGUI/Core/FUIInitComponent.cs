@@ -13,7 +13,7 @@ namespace ET
         private readonly string[] _initPackageArray =
         {
             FUIPackage.CommonAsset,
-            FUIPackage.CommonComp,
+            // FUIPackage.CommonComp,
             FUIPackage.FLogin,
         };
         public async ETTask Init()

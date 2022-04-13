@@ -6,7 +6,7 @@ namespace ET
 {
    public class FUIShopPanelComponent : Entity
     {
-        public FUIShopPanel fui;
+        // public FUIShopPanel fui;
         public static FUIShopPanelComponent Instance;
         public int shopId;
         //

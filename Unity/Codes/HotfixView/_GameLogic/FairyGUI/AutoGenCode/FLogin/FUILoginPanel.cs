@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 namespace ET
 {
     [ObjectSystem]
-    public class FUILoginPanelAwakeSystem : AwakeSystem<FUILoginPanel, GObject>
+    public class FUILoginPanelAwakeSystem : AwakeSystem<FUILoginPanel, FUI1>
     {
-        public override void Awake(FUILoginPanel self, GObject go)
+        public override void Awake(FUILoginPanel self, FUI1 fui1)
         {
-            self.Awake(go);
+            self.Awake(fui1);
         }
     }
         
+    [FriendClass(typeof(FUI1))]
     [FUI(typeof(FUILoginPanel), UIPackageName, UIResName)]
-    public sealed class FUILoginPanel : FUI
-    {	
-        public const string UIPackageName = "FLogin";
+    public sealed class FUILoginPanel : Entity, IAwake<FUI1>
+    {
+	    public const string UIPackageName = "FLogin";
         public const string UIResName = "UILoginPanel";
         
         /// <summary>
@@ -36,8 +37,8 @@ namespace ET
         public GTextInput RegisterAccount;
         public GTextInput RegisterPassword;
         public GTextInput RegisterPassword_1;
-        public FButton4_Normal RegisterBtn;
-        public FButton4_Normal ReturnBtn;
+        // public FButton4_Normal RegisterBtn;
+        // public FButton4_Normal ReturnBtn;
         public GGroup Register;
         public GImage n15;
         public GTextField n16;
@@ -45,8 +46,8 @@ namespace ET
         public GTextField n18;
         public GTextInput LoginAccount;
         public GTextInput LoginPassword;
-        public FButton4_Normal LoginBtn;
-        public FButton4_Normal ToRegisterBtn;
+        // public FButton4_Normal LoginBtn;
+        // public FButton4_Normal ToRegisterBtn;
         public GGroup Login;
         public const string URL = "ui://nstug1quqo3ye";
 
@@ -67,25 +68,13 @@ namespace ET
 			//return fui;
 		//}
         
-        public void Awake(GObject go)
+        public void Awake(FUI1 fui1)
         {
-            if(go == null)
-            {
-                return;
-			}
+	        self = (GComponent)fui1.gObject;
         
-			GObject = go;	
+			self.Add(fui1);
         
-			if (string.IsNullOrWhiteSpace(Name))
-			{
-				Name = UIResName;
-			}
-        
-			self = (GComponent)go;
-        
-			self.Add(this);
-        
-			var com = go.asCom;
+			var com = fui1.gObject.asCom;
             
 			if(com != null)
 			{
@@ -100,8 +89,8 @@ namespace ET
     			RegisterAccount = (GTextInput)com.GetChildAt(7);
     			RegisterPassword = (GTextInput)com.GetChildAt(8);
     			RegisterPassword_1 = (GTextInput)com.GetChildAt(9);
-    			RegisterBtn = AddChild<FButton4_Normal, GObject>(com.GetChildAt(10));
-    			ReturnBtn = AddChild<FButton4_Normal, GObject>(com.GetChildAt(11));
+    			// RegisterBtn = AddChild<FButton4_Normal, GObject>(com.GetChildAt(10));
+    			// ReturnBtn = AddChild<FButton4_Normal, GObject>(com.GetChildAt(11));
     			Register = (GGroup)com.GetChildAt(12);
     			n15 = (GImage)com.GetChildAt(13);
     			n16 = (GTextField)com.GetChildAt(14);
@@ -109,8 +98,8 @@ namespace ET
     			n18 = (GTextField)com.GetChildAt(16);
     			LoginAccount = (GTextInput)com.GetChildAt(17);
     			LoginPassword = (GTextInput)com.GetChildAt(18);
-    			LoginBtn = AddChild<FButton4_Normal, GObject>(com.GetChildAt(19));
-    			ToRegisterBtn = AddChild<FButton4_Normal, GObject>(com.GetChildAt(20));
+    			// LoginBtn = AddChild<FButton4_Normal, GObject>(com.GetChildAt(19));
+    			// ToRegisterBtn = AddChild<FButton4_Normal, GObject>(com.GetChildAt(20));
     			Login = (GGroup)com.GetChildAt(21);
     		}
     	}
@@ -137,8 +126,8 @@ namespace ET
     		RegisterAccount = null;
     		RegisterPassword = null;
     		RegisterPassword_1 = null;
-    		RegisterBtn = null;
-    		ReturnBtn = null;
+    		// RegisterBtn = null;
+    		// ReturnBtn = null;
     		Register = null;
     		n15 = null;
     		n16 = null;
@@ -146,8 +135,8 @@ namespace ET
     		n18 = null;
     		LoginAccount = null;
     		LoginPassword = null;
-    		LoginBtn = null;
-    		ToRegisterBtn = null;
+    		// LoginBtn = null;
+    		// ToRegisterBtn = null;
     		Login = null;
     	}
 }

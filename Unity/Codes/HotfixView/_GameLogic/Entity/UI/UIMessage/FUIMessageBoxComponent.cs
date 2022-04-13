@@ -4,7 +4,7 @@ namespace ET
 {
     public class FUIMessageBoxComponent : Entity
     {
-        public FUIMessageBox fui;
+        // public FUIMessageBox fui;
         
     }
 }

@@ -10,7 +10,7 @@ namespace ET
 		protected override async ETTask Run(EventType.AppStartInitFinish args)
 		{
 			// UIHelper.Create(args.ZoneScene, UIType.UILogin, UILayer.Mid).Coroutine();
-			var fui = await FUIHelper.OpenAsync<FUILoginPanel>();
+			var fui = await FUIHelper1.OpenAsync<FUILoginPanel>();
 			fui.AddComponent<FUILoginComponent>();
 		}
 	}

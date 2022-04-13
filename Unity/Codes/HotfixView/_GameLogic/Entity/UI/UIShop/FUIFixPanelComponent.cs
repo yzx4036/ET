@@ -5,7 +5,7 @@ namespace ET
 {
     public class FUIFixPanelComponent : Entity
     {
-        public FUISellPanel fui;
+        // public FUISellPanel fui;
         public static FUIFixPanelComponent Instance;
         public Unit unit;
         // public FixType fixType;

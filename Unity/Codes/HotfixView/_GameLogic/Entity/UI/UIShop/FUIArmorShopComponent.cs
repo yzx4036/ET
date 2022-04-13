@@ -5,7 +5,7 @@ namespace ET
 {
     public class FUIArmorShopComponent : Entity
     {
-        public FUIArmorShop fui;
+        // public FUIArmorShop fui;
         public static FUIArmorShopComponent Instance;
 
         // public List<ShopConfig> ShopItems;

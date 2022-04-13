@@ -9,7 +9,7 @@ namespace ET
     }
     public class FUIMessageComponent : Entity
     {
-        public FUIMessage fui;
+        // public FUIMessage fui;
         public Window win;
         public static FUIMessageComponent Instance;
     }
