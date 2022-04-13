@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ET
 {
-    public class ConfigLoader: IConfigLoader
+       public class ConfigLoader: IConfigLoader
     {
         public async Task GetAllConfigBytes(Dictionary<string, byte[]> output)
         {
