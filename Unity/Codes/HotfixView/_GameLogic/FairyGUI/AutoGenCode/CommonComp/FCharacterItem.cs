@@ -23,7 +23,8 @@ namespace ET
         /// <summary>
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
         /// </summary>
-        public GButton self;
+        public GButton selfGObj;
+		public FUI selfFUIRoot;
             
         public Controller button;
         public GImage n0;
@@ -58,9 +59,10 @@ namespace ET
 		
         public void Awake(FUI fui)
         {
-			self = (GButton)fui.gObject;
+			selfFUIRoot = fui;
+			selfGObj = (GButton)fui.gObject;
         
-			self.Add(fui);
+			selfGObj.Add(fui);
         
 			var com = fui.gObject.asCom;
             
@@ -83,8 +85,10 @@ namespace ET
             
             base.Dispose();
             
-            self.Remove();
-            self = null;
+            selfGObj.Remove();
+            selfGObj = null;
+			selfFUIRoot.Dispose();
+			selfFUIRoot = null;
             
     		button = null;
     		n0 = null;

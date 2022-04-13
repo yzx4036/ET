@@ -621,8 +621,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Codes\HotfixView\_GameLogic\Entity\UI.meta" />
     <Content Include="Codes\HotfixView\_GameLogic\ThirdParty\FairyGUI\Core.meta" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Codes\HotfixView\_GameLogic\Entity" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

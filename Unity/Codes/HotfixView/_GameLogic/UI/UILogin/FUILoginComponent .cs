@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ET
 {
+	[FriendClass(typeof(FUILoginPanel))]
 	public class FUILoginComponent : Entity, IAwake
 	{
 		public FUILoginPanel fuiLogin;

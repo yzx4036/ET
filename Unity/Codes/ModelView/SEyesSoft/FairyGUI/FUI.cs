@@ -101,17 +101,14 @@ namespace ET
             }
 
             base.Dispose();
-
-            // 从父亲中删除自己
-            GetParent<FUI>()?.RemoveNoDispose(Name);
-            //
-            // // 删除所有的孩子
-            // foreach (FUI ui in fuiChildren.Values.ToArray())
-            // {
-            //     ui.Dispose();
-            // }
-            //
-            // fuiChildren.Clear();
+            
+            
+            // 删除所有的孩子
+            foreach (FUI ui in fuiChildren.Values.ToArray())
+            {
+                ui.Dispose();
+            }
+            fuiChildren.Clear();
 
             // 删除自己的UI
             if (isFromFGUIPool)
@@ -165,17 +162,15 @@ namespace ET
 
             if (fuiChildren.TryGetValue(name, out ui))
             {
-                fuiChildren.Remove(name);
-
                 if (ui != null)
                 {
                     if (IsComponent)
                     {
                         this.gObject.asCom.RemoveChild(ui.gObject, false);
                     }
-
                     ui.Dispose();
                 }
+                fuiChildren.Remove(name);
             }
         }
 
@@ -202,7 +197,6 @@ namespace ET
                         this.gObject.asCom.RemoveChild(ui.gObject, false);
                     }
 
-                    // ui.Parent = null;
                 }
             }
 
