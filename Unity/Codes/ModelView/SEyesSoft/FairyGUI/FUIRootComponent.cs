@@ -135,12 +135,12 @@ namespace ET
                 throw new Exception($"ui.Name can not be empty");
             }
 
-            // if (fuiChildren.ContainsKey(ui.Name))
-            // {
-            //     throw new Exception($"ui.Name({ui.Name}) already exist");
-            // }
-            //
-            // fuiChildren.Add(ui.Name, ui);
+            if (fuiChildren.ContainsKey(ui.Name))
+            {
+                throw new Exception($"ui.Name({ui.Name}) already exist");
+            }
+            
+            fuiChildren.Add(ui.Name, ui);
 
             if (IsComponent && asChildGObject)
             {
@@ -176,7 +176,7 @@ namespace ET
 
                     ui.Dispose();
                 }
-            }
+            } 
         }
 
         /// <summary>

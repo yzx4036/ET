@@ -31,6 +31,7 @@ namespace ET
             cameraData.renderType = CameraRenderType.Overlay;
             Camera.main.GetUniversalAdditionalCameraData().cameraStack.Add(stageCamera);
             UIConfig.defaultFont = "KaiTi";
+            GameObject.DontDestroyOnLoad(stageCamera);
             for (int i = 0; i < _initPackageArray.Length; i++)
             {
                 await _fuiPackComp.AddPackageAsync(_initPackageArray[i]);
