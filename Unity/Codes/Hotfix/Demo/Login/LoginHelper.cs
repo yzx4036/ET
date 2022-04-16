@@ -16,7 +16,7 @@ namespace ET
                 {
                     session = zoneScene.GetComponent<NetKcpComponent>().Create(NetworkHelper.ToIPEndPoint(address));
                     {
-                        r2CLogin = (R2C_Login) await session.Call(new C2R_Login() { Account = account, Password = password });
+                        r2CLogin = (R2C_Login)await session.Call(new C2R_Login() { Account = account, Password = password });
                     }
                 }
                 finally

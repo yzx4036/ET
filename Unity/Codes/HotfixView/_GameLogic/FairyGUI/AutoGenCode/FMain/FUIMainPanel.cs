@@ -14,7 +14,6 @@ namespace ET
         }
     }
         
-    [FriendClass(typeof(FUI))]
     [FUI(typeof(FUIMainPanel), UIPackageName, UIResName)]
     public sealed class FUIMainPanel : Entity, IAwake<FUI>
     {	

@@ -14,7 +14,6 @@ namespace ET
         }
     }
         
-    [FriendClass(typeof(FUI))]
     public sealed class FButton4_Normal : Entity, IAwake<FUI>
     {	
         public const string UIPackageName = "CommonComp";
@@ -72,11 +71,6 @@ namespace ET
     			title = (GTextField)com.GetChildAt(2);
     		}
     	}
-
-        public void test()
-        {
-        }
-
         public override void Dispose()
 		{
             if(IsDisposed)

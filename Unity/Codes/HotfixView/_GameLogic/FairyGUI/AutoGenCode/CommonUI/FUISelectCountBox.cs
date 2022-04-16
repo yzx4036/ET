@@ -14,7 +14,6 @@ namespace ET
         }
     }
         
-    [FriendClass(typeof(FUI))]
     [FUI(typeof(FUISelectCountBox), UIPackageName, UIResName)]
     public sealed class FUISelectCountBox : Entity, IAwake<FUI>
     {	

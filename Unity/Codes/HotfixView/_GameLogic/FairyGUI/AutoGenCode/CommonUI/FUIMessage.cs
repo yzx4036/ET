@@ -14,7 +14,6 @@ namespace ET
         }
     }
         
-    [FriendClass(typeof(FUI))]
     [FUI(typeof(FUIMessage), UIPackageName, UIResName)]
     public sealed class FUIMessage : Entity, IAwake<FUI>
     {	

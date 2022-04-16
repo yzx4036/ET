@@ -14,7 +14,6 @@ namespace ET
         }
     }
         
-    [FriendClass(typeof(FUI))]
     [FUI(typeof(FUICharacterSelect), UIPackageName, UIResName)]
     public sealed class FUICharacterSelect : Entity, IAwake<FUI>
     {	

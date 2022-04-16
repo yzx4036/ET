@@ -14,7 +14,6 @@ namespace ET
         }
     }
         
-    [FriendClass(typeof(FUI))]
     [FUI(typeof(FUISetting), UIPackageName, UIResName)]
     public sealed class FUISetting : Entity, IAwake<FUI>
     {	

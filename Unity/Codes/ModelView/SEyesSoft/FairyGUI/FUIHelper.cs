@@ -50,16 +50,20 @@ namespace ET
         
         #region 创建FUI实例
         
-        public static async ETTask<FUI> OpenAsync<T>() where T : Entity, IAwake<FUI>, new()
+        public static async ETTask<FUI> OpenAsync<T>(Scene scene = null) where T : Entity, IAwake<FUI>, new()
         {
             FUIInstArgs uiArgs = null;
             Type uiType = typeof (T);
             if (FUIInstArgsDict.TryGetValue(uiType, out uiArgs))
             {
-                var _fuiComp = Game.Scene.GetComponent<FUIComponent>();
+                if (scene == null)
+                {
+                    scene = Game.Scene;
+                }
+                var _fuiComp = scene.GetComponent<FUIComponent>();
                 if (_fuiComp == null)
                 {
-                    _fuiComp = Game.Scene.AddComponent<FUIComponent>();
+                    _fuiComp = scene.AddComponent<FUIComponent>();
                 }
                 Log.Debug(">>>>>>>>>>>>>>>FUIHelper OpenAsync");
                 FUI fui = await _fuiComp.OpenAsync(uiArgs.UIPackageName, uiArgs.UIResName, uiArgs.FuiTypeHashCode);
@@ -70,12 +74,21 @@ namespace ET
             throw new Exception($"找不到对应FUIInstArgs uiType = {uiType}");
         }
 
-        public static void Close(Type uiType)
+        public static void Close(Type uiType, Scene scene = null)
         {
             FUIInstArgs uiArgs = null;
             if (FUIInstArgsDict.TryGetValue(uiType, out uiArgs))
             {
-                Game.Scene.GetComponent<FUIComponent>().Close(uiArgs.UIResName);
+                if (scene == null)
+                {
+                    scene = Game.Scene;
+                }
+                var _fuiComp = scene.GetComponent<FUIComponent>();
+                if (_fuiComp == null)
+                {
+                    _fuiComp = scene.AddComponent<FUIComponent>();
+                }
+                scene.GetComponent<FUIComponent>().Close(uiArgs.UIResName);
             }
         }
 

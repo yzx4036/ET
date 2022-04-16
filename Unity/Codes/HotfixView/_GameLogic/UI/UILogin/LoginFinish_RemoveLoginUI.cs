@@ -9,7 +9,7 @@ namespace ET
 	{
 		protected override void Run(LoginFinish args)
 		{
-			FUIHelper.Close(FUIType.FUILoginPanel);
+			FUIHelper.Close(FUIType.FUILoginPanel, args.ZoneScene);
 		}
 	}
 }

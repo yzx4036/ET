@@ -14,7 +14,6 @@ namespace ET
         }
     }
         
-    [FriendClass(typeof(FUI))]
     public sealed class FButton_D : Entity, IAwake<FUI>
     {	
         public const string UIPackageName = "CommonComp";

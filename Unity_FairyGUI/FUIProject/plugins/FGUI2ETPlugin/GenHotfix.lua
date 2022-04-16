@@ -122,8 +122,6 @@ local function genCode(handler)
     }
         ]], classInfo.className, classInfo.className, classInfo.className)
 		
-		writer:writeln(string.format("[FriendClass(typeof(FUI))]"))
-		
 		--如果是收藏的组件，生成[FUI]属性 用这个区分哪些是UI面板
 		if classInfo.res.exported
 				and classInfo.res.type == "component"

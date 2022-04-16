@@ -14,7 +14,6 @@ namespace ET
         }
     }
         
-    [FriendClass(typeof(FUI))]
     [FUI(typeof(FUIRingShop), UIPackageName, UIResName)]
     public sealed class FUIRingShop : Entity, IAwake<FUI>
     {	

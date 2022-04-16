@@ -9,7 +9,7 @@ namespace ET
 	{
 		protected override async ETTask Run(EventType.AppStartInitFinish args)
 		{
-			var fui = await FUIHelper.OpenAsync<FUILoginPanel>();
+			var fui = await FUIHelper.OpenAsync<FUILoginPanel>(args.ZoneScene);
 			fui.AddComponent<FUILoginComponent>();
 		}
 	}

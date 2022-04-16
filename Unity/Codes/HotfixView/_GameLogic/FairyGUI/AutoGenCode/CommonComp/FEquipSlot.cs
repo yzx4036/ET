@@ -14,7 +14,6 @@ namespace ET
         }
     }
         
-    [FriendClass(typeof(FUI))]
     public sealed class FEquipSlot : Entity, IAwake<FUI>
     {	
         public const string UIPackageName = "CommonComp";
