@@ -53,9 +53,10 @@ namespace ET
             return fui;
         }
 
-        public void Close(string uiType)
+        public void Close(string uiType, string pUIPackageName)
         {
             Remove(uiType);
+            Game.Scene.GetComponent<FUIPackageComponent>().EnsureRemovePackage(pUIPackageName);
         }
 
         public void Add(FUI ui, bool asChildGObject)

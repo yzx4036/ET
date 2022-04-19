@@ -14,55 +14,13 @@ namespace ET
     public class FUIPackageComponent : Entity, IAwake
     {
         private static Dictionary<string, UIPackage> s_Packages = new Dictionary<string, UIPackage>();
+        private static Dictionary<string, int> s_PackagesRefCount = new Dictionary<string, int>();
 
-        public void AddPackage(string type, Action onAddPackageCompleteCallback)
+        public async ETTask<UIPackage> AddPackageAsync(string type)
         {
             if (s_Packages.ContainsKey(type))
             {
-                return;
-            }
-            // AssetsBundleHelper
-            
-            //todo 接入资源管理后 
-            // TextAsset v = await AddressablesResComponent.Instance.GetAssetAsync<TextAsset>(type + "_fui", AssetsType.FUI);
-            // AddressablesResComponent.Instance.
-            // AssetsHelper.LoadAsset<TextAsset>(type + "_fui", AssetsType.FUI, desTextAsset =>
-            // {
-            //     if (desTextAsset != null)
-            //     {
-            //         s_Packages.Add(type, SEyesSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(desTextAsset.bytes, type, LoadPackageInternalPackageItem));
-            //         Debug.Log($">>>>>>AddPackage  desTextAsset :{desTextAsset}");
-            //         if (onAddPackageCompleteCallback != null)
-            //         {
-            //             onAddPackageCompleteCallback();
-            //         }
-            //     }
-            // });
-            
-            
-        }
-        
-        /// <summary>
-        /// 加载资源的同步委托
-        /// </summary>
-        /// <param name="name">注意，这个name是FGUI内部组装的纹理全名，例如FUILogin_atlas0</param>
-        /// <param name="extension"></param>
-        /// <param name="type"></param>
-        /// <param name="item"></param>
-        private static void LoadPackageInternalPackageItem(string name, string extension, System.Type type,
-            PackageItem item)
-        {
-            // AssetsHelper.LoadAsset<Texture>(name + extension, AssetsType.FUISprite, texture =>
-            // {
-            //     item.owner.SetItemAsset(item, texture, DestroyMethod.Unload);
-            // });
-        }
-        
-        public async ETTask AddPackageAsync(string type)
-        {
-            if (s_Packages.ContainsKey(type))
-            {
-                return;
+                return s_Packages[type];
             }
 
             var _addressPath = AssetsHelper.GetPath(type + "_fui", AssetsType.FUI);
@@ -70,15 +28,9 @@ namespace ET
             if (desTextAsset != null)
             {
                 s_Packages.Add(type, SEyesSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(desTextAsset.bytes, type, LoadPackageInternalAsync));
+                return s_Packages[type];
             }
-            await Task.CompletedTask;
-            Log.Debug(">>>>>>>>>>>>>>>AddPackageAsync");
-            // TextAsset desTextAsset =
-            //     await AssetsHelper.LoadAssetAsync<TextAsset>(type + "_fui", AssetsType.FUI);
-            // if (desTextAsset != null)
-            // {
-            //     s_Packages.Add(type, SEyesSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(desTextAsset.bytes, type, LoadPackageInternalAsync));
-            // }
+            return null;
         }
 
         /// <summary>
@@ -103,37 +55,55 @@ namespace ET
             return s_Packages.ContainsKey(pkgName);
         }
 
-        public void EnsurePackageLoaded(string pkgName, Action pkgLoadedCallback)
+        public UIPackage GetPackage(string pkgName)
         {
-            if (!IsPackageLoaded(pkgName))
-            { 
-                Log.Debug($"{pkgName} 包未加载，需要加载！！同步加载");
-                AddPackage(pkgName, pkgLoadedCallback);
-            }
-            else
+            if (IsPackageLoaded(pkgName))
             {
-                if (pkgLoadedCallback != null)
-                {
-                    pkgLoadedCallback();
-                }
+                return s_Packages[pkgName];
             }
+            return null;
         }
-        
+
+
         public async ETTask<bool> EnsurePackageLoadedAsync(string pkgName)
         {
+            UIPackage _pkg = null;
             if (!IsPackageLoaded(pkgName))
             {
                 Log.Debug($"{pkgName} 包未加载，需要加载！！异步加载");
-                await AddPackageAsync(pkgName);
+                _pkg = await AddPackageAsync(pkgName);
+                if (_pkg != null)
+                {
+                    HandlePackageRefCount(pkgName, 1);
+                }
+            }
+            if (_pkg == null)
+            {
+                _pkg = GetPackage(pkgName);
+            } 
+            foreach (var pkgDependency in _pkg.dependencies)
+            {
+                foreach (var dep in pkgDependency)
+                {
+                    if (dep.Key == "name")
+                    {
+                        await EnsurePackageLoadedAsync(dep.Value);
+                    }
+                }
             }
             return true;
+        }
+
+        public void EnsureRemovePackage(string pPkgName, bool pIsDepend = false)
+        {
+            HandlePackageRefCount(pPkgName, -1, pIsDepend);
         }
 
         /// <summary>
         /// 移除一个包，并清理其asset
         /// </summary>
         /// <param name="type"></param>
-        public void RemovePackage(string type)
+        private void RemovePackage(string type, bool pIsDepend = false)
         {
             UIPackage package;
 
@@ -143,11 +113,44 @@ namespace ET
                 if (p != null)
                 {
                     UIPackage.RemovePackage(package.name);
-
-                    // Assets.RemoveUnusedAssets();
                 }
 
+                if (!pIsDepend)
+                {
+                    foreach (var pkgDependency in package.dependencies)
+                    {
+                        foreach (var dep in pkgDependency)
+                        {
+                            if (dep.Key == "name")
+                            {
+                                EnsureRemovePackage(dep.Value, true);
+                            }
+                        }
+                    }
+                }
                 s_Packages.Remove(package.name);
+            }
+
+            foreach (var uiPackage in s_Packages)
+            {
+                Log.Debug($">>>>{uiPackage.Key} {uiPackage.Value.name} {s_PackagesRefCount[uiPackage.Key]}");
+            }
+        }
+
+        public void HandlePackageRefCount(string pType, int pDelta, bool pIsDepend = false)
+        {
+            if (s_PackagesRefCount.ContainsKey(pType))
+            {
+                s_PackagesRefCount[pType] += pDelta;
+            }
+            else
+            {
+                s_PackagesRefCount[pType] = 1;
+            }
+            Log.Debug($">>>>pType:{pType}, pDelta: {pDelta}, {s_PackagesRefCount[pType]}");
+            if (s_PackagesRefCount[pType] == 0)
+            {
+                RemovePackage(pType, pIsDepend);
             }
         }
     }

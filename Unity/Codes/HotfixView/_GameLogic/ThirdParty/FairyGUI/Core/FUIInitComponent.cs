@@ -14,7 +14,6 @@ namespace ET
         {
             FUIPackage.CommonAsset,
             FUIPackage.CommonComp,
-            FUIPackage.FLogin,
         };
         public async ETTask Init()
         {
@@ -34,20 +33,8 @@ namespace ET
             GameObject.DontDestroyOnLoad(stageCamera);
             for (int i = 0; i < _initPackageArray.Length; i++)
             {
-                await _fuiPackComp.AddPackageAsync(_initPackageArray[i]);
+                await _fuiPackComp.EnsurePackageLoadedAsync(_initPackageArray[i]);
             }
-            
-            // await Game.Scene.GetComponent<FUIPackageComponent>().AddPackageAsync(FUIPackage.FLogin);
-            // await Game.Scene.GetComponent<FUIPackageComponent>().AddPackageAsync(FUIPackage.UICharacterSelect);
-            // await Game.Scene.GetComponent<FUIPackageComponent>().AddPackageAsync(FUIPackage.UIMain);
-            // await Game.Scene.GetComponent<FUIPackageComponent>().AddPackageAsync(FUIPackage.UIEquip);
-            // await Game.Scene.GetComponent<FUIPackageComponent>().AddPackageAsync(FUIPackage.UIBag);
-            // await Game.Scene.GetComponent<FUIPackageComponent>().AddPackageAsync(FUIPackage.UIBattle);
-            // await Game.Scene.GetComponent<FUIPackageComponent>().AddPackageAsync(FUIPackage.UISetting);
-            // await Game.Scene.GetComponent<FUIPackageComponent>().AddPackageAsync(FUIPackage.UITips);
-            // await Game.Scene.GetComponent<FUIPackageComponent>().AddPackageAsync(FUIPackage.UIShop);
-
-
         }
 
         public override void Dispose()
@@ -56,8 +43,10 @@ namespace ET
             {
                 return;
             }
-
-            // Game.Scene.GetComponent<FUIPackageComponent>().RemovePackage(FUIPackage.FLogin);
+            for (int i = 0; i < _initPackageArray.Length; i++)
+            {
+                Game.Scene.GetComponent<FUIPackageComponent>().EnsureRemovePackage(_initPackageArray[i]);
+            }
             base.Dispose();
         }
     }

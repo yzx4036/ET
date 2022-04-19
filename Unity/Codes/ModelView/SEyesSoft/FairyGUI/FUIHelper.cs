@@ -88,7 +88,7 @@ namespace ET
                 {
                     _fuiComp = scene.AddComponent<FUIComponent>();
                 }
-                scene.GetComponent<FUIComponent>().Close(uiArgs.UIResName);
+                scene.GetComponent<FUIComponent>().Close(uiArgs.UIResName, uiArgs.UIPackageName);
             }
         }
 
