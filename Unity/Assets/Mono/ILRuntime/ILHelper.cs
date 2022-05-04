@@ -55,6 +55,7 @@ namespace ET
             appdomain.DelegateManager.RegisterMethodDelegate<ILTypeInstance>();
             appdomain.DelegateManager.RegisterMethodDelegate<AsyncOperation>();
             appdomain.DelegateManager.RegisterMethodDelegate<UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle<UnityEngine.ResourceManagement.ResourceProviders.SceneInstance>>();
+            appdomain.DelegateManager.RegisterMethodDelegate<System.String, System.String, System.Type, FairyGUI.PackageItem>();
 
             appdomain.DelegateManager.RegisterFunctionDelegate<UnityEngine.Events.UnityAction>();
             appdomain.DelegateManager.RegisterFunctionDelegate<System.Object, ET.ETTask>();
@@ -91,6 +92,22 @@ namespace ET
                 });
             });
             
+            appdomain.DelegateManager.RegisterDelegateConvertor<FairyGUI.UIPackage.LoadResourceAsync>((act) =>
+            {
+                return new FairyGUI.UIPackage.LoadResourceAsync((name, extension, type, item) =>
+                {
+                    ((Action<System.String, System.String, System.Type, FairyGUI.PackageItem>)act)(name, extension, type, item);
+                });
+            });
+            
+            appdomain.DelegateManager.RegisterDelegateConvertor<FairyGUI.EventCallback0>((act) =>
+            {
+                return new FairyGUI.EventCallback0(() =>
+                {
+                    ((Action)act)();
+                });
+            });
+
             // 注册适配器
             RegisterAdaptor(appdomain);
             
