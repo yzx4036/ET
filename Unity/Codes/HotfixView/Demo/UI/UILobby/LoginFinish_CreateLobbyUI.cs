@@ -1,12 +1,15 @@
 ﻿
 
+using System.Threading.Tasks;
+using ET.EventType;
+
 namespace ET
 {
 	public class LoginFinish_CreateLobbyUI: AEvent<EventType.LoginFinish>
 	{
-		protected override async ETTask Run(EventType.LoginFinish args)
+		protected override void Run(LoginFinish args)
 		{
-			await UIHelper.Create(args.ZoneScene, UIType.UILobby, UILayer.Mid);
+			UIHelper.Create(args.ZoneScene, UIType.UILobby, UILayer.Mid).Coroutine();
 		}
 	}
 }

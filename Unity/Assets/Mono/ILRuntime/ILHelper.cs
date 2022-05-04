@@ -54,8 +54,9 @@ namespace ET
             appdomain.DelegateManager.RegisterMethodDelegate<long, IPEndPoint>();
             appdomain.DelegateManager.RegisterMethodDelegate<ILTypeInstance>();
             appdomain.DelegateManager.RegisterMethodDelegate<AsyncOperation>();
-            
-            
+            appdomain.DelegateManager.RegisterMethodDelegate<UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle<UnityEngine.ResourceManagement.ResourceProviders.SceneInstance>>();
+            appdomain.DelegateManager.RegisterMethodDelegate<System.String, System.String, System.Type, FairyGUI.PackageItem>();
+
             appdomain.DelegateManager.RegisterFunctionDelegate<UnityEngine.Events.UnityAction>();
             appdomain.DelegateManager.RegisterFunctionDelegate<System.Object, ET.ETTask>();
             appdomain.DelegateManager.RegisterFunctionDelegate<ILTypeInstance, bool>();
@@ -68,7 +69,13 @@ namespace ET
             appdomain.DelegateManager.RegisterFunctionDelegate<int, int, int>();//Linq
             appdomain.DelegateManager.RegisterFunctionDelegate<KeyValuePair<int, List<int>>, bool>();
             appdomain.DelegateManager.RegisterFunctionDelegate<KeyValuePair<int, int>, KeyValuePair<int, int>, int>();
-            
+            appdomain.DelegateManager.RegisterMethodDelegate<System.Int64, System.Collections.Generic.List<System.Int64>>();
+            appdomain.DelegateManager.RegisterMethodDelegate<System.Int64, System.Collections.Generic.List<ILRuntime.Runtime.Intepreter.ILTypeInstance>>();
+            appdomain.DelegateManager.RegisterFunctionDelegate<System.Int64, System.Collections.Generic.List<System.Int64>, System.Boolean>();
+            appdomain.DelegateManager.RegisterFunctionDelegate<System.Int64, System.Collections.Generic.List<ILRuntime.Runtime.Intepreter.ILTypeInstance>, System.Boolean>();
+
+            appdomain.DelegateManager.RegisterMethodDelegate<ET.AService>();
+
             appdomain.DelegateManager.RegisterDelegateConvertor<UnityEngine.Events.UnityAction>((act) =>
             {
                 return new UnityEngine.Events.UnityAction(() =>
@@ -85,13 +92,30 @@ namespace ET
                 });
             });
             
+            appdomain.DelegateManager.RegisterDelegateConvertor<FairyGUI.UIPackage.LoadResourceAsync>((act) =>
+            {
+                return new FairyGUI.UIPackage.LoadResourceAsync((name, extension, type, item) =>
+                {
+                    ((Action<System.String, System.String, System.Type, FairyGUI.PackageItem>)act)(name, extension, type, item);
+                });
+            });
+            
+            appdomain.DelegateManager.RegisterDelegateConvertor<FairyGUI.EventCallback0>((act) =>
+            {
+                return new FairyGUI.EventCallback0(() =>
+                {
+                    ((Action)act)();
+                });
+            });
+
             // 注册适配器
             RegisterAdaptor(appdomain);
             
             //注册Json的CLR
             LitJson.JsonMapper.RegisterILRuntimeCLRRedirection(appdomain);
+            
             //注册ProtoBuf的CLR
-            PType.RegisterILRuntimeCLRRedirection(appdomain);
+            PType.RegisterILRuntime(appdomain, typeFullName => CodeLoader.Instance.GetHotfixType(typeFullName));
            
             
             ////////////////////////////////////
@@ -107,9 +131,12 @@ namespace ET
         
         public static void RegisterAdaptor(ILRuntime.Runtime.Enviorment.AppDomain appdomain)
         {
-            //注册自己写的适配器
-            // appdomain.RegisterCrossBindingAdaptor(new IAsyncStateMachineClassInheritanceAdaptor());
             AdapterRegister.RegisterCrossBindingAdaptor(appdomain);
+			//注册自己写的适配器
+            // appdomain.RegisterCrossBindingAdaptor(new IAsyncStateMachineClassInheritanceAdaptor());
+            appdomain.RegisterValueTypeBinder(typeof(Vector2), new Vector2Binder());
+            appdomain.RegisterValueTypeBinder(typeof(Vector3), new Vector3Binder());
+            appdomain.RegisterValueTypeBinder(typeof(Quaternion), new QuaternionBinder());
         }
     }
 }

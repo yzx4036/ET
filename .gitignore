@@ -57,9 +57,10 @@ Server/.DS_Store
 /Unity/Assets/Bundles/Code/Code.pdb.bytes.meta
 /Unity/Assembly-CSharp.csproj
 unityfs_httpserver/node_modules
-Unity_FairyGUI/FUIProject
 /Excel/~$*.xlsx
 /.vscode
+/Unity/.vsconfig
 Unity/AssetBundleBackup
 Unity/ServerData
 Unity/Assets/AddressableAssetsData/Windows
+Unity_FairyGUI/FairyGUI-Editor/*

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1920">
+  <controller name="BattlePanelC" pages="0,,1,,2,,3,,4," selected="0"/>
+  <controller name="ShowChatC" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n1_ci54" name="n1" src="er0b1s" fileName="BG_1.png" pkg="4nyd2ns5" xy="0,0" size="1080,1920">
+      <relation target="" sidePair="width-width%,height-height%,top-top%"/>
+    </image>
+    <image id="n24_ufll" name="n24" src="ufll5m" fileName="CharIcon.png" pkg="4nyd2ns5" xy="4,5" size="476,151" group="n18_ufll" aspect="true">
+      <relation target="" sidePair="width-width%,height-height%,left-left%,top-top%"/>
+    </image>
+    <text id="n25_ufll" name="CharacterFighting" xy="147,18" size="209,29" group="n18_ufll" fontSize="25" color="#a69a67" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" singleLine="true" autoClearText="true" text="战力:99999">
+      <relation target="" sidePair="width-width%,height-height%,left-left%,top-top%"/>
+    </text>
+    <text id="n11_ufll" name="CharacterName" xy="180,53" size="253,44" group="n18_ufll" fontSize="35" color="#a69a67" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" singleLine="true" autoClearText="true" text="冷大坑">
+      <relation target="" sidePair="width-width%,height-height%,left-left%,top-top%"/>
+    </text>
+    <text id="n13_ufll" name="CharacterLevel" xy="146,94" size="45,44" group="n18_ufll" fontSize="30" color="#a69a67" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" singleLine="true" autoClearText="true" text="99">
+      <relation target="" sidePair="width-width%,height-height%,left-left%,top-top%"/>
+    </text>
+    <text id="n19_ufll" name="GoldCount" xy="830,27" size="168,44" group="n18_ufll" fontSize="40" color="#a69a67" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" autoClearText="true" text="99999">
+      <relation target="n2_12ay3" sidePair="width-width%,height-height%,left-left%,top-top%"/>
+    </text>
+    <text id="n20_ufll" name="GemCount" xy="830,100" size="168,44" group="n18_ufll" fontSize="40" color="#a69a67" vAlign="middle" autoSize="shrink" strokeColor="#000000" singleLine="true" autoClearText="true" text="9999">
+      <relation target="n3_12ay3" sidePair="width-width%,height-height%,left-left%,top-top%"/>
+    </text>
+    <image id="n3_12ay3" name="n3" src="12ay3n" fileName="icgoods121.png" pkg="4nyd2ns5" xy="749,79" size="80,80" group="n18_ufll">
+      <relation target="" sidePair="width-width%,height-height%,top-top%,right-right%"/>
+    </image>
+    <image id="n2_12ay3" name="n2" src="12ay3m" fileName="icgoods117.png" pkg="4nyd2ns5" xy="749,9" size="80,80" group="n18_ufll" aspect="true">
+      <relation target="" sidePair="width-width%,height-height%,top-top%,right-right%"/>
+    </image>
+    <loader id="n84_ufll" name="CharacterIcon" xy="35,23" size="124,119" group="n18_ufll" fill="scaleMatchWidth"/>
+    <text id="n85_q85n" name="CharacterGender" xy="10,84" size="45,44" group="n18_ufll" fontSize="30" color="#a69a67" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" singleLine="true" autoClearText="true" text="♀">
+      <relation target="" sidePair="width-width%,height-height%,left-left%,top-top%"/>
+    </text>
+    <group id="n18_ufll" name="TopInfo" xy="4,5" size="994,154" advanced="true"/>
+    <image id="n22_ufll" name="HPBar" src="ufll5k" fileName="DownHP.png" pkg="4nyd2ns5" xy="93,1713" size="179,176" group="n40_ufll" aspect="true" fillMethod="vt" fillOrigin="1">
+      <relation target="n21_ufll" sidePair="width-width%,height-height%,left-left%,bottom-bottom%"/>
+    </image>
+    <image id="n23_ufll" name="MPBar" src="ufll5l" fileName="DownMP.png" pkg="4nyd2ns5" xy="809,1713" size="177,176" group="n40_ufll" aspect="true" fillMethod="vt" fillOrigin="1">
+      <relation target="n21_ufll" sidePair="width-width%,height-height%,right-right%,bottom-bottom%"/>
+    </image>
+    <image id="n21_ufll" name="n21" src="ufll5j" fileName="DownButtonBG.png" pkg="4nyd2ns5" xy="0,1654" size="1080,263" group="n40_ufll" aspect="true" filter="color" filterData="0,0,-1,0">
+      <relation target="" sidePair="width-width%,height-height%,bottom-bottom%,center-center%"/>
+    </image>
+    <image id="n32_ufll" name="EXPBar" src="ufll5n" fileName="ExpBAR.png" pkg="4nyd2ns5" xy="75,1893" size="928,12" group="n40_ufll" fillMethod="hz" fillAmount="79">
+      <relation target="n21_ufll" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="center-center%,bottom-bottom%"/>
+    </image>
+    <text id="n34_ufll" name="CurrHPText" xy="97,1790" size="172,29" group="n40_ufll" fontSize="25" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" singleLine="true" autoClearText="true" text="10000">
+      <relation target="n21_ufll" sidePair="width-width%,height-height%,left-left%,bottom-bottom%"/>
+    </text>
+    <text id="n37_ufll" name="CurrMPText" xy="806,1790" size="172,29" group="n40_ufll" fontSize="25" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" singleLine="true" autoClearText="true" text="10000">
+      <relation target="n21_ufll" sidePair="width-width%,height-height%,right-right%,bottom-bottom%"/>
+    </text>
+    <component id="n88_q85n" name="ToEquipBtn" src="q85n1o" fileName="Button_Slot.xml" pkg="o9z9wblx" xy="392,1772" size="88,88" group="n40_ufll">
+      <relation target="n21_ufll" sidePair="width-width%,height-height%,left-left%,bottom-bottom%"/>
+      <Button title="人物" controller="BattlePanelC" page="1"/>
+    </component>
+    <component id="n90_q85n" name="ToBattleBtn" src="q85n1o" fileName="Button_Slot.xml" pkg="o9z9wblx" xy="494,1772" size="88,88" group="n40_ufll">
+      <relation target="n21_ufll" sidePair="width-width%,height-height%,left-left%,bottom-bottom%"/>
+      <Button title="战斗" controller="BattlePanelC" page="2"/>
+    </component>
+    <component id="n89_q85n" name="ToMainBtn" src="q85n1o" fileName="Button_Slot.xml" pkg="o9z9wblx" xy="289,1770" size="90,90" group="n40_ufll">
+      <relation target="n21_ufll" sidePair="width-width%,height-height%,left-left%,bottom-bottom%"/>
+      <Button checked="true" title="主城" controller="BattlePanelC" page="0"/>
+    </component>
+    <component id="n91_q85n" name="ToSetBtn" src="q85n1o" fileName="Button_Slot.xml" pkg="o9z9wblx" xy="701,1772" size="88,88" group="n40_ufll">
+      <relation target="n21_ufll" sidePair="width-width%,height-height%,left-left%,bottom-bottom%"/>
+      <Button title="设置" controller="BattlePanelC" page="4"/>
+    </component>
+    <component id="n92_q85n" name="ToBagBtn" src="q85n1o" fileName="Button_Slot.xml" pkg="o9z9wblx" xy="597,1772" size="88,88" group="n40_ufll">
+      <relation target="n21_ufll" sidePair="width-width%,height-height%,left-left%,bottom-bottom%"/>
+      <Button title="背包" controller="BattlePanelC" page="3"/>
+    </component>
+    <group id="n40_ufll" name="DownBtn" xy="0,1654" size="1080,263" advanced="true"/>
+    <component id="n98_azrp" name="ChatBtn" src="uvgs12" fileName="Button4_Normal.xml" pkg="o9z9wblx" xy="49,1492" size="150,88">
+      <gearDisplay controller="ShowChatC" pages="0"/>
+      <relation target="" sidePair="width-width%,height-height%,left-left%,bottom-bottom%"/>
+      <Button title="聊天" titleFontSize="45" controller="ShowChatC" page="1"/>
+    </component>
+    <image id="n99_azrp" name="n99" src="uvgsy" fileName="TipsWindow.png" pkg="4nyd2ns5" xy="15,895" size="1051,752" group="n104_azrp">
+      <relation target="" sidePair="width-width%,height-height%,center-center%,bottom-bottom%"/>
+    </image>
+    <image id="n100_azrp" name="n100" src="uvgs1" fileName="InputField.png" pkg="4nyd2ns5" xy="44,1529" size="813,94" group="n104_azrp">
+      <relation target="" sidePair="width-width%,height-height%,center-center%,bottom-bottom%"/>
+    </image>
+    <component id="n101_azrp" name="SendBtn" src="uvgs12" fileName="Button4_Normal.xml" pkg="o9z9wblx" xy="867,1533" size="177,88" group="n104_azrp">
+      <relation target="" sidePair="width-width%,height-height%,right-right%,bottom-bottom%"/>
+      <Button title="发送" titleFontSize="30"/>
+    </component>
+    <component id="n102_azrp" name="CloseBtn" src="dh8k17" fileName="Button_Close.xml" pkg="o9z9wblx" xy="978,922" size="68,70" group="n104_azrp">
+      <relation target="" sidePair="width-width%,height-height%,right-right%,top-top%"/>
+      <Button controller="ShowChatC" page="0"/>
+    </component>
+    <richtext id="n103_azrp" name="InputText" xy="67,1539" size="777,76" group="n104_azrp" fontSize="35" color="#a69a67" vAlign="middle" autoSize="none" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" singleLine="true" autoClearText="true" text="你大爷的">
+      <relation target="n100_azrp" sidePair="width-width%,height-height%,center-center%,middle-middle%"/>
+    </richtext>
+    <group id="n104_azrp" name="ChatPanel" xy="15,895" size="1051,752" advanced="true">
+      <gearDisplay controller="ShowChatC" pages="1"/>
+    </group>
+    <component id="n93_ia59" name="MainPanel" src="ia595z" fileName="UIMain.xml" xy="0,156" aspect="true">
+      <gearDisplay controller="BattlePanelC" pages="0,1,3,4"/>
+      <relation target="" sidePair="width-width%,height-height%,center-center%,middle-middle%"/>
+    </component>
+  </displayList>
+</component>

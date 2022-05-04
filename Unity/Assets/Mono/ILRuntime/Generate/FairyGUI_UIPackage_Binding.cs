@@ -34,6 +34,12 @@ namespace ILRuntime.Runtime.Generated
             args = new Type[]{typeof(System.String)};
             method = type.GetMethod("RemovePackage", flag, null, args, null);
             app.RegisterCLRMethodRedirection(method, RemovePackage_3);
+            args = new Type[]{};
+            method = type.GetMethod("get_dependencies", flag, null, args, null);
+            app.RegisterCLRMethodRedirection(method, get_dependencies_4);
+            args = new Type[]{typeof(FairyGUI.PackageItem), typeof(System.Object), typeof(FairyGUI.DestroyMethod)};
+            method = type.GetMethod("SetItemAsset", flag, null, args, null);
+            app.RegisterCLRMethodRedirection(method, SetItemAsset_5);
 
 
         }
@@ -102,6 +108,48 @@ namespace ILRuntime.Runtime.Generated
 
 
             FairyGUI.UIPackage.RemovePackage(@packageIdOrName);
+
+            return __ret;
+        }
+
+        static StackObject* get_dependencies_4(ILIntepreter __intp, StackObject* __esp, IList<object> __mStack, CLRMethod __method, bool isNewObj)
+        {
+            ILRuntime.Runtime.Enviorment.AppDomain __domain = __intp.AppDomain;
+            StackObject* ptr_of_this_method;
+            StackObject* __ret = ILIntepreter.Minus(__esp, 1);
+
+            ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
+            FairyGUI.UIPackage instance_of_this_method = (FairyGUI.UIPackage)typeof(FairyGUI.UIPackage).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            __intp.Free(ptr_of_this_method);
+
+            var result_of_this_method = instance_of_this_method.dependencies;
+
+            return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
+        }
+
+        static StackObject* SetItemAsset_5(ILIntepreter __intp, StackObject* __esp, IList<object> __mStack, CLRMethod __method, bool isNewObj)
+        {
+            ILRuntime.Runtime.Enviorment.AppDomain __domain = __intp.AppDomain;
+            StackObject* ptr_of_this_method;
+            StackObject* __ret = ILIntepreter.Minus(__esp, 4);
+
+            ptr_of_this_method = ILIntepreter.Minus(__esp, 1);
+            FairyGUI.DestroyMethod @destroyMethod = (FairyGUI.DestroyMethod)typeof(FairyGUI.DestroyMethod).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)20);
+            __intp.Free(ptr_of_this_method);
+
+            ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
+            System.Object @asset = (System.Object)typeof(System.Object).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            __intp.Free(ptr_of_this_method);
+
+            ptr_of_this_method = ILIntepreter.Minus(__esp, 3);
+            FairyGUI.PackageItem @item = (FairyGUI.PackageItem)typeof(FairyGUI.PackageItem).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            __intp.Free(ptr_of_this_method);
+
+            ptr_of_this_method = ILIntepreter.Minus(__esp, 4);
+            FairyGUI.UIPackage instance_of_this_method = (FairyGUI.UIPackage)typeof(FairyGUI.UIPackage).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            __intp.Free(ptr_of_this_method);
+
+            instance_of_this_method.SetItemAsset(@item, @asset, @destroyMethod);
 
             return __ret;
         }

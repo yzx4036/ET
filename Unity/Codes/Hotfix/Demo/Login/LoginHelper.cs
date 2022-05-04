@@ -16,7 +16,7 @@ namespace ET
                 {
                     session = zoneScene.GetComponent<NetKcpComponent>().Create(NetworkHelper.ToIPEndPoint(address));
                     {
-                        r2CLogin = (R2C_Login) await session.Call(new C2R_Login() { Account = account, Password = password });
+                        r2CLogin = (R2C_Login)await session.Call(new C2R_Login() { Account = account, Password = password });
                     }
                 }
                 finally
@@ -34,7 +34,7 @@ namespace ET
 
                 Log.Debug("登陆gate成功!");
 
-                await Game.EventSystem.PublishAsync(new EventType.LoginFinish() {ZoneScene = zoneScene});
+                Game.EventSystem.Publish(new EventType.LoginFinish() {ZoneScene = zoneScene});
             }
             catch (Exception e)
             {

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="gvvny798" hasFavorites="true">
+  <resources>
+    <component id="azrp5p" name="UIBagPanel.xml" path="/" exported="true" favorite="true"/>
+  </resources>
+  <publish name="FBag"/>
+</packageDescription>

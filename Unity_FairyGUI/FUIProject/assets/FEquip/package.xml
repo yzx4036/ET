@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="gjh30k0r" hasFavorites="true">
+  <resources>
+    <component id="ik562" name="UIEquipPanel.xml" path="/" exported="true" favorite="true"/>
+    <component id="ci54l" name="AttrPanel.xml" path="/"/>
+  </resources>
+  <publish name="FEquip"/>
+</packageDescription>

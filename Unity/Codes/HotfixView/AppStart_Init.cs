@@ -1,14 +1,20 @@
+using System.Threading.Tasks;
+using ET.EventType;
 using SEyesSoft.ET;
 
 namespace ET
 {
     public class AppStart_Init: AEvent<EventType.AppStart>
     {
-        protected override async ETTask Run(EventType.AppStart args)
+        protected override void Run(AppStart args)
+        {
+            RunAsync(args).Coroutine();
+        }
+        
+        private async ETTask RunAsync(EventType.AppStart args)
         {
             Game.Scene.AddComponent<TimerComponent>();
             Game.Scene.AddComponent<CoroutineLockComponent>();
-
             // 加载配置
             // Game.Scene.AddComponent<ResourcesComponent>();
             Game.Scene.AddComponent<AddressablesResComponent>();
@@ -28,10 +34,12 @@ namespace ET
             Game.Scene.AddComponent<NumericWatcherComponent>();
             Game.Scene.AddComponent<AIDispatcherComponent>();
             // await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
-            
+            var _fUIInitComponent = Game.Scene.AddComponent<FUIInitComponent>();
+            await _fUIInitComponent.Init();
             Scene zoneScene = SceneFactory.CreateZoneScene(1, "Game", Game.Scene);
             
             await Game.EventSystem.PublishAsync(new EventType.AppStartInitFinish() { ZoneScene = zoneScene });
+            await ETTask.CompletedTask;
         }
     }
 }

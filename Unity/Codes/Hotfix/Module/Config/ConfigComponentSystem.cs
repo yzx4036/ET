@@ -22,12 +22,14 @@ namespace ET
 	    }
     }
     
+    [FriendClass(typeof(ConfigComponent))]
     public static class ConfigComponentSystem
 	{
 		public static async Task LoadOneConfig(this ConfigComponent self, Type configType)
 		{
-			byte[] oneConfigBytes = await self.ConfigLoader.GetOneConfigBytes(configType.FullName);
+			byte[] oneConfigBytes =  await self.ConfigLoader.GetOneConfigBytes(configType.FullName);
 
+			Log.Info($">>>>>>>>>>>>LoadOneConfig {configType.Name}");
 			object category = ProtobufHelper.FromBytes(configType, oneConfigBytes, 0, oneConfigBytes.Length);
 
 			self.AllConfig[configType] = category;
@@ -36,7 +38,7 @@ namespace ET
 		public static void Load(this ConfigComponent self)
 		{
 			self.AllConfig.Clear();
-			HashSet<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
+			List<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
 			
 			Dictionary<string, byte[]> configBytes = new Dictionary<string, byte[]>();
 			self.ConfigLoader.GetAllConfigBytes(configBytes);
@@ -47,36 +49,37 @@ namespace ET
 			}
 		}
 		
-		public static async ETTask LoadAsync(this ConfigComponent self)
+		public static async Task LoadAsync(this ConfigComponent self)
 		{
 			self.AllConfig.Clear();
-			HashSet<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
+			List<Type> types = Game.EventSystem.GetTypes(typeof (ConfigAttribute));
 			
 			Dictionary<string, byte[]> configBytes = new Dictionary<string, byte[]>();
 			await self.ConfigLoader.GetAllConfigBytes(configBytes);
-
-			using (ListComponent<Task> listTasks = ListComponent<Task>.Create())
+			foreach (Type type in types)
 			{
-				foreach (Type type in types)
-				{
-					Task task = Task.Run(() => self.LoadOneInThread(type, configBytes));
-					listTasks.Add(task);
-				}
-
-				await Task.WhenAll(listTasks.ToArray());
+				self.LoadOneInThread(type, configBytes);
 			}
 		}
 
 		private static void LoadOneInThread(this ConfigComponent self, Type configType, Dictionary<string, byte[]> configBytes)
 		{
-			byte[] oneConfigBytes = configBytes[configType.Name];
-
-			object category = ProtobufHelper.FromBytes(configType, oneConfigBytes, 0, oneConfigBytes.Length);
-
-			lock (self)
+			try
 			{
-				self.AllConfig[configType] = category;	
+				byte[] oneConfigBytes = configBytes[configType.Name];
+
+				object category = ProtobufHelper.FromBytes(configType, oneConfigBytes, 0, oneConfigBytes.Length);
+				
+				lock (self)
+				{
+					self.AllConfig[configType] = category;	
+				}
 			}
+			catch (Exception e)
+			{
+				Log.Error($"加载配置{configType.Name} 出错  {e}" );
+			}
+			
 		}
 	}
 }

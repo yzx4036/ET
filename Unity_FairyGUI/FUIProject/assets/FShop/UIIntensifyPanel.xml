@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1656">
+  <displayList>
+    <image id="n0_s0zo" name="SelectBG" src="f2qf63" fileName="Sprite/Kelvin142_2.png" pkg="4nyd2ns5" xy="80,525" filter="color" filterData="0.00,0.00,-0.50,0.00">
+      <relation target="" sidePair="center-center%,middle-middle%"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+    </image>
+    <text id="n1_s0zo" name="n1" xy="469,549" size="151,48" fontSize="40" color="#a69a67" align="center" vAlign="middle" autoSize="shrink" strokeColor="#000000" shadowColor="#000000" shadowOffset="1,1" text="强化">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="top-top%,center-center%"/>
+    </text>
+    <component id="n2_s0zo" name="CloseBtn" src="uvgs13" fileName="Button_Normal.xml" pkg="o9z9wblx" xy="455,949" size="165,68">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="center-center%,bottom-bottom%"/>
+      <Button title="关闭"/>
+    </component>
+    <component id="n6_s0zo" name="IntensifyBtn" src="ia591p" fileName="Button_Shop.xml" pkg="o9z9wblx" xy="460,856">
+      <relation target="" sidePair="center-center%,top-top%"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <Button title="升级武器"/>
+    </component>
+    <text id="n7_s0zo" name="n7" xy="188,640" size="745,203" fontSize="30" color="#ffffff" ubb="true" autoSize="none" text="你像是要强化手中的武器?&#xA;强化这把武器需要：[color=#FFFF33]黑铁矿石[/color]、[color=#FFFF33]饰品[/color]、[color=#FFFF33]10万金币[/color]。&#xA;我会一次性取走你背包中的所有黑铁矿石和饰品。&#xA;如果你的背包中有鹭物品，请先存放至仓库。">
+      <relation target="" sidePair="width-width%,height-height%"/>
+      <relation target="" sidePair="center-center%,top-top%"/>
+    </text>
+  </displayList>
+</component>

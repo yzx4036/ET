@@ -35,12 +35,12 @@ namespace ILRuntime.Runtime.Generated
                     lst.Add(m);
                 }
             }
-            args = new Type[]{typeof(System.String)};
+            args = new Type[]{typeof(System.Object)};
             if (genericMethods.TryGetValue("Empty", out lst))
             {
                 foreach(var m in lst)
                 {
-                    if(m.MatchGenericParameters(args, typeof(System.String[])))
+                    if(m.MatchGenericParameters(args, typeof(System.Object[])))
                     {
                         method = m.MakeGenericMethod(args);
                         app.RegisterCLRMethodRedirection(method, Empty_0);
@@ -60,7 +60,7 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 0);
 
 
-            var result_of_this_method = System.Array.Empty<System.String>();
+            var result_of_this_method = System.Array.Empty<System.Object>();
 
             return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
         }
