@@ -61,6 +61,7 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Tween\TweenManager.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Examples\Emoji\EmojiParser.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\StackFrameInfo.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\BreakpointConditionExpressionVisitor.cs.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\IConstantProvider.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\VariantType.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Examples\ModalWaiting\Window4.cs" />
@@ -146,9 +147,9 @@
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\CharSerializer.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\NullDecorator.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Intepreter\RegisterVM\Optimizer.Utils.cs" />
-     <Compile Include="Assets\ThirdParty\protobuf-net\DiscriminatedUnion.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\CallSite.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Utils\XML.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\DiscriminatedUnion.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Intepreter\RegisterVM\CodeBasicBlock.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\TypeReference.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.Cil\CodeWriter.cs" />
@@ -278,10 +279,11 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\TypeDefinitionCollection.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\DebugService.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GScrollBar.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Gesture\PinchGesture.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\symbols\pdb\Microsoft.Cci.Pdb\PdbLine.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Mesh\MeshFactory.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\TimeSpanSerializer.cs" />
-     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Gesture\PinchGesture.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\Expressions\Token.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\PInvokeAttributes.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Compiler\Local.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Examples\RenderTexture\RenderTextureMain.cs" />
@@ -333,6 +335,7 @@
      <Compile Include="Assets\ThirdParty\protobuf-net\Meta\ProtoSyntax.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Examples\Model\ModelMain.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\PopupMenu.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\Expressions\Lexer.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil.PE\ImageWriter.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Meta\TypeModel.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\TypeSpecification.cs" />
@@ -428,8 +431,10 @@
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ParseableSerializer.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\AssemblyReader.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\IGenericInstance.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\Expressions\EvalExpression.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\ReferenceType.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\Gears\GearLook.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\Expressions\Parser.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\SubItemSerializer.cs" />
      <Compile Include="Assets\ThirdParty\ETTask\AsyncETVoidMethodBuilder.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\GenericParameterAttributes.cs" />
@@ -569,8 +574,8 @@
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Collections.Generic\Collection.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\NetObjectSerializer.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\Mesh\StraightLineMesh.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Stack\StackFrame.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Core\HitTest\ColliderHitTest.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Stack\StackFrame.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\ExportedType.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\ParameterDefinitionCollection.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\PrefixStyle.cs" />

@@ -19,15 +19,39 @@ namespace ET
 		public Action OnApplicationQuit;
 
 		private Assembly assembly;
-
-		private ILRuntime.Runtime.Enviorment.AppDomain appDomain;
-		
-		private Type[] allTypes;
 		
 		public CodeMode CodeMode { get; set; }
+		
+		// 所有mono的类型
+		private readonly Dictionary<string, Type> monoTypes = new Dictionary<string, Type>();
+		
+		// 热更层的类型
+		private readonly Dictionary<string, Type> hotfixTypes = new Dictionary<string, Type>();
+		private ILRuntime.Runtime.Enviorment.AppDomain appDomain;
 
 		private CodeLoader()
 		{
+			Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+			foreach (Assembly ass in assemblies)
+			{
+				foreach (Type type in ass.GetTypes())
+				{
+					this.monoTypes[type.FullName] = type;
+					this.monoTypes[type.AssemblyQualifiedName] = type;
+				}
+			}
+		}
+		
+		public Type GetMonoType(string fullName)
+		{
+			this.monoTypes.TryGetValue(fullName, out Type type);
+			return type;
+		}
+		
+		public Type GetHotfixType(string fullName)
+		{
+			this.hotfixTypes.TryGetValue(fullName, out Type type);
+			return type;
 		}
 
 		public void Dispose()
@@ -45,12 +69,12 @@ namespace ET
 					byte[] assBytes  = _textAsset.bytes;
 					var _textAsset1 = await AddressableMgr.Instance.LoadAssetAsync<TextAsset>("Code.pdb");
 					byte[] pdbBytes  = _textAsset1.bytes;
-					// var _textAsset = ResourceManager.TryLoadAssetSync("Assets/Bundles/Code/Code.dll.bytes", typeof(TextAsset), null);
-					// byte[] assBytes  = _textAsset.ReadAllBytes();
-					// var _textAsset1 = ResourceManager.TryLoadAssetSync("Assets/Bundles/Code/Code.pdb.bytes", typeof(TextAsset), null);
-					// byte[] pdbBytes  = _textAsset1.ReadAllBytes();
 					assembly = Assembly.Load(assBytes, pdbBytes);
-					this.allTypes = assembly.GetTypes();
+					foreach (Type type in this.assembly.GetTypes())
+					{
+						this.monoTypes[type.FullName] = type;
+						this.hotfixTypes[type.FullName] = type;
+					}
 					IStaticMethod start = new MonoStaticMethod(assembly, "ET.Entry", "Start");
 					start.Run();
 					break;
@@ -65,7 +89,7 @@ namespace ET
 					//byte[] assBytes = File.ReadAllBytes(Path.Combine("../Unity/", Define.BuildOutputDir, "Code.dll"));
 					//byte[] pdbBytes = File.ReadAllBytes(Path.Combine("../Unity/", Define.BuildOutputDir, "Code.pdb"));
 				
-					appDomain = new ILRuntime.Runtime.Enviorment.AppDomain();
+					appDomain = new ILRuntime.Runtime.Enviorment.AppDomain(ILRuntime.Runtime.ILRuntimeJITFlags.JITOnDemand);
 #if DEBUG && (UNITY_EDITOR || UNITY_ANDROID || UNITY_IPHONE)
 					this.appDomain.UnityMainThreadID = System.Threading.Thread.CurrentThread.ManagedThreadId;
 #endif
@@ -73,9 +97,14 @@ namespace ET
 					MemoryStream pdbStream = new MemoryStream(pdbBytes);
 					appDomain.LoadAssembly(assStream, pdbStream, new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider());
 
+					Type[] types = appDomain.LoadedTypes.Values.Select(x => x.ReflectionType).ToArray();
+					foreach (Type type in types)
+					{
+						this.hotfixTypes[type.FullName] = type;
+					}
+					
 					ILHelper.InitILRuntime(appDomain);
-
-					this.allTypes = appDomain.LoadedTypes.Values.Select(x => x.ReflectionType).ToArray();
+					
 					IStaticMethod start = new ILStaticMethod(appDomain, "ET.Entry", "Start", 0);
 					start.Run();
 					break;
@@ -169,15 +198,22 @@ namespace ET
 
 			Assembly hotfixAssembly = Assembly.Load(assBytes, pdbBytes);
 			
-			List<Type> listType = new List<Type>();
-			listType.AddRange(this.assembly.GetTypes());
-			listType.AddRange(hotfixAssembly.GetTypes());
-			this.allTypes = listType.ToArray();
+			foreach (Type type in this.assembly.GetTypes())
+			{
+				this.monoTypes[type.FullName] = type;
+				this.hotfixTypes[type.FullName] = type;
+			}
+			
+			foreach (Type type in hotfixAssembly.GetTypes())
+			{
+				this.monoTypes[type.FullName] = type;
+				this.hotfixTypes[type.FullName] = type;
+			}
 		}
 
-		public Type[] GetTypes()
+		public Dictionary<string, Type> GetHotfixTypes()
 		{
-			return this.allTypes;
+			return this.hotfixTypes;
 		}
 	}
 }

@@ -5,7 +5,8 @@
         "Unity.ResourceManager",
         "Unity.ThirdParty",
         "Unity.Addressables.Editor",
-        "Unity.Addressables"
+        "Unity.Addressables",
+        "Unity.RenderPipelines.Universal.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
