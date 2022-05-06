@@ -32,6 +32,17 @@ namespace SEyesSoft.ET
                 self.addressableMgrInst = AddressableMgr.Instance;
             }
         }
+        
+        [ObjectSystem]
+        public class AddressablesResComponentDestroySystem: DestroySystem<AddressablesResComponent>
+        {
+            public override void Destroy(AddressablesResComponent self)
+            {
+                AddressablesResComponent.Instance = null;
+                self.goMgrInst = null;
+                self.addressableMgrInst = null;
+            }
+        }
 
         /// <summary>
         ///  实例化
@@ -84,7 +95,7 @@ namespace SEyesSoft.ET
 
     }
 
-    public class AddressablesResComponent: Entity, IAwake
+    public class AddressablesResComponent: Entity, IAwake, IDestroy
     {
         public GameObjectMgr goMgrInst;
         public AddressableMgr addressableMgrInst;
