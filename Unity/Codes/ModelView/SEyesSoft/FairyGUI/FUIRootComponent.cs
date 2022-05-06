@@ -25,9 +25,6 @@ namespace ET
         {
             public override void Destroy(FUIRootComponent self)
             {
-                // 从父亲中删除自己
-                self.GetParent<FUI>()?.RemoveNoDispose(self.Name);
-                //
                 // // 删除所有的孩子
                 // foreach (FUI ui in fuiChildren.Values.ToArray())
                 // {

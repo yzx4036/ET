@@ -6,23 +6,55 @@ using UnityEngine;
 
 namespace ET
 {
-    [ObjectSystem]
-    public class FUI1AwakeSystem : AwakeSystem<FUI, GObject>
+    [FriendClass(typeof (FUI))]
+    public static class FUISystem
     {
-        public override void Awake(FUI self, GObject gObject)
+        [ObjectSystem]
+        public class FUIAwakeSystem: AwakeSystem<FUI, GObject>
         {
-            self.gObject = gObject;
-            // self.root = self.AddComponent<FUIRootComponent, GObject>(gObject);
+            public override void Awake(FUI self, GObject gObject)
+            {
+                self.gObject = gObject;
+                // self.root = self.AddComponent<FUIRootComponent, GObject>(gObject);
+            }
+        }
+        
+        [ObjectSystem]
+        public class FUIDestroySystem: DestroySystem<FUI>
+        {
+            public override void Destroy(FUI self)
+            {
+                // 删除所有的孩子
+                foreach (FUI ui in self.fuiChildren.Values.ToArray())
+                {
+                    ui.Dispose();
+                }
+                self.fuiChildren.Clear();
+
+                // 删除自己的UI
+                if (self.isFromFGUIPool)
+                {
+                    self.gObject.Dispose();
+                }
+
+                self.gObject = null;
+                self.isFromFGUIPool = false;
+            }
+        }
+
+        public static void MakeFullScreen(this FUI self)
+        {
+            self.gObject?.asCom?.MakeFullScreen();
         }
     }
 
-    public class FUI : Entity, IAwake<GObject>
+    public class FUI : Entity, IAwake<GObject>, IDestroy
     {
         public GObject gObject;
         
-        private Dictionary<string, FUI> fuiChildren = new Dictionary<string, FUI>();
+        public Dictionary<string, FUI> fuiChildren = new Dictionary<string, FUI>();
 
-        protected bool isFromFGUIPool = false;
+        public bool isFromFGUIPool = false;
         
         public string Name
         {
@@ -69,22 +101,6 @@ namespace ET
             }
         }
 
-        public bool IsComponent
-        {
-            get
-            {
-                return this.gObject is GComponent;
-            }
-        }
-        
-        public bool IsRoot
-        {
-            get
-            {
-                return this.gObject is GRoot;
-            }
-        }
-        
         public bool IsEmpty
         {
             get
@@ -93,141 +109,5 @@ namespace ET
             }
         }
 
-        public override void Dispose()
-        {
-            if (IsDisposed)
-            {
-                return;
-            }
-
-            base.Dispose();
-            
-            
-            // 删除所有的孩子
-            foreach (FUI ui in fuiChildren.Values.ToArray())
-            {
-                ui.Dispose();
-            }
-            fuiChildren.Clear();
-
-            // 删除自己的UI
-            if (isFromFGUIPool)
-            {
-                this.gObject.Dispose();
-            }
-
-            this.gObject = null;
-            isFromFGUIPool = false;
-        }
-
-        public void Add(FUI ui, bool asChildGObject)
-        {
-            if (ui == null)
-            {
-                throw new Exception($"ui can not be empty");
-            }
-
-            if (string.IsNullOrWhiteSpace(ui.Name))
-            {
-                throw new Exception($"ui.Name can not be empty");
-            }
-
-            if (fuiChildren.ContainsKey(ui.Name))
-            {
-                throw new Exception($"ui.Name({ui.Name}) already exist");
-            }
-            
-            fuiChildren.Add(ui.Name, ui);
-
-            if (IsComponent && asChildGObject)
-            {
-                this.gObject.asCom.AddChild(ui.gObject);
-            }
-
-        }
-
-        public void MakeFullScreen()
-        {
-            this.gObject?.asCom?.MakeFullScreen();
-        }
-
-        public void Remove(string name)
-        {
-            if (IsDisposed)
-            {
-                return;
-            }
-
-            FUI ui;
-
-            if (fuiChildren.TryGetValue(name, out ui))
-            {
-                if (ui != null)
-                {
-                    if (IsComponent)
-                    {
-                        this.gObject.asCom.RemoveChild(ui.gObject, false);
-                    }
-                    ui.Dispose();
-                }
-                fuiChildren.Remove(name);
-            }
-        }
-
-        /// <summary>
-        /// 一般情况不要使用此方法，如需使用，需要自行管理返回值的FUI的释放。
-        /// </summary>
-        public FUI RemoveNoDispose(string name)
-        {
-            if (IsDisposed)
-            {
-                return null;
-            }
-
-            FUI ui;
-
-            if (fuiChildren.TryGetValue(name, out ui))
-            {
-                fuiChildren.Remove(name);
-
-                if (ui != null)
-                {
-                    if (IsComponent)
-                    {
-                        this.gObject.asCom.RemoveChild(ui.gObject, false);
-                    }
-
-                }
-            }
-
-            return ui;
-        }
-
-        public void RemoveChildren()
-        {
-            foreach (var child in fuiChildren.Values.ToArray())
-            {
-                child.Dispose();
-            }
-
-            fuiChildren.Clear();
-        }
-
-        public FUI Get(string name)
-        {
-            FUI child;
-
-            if (fuiChildren.TryGetValue(name, out child))
-            {
-                return child;
-            }
-
-            return null;
-        }
-
-        public FUI[] GetAll()
-        {
-            return fuiChildren.Values.ToArray();
-        }
     }
 }
