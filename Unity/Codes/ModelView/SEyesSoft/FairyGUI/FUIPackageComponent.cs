@@ -8,27 +8,47 @@ using UnityEngine;
 
 namespace ET
 {
-    /// <summary>
-    /// 管理所有UI Package
-    /// </summary>
-    public class FUIPackageComponent : Entity, IAwake
+    [FriendClass(typeof (FUIPackageComponent))]
+    public static class FUIPackageComponentSystem
     {
-        private static Dictionary<string, UIPackage> s_Packages = new Dictionary<string, UIPackage>();
-        private static Dictionary<string, int> s_PackagesRefCount = new Dictionary<string, int>();
-
-        public async ETTask<UIPackage> AddPackageAsync(string type)
+        [ObjectSystem]
+        public class FUIPackageComponentAwakeSystem: AwakeSystem<FUIPackageComponent>
         {
-            if (s_Packages.ContainsKey(type))
+            public override void Awake(FUIPackageComponent self)
             {
-                return s_Packages[type];
+                self.s_Packages = new Dictionary<string, UIPackage>();
+                self.s_PackagesRefCount = new Dictionary<string, int>();
+            }
+        }
+
+        [ObjectSystem]
+        public class FUIPackageComponentDestroySystem: DestroySystem<FUIPackageComponent>
+        {
+            public override void Destroy(FUIPackageComponent self)
+            {
+                self.s_PackagesRefCount.Clear();
+                self.s_PackagesRefCount = null;
+                foreach (var selfSPackage in self.s_Packages)
+                {
+                    self.EnsureRemovePackage(selfSPackage.Value.name);
+                }
+                self.s_Packages = null;
+            }
+        }
+        
+        public static async ETTask<UIPackage> AddPackageAsync(this FUIPackageComponent self, string type)
+        {
+            if (self.s_Packages.ContainsKey(type))
+            {
+                return self.s_Packages[type];
             }
 
             var _addressPath = AssetsHelper.GetPath(type + "_fui", AssetsType.FUI);
             TextAsset desTextAsset = await AddressablesResComponent.Instance.GetAssetAsync<TextAsset>(_addressPath);
             if (desTextAsset != null)
             {
-                s_Packages.Add(type, SEyesSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(desTextAsset.bytes, type, LoadPackageInternalAsync));
-                return s_Packages[type];
+                self.s_Packages.Add(type, SEyesSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(desTextAsset.bytes, type, LoadPackageInternalAsync));
+                return self.s_Packages[type];
             }
             return null;
         }
@@ -50,36 +70,36 @@ namespace ET
             await Task.CompletedTask;
         }
 
-        public bool IsPackageLoaded(string pkgName)
+        public static bool IsPackageLoaded(this FUIPackageComponent self, string pkgName)
         {
-            return s_Packages.ContainsKey(pkgName);
+            return self.s_Packages.ContainsKey(pkgName);
         }
 
-        public UIPackage GetPackage(string pkgName)
+        public static UIPackage GetPackage(this FUIPackageComponent self, string pkgName)
         {
-            if (IsPackageLoaded(pkgName))
+            if (self.IsPackageLoaded(pkgName))
             {
-                return s_Packages[pkgName];
+                return self.s_Packages[pkgName];
             }
             return null;
         }
 
 
-        public async ETTask<bool> EnsurePackageLoadedAsync(string pkgName)
+        public static async ETTask<bool> EnsurePackageLoadedAsync(this FUIPackageComponent self, string pkgName)
         {
             UIPackage _pkg = null;
-            if (!IsPackageLoaded(pkgName))
+            if (!self.IsPackageLoaded(pkgName))
             {
                 Log.Debug($"{pkgName} 包未加载，需要加载！！异步加载");
-                _pkg = await AddPackageAsync(pkgName);
+                _pkg = await self.AddPackageAsync(pkgName);
                 if (_pkg != null)
                 {
-                    HandlePackageRefCount(pkgName, 1);
+                    HandlePackageRefCount(self, pkgName, 1);
                 }
             }
             if (_pkg == null)
             {
-                _pkg = GetPackage(pkgName);
+                _pkg = self.GetPackage(pkgName);
             } 
             foreach (var pkgDependency in _pkg.dependencies)
             {
@@ -87,27 +107,27 @@ namespace ET
                 {
                     if (dep.Key == "name")
                     {
-                        await EnsurePackageLoadedAsync(dep.Value);
+                        await self.EnsurePackageLoadedAsync(dep.Value);
                     }
                 }
             }
             return true;
         }
 
-        public void EnsureRemovePackage(string pPkgName, bool pIsDepend = false)
+        public static void EnsureRemovePackage(this FUIPackageComponent self, string pPkgName, bool pIsDepend = false)
         {
-            HandlePackageRefCount(pPkgName, -1, pIsDepend);
+            HandlePackageRefCount(self, pPkgName, -1, pIsDepend);
         }
 
         /// <summary>
         /// 移除一个包，并清理其asset
         /// </summary>
         /// <param name="type"></param>
-        private void RemovePackage(string type, bool pIsDepend = false)
+        private static void RemovePackage(this FUIPackageComponent self, string type, bool pIsDepend = false)
         {
             UIPackage package;
 
-            if (s_Packages.TryGetValue(type, out package))
+            if (self.s_Packages.TryGetValue(type, out package))
             {
                 var p = UIPackage.GetByName(package.name);
                 if (p != null)
@@ -123,35 +143,48 @@ namespace ET
                         {
                             if (dep.Key == "name")
                             {
-                                EnsureRemovePackage(dep.Value, true);
+                                self.EnsureRemovePackage(dep.Value, true);
                             }
                         }
                     }
                 }
-                s_Packages.Remove(package.name);
+                self.s_Packages.Remove(package.name);
             }
 
-            foreach (var uiPackage in s_Packages)
+            foreach (var uiPackage in self.s_Packages)
             {
-                Log.Debug($">>>>{uiPackage.Key} {uiPackage.Value.name} {s_PackagesRefCount[uiPackage.Key]}");
+                Log.Debug($">>>>{uiPackage.Key} {uiPackage.Value.name} {self.s_PackagesRefCount[uiPackage.Key]}");
             }
         }
 
-        public void HandlePackageRefCount(string pType, int pDelta, bool pIsDepend = false)
+        private static void HandlePackageRefCount(FUIPackageComponent self, string pType, int pDelta, bool pIsDepend = false)
         {
-            if (s_PackagesRefCount.ContainsKey(pType))
+            if (self.s_PackagesRefCount.ContainsKey(pType))
             {
-                s_PackagesRefCount[pType] += pDelta;
+                if (self.s_PackagesRefCount[pType] < 0)
+                {
+                    return;
+                }
+                self.s_PackagesRefCount[pType] += pDelta;
             }
             else
             {
-                s_PackagesRefCount[pType] = 1;
+                self.s_PackagesRefCount[pType] = 1;
             }
-            Log.Debug($">>>>pType:{pType}, pDelta: {pDelta}, {s_PackagesRefCount[pType]}");
-            if (s_PackagesRefCount[pType] == 0)
+            Log.Debug($">>>>pType:{pType}, pDelta: {pDelta}, {self.s_PackagesRefCount[pType]}");
+            if (self.s_PackagesRefCount[pType] <= 0)
             {
-                RemovePackage(pType, pIsDepend);
+                self.RemovePackage(pType, pIsDepend);
             }
         }
+    }
+
+    /// <summary>
+    /// 管理所有UI Package
+    /// </summary>
+    public class FUIPackageComponent : Entity, IAwake, IDestroy
+    {
+        public Dictionary<string, UIPackage> s_Packages = new Dictionary<string, UIPackage>();
+        public Dictionary<string, int> s_PackagesRefCount = new Dictionary<string, int>();
     }
 }
