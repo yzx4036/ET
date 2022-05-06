@@ -46,8 +46,8 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\UIPainterEditor.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\PackagesWindow.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\EditorToolSet.cs" />
-     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\UIContentScalerEditor.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\DisplayObjectEditor.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\UIContentScalerEditor.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\UIPanelEditor.cs" />
      <None Include="Assets\ThirdParty\FairyGUI\Scripts\Editor\Unity.FairyGUI.Editor.asmdef" />
      <Reference Include="UnityEngine">

@@ -60,6 +60,8 @@ unityfs_httpserver/node_modules
 /Excel/~$*.xlsx
 /.vscode
 /Unity/.vsconfig
+Unity/Unity.Hotfix.csproj
+Unity/Unity.HotfixView.csproj
 Unity/AssetBundleBackup
 Unity/ServerData
 Unity/Assets/AddressableAssetsData/Windows
