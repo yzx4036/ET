@@ -19,37 +19,18 @@ using Object = UnityEngine.Object;
 
 namespace SEyesSoft.ET
 {
-    [ObjectSystem]
-    public class AddressablesResComponentAwakeSystem: AwakeSystem<AddressablesResComponent>
+    [FriendClass(typeof (AddressablesResComponent))]
+    public static class AddressablesResComponentSystem
     {
-        public override void Awake(AddressablesResComponent self)
+        [ObjectSystem]
+        public class AddressablesResComponentAwakeSystem: AwakeSystem<AddressablesResComponent>
         {
-            self.Awake();
-        }
-    }
-
-    public class AddressablesResComponent: Entity, IAwake
-    {
-        private GameObjectMgr goMgrInst;
-        private AddressableMgr addressableMgrInst;
-        public static AddressablesResComponent Instance { get; set; }
-
-        public void Awake()
-        {
-            Instance = this;
-            goMgrInst = GameObjectMgr.Instance;
-            addressableMgrInst = AddressableMgr.Instance;
-        }
-        
-        public override void Dispose()
-        {
-            if (this.IsDisposed)
+            public override void Awake(AddressablesResComponent self)
             {
-                return;
+                AddressablesResComponent.Instance = self;
+                self.goMgrInst = GameObjectMgr.Instance;
+                self.addressableMgrInst = AddressableMgr.Instance;
             }
-
-            base.Dispose();
-            Instance = null;
         }
 
         /// <summary>
@@ -57,9 +38,9 @@ namespace SEyesSoft.ET
         /// </summary>
         /// <param name="pBundleName"></param>
         /// <param name="pAssetName"></param>
-        public async Task<GameObject> InstantiateAsync(string pAdsPath, Transform parent = null, bool instantiateInWorldSpace = false)
+        public static async Task<GameObject> InstantiateAsync(this AddressablesResComponent self, string pAdsPath, Transform parent = null, bool instantiateInWorldSpace = false)
         {
-            return await this.goMgrInst.GetGameObjectAsync(pAdsPath, parent, instantiateInWorldSpace);
+            return await self.goMgrInst.GetGameObjectAsync(pAdsPath, parent, instantiateInWorldSpace);
         }
 
         /// <summary>
@@ -67,13 +48,13 @@ namespace SEyesSoft.ET
         /// </summary>
         /// <param name="pAdsPath"></param>
         /// <param name="go"></param>
-        public void RecycleGameObject(string pAdsPath, GameObject go)
+        public static void RecycleGameObject(this AddressablesResComponent self, string pAdsPath, GameObject go)
         {
             if (go == null)
             {
                 return;
             }
-            this.goMgrInst.RecycleGameObject(pAdsPath, go);
+            self.goMgrInst.RecycleGameObject(pAdsPath, go);
         }
 
         /// <summary>
@@ -81,25 +62,32 @@ namespace SEyesSoft.ET
         /// </summary>
         /// <param name="label"></param>
         /// <returns></returns>
-        public async Task<IList<T>> GetAssetsAsync<T>(string label)
+        public static async Task<IList<T>> GetAssetsAsync<T>(this AddressablesResComponent self, string label)
         {
-             return await this.addressableMgrInst.LoadAssetsAsync<T>(new []{label});
+            return await self.addressableMgrInst.LoadAssetsAsync<T>(new []{label});
         }
         
-        public async Task<T> GetAssetAsync<T>(string pAdsPath)
+        public static async Task<T> GetAssetAsync<T>(this AddressablesResComponent self, string pAdsPath)
         {
-            return await this.addressableMgrInst.LoadAssetAsync<T>(pAdsPath);
+            return await self.addressableMgrInst.LoadAssetAsync<T>(pAdsPath);
         }
 
-        public async Task LoadSceneAsync(string pAdsPath, Action<AsyncOperationHandle<SceneInstance>> pResultHandleCallback)
+        public static async Task LoadSceneAsync(this AddressablesResComponent self, string pAdsPath, Action<AsyncOperationHandle<SceneInstance>> pResultHandleCallback)
         {
-            await this.addressableMgrInst.LoadSceneAsync(pAdsPath,  pResultHandleCallback);
+            await self.addressableMgrInst.LoadSceneAsync(pAdsPath,  pResultHandleCallback);
         }
 
-        public async Task UnLoadSceneAsync(AsyncOperationHandle<SceneInstance> sceneHandle)
+        public static async Task UnLoadSceneAsync(this AddressablesResComponent self, AsyncOperationHandle<SceneInstance> sceneHandle)
         {
-            await this.addressableMgrInst.UnloadSceneAsync(sceneHandle);
+            await self.addressableMgrInst.UnloadSceneAsync(sceneHandle);
         }
 
+    }
+
+    public class AddressablesResComponent: Entity, IAwake
+    {
+        public GameObjectMgr goMgrInst;
+        public AddressableMgr addressableMgrInst;
+        public static AddressablesResComponent Instance { get; set; }
     }
 }
