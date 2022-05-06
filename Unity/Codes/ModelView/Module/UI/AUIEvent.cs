@@ -2,6 +2,7 @@ using SEyesSoft.ET;
 
 namespace ET
 {
+    [FriendClass(typeof(UIComponent))]
     public abstract class AUIEvent
     {
         public abstract ETTask<UI> OnCreate(UIComponent uiComponent, UILayer uiLayer);
