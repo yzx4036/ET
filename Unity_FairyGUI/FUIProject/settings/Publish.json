@@ -9,7 +9,7 @@
   "compressPNG": false,
   "codeGeneration": {
     "allowGenCode": false,
-    "codePath": "../../Unity/Codes/HotfixView/_GameLogic/FairyGUI/AutoGenCode",
+    "codePath": "../../Unity/Codes/ModelView/_GameLogicDemo/FairyGUI/AutoGenCode",
     "classNamePrefix": "F",
     "memberNamePrefix": "",
     "packageName": "ET",

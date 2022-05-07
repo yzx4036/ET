@@ -45,327 +45,36 @@ local function print_r (t, name)
 	fprint(pr(t, name))
 end
 
----@param handler CS.FairyEditor.PublishHandler
-local function genCode(handler)
-	---@type CS.FairyEditor.GlobalPublishSettings.CodeGenerationConfig
-	local settings = handler.project:GetSettings("Publish").codeGeneration
-	local codePkgName = handler:ToFilename(handler.pkg.name); --convert chinese to pinyin, remove special chars etc.
-	local exportCodePath = handler.exportCodePath .. '/' .. codePkgName
-	local namespaceName = settings.packageName
-	
-	--CollectClasses(stripeMemeber, stripeClass, fguiNamespace)
-	local classes = handler:CollectClasses(settings.ignoreNoname, settings.ignoreNoname, nil)
-	handler:SetupCodeFolder(exportCodePath, "cs") --check if target folder exists, and delete old files
-	
-	local classNamePrefix = settings.classNamePrefix
-	local getMemberByName = settings.getMemberByName
-	local hasClassNamePrefix = classNamePrefix and string.len(classNamePrefix) > 0
-	
-	---默认是不能生成跨包的组件类型，这里查找component的正确类型保存到字典，供生成代码字段时检测
-	local _typeDict = {}
-	for i = 0, handler.pkg.items.Count - 1 do
-		---@type CS.FairyEditor.FPackageItem
-		local _item = handler.pkg.items[i]
-		if string.find(_item.file, "xml") then
-			local _itemXml = CS.FairyEditor.XMLExtension.Load(_item.file)
-			if _itemXml then
-				local displayList = _itemXml:GetNode("displayList")
-				if displayList then
-					local _itemName = _item.name
-					if hasClassNamePrefix then
-						_itemName = classNamePrefix .. _item.name --这里拼接一下全局设置里面类名前缀
-					end
-					_typeDict[_itemName] = _typeDict[_itemName] or {}
-					---@type CS.FairyGUI.Utils.XML
-					local _elem = displayList:Elements():Filter("component")
-					for j = 0, _elem.Count - 1 do
-						---@type CS.FairyGUI.Utils.XML
-						local comp = _elem.rawList[j]
-						local compNameKey = comp:GetAttribute("name")
-						local compType = comp:GetAttribute("fileName")
-						if compNameKey then
-							compType = string.sub(compType, 1, string.len(compType) - 4)
-							if hasClassNamePrefix then
-								compType = classNamePrefix .. compType --这里拼接一下全局设置里面类名前缀
-							end
-							_typeDict[_itemName][compNameKey] = compType
-						end
-					end
-				end
-			end
-		end
-	end
-	
-	--print_r(_typeDict)
-	
-	local classCnt = classes.Count
-	local writer = CodeWriter.new()
-	for i = 0, classCnt - 1 do
-		---@type CS.FairyEditor.PublishHandler.ClassInfo
-		local classInfo = classes[i]
-		local members = classInfo.members
-		writer:reset()
-		
-		writer:writeln('using FairyGUI;')
-		writer:writeln()
-		writer:writeln('namespace %s', namespaceName)
-		writer:startBlock()
-		-- 1
-		writer:writeln([[[ObjectSystem]
-    public class %sAwakeSystem : AwakeSystem<%s, FUIGObjectComponent>
-    {
-        public override void Awake(%s self, FUIGObjectComponent fui)
-        {
-            self.Awake(fui);
-        }
-    }
-        ]], classInfo.className, classInfo.className, classInfo.className)
-		
-		--如果是收藏的组件，生成[FUI]属性 用这个区分哪些是UI面板
-		if classInfo.res.exported
-				and classInfo.res.type == "component"
-				and classInfo.res.favorite then
-			writer:writeln(string.format("[FUI(typeof(%s), UIPackageName, UIResName)]", classInfo.className))
-		end
-		
-		writer:writeln([[public sealed class %s : Entity, IAwake<FUIGObjectComponent>
-    {	
-        public const string UIPackageName = "%s";
-        public const string UIResName = "%s";
-        
-        /// <summary>
-        /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
-        /// </summary>
-        public %s selfGObj;
-		public FUIGObjectComponent selfFUIRoot;
-            ]], classInfo.className, codePkgName, classInfo.resName, classInfo.superClassName)
-		
-		local memberCnt = members.Count
-		for j = 0, memberCnt - 1 do
-			local memberInfo = members[j]
-			_typeDict[classInfo.className] = _typeDict[classInfo.className] or {}
-			local type = _typeDict[classInfo.className][memberInfo.varName] or memberInfo.type
-			writer:writeln('    public %s %s;', type, memberInfo.varName)
-		end
-		writer:writeln([[    public const string URL = "ui://%s%s";]], handler.pkg.id, classInfo.resId)
-		writer:writeln()
-		
-		writer:writeln([[    /// <summary>
-        /// 通过此方法获取的FUI，在Dispose时不会释放GObject，需要自行管理（一般在配合FGUI的Pool机制时使用）。
-        /// </summary>
-        //public static %s GetFormPool(Entity domain, GObject go)
-        //{
-			//  var fui = go.Get<%s>();
-
-            //if(fui == null)
-            //{
-			//  fui = Create(domain, go);
-			//}
-
-			//fui.isFromFGUIPool = true;
-
-			//return fui;
-		//}
-        ]], classInfo.className, classInfo.className)
-
-		writer:writeln('\t'..[[private T CreateFUICompInst<T>(GObject gObject) where T : Entity, IAwake<FUIGObjectComponent>, new()
-        {
-			var _fui = this.AddChild<FUIGObjectComponent, GObject>(gObject);
-	        return _fui.AddComponent<T, FUIGObjectComponent>(_fui);
-        }
-		]], classInfo.className)
-		
-		writer:writeln([[    public void Awake(FUIGObjectComponent fui)
-        {
-			selfFUIRoot = fui;
-			selfGObj = (%s)fui.gObject;
-        
-			selfGObj.Add(fui);
-        
-			var com = fui.gObject.asCom;
-            
-			if(com != null)
-			{]], classInfo.superClassName)
-		
-		--print_r(_typeDict)
-		
-		
-		for j = 0, memberCnt - 1 do
-			local memberInfo = members[j]
-			
-			_typeDict[classInfo.className] = _typeDict[classInfo.className] or {}
-			local typeName = _typeDict[classInfo.className][memberInfo.varName] or memberInfo.type
-			
-			--fprint("className:"..classInfo.className.." varName:"..memberInfo.varName)
-			
-			local isCustomComponent = _typeDict[classInfo.className][memberInfo.varName] ~= nil
-			
-			if memberInfo.group == 0 then
-				if getMemberByName then
-					if isCustomComponent then
-						writer:writeln('\t\t\t%s = CreateFUICompInst<%s>(com.GetChildAt(%s));', memberInfo.varName, typeName, memberInfo.index)
-						-- writer:writeln('\t\t%s = %s.Create(domain, com.GetChild("%s"));', memberInfo.varName, typeName, memberInfo.name)
-					else
-						writer:writeln('\t\t\t%s = (%s)com.GetChild("%s");', memberInfo.varName, typeName, memberInfo.name)
-					end
-				else
-					if isCustomComponent then
-						writer:writeln('\t\t\t%s = CreateFUICompInst<%s>(com.GetChildAt(%s));', memberInfo.varName, typeName, memberInfo.index)
-						-- writer:writeln('\t\t%s = %s.Create(domain, com.GetChildAt(%s));', memberInfo.varName, typeName, memberInfo.index)
-					else
-						writer:writeln('\t\t\t%s = (%s)com.GetChildAt(%s);', memberInfo.varName, typeName, memberInfo.index)
-					end
-				end
-			elseif memberInfo.group == 1 then
-				if getMemberByName then
-					writer:writeln('\t\t\t%s = com.GetController("%s");', memberInfo.varName, memberInfo.name)
-				else
-					writer:writeln('\t\t\t%s = com.GetControllerAt(%s);', memberInfo.varName, memberInfo.index)
-				end
-			else
-				if getMemberByName then
-					writer:writeln('\t\t\t%s = com.GetTransition("%s");', memberInfo.varName, memberInfo.name)
-				else
-					writer:writeln('\t\t\t%s = com.GetTransitionAt(%s);', memberInfo.varName, memberInfo.index)
-				end
-			end
-		end
-		writer:writeln('\t\t}')
-		
-		writer:writeln('\t}')
-		
-		writer:writeln([[    public override void Dispose()
-		{
-            if(IsDisposed)
-            {
-                return;
-            }
-            
-            base.Dispose();
-            
-            selfGObj.Remove();
-            selfGObj = null;
-			selfFUIRoot.Dispose();
-			selfFUIRoot = null;
-            ]])
-		
-		for j = 0, memberCnt - 1 do
-			local memberInfo = members[j]
-			local typeName = memberInfo.type
-			if memberInfo.group == 0 then
-				if getMemberByName then
-					if string.find(typeName, 'FUI') then
-						writer:writeln('\t\t%s.Dispose();', memberInfo.varName)
-					end
-					writer:writeln('\t\t%s = null;', memberInfo.varName)
-				else
-					if string.find(typeName, 'FUI') then
-						writer:writeln('\t\t%s.Dispose();', memberInfo.varName)
-					end
-					writer:writeln('\t\t%s = null;', memberInfo.varName)
-				end
-			elseif memberInfo.group == 1 then
-				if getMemberByName then
-					writer:writeln('\t\t%s = null;', memberInfo.varName)
-				else
-					writer:writeln('\t\t%s = null;', memberInfo.varName)
-				end
-			else
-				if getMemberByName then
-					writer:writeln('\t\t%s = null;', memberInfo.varName)
-				else
-					writer:writeln('\t\t%s = null;', memberInfo.varName)
-				end
-			end
-		end
-		writer:writeln('\t}')
-		
-		writer:endBlock() --class
-		writer:endBlock() --namepsace
-		
-		writer:save(exportCodePath .. '/' .. classInfo.className .. '.cs')
-	end
-	
-	-- 写入fuipackage
-	writer:reset()
-	
-	writer:writeln('namespace %s', namespaceName)
-	writer:startBlock()
-	writer:writeln('public static partial class FUIPackage')
-	writer:startBlock()
-	
-	writer:writeln('public const string %s = "%s";', codePkgName, codePkgName)
-	
-	-- 生成所有的
-	local itemCount = handler.items.Count
-	for i = 0, itemCount - 1 do
-		writer:writeln('public const string %s_%s = "ui://%s/%s";', codePkgName, handler.items[i].name, codePkgName, handler.items[i].name)
-	end
-	
-	writer:endBlock() --class
-	writer:endBlock() --namespace
-	local binderPackageName = 'Package' .. codePkgName
-	writer:save(exportCodePath .. '/' .. binderPackageName .. '.cs')
-	
-	
-	-- 写入Fui Type
-	-- 生成所有的Type
-	local itemCount = handler.items.Count
-	local _genClassNameList = {}
-	for i = 0, itemCount - 1 do
-		---@type CS.FairyEditor.FPackageItem
-		local _item = handler.items[i]
-		if _item.exported and _item.type == "component" and _item.favorite then
-			local _className = _item.name
-			if hasClassNamePrefix then
-				_className = classNamePrefix .. _className
-			end
-			table.insert(_genClassNameList, _className)
-			writer:writeln('public static readonly Type %s = typeof(%s);', _className, _className)
-		end
-	end
-	if #_genClassNameList > 0 then
-		writer:reset()
-		writer:writeln('using System;')
-		
-		writer:writeln('namespace %s', namespaceName)
-		writer:startBlock()
-		writer:writeln('public static partial class FUIType')
-		writer:startBlock()
-		
-		for i = 1, #_genClassNameList do
-			writer:writeln('public static readonly Type %s = typeof(%s);', _genClassNameList[i], _genClassNameList[i])
-		end
-		
-		writer:endBlock() --class
-		writer:endBlock() --namespace
-		local binderPackageName = 'FUIType' .. codePkgName
-		writer:save(exportCodePath .. '/' .. binderPackageName .. '.cs')
-	end
-	
-	
-	
-
-
-end
 
 local KeyDict = {
-	ClassName = "$<clsName>$",
-	CompsAwake = "$<compsAwake>$",
-	CompsDestroy = "$<compsDestroy>$",
-	PackName = "$<packName>$",
-	UiResName = "$<uiResName>$",	
-	CompsDefine = "$<compsDefine>$",
-	FuiAttribut = "$<fuiAttribut>$",
-	NamespaceName = "$<namespaceName>$",
+	ClassName = "%$%$clsName%$%$",
+	CompsAwake = "%$%$compsAwake%$%$",
+	CompsDestroy = "%$%$compsDestroy%$%$",
+	PackName = "%$%$packName%$%$",
+	UiResName = "%$%$uiResName%$%$",	
+	CompsDefine = "%$%$compsDefine%$%$",
+	FuiAttribut = "%$%$fuiAttribut%$%$",
+	NamespaceName = "%$%$namespaceName%$%$",
+	SuperClassName = "%$%$superClassName%$%$",
+	UiURL = "%$%$uiURL%$%$",
+	FuiPackageDef = "%$%$fuiPackageDef%$%$",
+	FuiTypeDef = "%$%$fuiTypeDef%$%$",
 }
 
-local function genCode1(handler, pTemplateString)
+---@param handler CS.FairyEditor.PublishHandler
+---@param pTemplateTable CsTemplate
+local function genCode(handler, pTemplateTable)
+	local _uiClsTp = nil
+	local _pkgClsTp = pTemplateTable.pkgClsTp
+	local _typeClsTp = pTemplateTable.typeClsTp
+	
+	local _className, _compsAwake, _compsDestroy, _packName, _uiResName, _compsDefine, _fuiAttribut, _namespaceName, _superClassName, _uiURL
+	
 	----@type CS.FairyEditor.GlobalPublishSettings.CodeGenerationConfig
 	local settings = handler.project:GetSettings("Publish").codeGeneration
-	local codePkgName = handler:ToFilename(handler.pkg.name); --convert chinese to pinyin, remove special chars etc.
-	local exportCodePath = handler.exportCodePath .. '/' .. codePkgName
-	local namespaceName = settings.packageName
+	_packName = handler:ToFilename(handler.pkg.name); --convert chinese to pinyin, remove special chars etc.
+	local exportCodePath = handler.exportCodePath .. '/' .. _packName
+	_namespaceName = settings.packageName
 	
 	--CollectClasses(stripeMemeber, stripeClass, fguiNamespace)
 	local classes = handler:CollectClasses(settings.ignoreNoname, settings.ignoreNoname, nil)
@@ -409,221 +118,126 @@ local function genCode1(handler, pTemplateString)
 			end
 		end
 	end
-	
-	--print_r(_typeDict)
+	-- --print_r(_typeDict)
 	
 	local classCnt = classes.Count
 	local writer = CodeWriter.new()
 	for i = 0, classCnt - 1 do
+		writer:reset()
+		_uiClsTp = tostring(pTemplateTable.uiClsTp)
+
 		---@type CS.FairyEditor.PublishHandler.ClassInfo
 		local classInfo = classes[i]
 		local members = classInfo.members
-		writer:reset()
-		local _className = classInfo.className
 
-		writer:writeln('using FairyGUI;')
-		writer:writeln()
-		writer:writeln('namespace %s', namespaceName)
-		writer:startBlock()
-		-- 1
-		writer:writeln([[[ObjectSystem]
-    public class %sAwakeSystem : AwakeSystem<%s, FUIGObjectComponent>
-    {
-        public override void Awake(%s self, FUIGObjectComponent fui)
-        {
-            self.Awake(fui);
-        }
-    }
-        ]], classInfo.className, classInfo.className, classInfo.className)
-		
+		_className = classInfo.className
+		_uiResName = classInfo.resName
+		_superClassName = classInfo.superClassName
+		_uiURL = string.format("%s%s", handler.pkg.id, classInfo.resId)
+
 		--如果是收藏的组件，生成[FUI]属性 用这个区分哪些是UI面板
 		if classInfo.res.exported
 				and classInfo.res.type == "component"
 				and classInfo.res.favorite then
-			writer:writeln(string.format("[FUI(typeof(%s), UIPackageName, UIResName)]", classInfo.className))
+			_fuiAttribut = string.format("[FUI(typeof(%s), UIPackageName, UIResName)]", _className)
 		end
 		
-		writer:writeln([[public sealed class %s : Entity, IAwake<FUIGObjectComponent>
-    {	
-        public const string UIPackageName = "%s";
-        public const string UIResName = "%s";
-        
-        /// <summary>
-        /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
-        /// </summary>
-        public %s selfGObj;
-		public FUIGObjectComponent selfFUIRoot;
-            ]], classInfo.className, codePkgName, classInfo.resName, classInfo.superClassName)
-		
+		_compsDefine = ""
 		local memberCnt = members.Count
 		for j = 0, memberCnt - 1 do
 			local memberInfo = members[j]
 			_typeDict[classInfo.className] = _typeDict[classInfo.className] or {}
 			local type = _typeDict[classInfo.className][memberInfo.varName] or memberInfo.type
-			writer:writeln('    public %s %s;', type, memberInfo.varName)
+			_compsDefine = _compsDefine .. string.format("\t\tpublic %s %s { get; set; }\n", type, memberInfo.varName)
 		end
-		writer:writeln([[    public const string URL = "ui://%s%s";]], handler.pkg.id, classInfo.resId)
-		writer:writeln()
-		
-		writer:writeln([[    /// <summary>
-        /// 通过此方法获取的FUI，在Dispose时不会释放GObject，需要自行管理（一般在配合FGUI的Pool机制时使用）。
-        /// </summary>
-        //public static %s GetFormPool(Entity domain, GObject go)
-        //{
-			//  var fui = go.Get<%s>();
 
-            //if(fui == null)
-            //{
-			//  fui = Create(domain, go);
-			//}
-
-			//fui.isFromFGUIPool = true;
-
-			//return fui;
-		//}
-        ]], classInfo.className, classInfo.className)
-
-		writer:writeln('\t'..[[private T CreateFUICompInst<T>(GObject gObject) where T : Entity, IAwake<FUIGObjectComponent>, new()
-        {
-			var _fui = this.AddChild<FUIGObjectComponent, GObject>(gObject);
-	        return _fui.AddComponent<T, FUIGObjectComponent>(_fui);
-        }
-		]], classInfo.className)
-		
-		writer:writeln([[    public void Awake(FUIGObjectComponent fui)
-        {
-			selfFUIRoot = fui;
-			selfGObj = (%s)fui.gObject;
-        
-			selfGObj.Add(fui);
-        
-			var com = fui.gObject.asCom;
-            
-			if(com != null)
-			{]], classInfo.superClassName)
-		
-		--print_r(_typeDict)
-		
-		
+		_compsAwake = ""
 		for j = 0, memberCnt - 1 do
 			local memberInfo = members[j]
 			
 			_typeDict[classInfo.className] = _typeDict[classInfo.className] or {}
 			local typeName = _typeDict[classInfo.className][memberInfo.varName] or memberInfo.type
-			
-			--fprint("className:"..classInfo.className.." varName:"..memberInfo.varName)
-			
 			local isCustomComponent = _typeDict[classInfo.className][memberInfo.varName] ~= nil
 			
 			if memberInfo.group == 0 then
 				if getMemberByName then
 					if isCustomComponent then
-						writer:writeln('\t\t\t%s = CreateFUICompInst<%s>(com.GetChildAt(%s));', memberInfo.varName, typeName, memberInfo.index)
-						-- writer:writeln('\t\t%s = %s.Create(domain, com.GetChild("%s"));', memberInfo.varName, typeName, memberInfo.name)
+						_compsAwake = _compsAwake .. string.format("\t\t\t\t\tself.%s = CreateFUICompInst<%s>(self, com.GetChildAt(%s));\n", memberInfo.varName, typeName, memberInfo.index)
 					else
-						writer:writeln('\t\t\t%s = (%s)com.GetChild("%s");', memberInfo.varName, typeName, memberInfo.name)
+						_compsAwake = _compsAwake .. string.format("\t\t\t\t\tself.%s = (%s)com.GetChild(\"%s\");\n", memberInfo.varName, typeName, memberInfo.name)
 					end
 				else
 					if isCustomComponent then
-						writer:writeln('\t\t\t%s = CreateFUICompInst<%s>(com.GetChildAt(%s));', memberInfo.varName, typeName, memberInfo.index)
-						-- writer:writeln('\t\t%s = %s.Create(domain, com.GetChildAt(%s));', memberInfo.varName, typeName, memberInfo.index)
+						_compsAwake = _compsAwake .. string.format("\t\t\t\t\tself.%s = CreateFUICompInst<%s>(self, com.GetChildAt(%s));\n", memberInfo.varName, typeName, memberInfo.index)
 					else
-						writer:writeln('\t\t\t%s = (%s)com.GetChildAt(%s);', memberInfo.varName, typeName, memberInfo.index)
+						_compsAwake = _compsAwake .. string.format("\t\t\t\t\tself.%s = (%s)com.GetChildAt(%s);\n", memberInfo.varName, typeName, memberInfo.index)
 					end
 				end
 			elseif memberInfo.group == 1 then
 				if getMemberByName then
-					writer:writeln('\t\t\t%s = com.GetController("%s");', memberInfo.varName, memberInfo.name)
+					_compsAwake = _compsAwake .. string.format("\t\t\t\t\tself.%s = com.GetController(\"%s\");\n", memberInfo.varName, memberInfo.name)
 				else
-					writer:writeln('\t\t\t%s = com.GetControllerAt(%s);', memberInfo.varName, memberInfo.index)
+					_compsAwake = _compsAwake .. string.format("\t\t\t\t\tself.%s = com.GetControllerAt(%s);\n", memberInfo.varName, memberInfo.index)
 				end
 			else
 				if getMemberByName then
-					writer:writeln('\t\t\t%s = com.GetTransition("%s");', memberInfo.varName, memberInfo.name)
+					_compsAwake = _compsAwake .. string.format("\t\t\t\t\tself.%s = com.GetTransition(\"%s\");\n", memberInfo.varName, memberInfo.name)
 				else
-					writer:writeln('\t\t\t%s = com.GetTransitionAt(%s);', memberInfo.varName, memberInfo.index)
+					_compsAwake = _compsAwake .. string.format("\t\t\t\t\tself.%s = com.GetTransitionAt(%s);\n", memberInfo.varName, memberInfo.index)
 				end
 			end
 		end
-		writer:writeln('\t\t}')
 		
-		writer:writeln('\t}')
-		
-		writer:writeln([[    public override void Dispose()
-		{
-            if(IsDisposed)
-            {
-                return;
-            }
-            
-            base.Dispose();
-            
-            selfGObj.Remove();
-            selfGObj = null;
-			selfFUIRoot.Dispose();
-			selfFUIRoot = null;
-            ]])
-		
+		_compsDestroy = ""
 		for j = 0, memberCnt - 1 do
 			local memberInfo = members[j]
 			local typeName = memberInfo.type
 			if memberInfo.group == 0 then
-				if getMemberByName then
-					if string.find(typeName, 'FUI') then
-						writer:writeln('\t\t%s.Dispose();', memberInfo.varName)
-					end
-					writer:writeln('\t\t%s = null;', memberInfo.varName)
-				else
-					if string.find(typeName, 'FUI') then
-						writer:writeln('\t\t%s.Dispose();', memberInfo.varName)
-					end
-					writer:writeln('\t\t%s = null;', memberInfo.varName)
-				end
-			elseif memberInfo.group == 1 then
-				if getMemberByName then
-					writer:writeln('\t\t%s = null;', memberInfo.varName)
-				else
-					writer:writeln('\t\t%s = null;', memberInfo.varName)
-				end
-			else
-				if getMemberByName then
-					writer:writeln('\t\t%s = null;', memberInfo.varName)
-				else
-					writer:writeln('\t\t%s = null;', memberInfo.varName)
+				if string.find(typeName, 'FUI') then
+					_compsDestroy = _compsDestroy .. string.format("\t\t\t\tself.%s.Dispose();\n", memberInfo.varName)
+					-- writer:writeln('\t\t%s.Dispose();', memberInfo.varName)
 				end
 			end
+			_compsDestroy = _compsDestroy .. string.format("\t\t\t\tself.%s = null;\n", memberInfo.varName)
 		end
-		writer:writeln('\t}')
-		
-		writer:endBlock() --class
-		writer:endBlock() --namepsace
-		
+
+		_uiClsTp = string.gsub(_uiClsTp, KeyDict.ClassName, _className)
+		_uiClsTp = string.gsub(_uiClsTp, KeyDict.CompsAwake, _compsAwake)
+		_uiClsTp = string.gsub(_uiClsTp, KeyDict.CompsDefine, _compsDefine)
+		_uiClsTp = string.gsub(_uiClsTp, KeyDict.CompsDestroy, _compsDestroy)
+		_uiClsTp = string.gsub(_uiClsTp, KeyDict.FuiAttribut, _fuiAttribut or "")
+		_uiClsTp = string.gsub(_uiClsTp, KeyDict.NamespaceName, _namespaceName)
+		_uiClsTp = string.gsub(_uiClsTp, KeyDict.PackName, _packName)
+		_uiClsTp = string.gsub(_uiClsTp, KeyDict.SuperClassName, _superClassName)
+		_uiClsTp = string.gsub(_uiClsTp, KeyDict.UiResName, _uiResName)
+		_uiClsTp = string.gsub(_uiClsTp, KeyDict.UiURL, _uiURL)
+
+		-- fprint(_uiClsTp)
+		writer:writeln(_uiClsTp)
 		writer:save(exportCodePath .. '/' .. classInfo.className .. '.cs')
 	end
 	
-	-- 写入fuipackage
+
+	-- -----写入fuipackage
 	writer:reset()
-	
-	writer:writeln('namespace %s', namespaceName)
-	writer:startBlock()
-	writer:writeln('public static partial class FUIPackage')
-	writer:startBlock()
-	
-	writer:writeln('public const string %s = "%s";', codePkgName, codePkgName)
-	
+	local _fuiPackDef = string.format('\t\tpublic const string %s = "%s";\n', _packName, _packName)
 	-- 生成所有的
 	local itemCount = handler.items.Count
 	for i = 0, itemCount - 1 do
-		writer:writeln('public const string %s_%s = "ui://%s/%s";', codePkgName, handler.items[i].name, codePkgName, handler.items[i].name)
+		_fuiPackDef = _fuiPackDef .. string.format('\t\tpublic const string %s_%s = "ui://%s/%s";\n', _packName, handler.items[i].name, _packName, handler.items[i].name)
+		-- writer:writeln('public const string %s_%s = "ui://%s/%s";', _packName, handler.items[i].name, _packName, handler.items[i].name)
 	end
+	_pkgClsTp = string.gsub(_pkgClsTp, KeyDict.NamespaceName, _namespaceName)
+	_pkgClsTp = string.gsub(_pkgClsTp, KeyDict.FuiPackageDef, _fuiPackDef)
 	
-	writer:endBlock() --class
-	writer:endBlock() --namespace
-	local binderPackageName = 'Package' .. codePkgName
+	-- fprint(_pkgClsTp)
+	writer:writeln(_pkgClsTp)
+	local binderPackageName = 'Package' .. _packName
 	writer:save(exportCodePath .. '/' .. binderPackageName .. '.cs')
 	
-	
-	-- 写入Fui Type
+
+	-- ------写入Fui Type
+	writer:reset()
 	-- 生成所有的Type
 	local itemCount = handler.items.Count
 	local _genClassNameList = {}
@@ -636,35 +250,22 @@ local function genCode1(handler, pTemplateString)
 				_className = classNamePrefix .. _className
 			end
 			table.insert(_genClassNameList, _className)
-			writer:writeln('public static readonly Type %s = typeof(%s);', _className, _className)
 		end
 	end
 	if #_genClassNameList > 0 then
-		writer:reset()
-		writer:writeln('using System;')
-		
-		writer:writeln('namespace %s', namespaceName)
-		writer:startBlock()
-		writer:writeln('public static partial class FUIType')
-		writer:startBlock()
-		
+		local _fuiTypeDef = ""
 		for i = 1, #_genClassNameList do
-			writer:writeln('public static readonly Type %s = typeof(%s);', _genClassNameList[i], _genClassNameList[i])
+			_fuiTypeDef = _fuiTypeDef .. string.format('\t\tpublic static readonly Type %s = typeof(%s);\n', _genClassNameList[i], _genClassNameList[i])
+			-- writer:writeln('public static readonly Type %s = typeof(%s);', _genClassNameList[i], _genClassNameList[i])
 		end
+		_typeClsTp = string.gsub(_typeClsTp, KeyDict.NamespaceName, _namespaceName)
+		_typeClsTp = string.gsub(_typeClsTp, KeyDict.FuiTypeDef, _fuiTypeDef)
 		
-		writer:endBlock() --class
-		writer:endBlock() --namespace
-		local binderPackageName = 'FUIType' .. codePkgName
-		
+		-- fprint(_typeClsTp)
+		writer:writeln(_typeClsTp)
+		local binderPackageName = 'FUIType' .. _packName
 		writer:save(exportCodePath .. '/' .. binderPackageName .. '.cs')
 	end
-	
-	-- local _className = 
-
-	writer:writeln(pTemplateString)
-	writer:save('e:/test.cs')
-
-	fprint(pTemplateString)
 end
 
-return genCode1
+return genCode
