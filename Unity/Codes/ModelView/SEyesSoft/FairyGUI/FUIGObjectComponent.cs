@@ -7,7 +7,6 @@ using UnityEngine;
 namespace ET
 {
     [FriendClass(typeof (FUIGObjectComponent))]
-    [FriendClass(typeof (FUIGObjectComponent))]
     public static class FUIGObjectComponentSystem
     {
         [ObjectSystem]

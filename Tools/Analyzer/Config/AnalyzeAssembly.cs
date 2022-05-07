@@ -21,13 +21,13 @@
         /// <summary>
         /// Unity.HotfixView 不需要检测
         /// </summary>
-        public static readonly string[] AllHotfix = new string[] { SerVerHotfix, UnityHotfix, RobotHotfix };
+        public static readonly string[] AllHotfix = new string[] { SerVerHotfix, UnityHotfix, UnityHotfixView, RobotHotfix };
 
         public static readonly string[] AllModel = new string[] { ServerModel, UnityModel, UnityModelView, RobotModel };
 
         public static readonly string[] All = new string[]
         {
-            ServerModel, SerVerHotfix, UnityModel, UnityHotfix, UnityModelView, RobotModel, RobotHotfix
+            ServerModel, SerVerHotfix, UnityModel, UnityHotfix, UnityHotfixView, UnityModelView, RobotModel, RobotHotfix
         };
     }
 }

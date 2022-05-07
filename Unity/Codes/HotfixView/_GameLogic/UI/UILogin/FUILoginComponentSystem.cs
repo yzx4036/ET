@@ -4,7 +4,7 @@ using System.Net;
 using UnityEngine;
 
 namespace ET
-{
+{ 
 	[ObjectSystem]
 	public class FUILoginComponentAwakeSystem : AwakeSystem<FUILoginComponent>
 	{
@@ -13,9 +13,9 @@ namespace ET
 			try
 			{
 				self.fuiLogin = self.GetFUIViewEntity<FUILoginPanel, FUILoginComponent>();
-				self.fuiLogin.selfFUIRoot.MakeFullScreen();
-				self.fuiLogin.LoginBtn.AddBtnClickedListener(self.LoginBtn_OnClicked);
-				self.fuiLogin.ToRegisterBtn.AddBtnClickedListener(self.RegisterBtn_OnClicked);
+				self.fuiLogin.GetComponent<FUIGObjectComponent>().MakeFullScreen();
+				// self.fuiLogin.LoginBtn.AddBtnClickedListener(self.LoginBtn_OnClicked);
+				// self.fuiLogin.ToRegisterBtn.AddBtnClickedListener(self.RegisterBtn_OnClicked);
 			}
 			catch (Exception exc)
 			{
@@ -24,6 +24,8 @@ namespace ET
 		}
 	}
 	
+	[FriendClass(typeof(FUILoginPanel))]
+	[FriendClass(typeof(FUILoginComponent))]
 	public static class FUILoginComponentSystem
 	{
 		public static void LoginBtn_OnClicked(this FUILoginComponent self)
