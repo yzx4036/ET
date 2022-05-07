@@ -5,8 +5,7 @@ namespace ET
 {
     public static partial class FUIType
     {
-		public static readonly Type FUICharacterSelect = typeof(FUICharacterSelect);
-		public static readonly Type FUILoginPanel = typeof(FUILoginPanel);
+		public static readonly Type FUISetting = typeof(FUISetting);
 
     }
 }
