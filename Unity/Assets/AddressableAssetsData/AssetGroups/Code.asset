@@ -17,13 +17,13 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: a061f522c4de7b74a868dc730efa5107
   m_SerializeEntries:
-  - m_GUID: 4188a9a61d6f7134ea1d91d787a136e5
-    m_Address: Code.dll
+  - m_GUID: 14d85f8b92428844fbb28ad4fef3cb5c
+    m_Address: Code.pdb
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
-  - m_GUID: f90f8c0dec6f4b84b83269cc6b4f2e79
-    m_Address: Code.pdb
+  - m_GUID: b2e2ec89fef0f5a4cb1cca10b6ef77df
+    m_Address: Code.dll
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
