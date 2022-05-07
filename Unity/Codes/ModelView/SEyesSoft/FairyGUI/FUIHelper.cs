@@ -50,7 +50,7 @@ namespace ET
         
         #region 创建FUI实例
         
-        public static async ETTask<FUI> OpenAsync<T>(Scene scene = null) where T : Entity, IAwake<FUI>, new()
+        public static async ETTask<FUIGObjectComponent> OpenAsync<T>(Scene scene = null) where T : Entity, IAwake<FUIGObjectComponent>, new()
         {
             FUIInstArgs uiArgs = null;
             Type uiType = typeof (T);
@@ -66,8 +66,8 @@ namespace ET
                     _fuiComp = scene.AddComponent<FUIComponent>();
                 }
                 Log.Debug(">>>>>>>>>>>>>>>FUIHelper OpenAsync");
-                FUI fui = await _fuiComp.OpenAsync(uiArgs.UIPackageName, uiArgs.UIResName, uiArgs.FuiTypeHashCode);
-                fui.AddComponent<T, FUI>(fui);
+                FUIGObjectComponent fui = await _fuiComp.OpenAsync(uiArgs.UIPackageName, uiArgs.UIResName, uiArgs.FuiTypeHashCode);
+                fui.AddComponent<T, FUIGObjectComponent>(fui);
                 return fui;
             }
 
@@ -111,7 +111,7 @@ namespace ET
         //关闭其他UI
         public static void CloseOtherPanel(string name)
         {
-            FUI[] allFui = Game.Scene.GetComponent<FUIComponent>().GetAll();
+            FUIGObjectComponent[] allFui = Game.Scene.GetComponent<FUIComponent>().GetAll();
             for (int i = 0; i < allFui.Length; i++)
             {
                 // if (allFui[i].Name == name)

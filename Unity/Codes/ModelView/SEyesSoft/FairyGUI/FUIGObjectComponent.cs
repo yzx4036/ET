@@ -6,27 +6,27 @@ using UnityEngine;
 
 namespace ET
 {
-    [FriendClass(typeof (FUI))]
-    [FriendClass(typeof (FUIRootComponent))]
-    public static class FUIRootComponentSystem
+    [FriendClass(typeof (FUIGObjectComponent))]
+    [FriendClass(typeof (FUIGObjectComponent))]
+    public static class FUIGObjectComponentSystem
     {
         [ObjectSystem]
-        public class FUIRootComponentAwakeSystem: AwakeSystem<FUIRootComponent, GObject>
+        public class FUIGObjectComponentAwakeSystem: AwakeSystem<FUIGObjectComponent, GObject>
         {
-            public override void Awake(FUIRootComponent self, GObject gObject)
+            public override void Awake(FUIGObjectComponent self, GObject gObject)
             {
-                self.GObject = gObject;
-                Log.Debug($"FUIAwakeSystem>>>>>>>>>>>self.GObject {self.GObject}");
+                self.gObject = gObject;
+                Log.Debug($"FUIAwakeSystem>>>>>>>>>>>self.GObject {self.gObject}");
             }
         }
         
         [ObjectSystem]
-        public class FUIRootComponentDestroySystem: DestroySystem<FUIRootComponent>
+        public class FUIGObjectComponentDestroySystem: DestroySystem<FUIGObjectComponent>
         {
-            public override void Destroy(FUIRootComponent self)
+            public override void Destroy(FUIGObjectComponent self)
             {
                 // // 删除所有的孩子
-                // foreach (FUI ui in fuiChildren.Values.ToArray())
+                // foreach (FUIGObjectComponent ui in fuiChildren.Values.ToArray())
                 // {
                 //     ui.Dispose();
                 // }
@@ -36,16 +36,16 @@ namespace ET
                 // 删除自己的UI
                 if (!self.IsRoot && !self.isFromFGUIPool)
                 {
-                    self.GObject.Dispose();
+                    self.gObject.Dispose();
                 }
 
-                self.GObject = null;
+                self.gObject = null;
                 self.isFromFGUIPool = false;
             }
         }
         
         
-        public static void Add(this FUIRootComponent self, FUI ui, bool asChildGObject)
+        public static void Add(this FUIGObjectComponent self, FUIGObjectComponent ui, bool asChildGObject)
         {
             if (ui == null || ui.IsEmpty)
             {
@@ -66,24 +66,24 @@ namespace ET
 
             if (self.IsComponent && asChildGObject)
             {
-                self.GObject.asCom.AddChild(ui.gObject);
+                self.gObject.asCom.AddChild(ui.gObject);
             }
 
         }
 
-        public static void MakeFullScreen(this FUIRootComponent self)
+        public static void MakeFullScreen(this FUIGObjectComponent self)
         {
-            self.GObject?.asCom?.MakeFullScreen();
+            self.gObject?.asCom?.MakeFullScreen();
         }
 
-        public static void Remove(this FUIRootComponent self, string name)
+        public static void Remove(this FUIGObjectComponent self, string name)
         {
             if (self.IsDisposed)
             {
                 return;
             }
 
-            FUI ui;
+            FUIGObjectComponent ui;
 
             if (self.fuiChildren.TryGetValue(name, out ui))
             {
@@ -93,7 +93,7 @@ namespace ET
                 {
                     if (self.IsComponent)
                     {
-                        self.GObject.asCom.RemoveChild(ui.gObject, false);
+                        self.gObject.asCom.RemoveChild(ui.gObject, false);
                     }
 
                     ui.Dispose();
@@ -104,14 +104,14 @@ namespace ET
         /// <summary>
         /// 一般情况不要使用此方法，如需使用，需要自行管理返回值的FUI的释放。
         /// </summary>
-        public static FUI RemoveNoDispose(this FUIRootComponent self, string name)
+        public static FUIGObjectComponent RemoveNoDispose(this FUIGObjectComponent self, string name)
         {
             if (self.IsDisposed)
             {
                 return null;
             }
 
-            FUI ui;
+            FUIGObjectComponent ui;
 
             if (self.fuiChildren.TryGetValue(name, out ui))
             {
@@ -121,7 +121,7 @@ namespace ET
                 {
                     if (self.IsComponent)
                     {
-                        self.GObject.asCom.RemoveChild(ui.gObject, false);
+                        self.gObject.asCom.RemoveChild(ui.gObject, false);
                     }
 
                     // ui.Parent = null;
@@ -131,7 +131,7 @@ namespace ET
             return ui;
         }
 
-        public static void RemoveChildren(this FUIRootComponent self)
+        public static void RemoveChildren(this FUIGObjectComponent self)
         {
             foreach (var child in self.fuiChildren.Values.ToArray())
             {
@@ -141,9 +141,9 @@ namespace ET
             self.fuiChildren.Clear();
         }
 
-        public static FUI Get(this FUIRootComponent self, string name)
+        public static FUIGObjectComponent Get(this FUIGObjectComponent self, string name)
         {
-            FUI child;
+            FUIGObjectComponent child;
 
             if (self.fuiChildren.TryGetValue(name, out child))
             {
@@ -153,44 +153,47 @@ namespace ET
             return null;
         }
 
-        public static FUI[] GetAll(this FUIRootComponent self)
+        public static FUIGObjectComponent[] GetAll(this FUIGObjectComponent self)
         {
             return self.fuiChildren.Values.ToArray();
         }
     }
 
-    public class FUIRootComponent : Entity, IAwake, IAwake<GObject>, IDestroy
+    /// <summary>
+    /// 封装FUI GObject 的 Entity
+    /// </summary>
+    public class FUIGObjectComponent : Entity, IAwake, IAwake<GObject>, IDestroy
     {
         public bool isFromFGUIPool = false;
-        public GObject GObject;
-        public Dictionary<string, FUI> fuiChildren = new Dictionary<string, FUI>();
+        public GObject gObject;
+        public Dictionary<string, FUIGObjectComponent> fuiChildren = new Dictionary<string, FUIGObjectComponent>();
         
-        public bool IsComponent => GObject is GComponent;
+        public bool IsComponent => this.gObject is GComponent;
         
-        public bool IsRoot => GObject is GRoot;
+        public bool IsRoot => this.gObject is GRoot;
         
-        public bool IsEmpty => GObject == null;
+        public bool IsEmpty => this.gObject == null;
 
         public string Name
         {
             get
             {
-                if (GObject == null)
+                if (this.gObject == null)
                 {
                     return string.Empty;
                 }
 
-                return GObject.name;
+                return this.gObject.name;
             }
 
             set
             {
-                if (GObject == null)
+                if (this.gObject == null)
                 {
                     return;
                 }
 
-                GObject.name = value;
+                this.gObject.name = value;
             }
         }
 
@@ -198,21 +201,21 @@ namespace ET
         {
             get
             {
-                if (GObject == null)
+                if (this.gObject == null)
                 {
                     return false;
                 }
 
-                return GObject.visible;
+                return this.gObject.visible;
             }
             set
             {
-                if (GObject == null)
+                if (this.gObject == null)
                 {
                     return;
                 }
 
-                GObject.visible = value;
+                this.gObject.visible = value;
             }
         }
     }

@@ -13,11 +13,11 @@ namespace ET
         {
             public override void Awake(FUIComponent self)
             {
-                self.Root = self.AddComponent<FUIRootComponent, GObject>(GRoot.inst);
-                Log.Debug(">>>>>>>>> self.AddComponent<FUI, GObject>(GRoot.inst); ");
-                // self.Root = EntityFactory.Create<FUI, GObject>(Game.Scene, GRoot.inst);
-                // self._loadedUI = new Dictionary<Type, FUI>();
-                // self._openedUI = new Dictionary<Type, FUI>();
+                self.Root = self.AddComponent<FUIGObjectComponent, GObject>(GRoot.inst);
+                Log.Debug(">>>>>>>>> self.AddComponent<FUIGObjectComponent, GObject>(GRoot.inst); ");
+                // self.Root = EntityFactory.Create<FUIGObjectComponent, GObject>(Game.Scene, GRoot.inst);
+                // self._loadedUI = new Dictionary<Type, FUIGObjectComponent>();
+                // self._openedUI = new Dictionary<Type, FUIGObjectComponent>();
             }
         }
 
@@ -38,15 +38,15 @@ namespace ET
             return UIPackage.CreateObject(uiPackageName, uiResName);
         }
 
-        private static FUI CreateFUIInst(this FUIComponent self, string uiPackageName, string uiResName, long pHashCodeId)
+        private static FUIGObjectComponent CreateFUIInst(this FUIComponent self, string uiPackageName, string uiResName, long pHashCodeId)
         {
             var gObj = CreateGObject(uiPackageName, uiResName);
-            return self.AddChildWithId<FUI, GObject>(pHashCodeId, gObj);
+            return self.AddChildWithId<FUIGObjectComponent, GObject>(pHashCodeId, gObj);
         }
 
         #endregion
 
-        public static async ETTask<FUI> OpenAsync(this FUIComponent self, string uiPackageName, string uiResName, long pHashCodeId)
+        public static async ETTask<FUIGObjectComponent> OpenAsync(this FUIComponent self, string uiPackageName, string uiResName, long pHashCodeId)
         {
             await Game.Scene.GetComponent<FUIPackageComponent>().EnsurePackageLoadedAsync(uiPackageName);
             var fui = self.CreateFUIInst(uiPackageName, uiResName, pHashCodeId);
@@ -61,7 +61,7 @@ namespace ET
             Game.Scene.GetComponent<FUIPackageComponent>().EnsureRemovePackage(pUIPackageName);
         }
 
-        public static void Add(this FUIComponent self, FUI ui, bool asChildGObject)
+        public static void Add(this FUIComponent self, FUIGObjectComponent ui, bool asChildGObject)
         {
             self.Root?.Add(ui, asChildGObject);
         }
@@ -78,12 +78,12 @@ namespace ET
             }
         }
 
-        public static FUI Get(this FUIComponent self, string name)
+        public static FUIGObjectComponent Get(this FUIComponent self, string name)
         {
             return self.Root?.Get(name);
         }
 
-        public static FUI[] GetAll(this FUIComponent self)
+        public static FUIGObjectComponent[] GetAll(this FUIComponent self)
         {
             return self.Root?.GetAll();
         }
@@ -107,6 +107,6 @@ namespace ET
     /// </summary>
     public class FUIComponent: Entity, IAwake, IDestroy
     {
-        public FUIRootComponent Root;
+        public FUIGObjectComponent Root;
     }
 }

@@ -5,9 +5,9 @@ namespace ET
 {
     public static class GObjectHelper
     {
-        private static Dictionary<GObject, FUI> keyValuePairs = new Dictionary<GObject, FUI>();
+        private static Dictionary<GObject, FUIGObjectComponent> keyValuePairs = new Dictionary<GObject, FUIGObjectComponent>();
 
-        public static FUI Get(this GObject self)
+        public static FUIGObjectComponent Get(this GObject self)
         {
             if (self != null && keyValuePairs.ContainsKey(self))
             {
@@ -17,7 +17,7 @@ namespace ET
             return default;
         }
 
-        public static void Add(this GObject self, FUI fui)
+        public static void Add(this GObject self, FUIGObjectComponent fui)
         {
             if (self != null && fui != null)
             {
@@ -25,7 +25,7 @@ namespace ET
             }
         }
 
-        public static FUI Remove(this GObject self)
+        public static FUIGObjectComponent Remove(this GObject self)
         {
             if (self != null && keyValuePairs.ContainsKey(self))
             {
