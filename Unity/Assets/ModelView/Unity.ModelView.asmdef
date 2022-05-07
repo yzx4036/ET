@@ -6,7 +6,8 @@
         "Unity.Mono",
         "Unity.ThirdParty",
         "Unity.Addressables",
-        "Unity.ResourceManager"
+        "Unity.ResourceManager",
+        "Unity.RenderPipelines.Universal.Runtime"
     ],
     "includePlatforms": [
         "Editor"
