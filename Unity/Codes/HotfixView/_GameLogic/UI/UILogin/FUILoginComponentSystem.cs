@@ -13,9 +13,9 @@ namespace ET
 			try
 			{
 				self.fuiLogin = self.GetFUIViewEntity<FUILoginPanel, FUILoginComponent>();
-				self.fuiLogin.GetComponent<FUIGObjectComponent>().MakeFullScreen();
-				// self.fuiLogin.LoginBtn.AddBtnClickedListener(self.LoginBtn_OnClicked);
-				// self.fuiLogin.ToRegisterBtn.AddBtnClickedListener(self.RegisterBtn_OnClicked);
+				self.GetFUIGObjectEntity().MakeFullScreen();
+				self.fuiLogin.LoginBtn.AddBtnClickedListener(self.LoginBtn_OnClicked);
+				self.fuiLogin.ToRegisterBtn.AddBtnClickedListener(self.RegisterBtn_OnClicked);
 			}
 			catch (Exception exc)
 			{

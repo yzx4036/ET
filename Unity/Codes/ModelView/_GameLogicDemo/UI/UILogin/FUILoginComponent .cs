@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ET
 {
-	public class FUILoginComponent : Entity, IAwake
+	public class FUILoginComponent : Entity, IAwake, IFUIBaseComponent
 	{
 		public FUILoginPanel fuiLogin;
 
