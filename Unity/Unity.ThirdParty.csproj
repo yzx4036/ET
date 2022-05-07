@@ -588,8 +588,8 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\Utils\Html\HtmlPageContext.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Reflection\ILRuntimeType.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Examples\Particles\ParticlesMain.cs" />
-     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GLabel.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ProtoEnumAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GLabel.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\IMethodSignature.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Intepreter\OpCodes\OpCode.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Examples\Basics\Window1.cs" />
