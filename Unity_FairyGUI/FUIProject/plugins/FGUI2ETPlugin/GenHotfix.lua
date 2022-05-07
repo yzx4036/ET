@@ -113,9 +113,9 @@ local function genCode(handler)
 		writer:startBlock()
 		-- 1
 		writer:writeln([[[ObjectSystem]
-    public class %sAwakeSystem : AwakeSystem<%s, FUI>
+    public class %sAwakeSystem : AwakeSystem<%s, FUIGObjectComponent>
     {
-        public override void Awake(%s self, FUI fui)
+        public override void Awake(%s self, FUIGObjectComponent fui)
         {
             self.Awake(fui);
         }
@@ -129,7 +129,7 @@ local function genCode(handler)
 			writer:writeln(string.format("[FUI(typeof(%s), UIPackageName, UIResName)]", classInfo.className))
 		end
 		
-		writer:writeln([[public sealed class %s : Entity, IAwake<FUI>
+		writer:writeln([[public sealed class %s : Entity, IAwake<FUIGObjectComponent>
     {	
         public const string UIPackageName = "%s";
         public const string UIResName = "%s";
@@ -138,7 +138,7 @@ local function genCode(handler)
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
         /// </summary>
         public %s selfGObj;
-		public FUI selfFUIRoot;
+		public FUIGObjectComponent selfFUIRoot;
             ]], classInfo.className, codePkgName, classInfo.resName, classInfo.superClassName)
 		
 		local memberCnt = members.Count
@@ -169,14 +169,14 @@ local function genCode(handler)
 		//}
         ]], classInfo.className, classInfo.className)
 
-		writer:writeln('\t'..[[private T CreateFUICompInst<T>(GObject gObject) where T : Entity, IAwake<FUI>, new()
+		writer:writeln('\t'..[[private T CreateFUICompInst<T>(GObject gObject) where T : Entity, IAwake<FUIGObjectComponent>, new()
         {
-			var _fui = this.AddChild<FUI, GObject>(gObject);
-	        return _fui.AddComponent<T, FUI>(_fui);
+			var _fui = this.AddChild<FUIGObjectComponent, GObject>(gObject);
+	        return _fui.AddComponent<T, FUIGObjectComponent>(_fui);
         }
 		]], classInfo.className)
 		
-		writer:writeln([[    public void Awake(FUI fui)
+		writer:writeln([[    public void Awake(FUIGObjectComponent fui)
         {
 			selfFUIRoot = fui;
 			selfGObj = (%s)fui.gObject;

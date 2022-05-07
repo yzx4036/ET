@@ -113,16 +113,14 @@ local function genCode(handler)
 		writer:startBlock()
 		-- 1
 		writer:writeln([[[ObjectSystem]
-    public class %sAwakeSystem : AwakeSystem<%s, FUI>
+    public class %sAwakeSystem : AwakeSystem<%s, FUIGObjectComponent>
     {
-        public override void Awake(%s self, FUI fui)
+        public override void Awake(%s self, FUIGObjectComponent fui)
         {
             self.Awake(fui);
         }
     }
         ]], classInfo.className, classInfo.className, classInfo.className)
-		
-		writer:writeln(string.format("[FriendClass(typeof(FUI))]"))
 		
 		--如果是收藏的组件，生成[FUI]属性 用这个区分哪些是UI面板
 		if classInfo.res.exported
@@ -131,7 +129,7 @@ local function genCode(handler)
 			writer:writeln(string.format("[FUI(typeof(%s), UIPackageName, UIResName)]", classInfo.className))
 		end
 		
-		writer:writeln([[public sealed class %s : Entity, IAwake<FUI>
+		writer:writeln([[public sealed class %s : Entity, IAwake<FUIGObjectComponent>
     {	
         public const string UIPackageName = "%s";
         public const string UIResName = "%s";
@@ -139,7 +137,8 @@ local function genCode(handler)
         /// <summary>
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
         /// </summary>
-        public %s self;
+        public %s selfGObj;
+		public FUIGObjectComponent selfFUIRoot;
             ]], classInfo.className, codePkgName, classInfo.resName, classInfo.superClassName)
 		
 		local memberCnt = members.Count
@@ -170,18 +169,19 @@ local function genCode(handler)
 		//}
         ]], classInfo.className, classInfo.className)
 
-		writer:writeln('\t'..[[private T CreateFUICompInst<T>(GObject gObject) where T : Entity, IAwake<FUI>, new()
+		writer:writeln('\t'..[[private T CreateFUICompInst<T>(GObject gObject) where T : Entity, IAwake<FUIGObjectComponent>, new()
         {
-			var _fui = this.AddChild<FUI, GObject>(gObject);
-	        return _fui.AddComponent<T, FUI>(_fui);
+			var _fui = this.AddChild<FUIGObjectComponent, GObject>(gObject);
+	        return _fui.AddComponent<T, FUIGObjectComponent>(_fui);
         }
 		]], classInfo.className)
 		
-		writer:writeln([[    public void Awake(FUI fui)
+		writer:writeln([[    public void Awake(FUIGObjectComponent fui)
         {
-			self = (%s)fui.gObject;
+			selfFUIRoot = fui;
+			selfGObj = (%s)fui.gObject;
         
-			self.Add(fui);
+			selfGObj.Add(fui);
         
 			var com = fui.gObject.asCom;
             
@@ -244,8 +244,10 @@ local function genCode(handler)
             
             base.Dispose();
             
-            self.Remove();
-            self = null;
+            selfGObj.Remove();
+            selfGObj = null;
+			selfFUIRoot.Dispose();
+			selfFUIRoot = null;
             ]])
 		
 		for j = 0, memberCnt - 1 do
