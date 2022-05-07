@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using FairyGUI;
 using SEyesSoft.ET;
@@ -26,13 +27,15 @@ namespace ET
         {
             public override void Destroy(FUIPackageComponent self)
             {
+                var _pkgNameArray = self.s_Packages.Keys.ToArray();
+                foreach (var name in _pkgNameArray)
+                {
+                    self.EnsureRemovePackage(name);
+                }
+                self.s_Packages.Clear();
+                self.s_Packages = null;
                 self.s_PackagesRefCount.Clear();
                 self.s_PackagesRefCount = null;
-                foreach (var selfSPackage in self.s_Packages)
-                {
-                    self.EnsureRemovePackage(selfSPackage.Value.name);
-                }
-                self.s_Packages = null;
             }
         }
         
