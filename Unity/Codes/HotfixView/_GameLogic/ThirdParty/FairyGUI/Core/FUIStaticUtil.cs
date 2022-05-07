@@ -19,14 +19,14 @@ namespace ET
             }
         }
         
-        // public static void AddBtnClickedListener(this FButton4_Normal self, EventCallback0 callback)
-        // {
-        //     self.selfGObj.onClick.Set(callback);
-        // }
-		      //
-        // public static void AddBtnClickedListener(this FButton4_Normal self, EventCallback1 callback)
-        // {
-        //     self.selfGObj.onClick.Set(callback);
-        // }
+        public static void AddBtnClickedListener(this FButton4_Normal self, EventCallback0 callback)
+        {
+            self.selfGObj.onClick.Set(callback);
+        }
+		      
+        public static void AddBtnClickedListener(this FButton4_Normal self, EventCallback1 callback)
+        {
+            self.selfGObj.onClick.Set(callback);
+        }
     }
 }

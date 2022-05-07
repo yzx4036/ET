@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 namespace ET
 {
     [ObjectSystem]
-    public class FUILoginPanelAwakeSystem : AwakeSystem<FUILoginPanel, FUI>
+    public class FUILoginPanelAwakeSystem : AwakeSystem<FUILoginPanel, FUIGObjectComponent>
     {
-        public override void Awake(FUILoginPanel self, FUI fui)
+        public override void Awake(FUILoginPanel self, FUIGObjectComponent fui)
         {
             self.Awake(fui);
         }
     }
         
     [FUI(typeof(FUILoginPanel), UIPackageName, UIResName)]
-    public sealed class FUILoginPanel : Entity, IAwake<FUI>
+    public sealed class FUILoginPanel : Entity, IAwake<FUIGObjectComponent>
     {	
         public const string UIPackageName = "FLogin";
         public const string UIResName = "UILoginPanel";
@@ -24,7 +24,7 @@ namespace ET
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
         /// </summary>
         public GComponent selfGObj;
-		public FUI selfFUIRoot;
+		public FUIGObjectComponent selfFUIRoot;
             
         public Controller c1;
         public GImage n25;
@@ -68,13 +68,13 @@ namespace ET
 			//return fui;
 		//}
         
-    	private T CreateFUICompInst<T>(GObject gObject) where T : Entity, IAwake<FUI>, new()
+    	private T CreateFUICompInst<T>(GObject gObject) where T : Entity, IAwake<FUIGObjectComponent>, new()
         {
-			var _fui = this.AddChild<FUI, GObject>(gObject);
-	        return _fui.AddComponent<T, FUI>(_fui);
+			var _fui = this.AddChild<FUIGObjectComponent, GObject>(gObject);
+	        return _fui.AddComponent<T, FUIGObjectComponent>(_fui);
         }
 		
-        public void Awake(FUI fui)
+        public void Awake(FUIGObjectComponent fui)
         {
 			selfFUIRoot = fui;
 			selfGObj = (GComponent)fui.gObject;
