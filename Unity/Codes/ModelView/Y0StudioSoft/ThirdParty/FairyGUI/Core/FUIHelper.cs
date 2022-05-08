@@ -10,20 +10,22 @@ namespace ET
         public string UIPackageName { get; set; }
         public string UIResName { get; set; }
         public Type FuiType { get; set; }
-    
+
         private long _FuiTypeHashCode = 0;
-    
-        public long FuiTypeHashCode {
+
+        public long FuiTypeHashCode
+        {
             get
             {
                 if (this._FuiTypeHashCode == 0)
                 {
                     this._FuiTypeHashCode = this.FuiType.GetHashCode();
                 }
+
                 return this._FuiTypeHashCode;
             }
         }
-    
+
         public FUIInstArgs(Type fuiType, string uiPackageName, string uiResName)
         {
             FuiType = fuiType;
@@ -45,12 +47,13 @@ namespace ET
             {
                 fuiAttrTypeList.Add(type);
             }
+
             LoadFUIAttribute(fuiAttrTypeList);
         }
-        
+
         #region 创建FUI实例
-        
-        public static async ETTask<FUIGObjectComponent> OpenAsync<T>(Scene scene = null) where T : Entity, IAwake<FUIGObjectComponent>, new()
+
+        public static async ETTask<FUIGObjectComponent> OpenAsync<T>(Scene scene = null) where T : Entity, IAwake, new()
         {
             FUIInstArgs uiArgs = null;
             Type uiType = typeof (T);
@@ -60,14 +63,16 @@ namespace ET
                 {
                     scene = Game.Scene;
                 }
+
                 var _fuiComp = scene.GetComponent<FUIComponent>();
                 if (_fuiComp == null)
                 {
                     _fuiComp = scene.AddComponent<FUIComponent>();
                 }
+
                 Log.Debug(">>>>>>>>>>>>>>>FUIHelper OpenAsync");
                 FUIGObjectComponent fui = await _fuiComp.OpenAsync(uiArgs.UIPackageName, uiArgs.UIResName, uiArgs.FuiTypeHashCode);
-                fui.AddComponent<T, FUIGObjectComponent>(fui);
+                fui.AddComponent<T>();
                 return fui;
             }
 
@@ -83,18 +88,18 @@ namespace ET
                 {
                     scene = Game.Scene;
                 }
+
                 var _fuiComp = scene.GetComponent<FUIComponent>();
                 if (_fuiComp == null)
                 {
                     _fuiComp = scene.AddComponent<FUIComponent>();
                 }
+
                 scene.GetComponent<FUIComponent>().Close(uiArgs.UIResName, uiArgs.UIPackageName);
             }
         }
 
         #endregion
-
-
 
         public static void SetWindowSize(Window win)
         {
@@ -131,19 +136,19 @@ namespace ET
         {
             Game.Scene.GetComponent<FUIComponent>().Remove(name);
         }
-        
+
         public static FUIInstArgs GetFUIInstArgsByType(Type uiType)
         {
             FUIInstArgs fuiInstArgs = null;
             FUIInstArgsDict.TryGetValue(uiType, out fuiInstArgs);
             return fuiInstArgs;
         }
-        
+
         private static void LoadFUIAttribute(List<Type> fuiTypeList)
         {
             for (int i = 0; i < fuiTypeList.Count; i++)
             {
-                var objects = fuiTypeList[i].GetCustomAttributes(typeof(FUIAttribute), true);
+                var objects = fuiTypeList[i].GetCustomAttributes(typeof (FUIAttribute), true);
                 if (objects.Length == 0)
                 {
                     continue;
@@ -155,6 +160,5 @@ namespace ET
                 }
             }
         }
-
     }
 }

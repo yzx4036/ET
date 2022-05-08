@@ -18,7 +18,7 @@ namespace ET
                 Log.Debug($"FUIAwakeSystem>>>>>>>>>>>self.GObject {self.gObject}");
             }
         }
-        
+
         [ObjectSystem]
         public class FUIGObjectComponentDestroySystem: DestroySystem<FUIGObjectComponent>
         {
@@ -42,8 +42,7 @@ namespace ET
                 self.isFromFGUIPool = false;
             }
         }
-        
-        
+
         public static void Add(this FUIGObjectComponent self, FUIGObjectComponent ui, bool asChildGObject)
         {
             if (ui == null || ui.IsEmpty)
@@ -60,14 +59,13 @@ namespace ET
             {
                 throw new Exception($"ui.Name({ui.Name}) already exist");
             }
-            
+
             self.fuiChildren.Add(ui.Name, ui);
 
             if (self.IsComponent && asChildGObject)
             {
                 self.gObject.asCom.AddChild(ui.gObject);
             }
-
         }
 
         public static void MakeFullScreen(this FUIGObjectComponent self)
@@ -97,7 +95,7 @@ namespace ET
 
                     ui.Dispose();
                 }
-            } 
+            }
         }
 
         /// <summary>
@@ -161,16 +159,16 @@ namespace ET
     /// <summary>
     /// 封装FUI GObject 的 Entity
     /// </summary>
-    public class FUIGObjectComponent : Entity, IAwake, IAwake<GObject>, IDestroy
+    public class FUIGObjectComponent: Entity, IAwake, IAwake<GObject>, IDestroy
     {
         public bool isFromFGUIPool = false;
-        public GObject gObject;
+        public GObject gObject { get; set; }
         public Dictionary<string, FUIGObjectComponent> fuiChildren = new Dictionary<string, FUIGObjectComponent>();
-        
+
         public bool IsComponent => this.gObject is GComponent;
-        
+
         public bool IsRoot => this.gObject is GRoot;
-        
+
         public bool IsEmpty => this.gObject == null;
 
         public string Name
