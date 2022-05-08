@@ -25,19 +25,19 @@ namespace ILRuntime.Runtime.Generated
         /// </summary>
         public static void Initialize(ILRuntime.Runtime.Enviorment.AppDomain app)
         {
-            SEyesSoft_SingerMonoManager_1_GameObjectMgr_Binding.Register(app);
-            SEyesSoft_SingerMonoManager_1_AddressableMgr_Binding.Register(app);
             System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_GameObject_Binding.Register(app);
             UnityEngine_Object_Binding.Register(app);
-            SEyesSoft_GameObjectMgr_Binding.Register(app);
+            Y0StudioSoft_GameObjectMgr_Binding.Register(app);
             System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_IList_1_TextAsset_Binding.Register(app);
             System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_TextAsset_Binding.Register(app);
             System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_Texture_Binding.Register(app);
             System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Binding.Register(app);
+            Y0StudioSoft_SingerMonoManager_1_GameObjectMgr_Binding.Register(app);
+            Y0StudioSoft_SingerMonoManager_1_AddressableMgr_Binding.Register(app);
             System_Threading_Tasks_Task_1_GameObject_Binding.Register(app);
             System_Runtime_CompilerServices_TaskAwaiter_1_GameObject_Binding.Register(app);
             System_String_Binding.Register(app);
-            SEyesSoft_AddressableMgr_Binding.Register(app);
+            Y0StudioSoft_AddressableMgr_Binding.Register(app);
             System_Threading_Tasks_Task_1_IList_1_TextAsset_Binding.Register(app);
             System_Runtime_CompilerServices_TaskAwaiter_1_IList_1_TextAsset_Binding.Register(app);
             System_Threading_Tasks_Task_1_TextAsset_Binding.Register(app);
@@ -132,22 +132,10 @@ namespace ILRuntime.Runtime.Generated
             System_Collections_Generic_HashSet_1_String_Binding.Register(app);
             UnityEngine_AnimationClip_Binding.Register(app);
             FairyGUI_GObject_Binding.Register(app);
-            FairyGUI_GComponent_Binding.Register(app);
-            FairyGUI_EventListener_Binding.Register(app);
-            FairyGUI_GRoot_Binding.Register(app);
-            FairyGUI_StageCamera_Binding.Register(app);
-            UnityEngine_Rendering_Universal_CameraExtensions_Binding.Register(app);
-            UnityEngine_Rendering_Universal_UniversalAdditionalCameraData_Binding.Register(app);
-            System_Collections_Generic_List_1_Camera_Binding.Register(app);
-            FairyGUI_UIConfig_Binding.Register(app);
-            System_Collections_Generic_Stack_1_ILTypeInstance_Binding.Register(app);
-            FairyGUI_Window_Binding.Register(app);
-            UnityEngine_Rect_Binding.Register(app);
-            System_Collections_Generic_Dictionary_2_GObject_ILTypeInstance_Binding.Register(app);
-            System_Action_Binding.Register(app);
             ET_Options_Binding.Register(app);
             System_Collections_Generic_List_1_Action_Binding.Register(app);
             System_Collections_Generic_List_1_Action_Binding_Enumerator_Binding.Register(app);
+            System_Action_Binding.Register(app);
             ET_MonoPool_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_Int64_ILTypeInstance_Binding.Register(app);
             LitJson_JsonMapper_Binding.Register(app);
@@ -250,6 +238,13 @@ namespace ILRuntime.Runtime.Generated
             ET_ListComponent_1_String_Binding.Register(app);
             UnityEngine_Component_Binding.Register(app);
             FairyGUI_UIPackage_Binding.Register(app);
+            FairyGUI_GRoot_Binding.Register(app);
+            FairyGUI_GComponent_Binding.Register(app);
+            FairyGUI_StageCamera_Binding.Register(app);
+            UnityEngine_Rendering_Universal_CameraExtensions_Binding.Register(app);
+            UnityEngine_Rendering_Universal_UniversalAdditionalCameraData_Binding.Register(app);
+            System_Collections_Generic_List_1_Camera_Binding.Register(app);
+            FairyGUI_UIConfig_Binding.Register(app);
             ET_ETAsyncTaskMethodBuilder_1_UIPackage_Binding.Register(app);
             System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_String_UIPackage_Binding.Register(app);
@@ -257,9 +252,14 @@ namespace ILRuntime.Runtime.Generated
             System_Collections_Generic_KeyValuePair_2_String_String_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_String_UIPackage_Binding_Enumerator_Binding.Register(app);
             System_Collections_Generic_KeyValuePair_2_String_UIPackage_Binding.Register(app);
-            SEyesSoft_Common_Util_Binding.Register(app);
+            Y0StudioSoft_Common_Util_Binding.Register(app);
             FairyGUI_PackageItem_Binding.Register(app);
             ET_ETTask_1_UIPackage_Binding.Register(app);
+            System_Collections_Generic_Stack_1_ILTypeInstance_Binding.Register(app);
+            FairyGUI_EventListener_Binding.Register(app);
+            FairyGUI_Window_Binding.Register(app);
+            UnityEngine_Rect_Binding.Register(app);
+            System_Collections_Generic_Dictionary_2_GObject_ILTypeInstance_Binding.Register(app);
 
             ILRuntime.CLR.TypeSystem.CLRType __clrType = null;
             __clrType = (ILRuntime.CLR.TypeSystem.CLRType)app.GetType (typeof(UnityEngine.Vector2));

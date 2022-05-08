@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FairyGUI;
-using SEyesSoft.ET;
+using Y0StudioSoft.ET;
 using UnityEngine;
 
 
@@ -50,7 +50,7 @@ namespace ET
             TextAsset desTextAsset = await AddressablesResComponent.Instance.GetAssetAsync<TextAsset>(_addressPath);
             if (desTextAsset != null)
             {
-                self.s_Packages.Add(type, SEyesSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(desTextAsset.bytes, type, LoadPackageInternalAsync));
+                self.s_Packages.Add(type, Y0StudioSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(desTextAsset.bytes, type, LoadPackageInternalAsync));
                 return self.s_Packages[type];
             }
             return null;

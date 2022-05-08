@@ -21,7 +21,7 @@ using uObject = UnityEngine.Object;
 /// 1.预加载资源属于常驻内存不会被释放
 /// 2.现版本只查询ResourceLocators[0],不知道是否会存在需要遍历ResourceLocators的情况
 /// </summary>
-namespace SEyesSoft
+namespace Y0StudioSoft
 {
     public class AddressableMgr: SingerMonoManager<AddressableMgr>
     {

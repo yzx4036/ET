@@ -14,14 +14,14 @@ using ILRuntime.CLR.Utils;
 
 namespace ILRuntime.Runtime.Generated
 {
-    unsafe class SEyesSoft_AddressableMgr_Binding
+    unsafe class Y0StudioSoft_AddressableMgr_Binding
     {
         public static void Register(ILRuntime.Runtime.Enviorment.AppDomain app)
         {
             BindingFlags flag = BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly;
             MethodBase method;
             Type[] args;
-            Type type = typeof(SEyesSoft.AddressableMgr);
+            Type type = typeof(Y0StudioSoft.AddressableMgr);
             Dictionary<string, List<MethodInfo>> genericMethods = new Dictionary<string, List<MethodInfo>>();
             List<MethodInfo> lst = null;                    
             foreach(var m in type.GetMethods())
@@ -118,7 +118,7 @@ namespace ILRuntime.Runtime.Generated
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 3);
-            SEyesSoft.AddressableMgr instance_of_this_method = (SEyesSoft.AddressableMgr)typeof(SEyesSoft.AddressableMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            Y0StudioSoft.AddressableMgr instance_of_this_method = (Y0StudioSoft.AddressableMgr)typeof(Y0StudioSoft.AddressableMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
             __intp.Free(ptr_of_this_method);
 
             var result_of_this_method = instance_of_this_method.LoadAssetsAsync<UnityEngine.TextAsset>(@keys, @mode);
@@ -142,7 +142,7 @@ namespace ILRuntime.Runtime.Generated
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            SEyesSoft.AddressableMgr instance_of_this_method = (SEyesSoft.AddressableMgr)typeof(SEyesSoft.AddressableMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            Y0StudioSoft.AddressableMgr instance_of_this_method = (Y0StudioSoft.AddressableMgr)typeof(Y0StudioSoft.AddressableMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
             __intp.Free(ptr_of_this_method);
 
             var result_of_this_method = instance_of_this_method.LoadAssetAsync<UnityEngine.GameObject>(@key);
@@ -166,7 +166,7 @@ namespace ILRuntime.Runtime.Generated
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            SEyesSoft.AddressableMgr instance_of_this_method = (SEyesSoft.AddressableMgr)typeof(SEyesSoft.AddressableMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            Y0StudioSoft.AddressableMgr instance_of_this_method = (Y0StudioSoft.AddressableMgr)typeof(Y0StudioSoft.AddressableMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
             __intp.Free(ptr_of_this_method);
 
             var result_of_this_method = instance_of_this_method.LoadAssetAsync<UnityEngine.TextAsset>(@key);
@@ -190,7 +190,7 @@ namespace ILRuntime.Runtime.Generated
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 2);
-            SEyesSoft.AddressableMgr instance_of_this_method = (SEyesSoft.AddressableMgr)typeof(SEyesSoft.AddressableMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            Y0StudioSoft.AddressableMgr instance_of_this_method = (Y0StudioSoft.AddressableMgr)typeof(Y0StudioSoft.AddressableMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
             __intp.Free(ptr_of_this_method);
 
             var result_of_this_method = instance_of_this_method.LoadAssetAsync<UnityEngine.Texture>(@key);
@@ -225,7 +225,7 @@ namespace ILRuntime.Runtime.Generated
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 5);
-            SEyesSoft.AddressableMgr instance_of_this_method = (SEyesSoft.AddressableMgr)typeof(SEyesSoft.AddressableMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            Y0StudioSoft.AddressableMgr instance_of_this_method = (Y0StudioSoft.AddressableMgr)typeof(Y0StudioSoft.AddressableMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
             __intp.Free(ptr_of_this_method);
 
             var result_of_this_method = instance_of_this_method.LoadSceneAsync(@key, @pResultHandleCallback, @loadMode, @activateOnLoad);
@@ -253,7 +253,7 @@ namespace ILRuntime.Runtime.Generated
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 3);
-            SEyesSoft.AddressableMgr instance_of_this_method = (SEyesSoft.AddressableMgr)typeof(SEyesSoft.AddressableMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            Y0StudioSoft.AddressableMgr instance_of_this_method = (Y0StudioSoft.AddressableMgr)typeof(Y0StudioSoft.AddressableMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
             __intp.Free(ptr_of_this_method);
 
             var result_of_this_method = instance_of_this_method.UnloadSceneAsync(@sceneHandle, @complete);

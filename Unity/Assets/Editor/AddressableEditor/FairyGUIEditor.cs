@@ -9,7 +9,7 @@ using UnityEngine;
 using Debug = UnityEngine.Debug;
 using Object = UnityEngine.Object;
 
-namespace SEyesSoft.Editor
+namespace Y0StudioSoft.Editor
 {
     public static class FairyGUIEditor
     {

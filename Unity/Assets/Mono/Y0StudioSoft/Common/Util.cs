@@ -4,7 +4,7 @@ using UnityEngine;
 
 //添加一些供lua调用的静态方法
 
-namespace SEyesSoft.Common
+namespace Y0StudioSoft.Common
 {
     public static class Util
     {

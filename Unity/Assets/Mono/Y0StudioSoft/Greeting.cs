@@ -3,7 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SEyesSoft
+namespace Y0StudioSoft
 {
     public class Greeting : MonoBehaviour
     {

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using ET;
 using UnityEngine;
 
-namespace SEyesSoft
+namespace Y0StudioSoft
 {
     public class GameObjectMgr : SingerMonoManager<GameObjectMgr>
     {

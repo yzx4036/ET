@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
-namespace SEyesSoft
+namespace Y0StudioSoft
 {
     public class Updater : INetworkMonitorListener
     {

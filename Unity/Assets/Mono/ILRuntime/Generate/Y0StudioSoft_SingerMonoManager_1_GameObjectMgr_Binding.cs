@@ -14,14 +14,14 @@ using ILRuntime.CLR.Utils;
 
 namespace ILRuntime.Runtime.Generated
 {
-    unsafe class SEyesSoft_SingerMonoManager_1_AddressableMgr_Binding
+    unsafe class Y0StudioSoft_SingerMonoManager_1_GameObjectMgr_Binding
     {
         public static void Register(ILRuntime.Runtime.Enviorment.AppDomain app)
         {
             BindingFlags flag = BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly;
             MethodBase method;
             Type[] args;
-            Type type = typeof(SEyesSoft.SingerMonoManager<SEyesSoft.AddressableMgr>);
+            Type type = typeof(Y0StudioSoft.SingerMonoManager<Y0StudioSoft.GameObjectMgr>);
             args = new Type[]{};
             method = type.GetMethod("get_Instance", flag, null, args, null);
             app.RegisterCLRMethodRedirection(method, get_Instance_0);
@@ -36,7 +36,7 @@ namespace ILRuntime.Runtime.Generated
             StackObject* __ret = ILIntepreter.Minus(__esp, 0);
 
 
-            var result_of_this_method = SEyesSoft.SingerMonoManager<SEyesSoft.AddressableMgr>.Instance;
+            var result_of_this_method = Y0StudioSoft.SingerMonoManager<Y0StudioSoft.GameObjectMgr>.Instance;
 
             object obj_result_of_this_method = result_of_this_method;
             if(obj_result_of_this_method is CrossBindingAdaptorType)

@@ -17,7 +17,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using Object = UnityEngine.Object;
 
-namespace SEyesSoft.ET
+namespace Y0StudioSoft.ET
 {
     [FriendClass(typeof (AddressablesResComponent))]
     public static class AddressablesResComponentSystem

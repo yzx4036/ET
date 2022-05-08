@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SEyesSoft
+namespace Y0StudioSoft
 {
     ///<summary>
     ///  管理各种管理器

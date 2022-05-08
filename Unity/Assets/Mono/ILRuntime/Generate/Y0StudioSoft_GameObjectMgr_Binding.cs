@@ -14,14 +14,14 @@ using ILRuntime.CLR.Utils;
 
 namespace ILRuntime.Runtime.Generated
 {
-    unsafe class SEyesSoft_GameObjectMgr_Binding
+    unsafe class Y0StudioSoft_GameObjectMgr_Binding
     {
         public static void Register(ILRuntime.Runtime.Enviorment.AppDomain app)
         {
             BindingFlags flag = BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly;
             MethodBase method;
             Type[] args;
-            Type type = typeof(SEyesSoft.GameObjectMgr);
+            Type type = typeof(Y0StudioSoft.GameObjectMgr);
             args = new Type[]{typeof(System.String), typeof(UnityEngine.GameObject)};
             method = type.GetMethod("RecycleGameObject", flag, null, args, null);
             app.RegisterCLRMethodRedirection(method, RecycleGameObject_0);
@@ -48,7 +48,7 @@ namespace ILRuntime.Runtime.Generated
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 3);
-            SEyesSoft.GameObjectMgr instance_of_this_method = (SEyesSoft.GameObjectMgr)typeof(SEyesSoft.GameObjectMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            Y0StudioSoft.GameObjectMgr instance_of_this_method = (Y0StudioSoft.GameObjectMgr)typeof(Y0StudioSoft.GameObjectMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
             __intp.Free(ptr_of_this_method);
 
             instance_of_this_method.RecycleGameObject(@path, @ins);
@@ -74,7 +74,7 @@ namespace ILRuntime.Runtime.Generated
             __intp.Free(ptr_of_this_method);
 
             ptr_of_this_method = ILIntepreter.Minus(__esp, 4);
-            SEyesSoft.GameObjectMgr instance_of_this_method = (SEyesSoft.GameObjectMgr)typeof(SEyesSoft.GameObjectMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
+            Y0StudioSoft.GameObjectMgr instance_of_this_method = (Y0StudioSoft.GameObjectMgr)typeof(Y0StudioSoft.GameObjectMgr).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)0);
             __intp.Free(ptr_of_this_method);
 
             var result_of_this_method = instance_of_this_method.GetGameObjectAsync(@path, @parent, @instantiateInWorldSpace);

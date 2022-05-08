@@ -14,14 +14,14 @@ using ILRuntime.CLR.Utils;
 
 namespace ILRuntime.Runtime.Generated
 {
-    unsafe class SEyesSoft_Common_Util_Binding
+    unsafe class Y0StudioSoft_Common_Util_Binding
     {
         public static void Register(ILRuntime.Runtime.Enviorment.AppDomain app)
         {
             BindingFlags flag = BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly;
             MethodBase method;
             Type[] args;
-            Type type = typeof(SEyesSoft.Common.Util);
+            Type type = typeof(Y0StudioSoft.Common.Util);
             args = new Type[]{typeof(System.Byte[]), typeof(System.String), typeof(FairyGUI.UIPackage.LoadResourceAsync)};
             method = type.GetMethod("FUiUIPackageAddPackageCallbackAsync", flag, null, args, null);
             app.RegisterCLRMethodRedirection(method, FUiUIPackageAddPackageCallbackAsync_0);
@@ -49,7 +49,7 @@ namespace ILRuntime.Runtime.Generated
             __intp.Free(ptr_of_this_method);
 
 
-            var result_of_this_method = SEyesSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(@descData, @assetNamePrefix, @loadFunc);
+            var result_of_this_method = Y0StudioSoft.Common.Util.FUiUIPackageAddPackageCallbackAsync(@descData, @assetNamePrefix, @loadFunc);
 
             return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
         }

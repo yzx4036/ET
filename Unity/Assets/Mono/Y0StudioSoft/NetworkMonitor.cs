@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SEyesSoft
+namespace Y0StudioSoft
 {
     public interface INetworkMonitorListener
     {

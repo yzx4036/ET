@@ -6,7 +6,7 @@ using UnityEngine;
 using System.Linq;
 using System.Resources;
 using System.Threading.Tasks;
-using SEyesSoft;
+using Y0StudioSoft;
 
 namespace ET
 {

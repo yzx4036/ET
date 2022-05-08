@@ -1,4 +1,4 @@
-﻿using SEyesSoft.ET;
+﻿using Y0StudioSoft.ET;
 using UnityEngine.SceneManagement;
 
 namespace ET

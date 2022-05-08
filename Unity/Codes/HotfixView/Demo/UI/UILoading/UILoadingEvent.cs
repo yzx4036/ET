@@ -1,5 +1,5 @@
 ﻿using System;
-using SEyesSoft.ET;
+using Y0StudioSoft.ET;
 using UnityEngine;
 
 namespace ET
