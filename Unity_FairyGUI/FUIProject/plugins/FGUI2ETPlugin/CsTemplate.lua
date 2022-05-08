@@ -9,10 +9,10 @@ namespace $$namespaceName$$
 {
     public static class $$clsName$$System
     {
-        private static T CreateFUICompInst<T>($$clsName$$ self, GObject gObject) where T : Entity, IAwake<FUIGObjectComponent>, new()
+        private static T CreateFUICompInst<T>($$clsName$$ self, GObject gObject) where T : Entity, IAwake, new()
         {
             var _fui = self.AddChild<FUIGObjectComponent, GObject>(gObject);
-            return _fui.AddComponent<T, FUIGObjectComponent>(_fui);
+            return _fui.AddComponent<T>();
         }
 
         /// <summary>
@@ -29,16 +29,13 @@ namespace $$namespaceName$$
         //     return fui;
         // }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
-        public class $$clsName$$AwakeSystem: AwakeSystem<$$clsName$$, FUIGObjectComponent>
+        public class $$clsName$$AwakeSystem: AwakeSystem<$$clsName$$>
         {
-            public override void Awake($$clsName$$ self, FUIGObjectComponent fui)
+            public override void Awake($$clsName$$ self)
             {
-                self.selfGObj.Add(fui);
-
-                var com = fui.gObject.asCom;
-
+                self.selfGObj.Add(self.selfFUIRoot);
+                var com = self.selfFUIRoot.gObject.asCom;
                 if (com != null)
                 {
 $$compsAwake$$
@@ -58,7 +55,7 @@ $$compsDestroy$$
     }
 
     $$fuiAttribut$$
-    public sealed class $$clsName$$: Entity, IAwake<FUIGObjectComponent>, IDestroy
+    public sealed class $$clsName$$: Entity, IAwake, IDestroy
     {
         public const string UIPackageName = "$$packName$$";
         public const string UIResName = "$$uiResName$$";
@@ -70,11 +67,17 @@ $$compsDestroy$$
         {
             get
             {
-                return (GButton)this.GetParent<FUIGObjectComponent>()?.gObject;
+                return ($$superClassName$$)this.selfFUIRoot?.gObject;
             }
         }
         
-        public FUIGObjectComponent selfFUIRoot;
+        public FUIGObjectComponent selfFUIRoot
+         {
+            get
+            {
+                return this.GetParent<FUIGObjectComponent>();
+            }
+        }
 
 $$compsDefine$$
 
