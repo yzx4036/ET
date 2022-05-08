@@ -35,9 +35,6 @@ namespace $$namespaceName$$
         {
             public override void Awake($$clsName$$ self, FUIGObjectComponent fui)
             {
-                self.selfFUIRoot = fui;
-                self.selfGObj = ($$superClassName$$) fui.gObject;
-
                 self.selfGObj.Add(fui);
 
                 var com = fui.gObject.asCom;
@@ -69,8 +66,14 @@ $$compsDestroy$$
         /// <summary>
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
         /// </summary>
-        public $$superClassName$$ selfGObj;
-
+        public $$superClassName$$ selfGObj
+        {
+            get
+            {
+                return (GButton)this.GetParent<FUIGObjectComponent>()?.gObject;
+            }
+        }
+        
         public FUIGObjectComponent selfFUIRoot;
 
 $$compsDefine$$
