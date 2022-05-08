@@ -6,10 +6,10 @@ namespace ET
 {
     public static class FCharacterItemSystem
     {
-        private static T CreateFUICompInst<T>(FCharacterItem self, GObject gObject) where T : Entity, IAwake<FUIGObjectComponent>, new()
+        private static T CreateFUICompInst<T>(FCharacterItem self, GObject gObject) where T : Entity, IAwake, new()
         {
             var _fui = self.AddChild<FUIGObjectComponent, GObject>(gObject);
-            return _fui.AddComponent<T, FUIGObjectComponent>(_fui);
+            return _fui.AddComponent<T>();
         }
 
         /// <summary>
@@ -26,19 +26,13 @@ namespace ET
         //     return fui;
         // }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
-        public class FCharacterItemAwakeSystem: AwakeSystem<FCharacterItem, FUIGObjectComponent>
+        public class FCharacterItemAwakeSystem: AwakeSystem<FCharacterItem>
         {
-            public override void Awake(FCharacterItem self, FUIGObjectComponent fui)
+            public override void Awake(FCharacterItem self)
             {
-                self.selfFUIRoot = fui;
-                self.selfGObj = (GButton) fui.gObject;
-
-                self.selfGObj.Add(fui);
-
-                var com = fui.gObject.asCom;
-
+                self.selfGObj.Add(self.selfFUIRoot);
+                var com = self.selfFUIRoot.gObject.asCom;
                 if (com != null)
                 {
 					self.button = com.GetControllerAt(0);
@@ -70,7 +64,7 @@ namespace ET
     }
 
     
-    public sealed class FCharacterItem: Entity, IAwake<FUIGObjectComponent>, IDestroy
+    public sealed class FCharacterItem: Entity, IAwake, IDestroy
     {
         public const string UIPackageName = "CommonComp";
         public const string UIResName = "CharacterItem";
@@ -78,9 +72,21 @@ namespace ET
         /// <summary>
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
         /// </summary>
-        public GButton selfGObj;
-
-        public FUIGObjectComponent selfFUIRoot;
+        public GButton selfGObj
+        {
+            get
+            {
+                return (GButton)this.selfFUIRoot?.gObject;
+            }
+        }
+        
+        public FUIGObjectComponent selfFUIRoot
+         {
+            get
+            {
+                return this.GetParent<FUIGObjectComponent>();
+            }
+        }
 
 		public Controller button { get; set; }
 		public GImage n0 { get; set; }

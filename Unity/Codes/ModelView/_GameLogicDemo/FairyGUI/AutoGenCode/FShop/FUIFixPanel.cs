@@ -6,10 +6,10 @@ namespace ET
 {
     public static class FUIFixPanelSystem
     {
-        private static T CreateFUICompInst<T>(FUIFixPanel self, GObject gObject) where T : Entity, IAwake<FUIGObjectComponent>, new()
+        private static T CreateFUICompInst<T>(FUIFixPanel self, GObject gObject) where T : Entity, IAwake, new()
         {
             var _fui = self.AddChild<FUIGObjectComponent, GObject>(gObject);
-            return _fui.AddComponent<T, FUIGObjectComponent>(_fui);
+            return _fui.AddComponent<T>();
         }
 
         /// <summary>
@@ -26,19 +26,13 @@ namespace ET
         //     return fui;
         // }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
-        public class FUIFixPanelAwakeSystem: AwakeSystem<FUIFixPanel, FUIGObjectComponent>
+        public class FUIFixPanelAwakeSystem: AwakeSystem<FUIFixPanel>
         {
-            public override void Awake(FUIFixPanel self, FUIGObjectComponent fui)
+            public override void Awake(FUIFixPanel self)
             {
-                self.selfFUIRoot = fui;
-                self.selfGObj = (GComponent) fui.gObject;
-
-                self.selfGObj.Add(fui);
-
-                var com = fui.gObject.asCom;
-
+                self.selfGObj.Add(self.selfFUIRoot);
+                var com = self.selfFUIRoot.gObject.asCom;
                 if (com != null)
                 {
 					self.SelectBG = (GImage)com.GetChildAt(0);
@@ -74,7 +68,7 @@ namespace ET
     }
 
     [FUI(typeof(FUIFixPanel), UIPackageName, UIResName)]
-    public sealed class FUIFixPanel: Entity, IAwake<FUIGObjectComponent>, IDestroy
+    public sealed class FUIFixPanel: Entity, IAwake, IDestroy
     {
         public const string UIPackageName = "FShop";
         public const string UIResName = "UIFixPanel";
@@ -82,9 +76,21 @@ namespace ET
         /// <summary>
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
         /// </summary>
-        public GComponent selfGObj;
-
-        public FUIGObjectComponent selfFUIRoot;
+        public GComponent selfGObj
+        {
+            get
+            {
+                return (GComponent)this.selfFUIRoot?.gObject;
+            }
+        }
+        
+        public FUIGObjectComponent selfFUIRoot
+         {
+            get
+            {
+                return this.GetParent<FUIGObjectComponent>();
+            }
+        }
 
 		public GImage SelectBG { get; set; }
 		public GTextField n1 { get; set; }

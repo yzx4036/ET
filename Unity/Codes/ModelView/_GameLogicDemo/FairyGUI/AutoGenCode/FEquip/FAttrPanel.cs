@@ -6,10 +6,10 @@ namespace ET
 {
     public static class FAttrPanelSystem
     {
-        private static T CreateFUICompInst<T>(FAttrPanel self, GObject gObject) where T : Entity, IAwake<FUIGObjectComponent>, new()
+        private static T CreateFUICompInst<T>(FAttrPanel self, GObject gObject) where T : Entity, IAwake, new()
         {
             var _fui = self.AddChild<FUIGObjectComponent, GObject>(gObject);
-            return _fui.AddComponent<T, FUIGObjectComponent>(_fui);
+            return _fui.AddComponent<T>();
         }
 
         /// <summary>
@@ -26,19 +26,13 @@ namespace ET
         //     return fui;
         // }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
-        public class FAttrPanelAwakeSystem: AwakeSystem<FAttrPanel, FUIGObjectComponent>
+        public class FAttrPanelAwakeSystem: AwakeSystem<FAttrPanel>
         {
-            public override void Awake(FAttrPanel self, FUIGObjectComponent fui)
+            public override void Awake(FAttrPanel self)
             {
-                self.selfFUIRoot = fui;
-                self.selfGObj = (GComponent) fui.gObject;
-
-                self.selfGObj.Add(fui);
-
-                var com = fui.gObject.asCom;
-
+                self.selfGObj.Add(self.selfFUIRoot);
+                var com = self.selfFUIRoot.gObject.asCom;
                 if (com != null)
                 {
 					self.AttrBG = (GImage)com.GetChildAt(0);
@@ -162,7 +156,7 @@ namespace ET
     }
 
     
-    public sealed class FAttrPanel: Entity, IAwake<FUIGObjectComponent>, IDestroy
+    public sealed class FAttrPanel: Entity, IAwake, IDestroy
     {
         public const string UIPackageName = "FEquip";
         public const string UIResName = "AttrPanel";
@@ -170,9 +164,21 @@ namespace ET
         /// <summary>
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
         /// </summary>
-        public GComponent selfGObj;
-
-        public FUIGObjectComponent selfFUIRoot;
+        public GComponent selfGObj
+        {
+            get
+            {
+                return (GComponent)this.selfFUIRoot?.gObject;
+            }
+        }
+        
+        public FUIGObjectComponent selfFUIRoot
+         {
+            get
+            {
+                return this.GetParent<FUIGObjectComponent>();
+            }
+        }
 
 		public GImage AttrBG { get; set; }
 		public FButton_Close CloseBtn { get; set; }

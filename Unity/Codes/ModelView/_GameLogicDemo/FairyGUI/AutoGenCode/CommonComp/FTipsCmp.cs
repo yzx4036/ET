@@ -6,10 +6,10 @@ namespace ET
 {
     public static class FTipsCmpSystem
     {
-        private static T CreateFUICompInst<T>(FTipsCmp self, GObject gObject) where T : Entity, IAwake<FUIGObjectComponent>, new()
+        private static T CreateFUICompInst<T>(FTipsCmp self, GObject gObject) where T : Entity, IAwake, new()
         {
             var _fui = self.AddChild<FUIGObjectComponent, GObject>(gObject);
-            return _fui.AddComponent<T, FUIGObjectComponent>(_fui);
+            return _fui.AddComponent<T>();
         }
 
         /// <summary>
@@ -26,19 +26,13 @@ namespace ET
         //     return fui;
         // }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
-        public class FTipsCmpAwakeSystem: AwakeSystem<FTipsCmp, FUIGObjectComponent>
+        public class FTipsCmpAwakeSystem: AwakeSystem<FTipsCmp>
         {
-            public override void Awake(FTipsCmp self, FUIGObjectComponent fui)
+            public override void Awake(FTipsCmp self)
             {
-                self.selfFUIRoot = fui;
-                self.selfGObj = (GComponent) fui.gObject;
-
-                self.selfGObj.Add(fui);
-
-                var com = fui.gObject.asCom;
-
+                self.selfGObj.Add(self.selfFUIRoot);
+                var com = self.selfFUIRoot.gObject.asCom;
                 if (com != null)
                 {
 					self.n10 = (GImage)com.GetChildAt(0);
@@ -62,7 +56,7 @@ namespace ET
     }
 
     
-    public sealed class FTipsCmp: Entity, IAwake<FUIGObjectComponent>, IDestroy
+    public sealed class FTipsCmp: Entity, IAwake, IDestroy
     {
         public const string UIPackageName = "CommonComp";
         public const string UIResName = "TipsCmp";
@@ -70,9 +64,21 @@ namespace ET
         /// <summary>
         /// {uiResName}的组件类型(GComponent、GButton、GProcessBar等)，它们都是GObject的子类。
         /// </summary>
-        public GComponent selfGObj;
-
-        public FUIGObjectComponent selfFUIRoot;
+        public GComponent selfGObj
+        {
+            get
+            {
+                return (GComponent)this.selfFUIRoot?.gObject;
+            }
+        }
+        
+        public FUIGObjectComponent selfFUIRoot
+         {
+            get
+            {
+                return this.GetParent<FUIGObjectComponent>();
+            }
+        }
 
 		public GImage n10 { get; set; }
 		public GTextField AttrText { get; set; }
