@@ -454,8 +454,8 @@
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GObjectPool.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\BreakpointInfo.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\ExtensibleUtil.cs" />
-     <Compile Include="Assets\ThirdParty\ILRuntime\CLR\TypeSystem\CLRType.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Scripts\UI\GObject.cs" />
+     <Compile Include="Assets\ThirdParty\ILRuntime\CLR\TypeSystem\CLRType.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Debugger\Protocol\SCEnumChildrenResult.cs" />
      <Compile Include="Assets\ThirdParty\FairyGUI\Examples\TurnPage\TurnPageMain.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Runtime\Intepreter\ILIntepreter.cs" />
@@ -636,6 +636,7 @@
      <Compile Include="Assets\ThirdParty\LitJson\IJsonWrapper.cs" />
      <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\UInt16Serializer.cs" />
      <Compile Include="Assets\ThirdParty\ILRuntime\Mono.Cecil\Mono.Cecil\AssemblyFlags.cs" />
+     <Compile Include="Assets\ThirdParty\_GameLogic\Empty.cs" />
      <None Include="Assets\ThirdParty\FairyGUI\Examples\Resources\RenderTexture\FullScreen.shader" />
      <None Include="Assets\ThirdParty\FairyGUI\Examples\Resources\Role\Materials\Role-Diffuse.shader" />
      <None Include="Assets\ThirdParty\FairyGUI\Resources\Shaders\FairyGUI-Text.shader" />
@@ -1243,7 +1244,6 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\ThirdParty\_GameLogic" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
