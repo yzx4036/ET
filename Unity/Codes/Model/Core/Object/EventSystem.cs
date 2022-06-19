@@ -88,6 +88,9 @@ namespace ET
 
         private Queue<long> lateUpdates = new Queue<long>();
         private Queue<long> lateUpdates2 = new Queue<long>();
+        
+        private Queue<long> fixedUpdates = new Queue<long>();
+        private Queue<long> fixedUpdates2 = new Queue<long>();
 
         private EventSystem()
         {
@@ -242,6 +245,14 @@ namespace ET
                 if (oneTypeSystems.ContainsKey(typeof (ILateUpdateSystem)))
                 {
                     this.lateUpdates.Enqueue(component.InstanceId);
+                }
+            }
+            
+            if (component is IFixedUpdate)
+            {
+                if (oneTypeSystems.ContainsKey(typeof (IFixedUpdateSystem)))
+                {
+                    this.fixedUpdates.Enqueue(component.InstanceId);
                 }
             }
         }
@@ -629,6 +640,47 @@ namespace ET
             }
 
             ObjectHelper.Swap(ref this.lateUpdates, ref this.lateUpdates2);
+        }
+        
+        public void FixedUpdate()
+        {
+            while (this.fixedUpdates.Count > 0)
+            {
+                long instanceId = this.fixedUpdates.Dequeue();
+                Entity component;
+                if (!this.allEntities.TryGetValue(instanceId, out component))
+                {
+                    continue;
+                }
+
+                if (component.IsDisposed)
+                {
+                    continue;
+                }
+
+                List<object> iFixedUpdateSystems = this.typeSystems.GetSystems(component.GetType(), typeof (IFixedUpdateSystem));
+                if (iFixedUpdateSystems == null)
+                {
+                    continue;
+                }
+
+                this.lateUpdates2.Enqueue(instanceId);
+
+                for (int i = 0; i < iFixedUpdateSystems.Count; ++i)
+                {
+                    IFixedUpdateSystem iFixedUpdateSystem = iFixedUpdateSystems[i] as IFixedUpdateSystem;
+                    try
+                    {
+                        iFixedUpdateSystem.Run(component);
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Error(e);
+                    }
+                }
+            }
+
+            ObjectHelper.Swap(ref this.fixedUpdates, ref this.fixedUpdates2);
         }
 
         public async ETTask PublishAsync<T>(T a) where T : struct

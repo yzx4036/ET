@@ -56,6 +56,11 @@ namespace ET
 			CodeLoader.Instance.Update?.Invoke();
 		}
 
+		private void FixedUpdate()
+		{
+			CodeLoader.Instance.FixedUpdate?.Invoke();
+		}
+
 		private void LateUpdate()
 		{
 			CodeLoader.Instance.LateUpdate?.Invoke();
