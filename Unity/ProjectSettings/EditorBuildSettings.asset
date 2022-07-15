@@ -5,17 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Res/Scenes/Init.unity
+  - enabled: 1
+    path: Assets/Scenes/Init.unity
     guid: e0d691ac8c1d0454ba07089ea820e18a
-  - enabled: 0
-    path: Assets/Bundles/Scenes/Map1.unity
+  - enabled: 1
+    path: Assets/Scenes/Map1.unity
     guid: a5294483f20f40d449699101bb428cda
-  - enabled: 0
-    path: Assets/Bundles/Scenes/Map2.unity
+  - enabled: 1
+    path: Assets/Scenes/Map2.unity
     guid: 064123f1e5067b249a9fd8967ddbde09
-  m_configObjects:
-    addressableimportsettings: {fileID: 11400000, guid: 01aec9759eab6b74db52e804b23a9925,
-      type: 2}
-    com.unity.addressableassets: {fileID: 11400000, guid: a2687dc910ddeb44ba844bf9f9941eca,
-      type: 2}
+  m_configObjects: {}
