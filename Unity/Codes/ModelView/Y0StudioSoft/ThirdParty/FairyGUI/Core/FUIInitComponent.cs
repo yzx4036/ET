@@ -53,6 +53,7 @@ namespace ET
         }
     }
 
+    [ComponentOf(typeof(Scene))]
     public class FUIInitComponent: Entity, IAwake, IDestroy
     {
         public readonly string[] _initPackageArray =

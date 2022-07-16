@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ET
 {
+	[ComponentOf(typeof(FUIGObjectComponent))]
 	public class FUILoginComponent : Entity, IAwake, IFUIBaseComponent
 	{
 		public FUILoginPanel fuiLogin;

@@ -95,6 +95,7 @@ namespace Y0StudioSoft.ET
 
     }
 
+    [ComponentOf(typeof(Scene))]
     public class AddressablesResComponent: Entity, IAwake, IDestroy
     {
         public GameObjectMgr goMgrInst;
