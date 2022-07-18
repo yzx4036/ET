@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Codes/Model/Share/Module/Timer/TimerComponent.cs.meta
 guid: 7d66a2e8cb43eca40bf511df28447e11
+========
+guid: 92b51ee3607711d408524a14777db73b
+>>>>>>>> upstream_master:Codes/Model/Client/Demo/Scene/ClientSceneFlagComponent.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

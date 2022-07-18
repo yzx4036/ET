@@ -31,7 +31,7 @@ namespace ET
 
         public static Options Options => Options.Instance;
 
-        public static List<Action> FrameFinishCallback = new List<Action>();
+        public static ILog ILog { get; set; }
 
         public static ILog ILog { get; set; }
 
@@ -45,15 +45,6 @@ namespace ET
         public static void LateUpdate()
         {
             EventSystem.LateUpdate();
-        }
-
-        public static void FrameFinish()
-        {
-            foreach (Action action in FrameFinishCallback)
-            {
-                action.Invoke();
-            }
-            FrameFinishCallback.Clear();
         }
 
         public static void Close()
