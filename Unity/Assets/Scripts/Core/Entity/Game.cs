@@ -33,8 +33,6 @@ namespace ET
 
         public static ILog ILog { get; set; }
 
-        public static ILog ILog { get; set; }
-
         public static void Update()
         {
             ThreadSynchronizationContext.Update();
