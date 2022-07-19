@@ -5,7 +5,7 @@ using UnityEngine;
 using YooAsset;
 using ET;
 
-namespace Y0StudioSoft.ET
+namespace Y0Studio.ET.Client.Res
 {
     public static class PatchUpdater
     {

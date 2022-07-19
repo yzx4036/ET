@@ -4,7 +4,7 @@ using ET;
 using UnityEngine;
 using YooAsset;
 
-namespace Y0StudioSoft.ET
+namespace Y0Studio.ET.Client.Res
 {
 	public class FsmCreateDownloader: IFsmNode
 	{

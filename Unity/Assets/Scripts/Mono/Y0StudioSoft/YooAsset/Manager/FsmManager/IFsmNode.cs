@@ -1,5 +1,5 @@
 ﻿
-namespace Y0StudioSoft.ET
+namespace Y0Studio.ET.Client.Res
 {
 	public interface IFsmNode
 	{

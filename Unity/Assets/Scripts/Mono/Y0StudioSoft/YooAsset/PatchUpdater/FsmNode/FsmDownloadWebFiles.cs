@@ -2,7 +2,7 @@
 using ET;
 using YooAsset;
 
-namespace Y0StudioSoft.ET
+namespace Y0Studio.ET.Client.Res
 {
     public class FsmDownloadWebFiles: IFsmNode
     {

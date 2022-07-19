@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Y0StudioSoft.ET
+namespace Y0Studio.ET.Client.Res
 {
 	internal class FsmPatchDone: IFsmNode
 	{

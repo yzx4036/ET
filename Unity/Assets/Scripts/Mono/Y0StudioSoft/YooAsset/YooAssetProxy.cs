@@ -4,7 +4,7 @@ using ET;
 using UnityEngine.SceneManagement;
 using YooAsset;
 
-namespace Y0StudioSoft.ET
+namespace Y0Studio.ET.Client.Res
 {
     public static class YooAssetProxy
     {

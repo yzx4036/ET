@@ -1,4 +1,4 @@
-﻿namespace Y0StudioSoft.ET
+﻿namespace Y0Studio.ET.Client.Res
 {
     /// <summary>
     /// 用户层反馈的操作方式

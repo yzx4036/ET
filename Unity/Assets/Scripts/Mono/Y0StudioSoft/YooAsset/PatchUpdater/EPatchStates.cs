@@ -1,4 +1,4 @@
-﻿namespace Y0StudioSoft.ET
+﻿namespace Y0Studio.ET.Client.Res
 {
     /// <summary>
     /// 补丁系统更新状态

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Y0StudioSoft.ET
+namespace Y0Studio.ET.Client.Res
 {
 	public class EventGroup
 	{
