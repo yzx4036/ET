@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace ET
+namespace ET.Client
 {
     [FriendOf(typeof(UI))]
     public static class UISystem
@@ -71,8 +71,8 @@ namespace ET
             return child;
         }
     }
-	
-    [ChildType(typeof(UI))]
+    
+    [ChildOf()]
     public sealed class UI: Entity, IAwake<string, GameObject>, IDestroy
     {
         public GameObject GameObject { get; set; }

@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace ET
+namespace ET.Client
 {
 	/// <summary>
 	/// 管理Scene上的UI
 	/// </summary>
-	[ChildType(typeof(UI))]
 	[ComponentOf(typeof(Scene))]
 	public class UIComponent: Entity, IAwake
 	{

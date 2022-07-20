@@ -47,6 +47,7 @@ namespace ET.Client
         }
     }
 
+    [ChildOf(typeof(ResourcesComponent))]
     public class ABInfo: Entity, IAwake<string, AssetBundle>, IDestroy
     {
         public string Name { get; set; }
@@ -135,7 +136,6 @@ namespace ET.Client
             protected override void Awake(ResourcesComponent self)
             {
                 ResourcesComponent.Instance = self;
-
                 if (Define.IsAsync)
                 {
                     self.LoadOneBundle("StreamingAssets");
@@ -599,8 +599,7 @@ namespace ET.Client
         }
     }
     
-    [ComponentOf(typeof(Scene))]
-    [ChildType(typeof(ABInfo))]
+    [ComponentOf]
     public class ResourcesComponent: Entity, IAwake, IDestroy
     {
         public static ResourcesComponent Instance { get; set; }

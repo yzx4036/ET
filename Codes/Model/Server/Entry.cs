@@ -10,6 +10,11 @@ namespace ET.Server
     {
         public static void Start()
         {
+            StartAsync().Coroutine();
+        }
+        
+        private static async ETTask StartAsync()
+        {
             AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
             {
                 Log.Error(e.ExceptionObject.ToString());
@@ -20,9 +25,7 @@ namespace ET.Server
             // 异步方法全部会回掉到主线程
             SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
             
-            Dictionary<string, Type> types = AssemblyHelper.GetAssemblyTypes(typeof(Game).Assembly, typeof(Entry).Assembly, DllHelper.GetHotfixAssembly());
-                    
-            Game.EventSystem.Add(types);
+            CodeLoader.Instance.LoadHotfix();
 				
             MongoHelper.Register(Game.EventSystem.GetTypes());
 
@@ -40,8 +43,9 @@ namespace ET.Server
             LogManager.Configuration.Variables["appIdFormat"] = $"{Game.Options.Process:000000}";
 				
             Log.Console($"app start: {Game.Scene.Id} options: {JsonHelper.ToJson(Game.Options)} ");
-
-            Game.EventSystem.Publish(Game.Scene, new ET.EventType.AppStart());
+            
+            await Game.EventSystem.Callback<ETTask>(CallbackType.InitShare);
+            await Game.EventSystem.Callback<ETTask>(CallbackType.InitServer);
         }
     }
 }

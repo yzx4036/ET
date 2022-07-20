@@ -15,8 +15,8 @@ namespace ET
 		public Action OnApplicationQuit;
 
 		private Assembly assembly;
-		
-		public CodeMode CodeMode { get; set; }
+
+		public GlobalConfig GlobalConfig;
 
 		private CodeLoader()
 		{
@@ -28,9 +28,9 @@ namespace ET
 		
 		public void Start()
 		{
-			switch (this.CodeMode)
+			switch (this.GlobalConfig.LoadMode)
 			{
-				case CodeMode.Mono:
+				case LoadMode.Mono:
 				{
 					Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
 					byte[] assBytes = ((TextAsset)dictionary["Code.dll"]).bytes;
@@ -46,13 +46,13 @@ namespace ET
 					start.Run();
 					break;
 				}
-				case CodeMode.Reload:
+				case LoadMode.Reload:
 				{
-					byte[] assBytes = File.ReadAllBytes(Path.Combine(Define.BuildOutputDir, "Data.dll"));
-					byte[] pdbBytes = File.ReadAllBytes(Path.Combine(Define.BuildOutputDir, "Data.pdb"));
+					byte[] assBytes = File.ReadAllBytes(Path.Combine(Define.BuildOutputDir, "Model.dll"));
+					byte[] pdbBytes = File.ReadAllBytes(Path.Combine(Define.BuildOutputDir, "Model.pdb"));
 					
 					assembly = Assembly.Load(assBytes, pdbBytes);
-					this.LoadLogic();
+					this.LoadHotfix();
 					IStaticMethod start = new StaticMethod(assembly, "ET.Client.Entry", "Start");
 					start.Run();
 					break;
@@ -63,15 +63,15 @@ namespace ET
 		// 热重载调用下面两个方法
 		// CodeLoader.Instance.LoadLogic();
 		// Game.EventSystem.Load();
-		public void LoadLogic()
+		public void LoadHotfix()
 		{
-			if (this.CodeMode != CodeMode.Reload)
+			if (this.GlobalConfig.LoadMode != LoadMode.Reload)
 			{
 				throw new Exception("CodeMode != Reload!");
 			}
 			
 			// 傻屌Unity在这里搞了个傻逼优化，认为同一个路径的dll，返回的程序集就一样。所以这里每次编译都要随机名字
-			string[] logicFiles = Directory.GetFiles(Define.BuildOutputDir, "Logic_*.dll");
+			string[] logicFiles = Directory.GetFiles(Define.BuildOutputDir, "Hotfix_*.dll");
 			if (logicFiles.Length != 1)
 			{
 				throw new Exception("Logic dll count != 1");

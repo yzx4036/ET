@@ -13,99 +13,166 @@ namespace ET
     {
         private const string CodeDir = "Assets/Bundles/Code/";
 
-        [MenuItem("Tools/Build/EnableAutoBuildCodeDebug _F1")]
         public static void SetAutoBuildCode()
         {
             PlayerPrefs.SetInt("AutoBuild", 1);
             ShowNotification("AutoBuildCode Enabled");
         }
         
-        [MenuItem("Tools/Build/DisableAutoBuildCodeDebug _F2")]
         public static void CancelAutoBuildCode()
         {
             PlayerPrefs.DeleteKey("AutoBuild");
             ShowNotification("AutoBuildCode Disabled");
         }
 
-        [MenuItem("Tools/Build/BuildCodeDebug _F5")]
-        public static void BuildCodeDebug()
+        public static void BuildCode(CodeOptimization codeOptimization, GlobalConfig globalConfig)
         {
-            BuildAssemblieEditor.BuildMuteAssembly("Code", new []
+            List<string> codes;
+            switch (globalConfig.CodeMode)
             {
-                "../Codes/Generate/Client/",
-                "../Codes/Model/Share/",
-                "../Codes/Hotfix/Share/",
-                "../Codes/Model/Client/",
-                "../Codes/ModelView/Client/",
-                "../Codes/Hotfix/Client/",
-                "../Codes/HotfixView/Client/"
-            }, Array.Empty<string>(), CodeOptimization.Debug);
+                case CodeMode.Client:
+                    codes = new List<string>()
+                    {
+                        "../Codes/Generate/Client/",
+                        "../Codes/Model/Share/",
+                        "../Codes/Hotfix/Share/",
+                        "../Codes/Model/Client/",
+                        "../Codes/ModelView/Client/",
+                        "../Codes/Hotfix/Client/",
+                        "../Codes/HotfixView/Client/"
+                    };
+                    break;
+                case CodeMode.Server:
+                    codes = new List<string>()
+                    {
+                        "../Codes/Generate/Server/",
+                        "../Codes/Model/Share/",
+                        "../Codes/Hotfix/Share/",
+                        "../Codes/Model/Server/",
+                        "../Codes/Hotfix/Server/",
+                    };
+                    break;
+                case CodeMode.ClientServer:
+                    codes = new List<string>()
+                    {
+                        "../Codes/Generate/Client/",
+                        "../Codes/Model/Share/",
+                        "../Codes/Hotfix/Share/",
+                        "../Codes/Model/Client/",
+                        "../Codes/ModelView/Client/",
+                        "../Codes/Hotfix/Client/",
+                        "../Codes/HotfixView/Client/",
+                        "../Codes/Generate/Server/",
+                        "../Codes/Model/Server/",
+                        "../Codes/Hotfix/Server/",
+                    };
+                    break;
+                default:
+                    throw new Exception("not found enum");
+            }
+
+            BuildAssemblieEditor.BuildMuteAssembly("Code", codes, Array.Empty<string>(), codeOptimization);
 
             AfterCompiling();
             
             AssetDatabase.Refresh();
         }
         
-        [MenuItem("Tools/Build/BuildCodeRelease _F6")]
-        public static void BuildCodeRelease()
+        public static void BuildModel(CodeOptimization codeOptimization, GlobalConfig globalConfig)
         {
-            BuildAssemblieEditor.BuildMuteAssembly("Code", new []
-            {
-                "../Codes/Generate/Client/",
-                "../Codes/Model/Share/",
-                "../Codes/Hotfix/Share/",
-                "../Codes/Model/Client/",
-                "../Codes/ModelView/Client/",
-                "../Codes/Hotfix/Client/",
-                "../Codes/HotfixView/Client/"
-            }, Array.Empty<string>(), CodeOptimization.Release);
-
-            AfterCompiling();
+            List<string> codes;
             
-            AssetDatabase.Refresh();
-        }
-        
-        [MenuItem("Tools/Build/BuildData _F7")]
-        public static void BuildData()
-        {
-            BuildAssemblieEditor.BuildMuteAssembly("Data", new []
+            switch (globalConfig.CodeMode)
             {
-                "../Codes/Generate/Client/",
-                "../Codes/Model/Share/",
-                "../Codes/Model/Client/",
-                "../Codes/ModelView/Client/",
-            }, Array.Empty<string>(), CodeOptimization.Debug);
+                case CodeMode.Client:
+                    codes = new List<string>()
+                    {
+                        "../Codes/Generate/Client/",
+                        "../Codes/Model/Share/",
+                        "../Codes/Model/Client/",
+                        "../Codes/ModelView/Client/",
+                    };
+                    break;
+                case CodeMode.Server:
+                    codes = new List<string>()
+                    {
+                        "../Codes/Generate/Server/",
+                        "../Codes/Model/Share/",
+                        "../Codes/Model/Server/",
+                    };
+                    break;
+                case CodeMode.ClientServer:
+                    codes = new List<string>()
+                    {
+                        "../Codes/Generate/Client/",
+                        "../Codes/Model/Share/",
+                        "../Codes/Model/Client/",
+                        "../Codes/ModelView/Client/",
+                        "../Codes/Generate/Server/",
+                        "../Codes/Model/Server/",
+                    };
+                    break;
+                default:
+                    throw new Exception("not found enum");
+            }
+            
+            BuildAssemblieEditor.BuildMuteAssembly("Model", codes, Array.Empty<string>(), codeOptimization);
         }
         
         
-        [MenuItem("Tools/Build/BuildLogic _F8")]
-        public static void BuildLogic()
+        public static void BuildHotfix(CodeOptimization codeOptimization, GlobalConfig globalConfig)
         {
-            string[] logicFiles = Directory.GetFiles(Define.BuildOutputDir, "Logic_*");
+            string[] logicFiles = Directory.GetFiles(Define.BuildOutputDir, "Hotfix_*");
             foreach (string file in logicFiles)
             {
                 File.Delete(file);
             }
             
             int random = RandomHelper.RandomNumber(100000000, 999999999);
-            string logicFile = $"Logic_{random}";
+            string logicFile = $"Hotfix_{random}";
             
-            BuildAssemblieEditor.BuildMuteAssembly(logicFile, new []
+            List<string> codes;
+            switch (globalConfig.CodeMode)
             {
-                "../Codes/Hotfix/Share/",
-                "../Codes/Hotfix/Client/",
-                "../Codes/HotfixView/Client/"
-            }, new[]{Path.Combine(Define.BuildOutputDir, "Data.dll")}, CodeOptimization.Debug);
+                case CodeMode.Client:
+                    codes = new List<string>()
+                    {
+                        "../Codes/Hotfix/Share/",
+                        "../Codes/Hotfix/Client/",
+                        "../Codes/HotfixView/Client/"
+                    };
+                    break;
+                case CodeMode.Server:
+                    codes = new List<string>()
+                    {
+                        "../Codes/Hotfix/Share/",
+                        "../Codes/Hotfix/Server/",
+                    };
+                    break;
+                case CodeMode.ClientServer:
+                    codes = new List<string>()
+                    {
+                        "../Codes/Hotfix/Share/",
+                        "../Codes/Hotfix/Client/",
+                        "../Codes/HotfixView/Client/",
+                        "../Codes/Hotfix/Server/",
+                    };
+                    break;
+                default:
+                    throw new Exception("not found enum");
+            }
+            
+            BuildAssemblieEditor.BuildMuteAssembly(logicFile, codes, new[]{Path.Combine(Define.BuildOutputDir, "Model.dll")}, codeOptimization);
         }
 
-        private static void BuildMuteAssembly(string assemblyName, string[] CodeDirectorys, string[] additionalReferences, CodeOptimization codeOptimization)
+        private static void BuildMuteAssembly(string assemblyName, List<string> CodeDirectorys, string[] additionalReferences, CodeOptimization codeOptimization)
         {
             if (!Directory.Exists(Define.BuildOutputDir))
             {
                 Directory.CreateDirectory(Define.BuildOutputDir);
             }
             List<string> scripts = new List<string>();
-            for (int i = 0; i < CodeDirectorys.Length; i++)
+            for (int i = 0; i < CodeDirectorys.Count; i++)
             {
                 DirectoryInfo dti = new DirectoryInfo(CodeDirectorys[i]);
                 FileInfo[] fileInfos = dti.GetFiles("*.cs", System.IO.SearchOption.AllDirectories);
