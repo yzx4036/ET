@@ -23,6 +23,10 @@ namespace ET
 		
 		public static void CleanDirectory(string dir)
 		{
+			if (!Directory.Exists(dir))
+			{
+				return;
+			}
 			foreach (string subdir in Directory.GetDirectories(dir))
 			{
 				Directory.Delete(subdir, true);		
@@ -91,30 +95,6 @@ namespace ET
 					ReplaceExtensionName(subDir, extensionName, newExtensionName);
 				}
 			}
-		}
-		
-		public static bool CopyFile(string sourcePath, string targetPath, bool overwrite)
-		{
-			string sourceText = null;
-			string targetText = null;
-
-			if (File.Exists(sourcePath))
-			{
-				sourceText = File.ReadAllText(sourcePath);
-			}
-
-			if (File.Exists(targetPath))
-			{
-				targetText = File.ReadAllText(targetPath);
-			}
-
-			if (sourceText != targetText && File.Exists(sourcePath))
-			{
-				File.Copy(sourcePath, targetPath, overwrite);
-				return true;
-			}
-
-			return false;
 		}
 	}
 }

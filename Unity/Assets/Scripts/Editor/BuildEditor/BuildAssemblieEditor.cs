@@ -50,19 +50,20 @@ namespace ET
                         "../Codes/Hotfix/Share/",
                         "../Codes/Model/Server/",
                         "../Codes/Hotfix/Server/",
+                        "../Codes/Model/Client/",
+                        "../Codes/Hotfix/Client/",
                     };
                     break;
                 case CodeMode.ClientServer:
                     codes = new List<string>()
                     {
-                        "../Codes/Generate/Client/",
+                        "../Codes/Generate/Server/",
                         "../Codes/Model/Share/",
                         "../Codes/Hotfix/Share/",
                         "../Codes/Model/Client/",
                         "../Codes/ModelView/Client/",
                         "../Codes/Hotfix/Client/",
                         "../Codes/HotfixView/Client/",
-                        "../Codes/Generate/Server/",
                         "../Codes/Model/Server/",
                         "../Codes/Hotfix/Server/",
                     };
@@ -99,12 +100,12 @@ namespace ET
                         "../Codes/Generate/Server/",
                         "../Codes/Model/Share/",
                         "../Codes/Model/Server/",
+                        "../Codes/Model/Client/",
                     };
                     break;
                 case CodeMode.ClientServer:
                     codes = new List<string>()
                     {
-                        "../Codes/Generate/Client/",
                         "../Codes/Model/Share/",
                         "../Codes/Model/Client/",
                         "../Codes/ModelView/Client/",
@@ -147,6 +148,7 @@ namespace ET
                     {
                         "../Codes/Hotfix/Share/",
                         "../Codes/Hotfix/Server/",
+                        "../Codes/Hotfix/Client/",
                     };
                     break;
                 case CodeMode.ClientServer:

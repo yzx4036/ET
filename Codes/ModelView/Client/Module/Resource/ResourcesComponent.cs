@@ -124,7 +124,7 @@ namespace ET.Client
                 {
                     self.LoadOneBundle("StreamingAssets");
                     self.AssetBundleManifestObject = (AssetBundleManifest)self.GetAsset("StreamingAssets", "AssetBundleManifest");
-                    self.UnloadBundle("StreamingAssets");
+                    self.UnloadBundle("StreamingAssets", false);
                 }
             }
         }
@@ -146,6 +146,11 @@ namespace ET.Client
                 self.IntToStringDict.Clear();
                 self.StringToABDict.Clear();
                 self.BundleNameToLowerDict.Clear();
+                if (self.AssetBundleManifestObject != null)
+                {
+                    UnityEngine.Object.Destroy(self.AssetBundleManifestObject);
+                    self.AssetBundleManifestObject = null;
+                }
             }
         }
 
@@ -214,17 +219,6 @@ namespace ET.Client
         public static bool Contains(this ResourcesComponent self, string bundleName)
         {
             return self.bundles.ContainsKey(bundleName);
-        }
-
-        public static Dictionary<string, UnityEngine.Object> GetBundleAll(this ResourcesComponent self, string bundleName)
-        {
-            Dictionary<string, UnityEngine.Object> dict;
-            if (!self.resourceCache.TryGetValue(bundleName.BundleNameToLower(), out dict))
-            {
-                throw new Exception($"not found asset: {bundleName}");
-            }
-
-            return dict;
         }
 
         public static UnityEngine.Object GetAsset(this ResourcesComponent self, string bundleName, string prefab)
