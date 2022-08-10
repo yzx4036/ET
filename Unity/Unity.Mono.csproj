@@ -610,25 +610,25 @@
      <HintPath>D:\Program Files\Unity\2021.3.2f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Unsafe">
-     <HintPath>D:\_Proj\UnityProj\ET\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.Unsafe.dll</HintPath>
+     <HintPath>D:\_Proj\UnityProj\ET6\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.Unsafe.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Mdb">
-     <HintPath>D:\_Proj\UnityProj\ET\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+     <HintPath>D:\_Proj\UnityProj\ET6\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
      </Reference>
      <Reference Include="CommandLine">
-     <HintPath>D:\_Proj\UnityProj\ET\Unity\Assets\Plugins\CommandLine.dll</HintPath>
+     <HintPath>D:\_Proj\UnityProj\ET6\Unity\Assets\Plugins\CommandLine.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Pdb">
-     <HintPath>D:\_Proj\UnityProj\ET\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+     <HintPath>D:\_Proj\UnityProj\ET6\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil">
-     <HintPath>D:\_Proj\UnityProj\ET\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+     <HintPath>D:\_Proj\UnityProj\ET6\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Rocks">
-     <HintPath>D:\_Proj\UnityProj\ET\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+     <HintPath>D:\_Proj\UnityProj\ET6\Unity\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
      </Reference>
      <Reference Include="ICSharpCode.SharpZipLib">
-     <HintPath>D:\_Proj\UnityProj\ET\Unity\Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+     <HintPath>D:\_Proj\UnityProj\ET6\Unity\Assets\Plugins\ICSharpCode.SharpZipLib.dll</HintPath>
      </Reference>
      <Reference Include="mscorlib">
      <HintPath>D:\Program Files\Unity\2021.3.2f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>
@@ -1231,22 +1231,22 @@
      <HintPath>D:\Program Files\Unity\2021.3.2f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\netstandard.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ResourceManager">
-     <HintPath>D:\_Proj\UnityProj\ET\Unity\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+     <HintPath>D:\_Proj\UnityProj\ET6\Unity\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Addressables.Editor">
-     <HintPath>D:\_Proj\UnityProj\ET\Unity\Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+     <HintPath>D:\_Proj\UnityProj\ET6\Unity\Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Addressables">
-     <HintPath>D:\_Proj\UnityProj\ET\Unity\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
+     <HintPath>D:\_Proj\UnityProj\ET6\Unity\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-     <HintPath>D:\_Proj\UnityProj\ET\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+     <HintPath>D:\_Proj\UnityProj\ET6\Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
-     <HintPath>D:\_Proj\UnityProj\ET\Unity\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     <HintPath>D:\_Proj\UnityProj\ET6\Unity\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>D:\_Proj\UnityProj\ET\Unity\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     <HintPath>D:\_Proj\UnityProj\ET6\Unity\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
