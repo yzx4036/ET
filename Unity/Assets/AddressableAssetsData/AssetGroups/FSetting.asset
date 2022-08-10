@@ -15,13 +15,14 @@ MonoBehaviour:
   m_GroupName: FSetting
   m_Data:
     m_SerializedData: []
-  m_GUID: 5cfda6d76f9e3364b881cca7b806c268
+  m_GUID: 0a519f25bd57f9c43bbc1fd311606b61
   m_SerializeEntries:
   - m_GUID: 3dae3cf4792ca1d44ae1d9aa61fb32f2
     m_Address: Assets/Bundles/FUI/FSetting_fui.bytes
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fba6c196efaf6c44692df230323aa228, type: 2}
   m_SchemaSet:

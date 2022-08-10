@@ -15,28 +15,20 @@ MonoBehaviour:
   m_GroupName: Code
   m_Data:
     m_SerializedData: []
-  m_GUID: a061f522c4de7b74a868dc730efa5107
+  m_GUID: c07cbac336be3f34b9b7ee85dc9263c4
   m_SerializeEntries:
-  - m_GUID: 14d85f8b92428844fbb28ad4fef3cb5c
-    m_Address: Code.pdb
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Preload
-  - m_GUID: b2e2ec89fef0f5a4cb1cca10b6ef77df
+  - m_GUID: 8f9f21b5f2b784449ad8f26dd3aaa8c4
     m_Address: Code.dll
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
-  - m_GUID: b632f40707b7c824f89bb68f0fcdae15
-    m_Address: Code.dll
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Preload
-  - m_GUID: 090beb3d1a8d2304da41b6bf71033836
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5cf0a870de9f4b8498180442a4573c07
     m_Address: Code.pdb
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fba6c196efaf6c44692df230323aa228, type: 2}
   m_SchemaSet:

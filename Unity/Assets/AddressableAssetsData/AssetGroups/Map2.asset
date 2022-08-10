@@ -15,13 +15,14 @@ MonoBehaviour:
   m_GroupName: Map2
   m_Data:
     m_SerializedData: []
-  m_GUID: a9b98c7d2e570cf41943b0c20c0d2ec5
+  m_GUID: 4f6b95a1192b7a94b85be883f08b84ea
   m_SerializeEntries:
   - m_GUID: 064123f1e5067b249a9fd8967ddbde09
     m_Address: Map2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fba6c196efaf6c44692df230323aa228, type: 2}
   m_SchemaSet:

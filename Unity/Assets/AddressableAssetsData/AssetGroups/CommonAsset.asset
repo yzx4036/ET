@@ -15,23 +15,26 @@ MonoBehaviour:
   m_GroupName: CommonAsset
   m_Data:
     m_SerializedData: []
-  m_GUID: 1fafa1055a2b47e44b45f97b401abce5
+  m_GUID: 50926059c2df552439962129f97eea6e
   m_SerializeEntries:
   - m_GUID: 9d9369c373813d74ca307a4be67fbe61
     m_Address: Assets/Bundles/FUI/CommonAsset_atlas0.png
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 772bd9aa7e4ccd04c9f3be427d751e8a
     m_Address: Assets/Bundles/FUI/CommonAsset_atlas0_1.png
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3fea728f7f29f5347af60b6daa602c4e
     m_Address: Assets/Bundles/FUI/CommonAsset_fui.bytes
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fba6c196efaf6c44692df230323aa228, type: 2}
   m_SchemaSet:

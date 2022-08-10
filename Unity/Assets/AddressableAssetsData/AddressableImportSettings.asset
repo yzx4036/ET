@@ -17,76 +17,76 @@ MonoBehaviour:
   - path: Assets/Bundles/UI/**.prefab
     matchType: 0
     groupName: UI
-    LabelMode: 0
+    groupTemplate: {fileID: 11400000, guid: 80d948ee291f6b64e881d8c8e1115109, type: 2}
+    groupTemplateApplicationMode: 0
     labelRefs:
     - m_LabelString: Preload
     dynamicLabels: []
-    groupTemplate: {fileID: 11400000, guid: 35a09e2dd7da1da42af3af9346b5047b, type: 2}
-    groupTemplateApplicationMode: 0
+    LabelMode: 0
     simplified: 0
     addressReplacement: 
   - path: Assets/Bundles/Code/*
     matchType: 0
     groupName: Code
-    LabelMode: 0
+    groupTemplate: {fileID: 11400000, guid: 35a09e2dd7da1da42af3af9346b5047b, type: 2}
+    groupTemplateApplicationMode: 0
     labelRefs:
     - m_LabelString: Preload
     dynamicLabels: []
-    groupTemplate: {fileID: 11400000, guid: 35a09e2dd7da1da42af3af9346b5047b, type: 2}
-    groupTemplateApplicationMode: 0
+    LabelMode: 0
     simplified: 1
     addressReplacement: 
   - path: Assets/Bundles/Scenes/(?<category>[^/]+)/*.unity
     matchType: 1
     groupName: ${category}
-    LabelMode: 0
+    groupTemplate: {fileID: 11400000, guid: 80d948ee291f6b64e881d8c8e1115109, type: 2}
+    groupTemplateApplicationMode: 0
     labelRefs:
     - m_LabelString: Preload
     dynamicLabels: []
-    groupTemplate: {fileID: 11400000, guid: 35a09e2dd7da1da42af3af9346b5047b, type: 2}
-    groupTemplateApplicationMode: 0
+    LabelMode: 0
     simplified: 1
     addressReplacement: 
   - path: Assets/Bundles/Config/*
     matchType: 0
     groupName: Config
-    LabelMode: 0
+    groupTemplate: {fileID: 11400000, guid: aa6cfda3d29e8944abee1fce4e3fbb8d, type: 2}
+    groupTemplateApplicationMode: 0
     labelRefs:
     - m_LabelString: config
     dynamicLabels: []
-    groupTemplate: {fileID: 11400000, guid: 35a09e2dd7da1da42af3af9346b5047b, type: 2}
-    groupTemplateApplicationMode: 0
+    LabelMode: 0
     simplified: 1
     addressReplacement: 
   - path: Assets/Bundles/Unit/*
     matchType: 0
     groupName: Units
-    LabelMode: 0
+    groupTemplate: {fileID: 11400000, guid: 80d948ee291f6b64e881d8c8e1115109, type: 2}
+    groupTemplateApplicationMode: 0
     labelRefs: []
     dynamicLabels: []
-    groupTemplate: {fileID: 11400000, guid: 35a09e2dd7da1da42af3af9346b5047b, type: 2}
-    groupTemplateApplicationMode: 0
+    LabelMode: 0
     simplified: 1
     addressReplacement: 
   - path: Assets/Bundles/FUI/(?<asset>.*)_(?<asset1>.*)_.*\.*
     matchType: 1
     groupName: ${asset}
-    LabelMode: 0
+    groupTemplate: {fileID: 11400000, guid: aa6cfda3d29e8944abee1fce4e3fbb8d, type: 2}
+    groupTemplateApplicationMode: 0
     labelRefs:
     - m_LabelString: Preload
     dynamicLabels: []
-    groupTemplate: {fileID: 11400000, guid: 35a09e2dd7da1da42af3af9346b5047b, type: 2}
-    groupTemplateApplicationMode: 0
+    LabelMode: 0
     simplified: 0
     addressReplacement: 
   - path: Assets/Bundles/FUI/(?<asset>.*)_.*\.*
     matchType: 1
     groupName: ${asset}
-    LabelMode: 0
+    groupTemplate: {fileID: 11400000, guid: aa6cfda3d29e8944abee1fce4e3fbb8d, type: 2}
+    groupTemplateApplicationMode: 0
     labelRefs:
     - m_LabelString: Preload
     dynamicLabels: []
-    groupTemplate: {fileID: 11400000, guid: 35a09e2dd7da1da42af3af9346b5047b, type: 2}
-    groupTemplateApplicationMode: 0
+    LabelMode: 0
     simplified: 0
     addressReplacement: 

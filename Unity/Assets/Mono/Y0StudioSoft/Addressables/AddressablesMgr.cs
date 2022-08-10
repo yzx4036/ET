@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
@@ -411,6 +412,10 @@ namespace Y0StudioSoft
             Debug.Log("Catalog检查完毕");
 
             Debug.Log("检查下载内容");
+
+            Dictionary<string, long> _tempRecord = new Dictionary<string, long>();
+            long _allDownloadSize = 0;
+            
             foreach (var locator in Addressables.ResourceLocators)
             {
                 var sizeHandler = Addressables.GetDownloadSizeAsync(locator.Keys);
@@ -419,37 +424,54 @@ namespace Y0StudioSoft
                 {
                     _initErrorCallback?.Invoke(sizeHandler.OperationException);
                     Addressables.Release(sizeHandler);
-                    return;
+                    continue;
                 }
-
+                _tempRecord.Add(locator.LocatorId, downloadSize);
+                _allDownloadSize += downloadSize;
                 Addressables.Release(sizeHandler);
-                if (downloadSize > 0)
-                {
-                    _initProgressCallback?.Invoke(0f, downloadSize);
-                    var downloadHandler = Addressables.DownloadDependenciesAsync(locator.Keys, Addressables.MergeMode.Union, false);
-                    await downloadHandler.Task;
-                    while (!downloadHandler.IsDone)
-                    {
-                        _initProgressCallback?.Invoke(downloadHandler.PercentComplete, downloadSize);
-                    }
+            }
+    
+            if (_allDownloadSize > 0)
+            {
+                Debug.Log($"有下载内容, 总大小：{_allDownloadSize}");
 
+                foreach (var locator in Addressables.ResourceLocators)
+                {
+                    if (!locator.Keys.Any())
+                    {
+                        continue;
+                    }
+                    var downloadSize = _tempRecord[locator.LocatorId];
+                    _initProgressCallback?.Invoke(0f, downloadSize);
+                    var downloadHandler = Addressables.DownloadDependenciesAsync(locator.Keys, Addressables.MergeMode.None, false);
+                    
+                    var task = Task.Factory.StartNew(async () =>
+                    {
+                        while (!downloadHandler.IsDone)
+                        {
+                            _initProgressCallback?.Invoke(downloadHandler.PercentComplete, downloadSize);
+                            await Task.Delay(2);
+                        }
+                    });
+                    
+                    await downloadHandler.Task;
+                    await task;
+                    
                     if (downloadHandler.Status == AsyncOperationStatus.Failed)
                     {
                         _initErrorCallback?.Invoke(downloadHandler.OperationException);
-                        return;
+                        continue;
                     }
 
                     _initProgressCallback?.Invoke(1f, downloadSize);
                     Addressables.Release(downloadHandler);
-                    Debug.Log("下载完成!");
                 }
-                else
-                {
-                    _initProgressCallback?.Invoke(1f, 0);
-                    Debug.Log("无可下载文件");
-                }
-
-                break;
+                Debug.Log("下载完成!");
+            }
+            else
+            {
+                _initProgressCallback?.Invoke(1f, 0);
+                Debug.Log("无可下载文件");
             }
 
             Debug.Log("更新完成");

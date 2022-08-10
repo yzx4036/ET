@@ -50,7 +50,11 @@ namespace ET
 		
 		public static void RegisterBtn_OnClicked(this FUILoginComponent self)
 		{
-			Log.Debug(">>>>>>>>>>>RegisterBtn_OnClicked ");
+			Log.Debug(">>>>>>>>>>>RegisterBtn_OnClicked 1111111111111111111");
+
+			Log.Debug(">>>>>>>>>>>RegisterBtn_OnClicked 热更测试！！");
+			
+			Log.Debug(">>>>>>>>>>>RegisterBtn_OnClicked 222222222222222");
 		}
 		
 		//---not overwrite---start---//

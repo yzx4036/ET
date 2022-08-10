@@ -15,13 +15,14 @@ MonoBehaviour:
   m_GroupName: CommonUI
   m_Data:
     m_SerializedData: []
-  m_GUID: 1e8ed6cf06e52774090eb69f0d548bf0
+  m_GUID: 9670f20e85a95a14aa4362161294b035
   m_SerializeEntries:
   - m_GUID: 1b4cbf9af8be538419e5682e7dc8b5e2
     m_Address: Assets/Bundles/FUI/CommonUI_fui.bytes
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fba6c196efaf6c44692df230323aa228, type: 2}
   m_SchemaSet:
