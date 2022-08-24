@@ -27,13 +27,14 @@
       <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
     
-    <ItemGroup>
+    <ItemGroup> 
         <Compile Include="..\..\Unity\Assets\Scripts\Core\**\*.cs">
             <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
     </ItemGroup>
     
     <ItemGroup>
+      <ProjectReference Include="..\..\Share\Analyzer\Share.Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
       <ProjectReference Include="..\ThirdParty\DotNet.ThirdParty.csproj" />
     </ItemGroup>
 

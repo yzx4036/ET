@@ -9,6 +9,7 @@ namespace ET
     [Config]
     public partial class UnitConfigCategory : ProtoObject, IMerge
     {
+        [StaticField]
         public static UnitConfigCategory Instance;
 		
         [ProtoIgnore]
@@ -30,13 +31,16 @@ namespace ET
             this.list.AddRange(s.list);
         }
 		
-        public override void EndInit()
+		[ProtoAfterDeserialization]        
+        public void ProtoEndInit()
         {
             foreach (UnitConfig config in list)
             {
-                config.EndInit();
+                config.AfterEndInit();
                 this.dict.Add(config.Id, config);
-            }            
+            }
+            this.list.Clear();
+            
             this.AfterEndInit();
         }
 		
