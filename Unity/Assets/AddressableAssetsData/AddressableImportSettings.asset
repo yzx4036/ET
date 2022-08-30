@@ -28,7 +28,7 @@ MonoBehaviour:
   - path: Assets/Bundles/Code/*
     matchType: 0
     groupName: Code
-    groupTemplate: {fileID: 11400000, guid: 35a09e2dd7da1da42af3af9346b5047b, type: 2}
+    groupTemplate: {fileID: 11400000, guid: aa6cfda3d29e8944abee1fce4e3fbb8d, type: 2}
     groupTemplateApplicationMode: 0
     labelRefs:
     - m_LabelString: Preload
@@ -39,7 +39,7 @@ MonoBehaviour:
   - path: Assets/Bundles/Scenes/(?<category>[^/]+)/*.unity
     matchType: 1
     groupName: ${category}
-    groupTemplate: {fileID: 11400000, guid: 80d948ee291f6b64e881d8c8e1115109, type: 2}
+    groupTemplate: {fileID: 11400000, guid: e772a5b6ead283d469ae394690941881, type: 2}
     groupTemplateApplicationMode: 0
     labelRefs:
     - m_LabelString: Preload

@@ -43,7 +43,7 @@ namespace Y0StudioSoft
         //private static GameObject _instanceGO = null;
 
         private Action _initCompleteCallback = null;
-        private Action<float, long> _initProgressCallback = null;
+        private Action<float, float> _initProgressCallback = null;
         private Action<Exception> _initErrorCallback = null;
         private Action _preloadCompleteCallback = null;
         private Action<float> _preloadProgressCallback = null;
@@ -73,7 +73,7 @@ namespace Y0StudioSoft
         }
 
         //***********************************公共方法*************************************
-        public async Task InitAddressableAsync(Action complete, Action<float, long> progress = null, Action<Exception> error = null)
+        public async Task InitAddressableAsync(Action complete, Action<float, float> progress = null, Action<Exception> error = null)
         {
             if (_initCor != null)
             {
@@ -83,7 +83,7 @@ namespace Y0StudioSoft
 
             if (_isInited)
             {
-                progress?.Invoke(1f, 0);
+                progress?.Invoke(0f, 0);
                 complete?.Invoke();
             }
             else
@@ -382,6 +382,27 @@ namespace Y0StudioSoft
             _initProgressCallback = null;
         }
 
+        private AsyncOperationHandle _downloadHandler;
+        private float downloadSize;
+        
+        private void Update()
+        {
+            if (!_downloadHandler.IsValid())
+            {
+                return;
+            }
+
+            if (_downloadHandler.Status == AsyncOperationStatus.Failed)
+            {
+                
+            }
+
+            if(!_downloadHandler.IsDone)
+            {
+                _initProgressCallback?.Invoke(_downloadHandler.PercentComplete, downloadSize);
+            }
+        }
+
         private async Task _HotUpdate()
         {
             Debug.Log("检查Catalog");
@@ -413,12 +434,11 @@ namespace Y0StudioSoft
 
             Debug.Log("检查下载内容");
 
-            Dictionary<string, long> _tempRecord = new Dictionary<string, long>();
-            long _allDownloadSize = 0;
-            
+            Dictionary<string, float> _tempRecord = new Dictionary<string, float>();
+            float _allDownloadSize = 0;
             foreach (var locator in Addressables.ResourceLocators)
             {
-                var sizeHandler = Addressables.GetDownloadSizeAsync(locator.Keys);
+                var sizeHandler =  Addressables.GetDownloadSizeAsync(locator.Keys);
                 long downloadSize = await sizeHandler.Task;
                 if (sizeHandler.Status == AsyncOperationStatus.Failed)
                 {
@@ -426,8 +446,10 @@ namespace Y0StudioSoft
                     Addressables.Release(sizeHandler);
                     continue;
                 }
-                _tempRecord.Add(locator.LocatorId, downloadSize);
-                _allDownloadSize += downloadSize;
+
+                var _currSize = downloadSize / Mathf.Pow(1024, 2);
+                _tempRecord.Add(locator.LocatorId, _currSize);
+                _allDownloadSize += _currSize;
                 Addressables.Release(sizeHandler);
             }
     
@@ -441,30 +463,19 @@ namespace Y0StudioSoft
                     {
                         continue;
                     }
-                    var downloadSize = _tempRecord[locator.LocatorId];
-                    _initProgressCallback?.Invoke(0f, downloadSize);
-                    var downloadHandler = Addressables.DownloadDependenciesAsync(locator.Keys, Addressables.MergeMode.None, false);
+                    downloadSize = _tempRecord[locator.LocatorId];
+                    _initProgressCallback?.Invoke(0f, downloadSize); 
+                    _downloadHandler = DownloadDependenciesAsync(locator.Keys, Addressables.MergeMode.Union, false);
+                    await _downloadHandler.Task;
                     
-                    var task = Task.Factory.StartNew(async () =>
+                    if (_downloadHandler.Status == AsyncOperationStatus.Failed)
                     {
-                        while (!downloadHandler.IsDone)
-                        {
-                            _initProgressCallback?.Invoke(downloadHandler.PercentComplete, downloadSize);
-                            await Task.Delay(2);
-                        }
-                    });
-                    
-                    await downloadHandler.Task;
-                    await task;
-                    
-                    if (downloadHandler.Status == AsyncOperationStatus.Failed)
-                    {
-                        _initErrorCallback?.Invoke(downloadHandler.OperationException);
+                        _initErrorCallback?.Invoke(_downloadHandler.OperationException);
                         continue;
                     }
 
                     _initProgressCallback?.Invoke(1f, downloadSize);
-                    Addressables.Release(downloadHandler);
+                    Addressables.Release(_downloadHandler);
                 }
                 Debug.Log("下载完成!");
             }

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: CommonComp
   m_Data:
     m_SerializedData: []
-  m_GUID: 817922c0f0ef7f74c9a248b95a866031
+  m_GUID: a538b9c005d3c294b877732c29b5e475
   m_SerializeEntries:
   - m_GUID: 166ae627a2834964d86a6006001b0305
     m_Address: Assets/Bundles/FUI/CommonComp_atlas0.png

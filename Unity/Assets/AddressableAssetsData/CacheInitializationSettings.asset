@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
-  m_Name: Code_ContentUpdateGroupSchema
+  m_Script: {fileID: 11500000, guid: b44c2db511ef19949950f4b3b93a6e53, type: 3}
+  m_Name: CacheInitializationSettings
   m_EditorClassIdentifier: 
-  m_Group: {fileID: 11400000, guid: ccf87b87d3367b944b2df566c85c2eb9, type: 2}
-  m_StaticContent: 1
+  m_Data:
+    m_CompressionEnabled: 1
+    m_CacheDirectoryOverride: 
+    m_ExpirationDelay: 12960000
+    m_LimitCacheSize: 1
+    m_MaximumCacheSize: 1073741824

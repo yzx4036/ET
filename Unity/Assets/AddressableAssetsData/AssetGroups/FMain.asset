@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: FMain
   m_Data:
     m_SerializedData: []
-  m_GUID: 3ab32f095056c5e4cb90a2d9f425cf52
+  m_GUID: 10c33dd3cdafcf74abfe0a222345d000
   m_SerializeEntries:
   - m_GUID: fdb3a4e7b02451144b409c83040f2b93
     m_Address: Assets/Bundles/FUI/FMain_fui.bytes

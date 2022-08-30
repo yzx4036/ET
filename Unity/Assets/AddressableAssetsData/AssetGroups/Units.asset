@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Units
   m_Data:
     m_SerializedData: []
-  m_GUID: fafa851a63d2880459b847c62a9754ae
+  m_GUID: c4ef27b0925f86f4f9b52fdf778442e5
   m_SerializeEntries:
   - m_GUID: cfaf4529ce2243c4c85126e9d008897b
     m_Address: Unit

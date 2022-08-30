@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: CommonAsset
   m_Data:
     m_SerializedData: []
-  m_GUID: 50926059c2df552439962129f97eea6e
+  m_GUID: 31f0ddc3806ca954eb66964d8d2afaac
   m_SerializeEntries:
   - m_GUID: 9d9369c373813d74ca307a4be67fbe61
     m_Address: Assets/Bundles/FUI/CommonAsset_atlas0.png

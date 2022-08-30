@@ -26,7 +26,7 @@ MonoBehaviour:
     m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider
   m_ForceUniqueProvider: 0
   m_UseAssetBundleCache: 1
-  m_UseAssetBundleCrc: 0
+  m_UseAssetBundleCrc: 1
   m_UseAssetBundleCrcForCachedBundles: 1
   m_UseUWRForLocalBundles: 0
   m_Timeout: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_AssetBundleProviderType:
     m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
-  m_BundleNaming: 0
+  m_BundleNaming: 1
   m_AssetLoadMode: 0
 --- !u!114 &-5524046687510292049
 MonoBehaviour:
@@ -67,10 +67,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a3c5d64ac83548c09dd1678b9f6f1cd, type: 3}
-  m_Name: CustomHotUpdate
+  m_Name: HotUpdatePack_Separate
   m_EditorClassIdentifier: 
   m_SchemaObjects:
   - {fileID: -8843169857189434305}
   - {fileID: -5524046687510292049}
-  m_Description: Pack assets into Custom Hot Update
+  m_Description: Pack assets into HotUpdatePack_Separate
   m_Settings: {fileID: 0}

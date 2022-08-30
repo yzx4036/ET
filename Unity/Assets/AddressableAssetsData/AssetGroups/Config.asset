@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Config
   m_Data:
     m_SerializedData: []
-  m_GUID: 0df70ece2dc62794d93d38ba59c66289
+  m_GUID: 872be5d4910aad04d9af4080e3a4cfe2
   m_SerializeEntries:
   - m_GUID: 277d58db3067742a7b32f9994984b3bc
     m_Address: AIConfigCategory

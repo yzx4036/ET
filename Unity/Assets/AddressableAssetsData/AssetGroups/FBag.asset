@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: FBag
   m_Data:
     m_SerializedData: []
-  m_GUID: 05e64f20bddeecf4784547931c4eb195
+  m_GUID: 73f539a2aab970d41916e48d677aa932
   m_SerializeEntries:
   - m_GUID: 9c65202d1a9b2544bbc41345ee48cb99
     m_Address: Assets/Bundles/FUI/FBag_fui.bytes

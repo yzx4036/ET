@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: FEquip
   m_Data:
     m_SerializedData: []
-  m_GUID: 97f2abd8b0ea8804892f2ee6217030b9
+  m_GUID: 4f9c1ec3cd4ed5740abcdc0451365919
   m_SerializeEntries:
   - m_GUID: 41709476adae3d04bb0b9f3718377cb8
     m_Address: Assets/Bundles/FUI/FEquip_fui.bytes
