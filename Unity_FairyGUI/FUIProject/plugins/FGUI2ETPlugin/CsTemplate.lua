@@ -43,7 +43,6 @@ $$compsAwake$$
             }
         }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
         public class $$clsName$$DestroySystem: DestroySystem<$$clsName$$>
         {
