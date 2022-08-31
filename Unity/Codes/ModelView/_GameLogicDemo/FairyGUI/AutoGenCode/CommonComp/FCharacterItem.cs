@@ -46,7 +46,6 @@ namespace ET
             }
         }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
         public class FCharacterItemDestroySystem: DestroySystem<FCharacterItem>
         {

@@ -51,7 +51,6 @@ namespace ET
             }
         }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
         public class FUIWeaponShopDestroySystem: DestroySystem<FUIWeaponShop>
         {

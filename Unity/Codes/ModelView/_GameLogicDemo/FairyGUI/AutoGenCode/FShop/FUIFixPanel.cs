@@ -48,7 +48,6 @@ namespace ET
             }
         }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
         public class FUIFixPanelDestroySystem: DestroySystem<FUIFixPanel>
         {

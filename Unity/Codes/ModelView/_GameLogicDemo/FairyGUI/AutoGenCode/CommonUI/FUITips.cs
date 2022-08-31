@@ -64,7 +64,6 @@ namespace ET
             }
         }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
         public class FUITipsDestroySystem: DestroySystem<FUITips>
         {

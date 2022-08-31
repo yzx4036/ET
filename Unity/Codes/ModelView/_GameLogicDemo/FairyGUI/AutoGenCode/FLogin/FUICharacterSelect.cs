@@ -61,7 +61,6 @@ namespace ET
             }
         }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
         public class FUICharacterSelectDestroySystem: DestroySystem<FUICharacterSelect>
         {

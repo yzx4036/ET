@@ -47,7 +47,6 @@ namespace ET
             }
         }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
         public class FUIOtherShopDestroySystem: DestroySystem<FUIOtherShop>
         {

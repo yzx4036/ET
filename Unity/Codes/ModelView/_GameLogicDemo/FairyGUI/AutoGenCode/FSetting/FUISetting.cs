@@ -50,7 +50,6 @@ namespace ET
             }
         }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
         public class FUISettingDestroySystem: DestroySystem<FUISetting>
         {

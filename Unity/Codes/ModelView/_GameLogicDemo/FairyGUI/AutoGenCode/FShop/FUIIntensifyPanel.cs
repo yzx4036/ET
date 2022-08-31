@@ -45,7 +45,6 @@ namespace ET
             }
         }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
         public class FUIIntensifyPanelDestroySystem: DestroySystem<FUIIntensifyPanel>
         {

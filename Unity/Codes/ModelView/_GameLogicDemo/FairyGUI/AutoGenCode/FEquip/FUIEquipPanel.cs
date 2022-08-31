@@ -70,7 +70,6 @@ namespace ET
             }
         }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
         public class FUIEquipPanelDestroySystem: DestroySystem<FUIEquipPanel>
         {

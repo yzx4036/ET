@@ -44,7 +44,6 @@ namespace ET
             }
         }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
         public class FButton_NormalDestroySystem: DestroySystem<FButton_Normal>
         {

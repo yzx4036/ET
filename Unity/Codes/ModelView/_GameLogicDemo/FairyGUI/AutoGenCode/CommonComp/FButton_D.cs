@@ -43,7 +43,6 @@ namespace ET
             }
         }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
         public class FButton_DDestroySystem: DestroySystem<FButton_D>
         {

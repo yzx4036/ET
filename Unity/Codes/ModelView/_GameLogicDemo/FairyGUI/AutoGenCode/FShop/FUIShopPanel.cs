@@ -49,7 +49,6 @@ namespace ET
             }
         }
 
-        [FriendClass(typeof (FUIGObjectComponent))]
         [ObjectSystem]
         public class FUIShopPanelDestroySystem: DestroySystem<FUIShopPanel>
         {
