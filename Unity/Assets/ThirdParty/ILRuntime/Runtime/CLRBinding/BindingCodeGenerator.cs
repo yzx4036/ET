@@ -391,37 +391,22 @@ namespace ILRuntime.Runtime.Generated
                 if (type is CLR.TypeSystem.ILType)
                 {
                     if (type.HasGenericParameter)
+                        continue;
+                    var methods = type.GetMethods().ToList();
+                    foreach (var i in ((CLR.TypeSystem.ILType)type).GetConstructors())
+                        methods.Add(i);
+                    if (((CLR.TypeSystem.ILType)type).GetStaticConstroctor() != null)
+                        methods.Add(((CLR.TypeSystem.ILType)type).GetStaticConstroctor());
+                    foreach (var j in methods)
                     {
-                        CLR.TypeSystem.ILType iltype = (CLR.TypeSystem.ILType)type;
-                        if (iltype.GenericInstances != null)
+                        CLR.Method.ILMethod method = j as CLR.Method.ILMethod;
+                        if (method != null)
                         {
-                            foreach(var i in iltype.GenericInstances)
-                            {
-                                PrewarmType(i);
-                            }
+                            if (method.GenericParameterCount > 0 && !method.IsGenericInstance)
+                                continue;
+                            var body = method.Body;
                         }
                     }
-                    else
-                        PrewarmType((CLR.TypeSystem.ILType)type);
-                }
-            }
-        }
-
-        static void PrewarmType(CLR.TypeSystem.ILType type)
-        {
-            var methods = type.GetMethods().ToList();
-            foreach (var i in ((CLR.TypeSystem.ILType)type).GetConstructors())
-                methods.Add(i);
-            if (((CLR.TypeSystem.ILType)type).GetStaticConstroctor() != null)
-                methods.Add(((CLR.TypeSystem.ILType)type).GetStaticConstroctor());
-            foreach (var j in methods)
-            {
-                CLR.Method.ILMethod method = j as CLR.Method.ILMethod;
-                if (method != null)
-                {
-                    if (method.GenericParameterCount > 0 && !method.IsGenericInstance)
-                        continue;
-                    var body = method.Body;
                 }
             }
         }
@@ -438,106 +423,104 @@ namespace ILRuntime.Runtime.Generated
             {
                 if (type is CLR.TypeSystem.ILType)
                 {
-                    if (type.TypeForCLR.IsByRef)
+                    if (type.TypeForCLR.IsByRef || type.HasGenericParameter)
                         continue;
-                    if (type.HasGenericParameter)
+                    var methods = type.GetMethods().ToList();
+                    foreach (var i in ((CLR.TypeSystem.ILType)type).GetConstructors())
+                        methods.Add(i);
+                    if (((CLR.TypeSystem.ILType)type).GetStaticConstroctor() != null)
+                        methods.Add(((CLR.TypeSystem.ILType)type).GetStaticConstroctor());
+                    foreach (var j in methods)
                     {
-                        CLR.TypeSystem.ILType iltype = (CLR.TypeSystem.ILType)type;
-                        if (iltype.GenericInstances != null)
+                        CLR.Method.ILMethod method = j as CLR.Method.ILMethod;
+                        if (method != null)
                         {
-                            foreach (var i in iltype.GenericInstances)
+                            if (method.GenericParameterCount > 0 && !method.IsGenericInstance)
+                                continue;
+                            var body = method.Body;
+                            foreach (var ins in body)
                             {
-                                CrawlType(domain, i, infos);
-                            }
-                        }
-                    }
-                    else
-                        CrawlType(domain, (CLR.TypeSystem.ILType)type, infos);
-                }
-            }
-        }
-
-        static void CrawlType(ILRuntime.Runtime.Enviorment.AppDomain domain, CLR.TypeSystem.ILType type, Dictionary<Type, CLRBindingGenerateInfo> infos)
-        {
-            var methods = type.GetMethods().ToList();
-            foreach (var i in ((CLR.TypeSystem.ILType)type).GetConstructors())
-                methods.Add(i);
-            if (((CLR.TypeSystem.ILType)type).GetStaticConstroctor() != null)
-                methods.Add(((CLR.TypeSystem.ILType)type).GetStaticConstroctor());
-            foreach (var j in methods)
-            {
-                CLR.Method.ILMethod method = j as CLR.Method.ILMethod;
-                if (method != null)
-                {
-                    if (method.GenericParameterCount > 0 && !method.IsGenericInstance)
-                        continue;
-                    var body = method.Body;
-                    foreach (var ins in body)
-                    {
-                        switch (ins.Code)
-                        {
-                            case Intepreter.OpCodes.OpCodeEnum.Newobj:
+                                switch (ins.Code)
                                 {
-                                    CLR.Method.CLRMethod m = domain.GetMethod(ins.TokenInteger) as CLR.Method.CLRMethod;
-                                    if (m != null)
-                                    {
-                                        if (m.DeclearingType.IsDelegate)
-                                            continue;
-                                        Type t = m.DeclearingType.TypeForCLR;
-                                        CLRBindingGenerateInfo info;
-                                        if (!infos.TryGetValue(t, out info))
+                                    case Intepreter.OpCodes.OpCodeEnum.Newobj:
                                         {
-                                            info = CreateNewBindingInfo(t);
-                                            infos[t] = info;
-                                        }
-                                        if (m.IsConstructor)
-                                            info.Constructors.Add(m.ConstructorInfo);
-                                        else
-                                            info.Methods.Add(m.MethodInfo);
-                                    }
-                                }
-                                break;
-                            case Intepreter.OpCodes.OpCodeEnum.Ldfld:
-                            case Intepreter.OpCodes.OpCodeEnum.Stfld:
-                            case Intepreter.OpCodes.OpCodeEnum.Ldflda:
-                            case Intepreter.OpCodes.OpCodeEnum.Ldsfld:
-                            case Intepreter.OpCodes.OpCodeEnum.Ldsflda:
-                            case Intepreter.OpCodes.OpCodeEnum.Stsfld:
-                                {
-                                    var t = domain.GetType((int)(ins.TokenLong >> 32)) as CLR.TypeSystem.CLRType;
-                                    if (t != null)
-                                    {
-                                        var fi = t.GetField((int)ins.TokenLong);
-                                        if (fi != null && fi.IsPublic)
-                                        {
-                                            CLRBindingGenerateInfo info;
-                                            if (!infos.TryGetValue(t.TypeForCLR, out info))
+                                            CLR.Method.CLRMethod m = domain.GetMethod(ins.TokenInteger) as CLR.Method.CLRMethod;
+                                            if (m != null)
                                             {
-                                                info = CreateNewBindingInfo(t.TypeForCLR);
-                                                infos[t.TypeForCLR] = info;
-                                            }
-                                            if (ins.Code == Intepreter.OpCodes.OpCodeEnum.Stfld || ins.Code == Intepreter.OpCodes.OpCodeEnum.Stsfld)
-                                            {
-                                                if (t.IsValueType)
+                                                if (m.DeclearingType.IsDelegate)
+                                                    continue;
+                                                Type t = m.DeclearingType.TypeForCLR;
+                                                CLRBindingGenerateInfo info;
+                                                if (!infos.TryGetValue(t, out info))
                                                 {
-                                                    info.ValueTypeNeeded = true;
-                                                    info.DefaultInstanceNeeded = true;
+                                                    info = CreateNewBindingInfo(t);
+                                                    infos[t] = info;
+                                                }
+                                                if (m.IsConstructor)
+                                                    info.Constructors.Add(m.ConstructorInfo);
+                                                else
+                                                    info.Methods.Add(m.MethodInfo);
+                                            }
+                                        }
+                                        break;
+                                    case Intepreter.OpCodes.OpCodeEnum.Ldfld:
+                                    case Intepreter.OpCodes.OpCodeEnum.Stfld:
+                                    case Intepreter.OpCodes.OpCodeEnum.Ldflda:
+                                    case Intepreter.OpCodes.OpCodeEnum.Ldsfld:
+                                    case Intepreter.OpCodes.OpCodeEnum.Ldsflda:
+                                    case Intepreter.OpCodes.OpCodeEnum.Stsfld:
+                                        {
+                                            var t = domain.GetType((int)(ins.TokenLong >> 32)) as CLR.TypeSystem.CLRType;
+                                            if(t != null)
+                                            {
+                                                var fi = t.GetField((int)ins.TokenLong);
+                                                if (fi != null && fi.IsPublic)
+                                                {
+                                                    CLRBindingGenerateInfo info;
+                                                    if (!infos.TryGetValue(t.TypeForCLR, out info))
+                                                    {
+                                                        info = CreateNewBindingInfo(t.TypeForCLR);
+                                                        infos[t.TypeForCLR] = info;
+                                                    }
+                                                    if (ins.Code == Intepreter.OpCodes.OpCodeEnum.Stfld || ins.Code == Intepreter.OpCodes.OpCodeEnum.Stsfld)
+                                                    {
+                                                        if (t.IsValueType)
+                                                        {
+                                                            info.ValueTypeNeeded = true;
+                                                            info.DefaultInstanceNeeded = true;
+                                                        }
+                                                    }
+                                                    info.Fields.Add(fi);
                                                 }
                                             }
-                                            info.Fields.Add(fi);
                                         }
-                                    }
-                                }
-                                break;
-                            case Intepreter.OpCodes.OpCodeEnum.Ldtoken:
-                                {
-                                    if (ins.TokenInteger == 0)
-                                    {
-                                        var t = domain.GetType((int)(ins.TokenLong >> 32)) as CLR.TypeSystem.CLRType;
-                                        if (t != null)
+                                        break;
+                                    case Intepreter.OpCodes.OpCodeEnum.Ldtoken:
                                         {
-                                            var fi = t.GetField((int)ins.TokenLong);
-                                            if (fi != null)
+                                            if (ins.TokenInteger == 0)
+                                            {
+                                                var t = domain.GetType((int)(ins.TokenLong >> 32)) as CLR.TypeSystem.CLRType;
+                                                if (t != null)
+                                                {
+                                                    var fi = t.GetField((int)ins.TokenLong);
+                                                    if (fi != null)
+                                                    {
+                                                        CLRBindingGenerateInfo info;
+                                                        if (!infos.TryGetValue(t.TypeForCLR, out info))
+                                                        {
+                                                            info = CreateNewBindingInfo(t.TypeForCLR);
+                                                            infos[t.TypeForCLR] = info;
+                                                        }
+                                                        info.Fields.Add(fi);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        break;
+                                    case Intepreter.OpCodes.OpCodeEnum.Newarr:
+                                        {
+                                            var t = domain.GetType(ins.TokenInteger) as CLR.TypeSystem.CLRType;
+                                            if(t != null)
                                             {
                                                 CLRBindingGenerateInfo info;
                                                 if (!infos.TryGetValue(t.TypeForCLR, out info))
@@ -545,67 +528,52 @@ namespace ILRuntime.Runtime.Generated
                                                     info = CreateNewBindingInfo(t.TypeForCLR);
                                                     infos[t.TypeForCLR] = info;
                                                 }
-                                                info.Fields.Add(fi);
+                                                info.ArrayNeeded = true;
                                             }
                                         }
-                                    }
-                                }
-                                break;
-                            case Intepreter.OpCodes.OpCodeEnum.Newarr:
-                                {
-                                    var t = domain.GetType(ins.TokenInteger) as CLR.TypeSystem.CLRType;
-                                    if (t != null)
-                                    {
-                                        CLRBindingGenerateInfo info;
-                                        if (!infos.TryGetValue(t.TypeForCLR, out info))
+                                        break;
+                                    case Intepreter.OpCodes.OpCodeEnum.Call:
+                                    case Intepreter.OpCodes.OpCodeEnum.Callvirt:
                                         {
-                                            info = CreateNewBindingInfo(t.TypeForCLR);
-                                            infos[t.TypeForCLR] = info;
-                                        }
-                                        info.ArrayNeeded = true;
-                                    }
-                                }
-                                break;
-                            case Intepreter.OpCodes.OpCodeEnum.Call:
-                            case Intepreter.OpCodes.OpCodeEnum.Callvirt:
-                                {
-                                    CLR.Method.CLRMethod m = domain.GetMethod(ins.TokenInteger) as CLR.Method.CLRMethod;
-                                    if (m != null)
-                                    {
-                                        //Cannot explicit call base class's constructor directly
-                                        if (m.IsConstructor && m.DeclearingType.CanAssignTo(((CLR.TypeSystem.ILType)type).FirstCLRBaseType))
-                                            continue;
-                                        if (m.IsConstructor)
-                                        {
-                                            if (!m.ConstructorInfo.IsPublic)
-                                                continue;
-                                            Type t = m.DeclearingType.TypeForCLR;
-                                            CLRBindingGenerateInfo info;
-                                            if (!infos.TryGetValue(t, out info))
+                                            CLR.Method.CLRMethod m = domain.GetMethod(ins.TokenInteger) as CLR.Method.CLRMethod;
+                                            if (m != null)
                                             {
-                                                info = CreateNewBindingInfo(t);
-                                                infos[t] = info;
-                                            }
+                                                //Cannot explicit call base class's constructor directly
+                                                if (m.IsConstructor && m.DeclearingType.CanAssignTo(((CLR.TypeSystem.ILType)type).FirstCLRBaseType))
+                                                    continue;
+                                                if (m.IsConstructor)
+                                                {
+                                                    if (!m.ConstructorInfo.IsPublic)
+                                                        continue;
+                                                    Type t = m.DeclearingType.TypeForCLR;
+                                                    CLRBindingGenerateInfo info;
+                                                    if (!infos.TryGetValue(t, out info))
+                                                    {
+                                                        info = CreateNewBindingInfo(t);
+                                                        infos[t] = info;
+                                                    }
 
-                                            info.Constructors.Add(m.ConstructorInfo);
-                                        }
-                                        else
-                                        {
-                                            if (!m.MethodInfo.IsPublic)
-                                                continue;
-                                            Type t = m.DeclearingType.TypeForCLR;
-                                            CLRBindingGenerateInfo info;
-                                            if (!infos.TryGetValue(t, out info))
-                                            {
-                                                info = CreateNewBindingInfo(t);
-                                                infos[t] = info;
-                                            }
+                                                    info.Constructors.Add(m.ConstructorInfo);
+                                                }
+                                                else
+                                                {
+                                                    if (!m.MethodInfo.IsPublic)
+                                                        continue;
+                                                    Type t = m.DeclearingType.TypeForCLR;
+                                                    CLRBindingGenerateInfo info;
+                                                    if (!infos.TryGetValue(t, out info))
+                                                    {
+                                                        info = CreateNewBindingInfo(t);
+                                                        infos[t] = info;
+                                                    }
 
-                                            info.Methods.Add(m.MethodInfo);
+                                                    info.Methods.Add(m.MethodInfo);
+                                                }
+                                            }
                                         }
-                                    }
+                                        break;
                                 }
-                                break;
+                            }
                         }
                     }
                 }

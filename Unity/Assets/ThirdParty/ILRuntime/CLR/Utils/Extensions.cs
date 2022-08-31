@@ -9,7 +9,6 @@ using ILRuntime.Other;
 using ILRuntime.Mono.Cecil;
 using ILRuntime.Runtime.Intepreter;
 using System.Reflection;
-using ILRuntime.Reflection;
 
 namespace ILRuntime.CLR.Utils
 {
@@ -337,13 +336,6 @@ namespace ILRuntime.CLR.Utils
                     return false;
             }
             return true;
-        }
-
-        public static Type UnWrapper(this Type type)
-        {
-            if (type is ILRuntimeWrapperType)
-                return (type as ILRuntimeWrapperType).RealType;
-            return type;
         }
     }
 }

@@ -16,7 +16,6 @@ namespace ILRuntime.Reflection
         ILType dType;
         Mono.Cecil.PropertyDefinition definition;
         ILRuntime.Runtime.Enviorment.AppDomain appdomain;
-        ILRuntimeParameterInfo[] parameters;
 
         Attribute[] customAttributes;
         Type[] attributeTypes;
@@ -65,13 +64,6 @@ namespace ILRuntime.Reflection
             this.definition = definition;
             this.dType = dType;
             appdomain = dType.AppDomain;
-            parameters = new ILRuntimeParameterInfo[definition.Parameters.Count];
-            for (int i = 0; i < definition.Parameters.Count; i++)
-            {
-                var pd = definition.Parameters[i];
-                var parameterType = dType.AppDomain.GetType(pd.ParameterType, null, null);
-                parameters[i] = new ILRuntimeParameterInfo(pd, parameterType, this, appdomain);
-            }
         }
 
         void InitializeCustomAttribute()
@@ -219,7 +211,7 @@ namespace ILRuntime.Reflection
 
         public override ParameterInfo[] GetIndexParameters()
         {
-            return parameters;
+            return new ParameterInfo[0];
         }
 
         public override MethodInfo GetSetMethod(bool nonPublic)
@@ -269,11 +261,6 @@ namespace ILRuntime.Reflection
             }
             else
                 throw new ArgumentException("Index count mismatch");
-        }
-
-        public override string ToString()
-        {
-            return definition == null ? base.ToString() : definition.ToString();
         }
     }
 }

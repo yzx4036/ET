@@ -154,7 +154,7 @@ namespace ILRuntime.Reflection
             if (customAttributes == null)
                 InitializeCustomAttribute();
 
-            List<Attribute> res = new List<Attribute>();
+            List<object> res = new List<object>();
             for (int i = 0; i < customAttributes.Length; i++)
             {
                 if (attributeTypes[i].Equals(attributeType) || attributeTypes[i].IsSubclassOf(attributeType))

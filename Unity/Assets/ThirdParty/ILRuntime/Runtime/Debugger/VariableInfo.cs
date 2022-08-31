@@ -16,8 +16,6 @@ namespace ILRuntime.Runtime.Debugger
         Integer,
         Boolean,
         String,
-        Value,
-        Class,
         Null,
         Error,
         NotFound,
@@ -42,10 +40,6 @@ namespace ILRuntime.Runtime.Debugger
         public string Name { get; set; }
         public VariableReference Parent { get; set; }
         public VariableReference[] Parameters { get; set; }
-
-        public Type ValueType { get; set; }
-        public object Value { get; set; }
-        public bool Conditional { get; set; } // 运算符?.为true
 
         public string FullName
         {
@@ -145,7 +139,6 @@ namespace ILRuntime.Runtime.Debugger
         public bool IsPrivate { get; set; }
         public bool IsProtected { get; set; }
         public int Offset { get; set;}
-        public Type ValueObjType { get; set; }
 
         public static VariableInfo FromObject(object obj, bool retriveType = false)
         {
@@ -161,7 +154,6 @@ namespace ILRuntime.Runtime.Debugger
                 else if(obj is bool)
                 {
                     info.ValueType = ValueTypes.Boolean;
-                    info.Value = info.Value.ToLower(); // 小写的true或false
                 }
                 else if(obj is string)
                 {
@@ -201,17 +193,6 @@ namespace ILRuntime.Runtime.Debugger
             Value = "NullReferenceException"
         };
 
-        public static VariableInfo NullReferenceExeptionWithName(string name)
-        {
-            return new VariableInfo
-            {
-                Type = VariableTypes.Error,
-                Name = "",
-                TypeName = "",
-                Value = name + " is Null"
-            };
-        }
-
         public static VariableInfo RequestTimeout = new VariableInfo
         {
             Type = VariableTypes.Timeout,
@@ -235,8 +216,7 @@ namespace ILRuntime.Runtime.Debugger
             Name = "",
             TypeName = "System.Boolean",
             Value = "true",
-            ValueType = ValueTypes.Boolean,
-            ValueObjType = typeof(bool),
+            ValueType = ValueTypes.Boolean
         };
 
         public static VariableInfo False = new VariableInfo
@@ -245,8 +225,7 @@ namespace ILRuntime.Runtime.Debugger
             Name = "",
             TypeName = "System.Boolean",
             Value = "false",
-            ValueType = ValueTypes.Boolean,
-            ValueObjType = typeof(bool),
+            ValueType = ValueTypes.Boolean
         };
 
         public static VariableInfo GetCannotFind(string name)
@@ -257,7 +236,7 @@ namespace ILRuntime.Runtime.Debugger
                 TypeName = "",
             };
             res.Name = name;
-            res.Value = string.Format("Cannot find \"{0}\" in current scope.", name);
+            res.Value = string.Format("Cannot find {0} in current scope.", name);
 
             return res;
         }
@@ -270,7 +249,6 @@ namespace ILRuntime.Runtime.Debugger
             res.TypeName = "System.Int32";
             res.Name = "";
             res.ValueType = ValueTypes.Integer;
-            res.ValueObjType = typeof(int);
 
             return res;
         }
@@ -283,7 +261,6 @@ namespace ILRuntime.Runtime.Debugger
             res.TypeName = "System.String";
             res.Name = "";
             res.ValueType = ValueTypes.String;
-            res.ValueObjType = typeof(string);
 
             return res;
         }
@@ -294,18 +271,6 @@ namespace ILRuntime.Runtime.Debugger
             res.Type = VariableTypes.Error;
             res.Value = ex.ToString();
             res.TypeName = ex.GetType().FullName;
-            res.Name = "";
-            res.ValueType = ValueTypes.String;
-
-            return res;
-        }
-
-        public static VariableInfo GetError(string errorText)
-        {
-            var res = new VariableInfo();
-            res.Type = VariableTypes.Error;
-            res.Value = errorText;
-            res.TypeName = "";
             res.Name = "";
             res.ValueType = ValueTypes.String;
 

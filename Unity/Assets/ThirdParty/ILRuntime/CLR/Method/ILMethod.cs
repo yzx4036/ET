@@ -743,7 +743,6 @@ namespace ILRuntime.CLR.Method
                 case OpCodeEnum.Newarr:
                 case OpCodeEnum.Stobj:
                 case OpCodeEnum.Ldobj:
-                case OpCodeEnum.Castclass:
                     {
                         code.TokenInteger = GetTypeTokenHashCode(token);
                     }

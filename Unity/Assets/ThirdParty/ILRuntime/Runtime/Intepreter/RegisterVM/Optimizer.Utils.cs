@@ -456,7 +456,6 @@ namespace ILRuntime.Runtime.Intepreter.RegisterVM
                 case OpCodeREnum.Ldflda:
                 case OpCodeREnum.Ldvirtftn:
                 case OpCodeREnum.Isinst:
-                case OpCodeREnum.Castclass:
                     r1 = op.Register2;
                     return true;
                 case OpCodeREnum.Stind_I:
@@ -508,6 +507,7 @@ namespace ILRuntime.Runtime.Intepreter.RegisterVM
                 case OpCodeREnum.Nop:
                 case OpCodeREnum.InlineStart:
                 case OpCodeREnum.InlineEnd:
+                case OpCodeREnum.Castclass:
                 case OpCodeREnum.Readonly:
                 case OpCodeREnum.Leave:
                 case OpCodeREnum.Leave_S:
@@ -730,7 +730,6 @@ namespace ILRuntime.Runtime.Intepreter.RegisterVM
                 case OpCodeREnum.Ldflda:
                 case OpCodeREnum.Ldtoken:
                 case OpCodeREnum.Isinst:
-                case OpCodeREnum.Castclass:
                 case OpCodeREnum.Ldsfld:
                 case OpCodeREnum.Ldsflda:
                 case OpCodeREnum.Ldftn:
@@ -804,6 +803,7 @@ namespace ILRuntime.Runtime.Intepreter.RegisterVM
                 case OpCodeREnum.Stfld:
                 case OpCodeREnum.Stsfld:
                 case OpCodeREnum.Throw:
+                case OpCodeREnum.Castclass:
                 case OpCodeREnum.Readonly:
                 case OpCodeREnum.Leave:
                 case OpCodeREnum.Leave_S:
@@ -935,7 +935,6 @@ namespace ILRuntime.Runtime.Intepreter.RegisterVM
                 case OpCodeREnum.Ldflda:
                 case OpCodeREnum.Ldvirtftn:
                 case OpCodeREnum.Isinst:
-                case OpCodeREnum.Castclass:
                 case OpCodeREnum.Addi:
                 case OpCodeREnum.Subi:
                 case OpCodeREnum.Muli:
@@ -1243,7 +1242,6 @@ namespace ILRuntime.Runtime.Intepreter.RegisterVM
                 case OpCodeREnum.Ldftn:
                 case OpCodeREnum.Ldvirtftn:
                 case OpCodeREnum.Isinst:
-                case OpCodeREnum.Castclass:
                 case OpCodeREnum.Ldelem_I1:
                 case OpCodeREnum.Ldelem_U1:
                 case OpCodeREnum.Ldelem_I2:
