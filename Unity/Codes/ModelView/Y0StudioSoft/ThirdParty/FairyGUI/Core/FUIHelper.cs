@@ -36,19 +36,30 @@ namespace ET
 
     public static class FUIHelper
     {
+        private static bool isInited = false;
         private static Dictionary<Type, FUIInstArgs> FUIInstArgsDict = new Dictionary<Type, FUIInstArgs>();
 
         public static void Init()
         {
-            Debug.Log(">>>>>>>>>>FUIHelper Init");
-            var types = EventSystem.Instance.GetTypes(typeof (FUIAttribute));
-            List<Type> fuiAttrTypeList = new List<Type>();
-            foreach (Type type in types)
+            if (!isInited)
             {
-                fuiAttrTypeList.Add(type);
-            }
+                Debug.Log(">>>>>>>>>>FUIHelper Init");
+                var types = EventSystem.Instance.GetTypes(typeof (FUIAttribute));
+                List<Type> fuiAttrTypeList = new List<Type>();
+                foreach (Type type in types)
+                {
+                    fuiAttrTypeList.Add(type);
+                }
 
-            LoadFUIAttribute(fuiAttrTypeList);
+                LoadFUIAttribute(fuiAttrTypeList);
+                isInited = true;
+            }
+        }
+
+        public static void Clear()
+        {
+            //todo 清理
+            FUIInstArgsDict.Clear();
         }
 
         #region 创建FUI实例
