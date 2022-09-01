@@ -300,7 +300,6 @@ namespace Y0StudioSoft
                     Debug.LogError(obj.OperationException.Message);
                 }
             };
-            Addressables.Release(handler);
         }
 
         public async Task UnloadSceneAsync(AsyncOperationHandle<SceneInstance> sceneHandle, Action<bool> complete = null)
@@ -323,6 +322,7 @@ namespace Y0StudioSoft
                 complete = null;
             };
             Addressables.Release(handler);
+            Addressables.Release(sceneHandle);
         }
 
         //public void AtlasRequest(string atlasName, Action<SpriteAtlas> callback)
