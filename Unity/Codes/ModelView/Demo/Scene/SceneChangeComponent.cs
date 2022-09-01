@@ -7,7 +7,7 @@ namespace ET
     [ComponentOf(typeof(Scene))]
     public class SceneChangeComponent: Entity, IAwake, IUpdate, IDestroy
     {
-        public AsyncOperationHandle<SceneInstance>? loadMapOperation;
+        public AsyncOperationHandle<SceneInstance> loadMapOperation;
         public ETTask tcs;
     }
 }
