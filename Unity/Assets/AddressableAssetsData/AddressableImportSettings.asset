@@ -25,6 +25,16 @@ MonoBehaviour:
     LabelMode: 0
     simplified: 0
     addressReplacement: 
+  - path: Assets/Bundles/Audio/*.*
+    matchType: 0
+    groupName: Audio
+    groupTemplate: {fileID: 11400000, guid: 80d948ee291f6b64e881d8c8e1115109, type: 2}
+    groupTemplateApplicationMode: 0
+    labelRefs: []
+    dynamicLabels: []
+    LabelMode: 0
+    simplified: 0
+    addressReplacement: 
   - path: Assets/Bundles/Code/*
     matchType: 0
     groupName: Code
@@ -36,10 +46,10 @@ MonoBehaviour:
     LabelMode: 0
     simplified: 1
     addressReplacement: 
-  - path: Assets/Bundles/Scenes/(?<category>[^/]+)/*.unity
+  - path: Assets/Bundles/Scenes/(?<category>[^/]+)/(?<asset>.*).*
     matchType: 1
-    groupName: ${category}
-    groupTemplate: {fileID: 11400000, guid: 80d948ee291f6b64e881d8c8e1115109, type: 2}
+    groupName: Scene_${category}
+    groupTemplate: {fileID: 11400000, guid: aa6cfda3d29e8944abee1fce4e3fbb8d, type: 2}
     groupTemplateApplicationMode: 0
     labelRefs:
     - m_LabelString: Preload
@@ -70,7 +80,7 @@ MonoBehaviour:
     addressReplacement: 
   - path: Assets/Bundles/FUI/(?<category>[^/]+)/(?<asset>.*).*
     matchType: 1
-    groupName: ${category}
+    groupName: FUI_${category}
     groupTemplate: {fileID: 11400000, guid: aa6cfda3d29e8944abee1fce4e3fbb8d, type: 2}
     groupTemplateApplicationMode: 0
     labelRefs:

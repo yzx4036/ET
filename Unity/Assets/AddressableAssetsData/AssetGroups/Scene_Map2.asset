@@ -10,52 +10,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Config
+  m_Name: Scene_Map2
   m_EditorClassIdentifier: 
-  m_GroupName: Config
+  m_GroupName: Scene_Map2
   m_Data:
     m_SerializedData: []
-  m_GUID: 9b2933b85a36a72449a9cc7e4b80fdaf
+  m_GUID: e4e6aec9262097a499e73e2874482924
   m_SerializeEntries:
-  - m_GUID: 277d58db3067742a7b32f9994984b3bc
-    m_Address: AIConfigCategory
+  - m_GUID: e7b86a45dc154ae40a2f51144799b7bf
+    m_Address: LightingData
     m_ReadOnly: 0
     m_SerializedLabels:
-    - config
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 40aebe92b34144ab187964caf41b2104
-    m_Address: StartMachineConfigCategory
+  - m_GUID: 62a71c4ca03e7434ca6ff4bba65ffb45
+    m_Address: Lightmap-0_comp_dir
     m_ReadOnly: 0
     m_SerializedLabels:
-    - config
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f62068aa635af4f189781cb7900fa538
-    m_Address: StartProcessConfigCategory
+  - m_GUID: 0d7da8dd669b0d8488a81fcb41451b21
+    m_Address: Lightmap-0_comp_light
     m_ReadOnly: 0
     m_SerializedLabels:
-    - config
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f5aaffc264fbd427f907e6180178fa65
-    m_Address: StartSceneConfigCategory
+  - m_GUID: 064123f1e5067b249a9fd8967ddbde09
+    m_Address: Map2
     m_ReadOnly: 0
     m_SerializedLabels:
-    - config
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2f76d9d7f3caf49b89a8292eb2ee302c
-    m_Address: StartZoneConfigCategory
+  - m_GUID: c78b5af2c87902e4aba73014819bd1a7
+    m_Address: Map2Settings
     m_ReadOnly: 0
     m_SerializedLabels:
-    - config
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3f452063ceb5f4150bbbfe795c0aca90
-    m_Address: UnitConfigCategory
+  - m_GUID: 1f1694b2c0d992047b551ad028dd5347
+    m_Address: ReflectionProbe-0
     m_ReadOnly: 0
     m_SerializedLabels:
-    - config
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fba6c196efaf6c44692df230323aa228, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 52157455e387dc84085e8d6ca4a7b8eb, type: 2}
-    - {fileID: 11400000, guid: f18f2f7f6af846f409dd7639ef276155, type: 2}
+    - {fileID: 11400000, guid: 80a437dd506ffb1498e740c54de447bc, type: 2}
+    - {fileID: 11400000, guid: dd89a81fdf2e2b0488d316268e6fe143, type: 2}

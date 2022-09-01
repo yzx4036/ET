@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Units
   m_Data:
     m_SerializedData: []
-  m_GUID: 7083138d1e1c6224fb57aed2c3220b2d
+  m_GUID: 1a9aba430aee5074e8e0c81792b235da
   m_SerializeEntries:
   - m_GUID: edbdf76e36a24834fbc00ccc22cec493
     m_Address: Skeleton

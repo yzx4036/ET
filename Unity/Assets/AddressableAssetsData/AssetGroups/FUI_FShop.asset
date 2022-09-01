@@ -10,21 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Code
+  m_Name: FUI_FShop
   m_EditorClassIdentifier: 
-  m_GroupName: Code
+  m_GroupName: FUI_FShop
   m_Data:
     m_SerializedData: []
-  m_GUID: 46de960bfa68c7e41b13ee39cc5f7143
+  m_GUID: 0eceea48ebbdd184bb02c891cc0d15f4
   m_SerializeEntries:
-  - m_GUID: 8f9f21b5f2b784449ad8f26dd3aaa8c4
-    m_Address: Code.dll
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5cf0a870de9f4b8498180442a4573c07
-    m_Address: Code.pdb
+  - m_GUID: c29f2757a22250848a9ceee0ebf04fe3
+    m_Address: Assets/Bundles/FUI/FShop/FShop_fui.bytes
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
@@ -33,5 +27,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: fba6c196efaf6c44692df230323aa228, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: b48e1385a7c771547a14ed45afd7b466, type: 2}
-    - {fileID: 11400000, guid: 243d037d8ed9bb24cb04d16dd50a1344, type: 2}
+    - {fileID: 11400000, guid: e320ba4951e2deb4092f7b821803bbdb, type: 2}
+    - {fileID: 11400000, guid: cc09e4d46f0bb1341bddf261119613aa, type: 2}
