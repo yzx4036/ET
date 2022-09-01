@@ -7,5 +7,5 @@
     <component id="dh8k8" name="Mask.xml" path="/"/>
     <component id="dh8k0" name="UICharacterSelect.xml" path="/" exported="true" favorite="true"/>
   </resources>
-  <publish name="FLogin"/>
+  <publish name=""/>
 </packageDescription>

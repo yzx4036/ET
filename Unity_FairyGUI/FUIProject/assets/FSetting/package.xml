@@ -3,5 +3,5 @@
   <resources>
     <component id="ia5960" name="UISetting.xml" path="/" exported="true" favorite="true"/>
   </resources>
-  <publish name="FSetting"/>
+  <publish name=""/>
 </packageDescription>

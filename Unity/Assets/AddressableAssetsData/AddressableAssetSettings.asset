@@ -46,21 +46,19 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: b65ed0aa88e22e14da6692a6735a0136, type: 2}
   - {fileID: 11400000, guid: 8c6429a12eb276e45b4b1d5653e901de, type: 2}
+  - {fileID: 11400000, guid: 14ffea8fe62679240b20d801ceb7dca1, type: 2}
   - {fileID: 11400000, guid: ccf87b87d3367b944b2df566c85c2eb9, type: 2}
   - {fileID: 11400000, guid: 46f6f70133255d942a9cd5becc81a639, type: 2}
-  - {fileID: 11400000, guid: 0412cbd6c9d27f742a4e3952049c35f6, type: 2}
-  - {fileID: 11400000, guid: ab1d3fa23d200a24ab1ec6db69e04e10, type: 2}
-  - {fileID: 11400000, guid: 100e1c4be4b99564b8ed6246d5c70ee8, type: 2}
+  - {fileID: 11400000, guid: 53091f7436d28cc45bd09dd4b9ee6be0, type: 2}
   - {fileID: 11400000, guid: fdbafcf1e860ac84bb1cbcf820127c7c, type: 2}
+  - {fileID: 11400000, guid: 31665279904d60342b55fdca4d23d2c8, type: 2}
   - {fileID: 11400000, guid: 6d199a2ecbe81b440b07781d29127c9a, type: 2}
   - {fileID: 11400000, guid: e32ee8c44ebc8c14fbae95bd85bdd37f, type: 2}
   - {fileID: 11400000, guid: 4c11c75403b4952428cff2a00c82328d, type: 2}
   - {fileID: 11400000, guid: 2725d3327b25db44594bd403b4fc905a, type: 2}
   - {fileID: 11400000, guid: 6e40668901100c5449c1bddab5349538, type: 2}
-  - {fileID: 11400000, guid: d5841dded7cc79646b63fa122af54c96, type: 2}
-  - {fileID: 11400000, guid: 334ddfa03c8ab084892785e5007aa21c, type: 2}
-  - {fileID: 11400000, guid: 53091f7436d28cc45bd09dd4b9ee6be0, type: 2}
-  - {fileID: 11400000, guid: 14ffea8fe62679240b20d801ceb7dca1, type: 2}
+  - {fileID: 11400000, guid: 37c8d3737a159d14ba3c5b169b5950fa, type: 2}
+  - {fileID: 11400000, guid: 4d3c2046c28e00c4188591b9d4b97d52, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -166,7 +164,7 @@ MonoBehaviour:
           m_Key: HostingServiceUploadSpeed
         - m_AssemblyName: mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
           m_ClassName: System.String
-          m_Data: Library/com.unity.addressables/aa/Windows/StandaloneWindows64;ServerData/StandaloneWindows64
+          m_Data: Library/com.unity.addressables/aa/Windows/StandaloneWindows64
           m_Key: ContentRoot
         - m_AssemblyName: mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
           m_ClassName: System.Boolean

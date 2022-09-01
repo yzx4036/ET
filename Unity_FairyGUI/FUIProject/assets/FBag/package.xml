@@ -3,5 +3,5 @@
   <resources>
     <component id="azrp5p" name="UIBagPanel.xml" path="/" exported="true" favorite="true"/>
   </resources>
-  <publish name="FBag"/>
+  <publish name=""/>
 </packageDescription>

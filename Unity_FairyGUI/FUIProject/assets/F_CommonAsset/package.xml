@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="4nyd2ns5">
+  <resources>
+    <image id="dh8k1l" name="CharacterItem.png" path="/" exported="true"/>
+    <image id="ci542" name="BG.png" path="/" exported="true" scale="" scale9grid="20,76,537,338"/>
+    <image id="er0b1s" name="BG_1.png" path="/" exported="true"/>
+    <image id="dh8k6" name="BG_CreatePanel.png" path="/" exported="true"/>
+    <image id="ci544" name="BG_NoClose.png" path="/" exported="true" scale="" scale9grid="148,108,296,216"/>
+    <image id="ufll5i" name="BarBG.png" path="/" exported="true"/>
+    <image id="ufll5m" name="CharIcon.png" path="/" exported="true"/>
+    <image id="dh8k1m" name="CharacterItem_Click.png" path="/" exported="true"/>
+    <image id="qo3y16" name="CharacterSelectBG.jpg" path="/" exported="true"/>
+    <image id="uvgsm" name="CreateButton.png" path="/" exported="true"/>
+    <image id="uvgsn" name="CreateButton_Click.png" path="/" exported="true"/>
+    <image id="ufll5j" name="DownButtonBG.png" path="/" exported="true"/>
+    <image id="ufll5k" name="DownHP.png" path="/" exported="true"/>
+    <image id="ufll5l" name="DownMP.png" path="/" exported="true"/>
+    <image id="ci545" name="DownTips.png" path="/" exported="true" scale="9grid" scale9grid="18,21,283,18"/>
+    <image id="uvgs0" name="EquipBG.png" path="/" exported="true"/>
+    <image id="ufll5n" name="ExpBAR.png" path="/" exported="true" scale="9grid" scale9grid="110,0,220,10"/>
+    <image id="uvgsa" name="Gril.png" path="/" exported="true"/>
+    <image id="uvgsb" name="Gril_Click.png" path="/" exported="true"/>
+    <image id="uvgs1" name="InputField.png" path="/" exported="true" scale="9grid" scale9grid="37,6,74,12"/>
+    <image id="f2qf63" name="Kelvin142_2.png" path="/" exported="true" scale="9grid" scale9grid="137,138,662,335"/>
+    <image id="er0b62" name="MainMapBG.jpg" path="/" exported="true"/>
+    <image id="uvgsc" name="Man.png" path="/" exported="true"/>
+    <image id="uvgsd" name="Man_Click.png" path="/" exported="true"/>
+    <image id="uvgs10" name="Right.png" path="/"/>
+    <image id="uvgst" name="Slot.png" path="/" exported="true"/>
+    <image id="oeq765" name="TipsBG.png" path="/" exported="true"/>
+    <image id="oeq76a" name="TipsBGAll.png" path="/" exported="true"/>
+    <image id="oeq769" name="TipsBGDown.png" path="/" exported="true" scale="9grid" scale9grid="10,8,245,16"/>
+    <image id="oeq766" name="TipsBGLine.png" path="/" exported="true"/>
+    <image id="oeq767" name="TipsBGMid.png" path="/" exported="true" scale="9grid" scale9grid="10,11,246,22"/>
+    <image id="oeq768" name="TipsBGUP.png" path="/" exported="true" scale="9grid" scale9grid="10,10,245,20"/>
+    <image id="uvgsy" name="TipsWindow.png" path="/" exported="true" scale="9grid" scale9grid="101,44,202,88"/>
+    <image id="oeq764" name="UITipsBG.png" path="/" exported="true"/>
+    <image id="uvgs6" name="dao1.png" path="/" exported="true"/>
+    <image id="uvgs7" name="dao2.png" path="/" exported="true"/>
+    <image id="uvgs8" name="fa1.png" path="/" exported="true"/>
+    <image id="uvgs9" name="fa2.png" path="/" exported="true"/>
+    <image id="uvgsp" name="guanbi1.png" path="/" exported="true"/>
+    <image id="uvgso" name="guanbi2.png" path="/" exported="true"/>
+    <image id="12ay3m" name="icgoods117.png" path="/" exported="true"/>
+    <image id="12ay3n" name="icgoods121.png" path="/" exported="true"/>
+    <image id="uvgse" name="zhan1.png" path="/" exported="true"/>
+    <image id="uvgsf" name="zhan2.png" path="/" exported="true"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

@@ -4,5 +4,5 @@
     <component id="ci540" name="UIMainPanel.xml" path="/" exported="true" favorite="true"/>
     <component id="ia595z" name="UIMain.xml" path="/"/>
   </resources>
-  <publish name="FMain"/>
+  <publish name=""/>
 </packageDescription>

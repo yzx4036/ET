@@ -15,10 +15,10 @@ MonoBehaviour:
   m_GroupName: FShop
   m_Data:
     m_SerializedData: []
-  m_GUID: 2539b113d38358244bbea2c95bbfe045
+  m_GUID: fc42fea340c61ea4eb7fbd9d1e22270a
   m_SerializeEntries:
-  - m_GUID: fc0b26c8fecd0224e81e931087524276
-    m_Address: Assets/Bundles/FUI/FShop_fui.bytes
+  - m_GUID: c29f2757a22250848a9ceee0ebf04fe3
+    m_Address: Assets/Bundles/FUI/FShop/FShop_fui.bytes
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload

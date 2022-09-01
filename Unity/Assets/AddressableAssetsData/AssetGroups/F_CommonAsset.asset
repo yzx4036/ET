@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: F_CommonAsset
+  m_EditorClassIdentifier: 
+  m_GroupName: F_CommonAsset
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4ee470fa23c0196488944f2a747e3d1e
+  m_SerializeEntries:
+  - m_GUID: 1b77cb4f9c23e8b43b3cb1cb678ed42a
+    m_Address: Assets/Bundles/FUI/F_CommonAsset/F_CommonAsset_atlas0.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd697992ec88217469fc83f6f9cd1aef
+    m_Address: Assets/Bundles/FUI/F_CommonAsset/F_CommonAsset_atlas0_1.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 31a9cb15247b41948b82a60c22c14aa5
+    m_Address: Assets/Bundles/FUI/F_CommonAsset/F_CommonAsset_fui.bytes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: fba6c196efaf6c44692df230323aa228, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 1a82f4b80b2af1a43b77294bc241a730, type: 2}
+    - {fileID: 11400000, guid: af3395cd4d4992f41b295d3eb28e463d, type: 2}

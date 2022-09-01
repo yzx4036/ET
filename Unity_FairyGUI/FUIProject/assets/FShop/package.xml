@@ -10,5 +10,5 @@
     <component id="qycq6" name="UIRingShop.xml" path="/" exported="true" favorite="true"/>
     <component id="y1jy8" name="UIOtherShop.xml" path="/" exported="true" favorite="true"/>
   </resources>
-  <publish name="FShop"/>
+  <publish name=""/>
 </packageDescription>

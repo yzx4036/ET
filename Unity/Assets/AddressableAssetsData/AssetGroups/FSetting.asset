@@ -15,10 +15,10 @@ MonoBehaviour:
   m_GroupName: FSetting
   m_Data:
     m_SerializedData: []
-  m_GUID: a78fa5e75d59d7d499fa2edde75bf0c0
+  m_GUID: 76336e189c706134ca993eb67d7b4ac7
   m_SerializeEntries:
-  - m_GUID: 3dae3cf4792ca1d44ae1d9aa61fb32f2
-    m_Address: Assets/Bundles/FUI/FSetting_fui.bytes
+  - m_GUID: 651cb0066ef9b514abe40dee18427dc4
+    m_Address: Assets/Bundles/FUI/FSetting/FSetting_fui.bytes
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload

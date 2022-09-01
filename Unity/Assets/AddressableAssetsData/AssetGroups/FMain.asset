@@ -15,10 +15,10 @@ MonoBehaviour:
   m_GroupName: FMain
   m_Data:
     m_SerializedData: []
-  m_GUID: 10c33dd3cdafcf74abfe0a222345d000
+  m_GUID: 408735d419b8f79498352c11ed36ccf4
   m_SerializeEntries:
-  - m_GUID: fdb3a4e7b02451144b409c83040f2b93
-    m_Address: Assets/Bundles/FUI/FMain_fui.bytes
+  - m_GUID: d9813df26dd2adb4187c7b00d8a597ca
+    m_Address: Assets/Bundles/FUI/FMain/FMain_fui.bytes
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload

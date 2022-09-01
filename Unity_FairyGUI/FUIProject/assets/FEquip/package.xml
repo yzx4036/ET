@@ -4,5 +4,5 @@
     <component id="ik562" name="UIEquipPanel.xml" path="/" exported="true" favorite="true"/>
     <component id="ci54l" name="AttrPanel.xml" path="/"/>
   </resources>
-  <publish name="FEquip"/>
+  <publish name=""/>
 </packageDescription>

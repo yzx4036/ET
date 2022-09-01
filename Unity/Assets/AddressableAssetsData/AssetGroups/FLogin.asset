@@ -15,10 +15,10 @@ MonoBehaviour:
   m_GroupName: FLogin
   m_Data:
     m_SerializedData: []
-  m_GUID: b9770a6b01ee1fb4c883b1cdbfb8fbdb
+  m_GUID: 56ad442e148ac484d890321570b31414
   m_SerializeEntries:
-  - m_GUID: 373bc5c5f9143fe48acc081ff3ea2be2
-    m_Address: Assets/Bundles/FUI/FLogin_fui.bytes
+  - m_GUID: 89579f069d14b2c40b10bea191fe5b6a
+    m_Address: Assets/Bundles/FUI/FLogin/FLogin_fui.bytes
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
