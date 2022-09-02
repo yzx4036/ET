@@ -47,7 +47,7 @@ namespace ET
                 return self.s_Packages[type];
             }
 
-            var _addressPath = AssetsHelper.GetPath(type + "_fui", AssetsType.FUI);
+            var _addressPath = AssetsHelper.GetPath(type, type, AssetsType.FUI);
             TextAsset desTextAsset = await AddressablesResComponent.Instance.GetAssetAsync<TextAsset>(_addressPath);
             if (desTextAsset != null)
             {
@@ -67,7 +67,7 @@ namespace ET
         private static async void LoadPackageInternalAsync(string name, string extension, System.Type type,
             PackageItem item)
         {
-            var _addressPath = AssetsHelper.GetPath(name + extension, AssetsType.FUISprite);
+            var _addressPath = AssetsHelper.GetPath(item.owner.name, name, AssetsType.FUISprite, extension);
             Log.Debug($"LoadPackageInternalAsync>>>>>>>>>{_addressPath}");
             Texture texture  = await AddressablesResComponent.Instance.GetAssetAsync<Texture>(_addressPath);
             item.owner.SetItemAsset(item, texture, DestroyMethod.Unload);
