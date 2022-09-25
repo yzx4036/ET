@@ -1,16 +1,11 @@
 using System.Net;
+using System.Net.Sockets;
 
 namespace ET.Server
 {
     public static class SceneFactory
     {
-        public static async ETTask<Scene> Create(Entity parent, string name, SceneType sceneType)
-        {
-            long instanceId = IdGenerater.Instance.GenerateInstanceId();
-            return await Create(parent, instanceId, instanceId, parent.DomainZone(), name, sceneType);
-        }
-        
-        public static async ETTask<Scene> Create(Entity parent, long id, long instanceId, int zone, string name, SceneType sceneType, StartSceneConfig startSceneConfig = null)
+        public static async ETTask<Scene> CreateServerScene(Entity parent, long id, long instanceId, int zone, string name, SceneType sceneType, StartSceneConfig startSceneConfig = null)
         {
             await ETTask.CompletedTask;
             Scene scene = EntitySceneFactory.CreateScene(id, instanceId, zone, sceneType, name, parent);
@@ -28,10 +23,10 @@ namespace ET.Server
                     scene.AddComponent<HttpComponent, string>($"http://{startSceneConfig.OuterIPPort}/");
                     break;
                 case SceneType.Realm:
-                    scene.AddComponent<NetKcpComponent, IPEndPoint, int>(startSceneConfig.InnerIPOutPort, SessionStreamCallbackId.SessionStreamDispatcherServerOuter);
+                    scene.AddComponent<NetServerComponent, IPEndPoint>(startSceneConfig.InnerIPOutPort);
                     break;
                 case SceneType.Gate:
-                    scene.AddComponent<NetKcpComponent, IPEndPoint, int>(startSceneConfig.InnerIPOutPort, SessionStreamCallbackId.SessionStreamDispatcherServerOuter);
+                    scene.AddComponent<NetServerComponent, IPEndPoint>(startSceneConfig.InnerIPOutPort);
                     scene.AddComponent<PlayerComponent>();
                     scene.AddComponent<GateSessionKeyComponent>();
                     break;
@@ -44,7 +39,13 @@ namespace ET.Server
                     break;
                 case SceneType.Robot:
                     scene.AddComponent<RobotManagerComponent>();
-                    
+                    break;
+                case SceneType.BenchmarkServer:
+                    scene.AddComponent<BenchmarkServerComponent>();
+                    scene.AddComponent<NetServerComponent, IPEndPoint>(startSceneConfig.OuterIPPort);
+                    break;
+                case SceneType.BenchmarkClient:
+                    scene.AddComponent<BenchmarkClientComponent>();
                     break;
             }
 

@@ -7,8 +7,11 @@ namespace ET
         [StaticField]
         private static readonly HashSet<ushort> ignoreDebugLogMessageSet = new HashSet<ushort>
         {
-            OuterOpcode.C2G_Ping,
-            OuterOpcode.G2C_Ping,
+            OuterMessage.C2G_Ping,
+            OuterMessage.G2C_Ping,
+            OuterMessage.C2G_Benchmark,
+            OuterMessage.G2C_Benchmark,
+            ushort.MaxValue, // ActorResponse
         };
 
         private static bool IsNeedLogMessage(ushort opcode)
@@ -31,8 +34,9 @@ namespace ET
             return opcode >= OpcodeRangeDefine.InnerMinOpcode;
         }
 
-        public static void LogMsg(int zone, ushort opcode, object message)
+        public static void LogMsg(int zone, object message)
         {
+            ushort opcode = NetServices.Instance.GetOpcode(message.GetType());
             if (!IsNeedLogMessage(opcode))
             {
                 return;
@@ -41,8 +45,9 @@ namespace ET
             Logger.Instance.Debug("zone: {0} {1}", zone, message);
         }
         
-        public static void LogMsg(ushort opcode, long actorId, object message)
+        public static void LogMsg(long actorId, object message)
         {
+            ushort opcode = NetServices.Instance.GetOpcode(message.GetType());
             if (!IsNeedLogMessage(opcode))
             {
                 return;

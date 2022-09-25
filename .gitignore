@@ -58,6 +58,7 @@ Server/.DS_Store
 /Unity/Assets/Bundles/Code/Code.pdb.bytes.meta
 /Unity/Assembly-CSharp.csproj
 ~$*.xlsx
+~$*.xlsx.meta
 /.vscode
 /Unity/UserSettings/Search.settings
 /Unity/Unity.Hotfix.csproj
@@ -71,3 +72,15 @@ Server/.DS_Store
 /Unity/Unity.Codes.csproj
 /Unity/Unity.Ignore.csproj
 Publish/
+/Unity/Assets/Bundles/Code/*
+/Unity/Assets/Bundles/AssetBundleOutput.meta
+/Unity/Assets/Bundles/AssetBundleOutput
+/Unity/Assets/Bundles/AssetBundleSourceData
+/Unity/Assets/Bundles/AssetBundleSourceData.meta
+/Unity/Unity.Editor.Codes.csproj
+/Unity/Unity.Hotfix.Codes.csproj
+/Unity/Unity.HotfixView.Codes.csproj
+/Unity/Unity.Model.Codes.csproj
+/Unity/Unity.ModelView.Codes.csproj
+/Unity/Unity.GenerateClient.csproj
+/Unity/Unity.GenerateServer.csproj

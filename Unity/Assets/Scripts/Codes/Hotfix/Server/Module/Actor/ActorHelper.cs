@@ -17,19 +17,8 @@ namespace ET.Server
         public static object ToActorMessage(this MemoryStream memoryStream)
         {
             ushort opcode = BitConverter.ToUInt16(memoryStream.GetBuffer(), 8);
-            Type type = OpcodeTypeComponent.Instance.GetType(opcode);
-
-            if (opcode < OpcodeRangeDefine.PbMaxOpcode)
-            {
-                return ProtobufHelper.FromBytes(type, memoryStream.GetBuffer(), 10, (int)memoryStream.Length - 10);
-            }
-
-            if (opcode >= OpcodeRangeDefine.JsonMinOpcode)
-            {
-                return JsonHelper.FromJson(type, memoryStream.GetBuffer().ToStr(10, (int)(memoryStream.Length - 10)));
-            }
-
-            return MongoHelper.FromBson(type, memoryStream.GetBuffer(), 10, (int)memoryStream.Length - 10);
+            Type type = NetServices.Instance.GetType(opcode);
+            return ProtobufHelper.FromBytes(type, memoryStream.GetBuffer(), 10, (int)memoryStream.Length - 10);
         }
     }
 }

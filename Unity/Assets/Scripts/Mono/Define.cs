@@ -22,6 +22,18 @@
         public static bool EnableCodes = false;
 #endif
 		
+#if ENABLE_VIEW
+		public static bool EnableView = true;
+#else
+		public static bool EnableView = false;
+#endif
+		
+#if ENABLE_IL2CPP
+		public static bool EnableIL2CPP = true;
+#else
+		public static bool EnableIL2CPP = false;
+#endif
+		
 		public static UnityEngine.Object LoadAssetAtPath(string s)
 		{
 #if UNITY_EDITOR	

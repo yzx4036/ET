@@ -7,11 +7,8 @@ namespace ET
 {
     [ProtoContract]
     [Config]
-    public partial class UnitConfigCategory : ProtoObject, IMerge
+    public partial class UnitConfigCategory : ConfigSingleton<UnitConfigCategory>, IMerge
     {
-        [StaticField]
-        public static UnitConfigCategory Instance;
-		
         [ProtoIgnore]
         [BsonIgnore]
         private Dictionary<int, UnitConfig> dict = new Dictionary<int, UnitConfig>();
@@ -20,11 +17,6 @@ namespace ET
         [ProtoMember(1)]
         private List<UnitConfig> list = new List<UnitConfig>();
 		
-        public UnitConfigCategory()
-        {
-            Instance = this;
-        }
-        
         public void Merge(object o)
         {
             UnitConfigCategory s = o as UnitConfigCategory;
@@ -88,14 +80,11 @@ namespace ET
 		/// <summary>名字</summary>
 		[ProtoMember(3)]
 		public string Name { get; set; }
-		/// <summary>描述</summary>
-		[ProtoMember(4)]
-		public string Desc { get; set; }
 		/// <summary>位置</summary>
-		[ProtoMember(5)]
+		[ProtoMember(4)]
 		public int Position { get; set; }
 		/// <summary>身高</summary>
-		[ProtoMember(6)]
+		[ProtoMember(5)]
 		public int Height { get; set; }
 
 	}
