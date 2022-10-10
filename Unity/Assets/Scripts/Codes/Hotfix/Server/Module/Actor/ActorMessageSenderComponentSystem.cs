@@ -6,7 +6,7 @@ namespace ET.Server
     [FriendOf(typeof(ActorMessageSenderComponent))]
     public static class ActorMessageSenderComponentSystem
     {
-        [Callback(TimerCallbackId.ActorMessageSenderChecker)]
+        [Invoke(TimerInvokeType.ActorMessageSenderChecker)]
         public class ActorMessageSenderChecker: ATimer<ActorMessageSenderComponent>
         {
             protected override void Run(ActorMessageSenderComponent self)
@@ -29,7 +29,7 @@ namespace ET.Server
             {
                 ActorMessageSenderComponent.Instance = self;
 
-                self.TimeoutCheckTimer = TimerComponent.Instance.NewRepeatedTimer(1000, TimerCallbackId.ActorMessageSenderChecker, self);
+                self.TimeoutCheckTimer = TimerComponent.Instance.NewRepeatedTimer(1000, TimerInvokeType.ActorMessageSenderChecker, self);
             }
         }
 
@@ -101,9 +101,16 @@ namespace ET.Server
                 throw new Exception($"actor id is 0: {message}");
             }
             
-            ProcessActorId processActorId = new ProcessActorId(actorId);
+            ProcessActorId processActorId = new(actorId);
+            
+            // 这里做了优化，如果发向同一个进程，则直接处理，不需要通过网络层
+            if (processActorId.Process == Options.Instance.Process)
+            {
+                NetInnerComponent.Instance.HandleMessage(actorId, message);
+                return;
+            }
+            
             Session session = NetInnerComponent.Instance.Get(processActorId.Process);
-
             session.Send(processActorId.ActorId, message);
         }
 

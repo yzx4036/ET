@@ -48,9 +48,8 @@ namespace ET
         }
     }
 
-    public struct TimerCallback: ICallback
+    public struct TimerCallback
     {
-        public int Id { get; set; }
         public object Args;
     }
 
@@ -59,13 +58,13 @@ namespace ET
         /// <summary>
         /// key: time, value: timer id
         /// </summary>
-        private readonly MultiMap<long, long> TimeId = new MultiMap<long, long>();
+        private readonly MultiMap<long, long> TimeId = new();
 
-        private readonly Queue<long> timeOutTime = new Queue<long>();
+        private readonly Queue<long> timeOutTime = new();
 
-        private readonly Queue<long> timeOutTimerIds = new Queue<long>();
+        private readonly Queue<long> timeOutTimerIds = new();
 
-        private readonly Dictionary<long, TimerAction> timerActions = new Dictionary<long, TimerAction>();
+        private readonly Dictionary<long, TimerAction> timerActions = new();
 
         private long idGenerator;
 
@@ -139,14 +138,14 @@ namespace ET
             {
                 case TimerClass.OnceTimer:
                 {
-                    EventSystem.Instance.Callback(new TimerCallback() { Id = timerAction.Type, Args = timerAction.Object });
+                    EventSystem.Instance.Invoke(timerAction.Type, new TimerCallback() { Args = timerAction.Object });
                     timerAction.Recycle();
                     break;
                 }
                 case TimerClass.OnceWaitTimer:
                 {
-                    ETTask<bool> tcs = timerAction.Object as ETTask<bool>;
-                    tcs.SetResult(true);
+                    ETTask tcs = timerAction.Object as ETTask;
+                    tcs.SetResult();
                     timerAction.Recycle();
                     break;
                 }
@@ -155,7 +154,7 @@ namespace ET
                     long timeNow = GetNow();
                     timerAction.StartTime = timeNow;
                     this.AddTimer(timerAction);
-                    EventSystem.Instance.Callback(new TimerCallback() { Id = timerAction.Type, Args = timerAction.Object });
+                    EventSystem.Instance.Invoke(timerAction.Type, new TimerCallback() { Args = timerAction.Object });
                     break;
                 }
             }
@@ -194,15 +193,15 @@ namespace ET
             return true;
         }
 
-        public async ETTask<bool> WaitTillAsync(long tillTime, ETCancellationToken cancellationToken = null)
+        public async ETTask WaitTillAsync(long tillTime, ETCancellationToken cancellationToken = null)
         {
             long timeNow = GetNow();
             if (timeNow >= tillTime)
             {
-                return true;
+                return;
             }
 
-            ETTask<bool> tcs = ETTask<bool>.Create(true);
+            ETTask tcs = ETTask.Create(true);
             TimerAction timer = TimerAction.Create(this.GetId(), TimerClass.OnceWaitTimer, timeNow, tillTime - timeNow, 0, tcs);
             this.AddTimer(timer);
             long timerId = timer.Id;
@@ -211,40 +210,36 @@ namespace ET
             {
                 if (this.Remove(timerId))
                 {
-                    tcs.SetResult(false);
+                    tcs.SetResult();
                 }
             }
 
-            bool ret;
             try
             {
                 cancellationToken?.Add(CancelAction);
-                ret = await tcs;
+                await tcs;
             }
             finally
             {
                 cancellationToken?.Remove(CancelAction);
             }
-
-            return ret;
         }
 
-        public async ETTask<bool> WaitFrameAsync(ETCancellationToken cancellationToken = null)
+        public async ETTask WaitFrameAsync(ETCancellationToken cancellationToken = null)
         {
-            bool ret = await this.WaitAsync(1, cancellationToken);
-            return ret;
+            await this.WaitAsync(1, cancellationToken);
         }
 
-        public async ETTask<bool> WaitAsync(long time, ETCancellationToken cancellationToken = null)
+        public async ETTask WaitAsync(long time, ETCancellationToken cancellationToken = null)
         {
             if (time == 0)
             {
-                return true;
+                return;
             }
 
             long timeNow = GetNow();
 
-            ETTask<bool> tcs = ETTask<bool>.Create(true);
+            ETTask tcs = ETTask.Create(true);
             TimerAction timer = TimerAction.Create(this.GetId(), TimerClass.OnceWaitTimer, timeNow, time, 0, tcs);
             this.AddTimer(timer);
             long timerId = timer.Id;
@@ -253,22 +248,19 @@ namespace ET
             {
                 if (this.Remove(timerId))
                 {
-                    tcs.SetResult(false);
+                    tcs.SetResult();
                 }
             }
 
-            bool ret;
             try
             {
                 cancellationToken?.Add(CancelAction);
-                ret = await tcs;
+                await tcs;
             }
             finally
             {
                 cancellationToken?.Remove(CancelAction);
             }
-
-            return ret;
         }
 
         // 用这个优点是可以热更，缺点是回调式的写法，逻辑不连贯。WaitTillAsync不能热更，优点是逻辑连贯。
