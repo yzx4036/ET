@@ -141,18 +141,18 @@ namespace Y0Studio.ET.Client.Res
             else if (msg is PatchEventMessageDefine.StaticVersionUpdateFailed)
             {
                 System.Action callback = () => { PatchUpdater.HandleOperation(EPatchOperation.TryUpdateStaticVersion); };
-                Log.Info($"Failed to update static version, please check the network status.", callback);
+                // Log.Info($"Failed to update static version, please check the network status.", callback);
             }
             else if (msg is PatchEventMessageDefine.PatchManifestUpdateFailed)
             {
                 System.Action callback = () => { PatchUpdater.HandleOperation(EPatchOperation.TryUpdatePatchManifest); };
-                Log.Info($"Failed to update patch manifest, please check the network status.", callback);
+                // Log.Info($"Failed to update patch manifest, please check the network status.", callback);
             }
             else if (msg is PatchEventMessageDefine.WebFileDownloadFailed)
             {
                 var message = msg as PatchEventMessageDefine.WebFileDownloadFailed;
                 System.Action callback = () => { PatchUpdater.HandleOperation(EPatchOperation.TryDownloadWebFiles); };
-                Log.Info($"Failed to download file : {message.FileName}", callback);
+                // Log.Info($"Failed to download file : {message.FileName}", callback);
             }
             else
             {
