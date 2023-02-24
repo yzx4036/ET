@@ -5,10 +5,10 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "00cedc166f7ca58cfb9a9ad645bd4a0ffc9b8fc9"
+      "hash": "a9ca9fc6131b81cd3d4c48adcd871434475539c1"
     },
     "com.tuyoogame.yooasset": {
-      "version": "1.4.5-preview",
+      "version": "1.4.6-preview",
       "depth": 0,
       "source": "registry",
       "dependencies": {
