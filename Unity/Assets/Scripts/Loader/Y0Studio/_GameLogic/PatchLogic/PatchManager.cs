@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using dnlib.DotNet;
 using ET;
 using UnityEditorInternal;
 using UnityEngine;
 using UniFramework.Machine;
 using UniFramework.Event;
-using UniFramework.Module;
 using YooAsset;
 using StateMachine = UniFramework.Machine.StateMachine;
 
 namespace Y0Studio.ET.Client
 {
-	public class PatchManager: Singleton<PatchManager>, ISingletonUpdate, IModule
+	public class PatchManager: Singleton<PatchManager>, ISingletonUpdate, ISingletonAwake
 	{
 		/// <summary>
 		/// 运行模式
@@ -29,16 +29,15 @@ namespace Y0Studio.ET.Client
 		/// </summary>
 		public PatchDownloaderOperation Downloader { set; get; }
 
-
+		private StateMachine _machine;
 		private bool _isRun = false;
 		private EventGroup _eventGroup = new EventGroup();
-		private StateMachine _machine;
 
-		void IModule.OnCreate(object createParam)
+		public void Awake()
 		{
 		}
 
-		void IModule.OnDestroy()
+		public override void Dispose()
 		{
 			_eventGroup.RemoveAllListener();
 		}
@@ -49,11 +48,6 @@ namespace Y0Studio.ET.Client
 				_machine.Update();
 		}
 		
-		void IModule.OnUpdate()
-		{
-			
-		}
-
 		/// <summary>
 		/// 开启流程
 		/// </summary>
@@ -120,7 +114,6 @@ namespace Y0Studio.ET.Client
 				throw new System.NotImplementedException($"{message.GetType()}");
 			}
 		}
-
 
 	}
 }
