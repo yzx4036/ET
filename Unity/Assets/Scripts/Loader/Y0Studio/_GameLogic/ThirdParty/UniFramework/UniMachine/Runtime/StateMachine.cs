@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using ET;
+using UnityEngine;
 
 namespace UniFramework.Machine
 {
@@ -127,7 +128,7 @@ namespace UniFramework.Machine
 				return;
 			}
 
-			Log.Info($"{_curNode.GetType().FullName} --> {node.GetType().FullName}");
+			Debug.Log($"{_curNode.GetType().FullName} --> {node.GetType().FullName}");
 			_preNode = _curNode;
 			_curNode.OnExit();
 			_curNode = node;
