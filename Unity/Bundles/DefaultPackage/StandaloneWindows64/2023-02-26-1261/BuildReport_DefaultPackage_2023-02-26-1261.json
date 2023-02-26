@@ -1,0 +1,72 @@
+{
+    "Summary": {
+        "YooVersion": "1.4.6-preview",
+        "UnityVersion": "2021.3.16f1",
+        "BuildDate": "2023/2/26 21:01:31",
+        "BuildSeconds": 3,
+        "BuildTarget": 19,
+        "BuildPipeline": 0,
+        "BuildMode": 0,
+        "BuildPackageName": "DefaultPackage",
+        "BuildPackageVersion": "2023-02-26-1261",
+        "EnableAddressable": true,
+        "UniqueBundleName": false,
+        "EncryptionServicesClassName": "null",
+        "OutputNameStyle": 1,
+        "CompressOption": 2,
+        "DisableWriteTypeTree": false,
+        "IgnoreTypeTreeChanges": true,
+        "AssetFileTotalCount": 3,
+        "MainAssetTotalCount": 3,
+        "AllBundleTotalCount": 1,
+        "AllBundleTotalSize": 14802,
+        "EncryptedBundleTotalCount": 0,
+        "EncryptedBundleTotalSize": 0,
+        "RawBundleTotalCount": 0,
+        "RawBundleTotalSize": 0
+    },
+    "AssetInfos": [
+        {
+            "Address": "UIHelp",
+            "AssetPath": "Assets/Bundles/UI/UIHelp.prefab",
+            "AssetGUID": "c54e8d9624286b24fa23519e5df2ed0a",
+            "AssetTags": [],
+            "MainBundleName": "assets_bundles_ui.bundle",
+            "MainBundleSize": 14802,
+            "DependBundles": [],
+            "DependAssets": []
+        },
+        {
+            "Address": "UILobby",
+            "AssetPath": "Assets/Bundles/UI/UILobby.prefab",
+            "AssetGUID": "d8d87e53d93e234448658c9a801a9967",
+            "AssetTags": [],
+            "MainBundleName": "assets_bundles_ui.bundle",
+            "MainBundleSize": 14802,
+            "DependBundles": [],
+            "DependAssets": []
+        },
+        {
+            "Address": "UILogin",
+            "AssetPath": "Assets/Bundles/UI/UILogin.prefab",
+            "AssetGUID": "9f6d9adc6f537764fa0fea29671e77bf",
+            "AssetTags": [],
+            "MainBundleName": "assets_bundles_ui.bundle",
+            "MainBundleSize": 14802,
+            "DependBundles": [],
+            "DependAssets": []
+        }
+    ],
+    "BundleInfos": [
+        {
+            "BundleName": "assets_bundles_ui.bundle",
+            "FileName": "5a20721282f494687a25d6303fadc4e6.bundle",
+            "FileHash": "5a20721282f494687a25d6303fadc4e6",
+            "FileCRC": "680ac849",
+            "FileSize": 14802,
+            "IsRawFile": false,
+            "LoadMethod": 0,
+            "Tags": []
+        }
+    ]
+}

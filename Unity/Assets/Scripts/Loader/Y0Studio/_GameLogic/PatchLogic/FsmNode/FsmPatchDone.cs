@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniFramework.Machine;
 using UniFramework.Module;
+using UnityEngine.SceneManagement;
 
 namespace Y0Studio.ET.Client
 {
@@ -19,7 +20,7 @@ namespace Y0Studio.ET.Client
 		{
 			PatchEventDefine.PatchStatesChange.SendEventMessage("开始游戏！");
 
-
+			SceneManager.LoadSceneAsync(1);
 		}
 
 		void IStateNode.OnUpdate()

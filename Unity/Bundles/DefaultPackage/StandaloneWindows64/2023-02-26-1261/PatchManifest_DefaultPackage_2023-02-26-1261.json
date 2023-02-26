@@ -1,0 +1,42 @@
+{
+    "FileVersion": "1.4.6",
+    "EnableAddressable": true,
+    "OutputNameStyle": 1,
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "2023-02-26-1261",
+    "AssetList": [
+        {
+            "Address": "UIHelp",
+            "AssetPath": "Assets/Bundles/UI/UIHelp.prefab",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependIDs": []
+        },
+        {
+            "Address": "UILobby",
+            "AssetPath": "Assets/Bundles/UI/UILobby.prefab",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependIDs": []
+        },
+        {
+            "Address": "UILogin",
+            "AssetPath": "Assets/Bundles/UI/UILogin.prefab",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependIDs": []
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "assets_bundles_ui.bundle",
+            "FileHash": "5a20721282f494687a25d6303fadc4e6",
+            "FileCRC": "680ac849",
+            "FileSize": 14802,
+            "IsRawFile": false,
+            "LoadMethod": 0,
+            "Tags": [],
+            "ReferenceIDs": []
+        }
+    ]
+}
