@@ -23,8 +23,8 @@ namespace Y0Studio.ET.Client
 		void IStateNode.OnEnter()
 		{
 			// 加载更新面板
-			// var go = Resources.Load<GameObject>("PatchWindow");
-			// GameObject.Instantiate(go);
+			var go = Resources.Load<GameObject>("PatchWindow");
+			GameObject.Instantiate(go);
 
 			_machine.ChangeState<FsmInitialize>();
 		}
