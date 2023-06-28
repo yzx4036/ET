@@ -16,7 +16,7 @@ namespace YooAsset
             throw new NotImplementedException();
         }
 
-        public FileStream LoadFromStream(DecryptFileInfo fileInfo)
+        public Stream LoadFromStream(DecryptFileInfo fileInfo)
         {
             throw new NotImplementedException();
         }

@@ -39,55 +39,55 @@ namespace Y0Studio.ET.Client
 		{
 			yield return new WaitForSeconds(1f);
 
-			var playMode = PatchManager.Instance.PlayMode;
-
-			// 创建默认的资源包
-			string packageName = "DefaultPackage";
-			var package = YooAssets.TryGetAssetsPackage(packageName);
-			if (package == null)
-			{
-				package = YooAssets.CreateAssetsPackage(packageName);
-				YooAssets.SetDefaultAssetsPackage(package);
-			}
-
-			// 编辑器下的模拟模式
-			InitializationOperation initializationOperation = null;
-			if (playMode == EPlayMode.EditorSimulateMode)
-			{
-				var createParameters = new EditorSimulateModeParameters();
-				createParameters.SimulatePatchManifestPath = EditorSimulateModeHelper.SimulateBuild(packageName);
-				initializationOperation = package.InitializeAsync(createParameters);
-			}
-
-			// 单机运行模式
-			if (playMode == EPlayMode.OfflinePlayMode)
-			{
-				var createParameters = new OfflinePlayModeParameters();
-				createParameters.DecryptionServices = new GameDecryptionServices();
-				initializationOperation = package.InitializeAsync(createParameters);
-			}
-
-			// 联机运行模式
-			if (playMode == EPlayMode.HostPlayMode)
-			{
-				var createParameters = new HostPlayModeParameters();
-				createParameters.DecryptionServices = new GameDecryptionServices();
-				createParameters.QueryServices = new GameQueryServices();
-				createParameters.DefaultHostServer = GetHostServerURL();
-				createParameters.FallbackHostServer = GetHostServerURL();
-				initializationOperation = package.InitializeAsync(createParameters);
-			}
-
-			yield return initializationOperation;
-			if (package.InitializeStatus == EOperationStatus.Succeed)
-			{
-				_machine.ChangeState<FsmUpdateVersion>();
-			}
-			else
-			{
-				Debug.LogWarning($"{initializationOperation.Error}");
-				PatchEventDefine.InitializeFailed.SendEventMessage();
-			}
+			// var playMode = PatchManager.Instance.PlayMode;
+			//
+			// // 创建默认的资源包
+			// string packageName = "DefaultPackage";
+			// var package = YooAssets.TryGetAssetsPackage(packageName);
+			// if (package == null)
+			// {
+			// 	package = YooAssets.CreateAssetsPackage(packageName);
+			// 	YooAssets.SetDefaultAssetsPackage(package);
+			// }
+			//
+			// // 编辑器下的模拟模式
+			// InitializationOperation initializationOperation = null;
+			// if (playMode == EPlayMode.EditorSimulateMode)
+			// {
+			// 	var createParameters = new EditorSimulateModeParameters();
+			// 	createParameters.SimulatePatchManifestPath = EditorSimulateModeHelper.SimulateBuild(packageName);
+			// 	initializationOperation = package.InitializeAsync(createParameters);
+			// }
+			//
+			// // 单机运行模式
+			// if (playMode == EPlayMode.OfflinePlayMode)
+			// {
+			// 	var createParameters = new OfflinePlayModeParameters();
+			// 	createParameters.DecryptionServices = new GameDecryptionServices();
+			// 	initializationOperation = package.InitializeAsync(createParameters);
+			// }
+			//
+			// // 联机运行模式
+			// if (playMode == EPlayMode.HostPlayMode)
+			// {
+			// 	var createParameters = new HostPlayModeParameters();
+			// 	createParameters.DecryptionServices = new GameDecryptionServices();
+			// 	createParameters.QueryServices = new GameQueryServices();
+			// 	createParameters.DefaultHostServer = GetHostServerURL();
+			// 	createParameters.FallbackHostServer = GetHostServerURL();
+			// 	initializationOperation = package.InitializeAsync(createParameters);
+			// }
+			//
+			// yield return initializationOperation;
+			// if (package.InitializeStatus == EOperationStatus.Succeed)
+			// {
+			// 	_machine.ChangeState<FsmUpdateVersion>();
+			// }
+			// else
+			// {
+			// 	Debug.LogWarning($"{initializationOperation.Error}");
+			// 	PatchEventDefine.InitializeFailed.SendEventMessage();
+			// }
 		}
 
 		/// <summary>
@@ -147,7 +147,7 @@ namespace Y0Studio.ET.Client
 				throw new NotImplementedException();
 			}
 
-			public FileStream LoadFromStream(DecryptFileInfo fileInfo)
+			public Stream LoadFromStream(DecryptFileInfo fileInfo)
 			{
 				BundleStream bundleStream = new BundleStream(fileInfo.FilePath, FileMode.Open);
 				return bundleStream;
