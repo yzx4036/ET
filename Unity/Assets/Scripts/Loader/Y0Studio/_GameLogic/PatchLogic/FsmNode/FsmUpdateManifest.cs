@@ -37,7 +37,7 @@ namespace Y0Studio.ET.Client
 		{
 			yield return new WaitForSecondsRealtime(0.5f);
 
-			var package = YooAssets.GetAssetsPackage("DefaultPackage");
+			var package = YooAssets.GetPackage("DefaultPackage");
 			var operation = package.UpdatePackageManifestAsync(PatchManager.Instance.PackageVersion);
 			yield return operation;
 

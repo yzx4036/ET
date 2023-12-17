@@ -24,7 +24,7 @@ namespace Y0Studio.ET.Client
 		/// <summary>
 		/// 下载器
 		/// </summary>
-		public PatchDownloaderOperation Downloader { set; get; }
+		public DownloaderOperation Downloader { set; get; }
 
 		private StateMachine _machine;
 		private bool _isRun = false;

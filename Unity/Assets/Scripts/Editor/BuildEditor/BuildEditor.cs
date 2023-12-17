@@ -47,7 +47,7 @@ namespace ET
 
         private void OnEnable()
 		{
-			globalConfig = Resources.Load<GlobalConfig>("GlobalConfig");
+			globalConfig = AssetDatabase.LoadAssetAtPath<GlobalConfig>("Assets/Resources/GlobalConfig.asset");
 			
 #if UNITY_ANDROID
 			activePlatform = PlatformType.Android;
@@ -114,15 +114,15 @@ namespace ET
 			
 			GUILayout.Label("");
 			GUILayout.Label("Code Compile：");
-			
-			var codeMode = (CodeMode)EditorGUILayout.EnumPopup("CodeMode: ", this.globalConfig.CodeMode);
-			if (codeMode != this.globalConfig.CodeMode)
+			EditorGUI.BeginChangeCheck();
+			this.globalConfig.CodeMode = (CodeMode)EditorGUILayout.EnumPopup("CodeMode: ", this.globalConfig.CodeMode);
+			if (EditorGUI.EndChangeCheck())
 			{
-				this.globalConfig.CodeMode = codeMode;
 				EditorUtility.SetDirty(this.globalConfig);
-				AssetDatabase.SaveAssets();
+				AssetDatabase.SaveAssetIfDirty(this.globalConfig);
+				AssetDatabase.Refresh();
 			}
-			
+
 			if (GUILayout.Button("BuildModelAndHotfix"))
 			{
 				if (Define.EnableCodes)

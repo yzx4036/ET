@@ -20,7 +20,7 @@ namespace Y0Studio.ET.Client
 		void IStateNode.OnEnter()
 		{
 			PatchEventDefine.PatchStatesChange.SendEventMessage("清理未使用的缓存文件！");
-			var package = YooAsset.YooAssets.GetAssetsPackage("DefaultPackage");
+			var package = YooAsset.YooAssets.GetPackage("DefaultPackage");
 			var operation = package.ClearUnusedCacheFilesAsync();
 			operation.Completed += Operation_Completed;
 		}

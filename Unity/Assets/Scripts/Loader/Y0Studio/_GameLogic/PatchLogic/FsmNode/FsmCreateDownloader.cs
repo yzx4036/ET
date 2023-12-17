@@ -40,7 +40,7 @@ namespace Y0Studio.ET.Client
 
 			int downloadingMaxNum = 10;
 			int failedTryAgain = 3;
-			var downloader = YooAssets.CreatePatchDownloader(downloadingMaxNum, failedTryAgain);
+			var downloader = YooAssets.CreateResourceDownloader(downloadingMaxNum, failedTryAgain);
 			PatchManager.Instance.Downloader = downloader;
 
 			if (downloader.TotalDownloadCount == 0)
