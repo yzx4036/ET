@@ -3,7 +3,6 @@
     "rootNamespace": "ET",
     "references": [
         "Unity.ThirdParty",
-        "YooAsset",
         "Unity.Core",
         "HybridCLR.Runtime",
         "MemoryPack",
