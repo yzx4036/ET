@@ -8,20 +8,14 @@ namespace ET
 {
     public static class ProcessHelper
     {
-        public static Process Run(string exe, string arguments, string workingDirectory = ".", bool waitExit = false)
+        public static System.Diagnostics.Process Run(string exe, string arguments, string workingDirectory = ".", bool waitExit = false)
         {
             //Log.Debug($"Process Run exe:{exe} ,arguments:{arguments} ,workingDirectory:{workingDirectory}");
             try
             {
-                bool redirectStandardOutput = true;
-                bool redirectStandardError = true;
-                bool useShellExecute = false;
-                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                {
-                    redirectStandardOutput = false;
-                    redirectStandardError = false;
-                    useShellExecute = true;
-                }
+                bool redirectStandardOutput = false;
+                bool redirectStandardError = false;
+                bool useShellExecute = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
                 
                 if (waitExit)
                 {
@@ -41,7 +35,7 @@ namespace ET
                     RedirectStandardError = redirectStandardError,
                 };
 
-                Process process = Process.Start(info);
+                System.Diagnostics.Process process = System.Diagnostics.Process.Start(info);
 
                 if (waitExit)
                 {
@@ -56,7 +50,7 @@ namespace ET
             }
         }
         
-        private static async ETTask WaitExitAsync(Process process)
+        private static async ETTask WaitExitAsync(System.Diagnostics.Process process)
         {
             await process.WaitForExitAsync();
 #if UNITY
@@ -65,7 +59,7 @@ namespace ET
         }
         
 #if UNITY
-        private static async Task WaitForExitAsync(this Process self)
+        private static async Task WaitForExitAsync(this System.Diagnostics.Process self)
         {
             if (!self.HasExited)
             {

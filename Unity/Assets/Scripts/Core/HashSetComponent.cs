@@ -5,6 +5,10 @@ namespace ET
 {
     public class HashSetComponent<T>: HashSet<T>, IDisposable
     {
+        public HashSetComponent()
+        {
+        }
+        
         public static HashSetComponent<T> Create()
         {
             return ObjectPool.Instance.Fetch(typeof (HashSetComponent<T>)) as HashSetComponent<T>;

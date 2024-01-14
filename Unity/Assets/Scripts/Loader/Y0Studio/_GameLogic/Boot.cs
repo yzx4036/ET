@@ -32,10 +32,7 @@ namespace Y0Studio.ET.Client
 			YooAssets.Initialize();
 			YooAssets.SetOperationSystemMaxTimeSlice(30);
 
-			Game.AddSingleton<PatchManager>();
 
-			// 开始补丁更新流程
-			PatchManager.Instance.Run(PlayMode);
 		}
 	}
 }

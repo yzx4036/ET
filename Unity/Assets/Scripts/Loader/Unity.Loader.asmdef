@@ -3,9 +3,11 @@
     "rootNamespace": "ET",
     "references": [
         "Unity.ThirdParty",
-        "YooAsset",
         "Unity.Core",
-        "HybridCLR.Runtime"
+        "HybridCLR.Runtime",
+        "MemoryPack",
+        "BetterStreamingAssets",
+        "YooAsset"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

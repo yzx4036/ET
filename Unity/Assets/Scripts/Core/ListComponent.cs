@@ -5,6 +5,10 @@ namespace ET
 {
     public class ListComponent<T>: List<T>, IDisposable
     {
+        public ListComponent()
+        {
+        }
+        
         public static ListComponent<T> Create()
         {
             return ObjectPool.Instance.Fetch(typeof (ListComponent<T>)) as ListComponent<T>;
@@ -12,6 +16,10 @@ namespace ET
 
         public void Dispose()
         {
+            if (this.Capacity > 64) // 超过64，让gc回收
+            {
+                return;
+            }
             this.Clear();
             ObjectPool.Instance.Recycle(this);
         }
