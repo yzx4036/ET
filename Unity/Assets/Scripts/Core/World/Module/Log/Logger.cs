@@ -1,5 +1,6 @@
 ﻿namespace ET
 {
+    using ETLogger = global::ET.Log;
     public class Logger: Singleton<Logger>, ISingletonAwake
     {
         private ILog log;
