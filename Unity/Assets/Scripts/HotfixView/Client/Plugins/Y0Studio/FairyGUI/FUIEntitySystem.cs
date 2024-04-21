@@ -10,7 +10,7 @@ namespace ET.Client
         private static void Awake(this ET.Client.FUIEntity self)
         {
             self.PanelCoreData = self.AddChild<PanelCoreData>();
-            self.Language = LocalizeComponentSystem.DefaultLanguage;
+            // self.Language = LocalizeComponentSystem.DefaultLanguage; //todo 多语言需要修改
         }
         [EntitySystem]
         private static void Destroy(this ET.Client.FUIEntity self)
@@ -23,7 +23,7 @@ namespace ET.Client
                 self.GComponent = null;
             }
             
-            self.Language = LocalizeComponentSystem.DefaultLanguage;
+            // self.Language = LocalizeComponentSystem.DefaultLanguage; //todo 多语言需要修改
         }
         
         public static void SetPanelType(this FUIEntity self, UIPanelType panelType)

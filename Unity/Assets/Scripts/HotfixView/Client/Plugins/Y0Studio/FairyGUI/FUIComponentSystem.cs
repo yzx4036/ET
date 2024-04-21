@@ -278,7 +278,7 @@ namespace ET.Client
             CoroutineLock coroutineLock = null;
             try
             {
-                coroutineLock = await CoroutineLockComponent.Instance.Wait(CoroutineLockType.LoadingPanels, (int)id);
+                coroutineLock = await self.Root().GetComponent<CoroutineLockComponent>().Wait(CoroutineLockType.LoadingPanels, (int)id);
                 
                 FUIEntity fuiEntity = self.GetFUIEntity(id);
                 // 如果UI不存在开始实例化新的窗口
@@ -490,20 +490,22 @@ namespace ET.Client
             fuiEventHandler.OnInitComponent(fuiEntity);
             fuiEventHandler.OnRegisterUIEvent(fuiEntity);
             
-            // 翻译打开的界面
-            SystemLanguage currentLanguage = self.ClientScene().GetComponent<LocalizeComponent>().CurrentLanguage;
-            if (fuiEntity.Language != currentLanguage)
-            {
-                var (_, translateFUI) = self.ClientScene().GetComponent<LocalizeComponent>().GetCurrentTranslator();
-                self.OnePanelTranslateText(currentLanguage, fuiEntity, translateFUI);
-            }
+            // 翻译打开的界面 
+            
+            //多语言需要修改
+            // SystemLanguage currentLanguage = self.ClientScene().GetComponent<LocalizeComponent>().CurrentLanguage;
+            // if (fuiEntity.Language != currentLanguage)
+            // {
+            //     var (_, translateFUI) = self.ClientScene().GetComponent<LocalizeComponent>().GetCurrentTranslator();
+            //     self.OnePanelTranslateText(currentLanguage, fuiEntity, translateFUI);
+            // }
            
             self.AllPanelsDic[(int)fuiEntity.PanelId] = fuiEntity;
         }
 
         private static async ETTask<GComponent> CreateObjectAsync(this FUIComponent self, string packageName, string componentName)
         {
-            return (await self.ClientScene().GetComponent<FUIAssetComponent>().CreateObjectAsync(packageName, componentName)).asCom;
+            return (await self.Root().GetComponent<FUIAssetComponent>().CreateObjectAsync(packageName, componentName)).asCom;
         }
 
         public static void AllPanelTranslateText(this FUIComponent self, SystemLanguage currentLanguage, Func<string, string, string> translator)

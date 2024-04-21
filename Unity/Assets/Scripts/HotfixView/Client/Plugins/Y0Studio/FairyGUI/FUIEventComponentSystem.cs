@@ -29,7 +29,7 @@ namespace ET.Client
             self.PanelIdInfoDict.Clear();
             self.PanelTypeInfoDict.Clear();
 
-            foreach (Type v in EventSystem.Instance.GetTypes(typeof(FUIEventAttribute)))
+            foreach (Type v in CodeTypes.Instance.GetTypes(typeof(FUIEventAttribute)))
             {
                 FUIEventAttribute attr = v.GetCustomAttributes(typeof(FUIEventAttribute), false)[0] as FUIEventAttribute;
                 self.UIEventHandlers.Add(attr.PanelId, Activator.CreateInstance(v) as IFUIEventHandler);
